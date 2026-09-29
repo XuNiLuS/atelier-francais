@@ -1,0 +1,3617 @@
+{
+  "phase": "initial",
+  "scanned_at_utc": "2026-09-29T20:05:08.682765667Z",
+  "image": {
+    "tag": "franais-web:latest",
+    "docker_inspect_id": "sha256:cbeeceee67f108307850444cd2aba8616444dc93c62090f160b7a62cba6d299c",
+    "trivy_image_id": "sha256:003c66d8e92c8209049a32c114605ecb95d2d509aa80be548b019d374ccaaff8",
+    "architecture": "arm64",
+    "os": {
+      "Family": "debian",
+      "Name": "13.6"
+    },
+    "created": "2026-09-29T19:54:28.732870551Z"
+  },
+  "tools": {
+    "trivy": "0.74.0",
+    "trivy_image_digest": "sha256:62b1e65e8869bc4b4c6aa4fa2b21595256c7c2f6018a9d9ad61caf87187c1969",
+    "pip_audit": "2.10.1",
+    "trivy_database": {
+      "Version": 2,
+      "NextUpdate": "2026-09-30T19:09:08.570009207Z",
+      "UpdatedAt": "2026-09-29T19:09:08.570009916Z",
+      "DownloadedAt": "2026-09-29T20:05:07.63522093Z"
+    }
+  },
+  "method": {
+    "local_docker_save_archive": true,
+    "archive_mounted_read_only": true,
+    "docker_socket_mounted": false,
+    "image_uploaded": false,
+    "code_uploaded": false,
+    "final_scan_offline": false,
+    "unfixed_included": true,
+    "all_severities_included": true
+  },
+  "pip_audit": {
+    "package_count": 17,
+    "raw_finding_count": 12,
+    "distinct_package_advisory_count": 6,
+    "dependencies": [
+      {
+        "name": "annotated-doc",
+        "version": "0.0.5",
+        "vulns": []
+      },
+      {
+        "name": "annotated-types",
+        "version": "0.8.0",
+        "vulns": []
+      },
+      {
+        "name": "anyio",
+        "version": "4.15.1",
+        "vulns": []
+      },
+      {
+        "name": "click",
+        "version": "8.5.0",
+        "vulns": []
+      },
+      {
+        "name": "fastapi",
+        "version": "0.142.0",
+        "vulns": []
+      },
+      {
+        "name": "h11",
+        "version": "0.16.0",
+        "vulns": []
+      },
+      {
+        "name": "idna",
+        "version": "3.20",
+        "vulns": []
+      },
+      {
+        "name": "jinja2",
+        "version": "3.1.6",
+        "vulns": []
+      },
+      {
+        "name": "markupsafe",
+        "version": "3.0.3",
+        "vulns": []
+      },
+      {
+        "name": "opentelemetry-api",
+        "version": "1.45.0",
+        "vulns": []
+      },
+      {
+        "name": "pip",
+        "version": "25.0.1",
+        "vulns": [
+          {
+            "id": "PYSEC-2026-1795",
+            "fix_versions": [
+              "25.3"
+            ],
+            "aliases": [
+              "GHSA-4xh5-x5gv-qwph",
+              "CVE-2025-8869"
+            ],
+            "description": "When extracting a tar archive pip may not check symbolic links point into the extraction directory if the tarfile module doesn't implement PEP 706. Note that upgrading pip to a \"fixed\" version for this vulnerability doesn't fix all known vulnerabilities that are remediated by using a Python version that implements PEP 706. Note that this is a vulnerability in pip's fallback implementation of tar extraction for Python versions that don't implement PEP 706 and therefore are not secure to all vulnerabilities in the Python 'tarfile' module. If you're using a Python version that implements PEP 706 then pip doesn't use the \"vulnerable\" fallback code. Mitigations include upgrading to a version of pip that includes the fix, upgrading to a Python version that implements PEP 706 (Python >=3.9.17, >=3.10.12, >=3.11.4, or >=3.12), applying the linked patch, or inspecting source distributions (sdists) before installation as is already a best-practice."
+          },
+          {
+            "id": "PYSEC-2026-1796",
+            "fix_versions": [
+              "26.0"
+            ],
+            "aliases": [
+              "GHSA-6vgw-5pg2-w6jp",
+              "CVE-2026-1703"
+            ],
+            "description": "When pip is installing and extracting a maliciously crafted wheel archive, files may be extracted outside the installation directory. The path traversal is limited to prefixes of the installation directory, thus isn't able to inject or overwrite executable files in typical situations."
+          },
+          {
+            "id": "PYSEC-2026-2875",
+            "fix_versions": [
+              "26.1"
+            ],
+            "aliases": [
+              "GHSA-58qw-9mgm-455v",
+              "CVE-2026-3219"
+            ],
+            "description": "pip handles concatenated tar and ZIP files as ZIP files regardless of filename or whether a file is both a tar and ZIP file. This behavior could result in confusing installation behavior, such as installing \"incorrect\" files according to the filename of the archive. New behavior only proceeds with installation if the file identifies uniquely as a ZIP or tar archive, not as both."
+          },
+          {
+            "id": "PYSEC-2026-2876",
+            "fix_versions": [
+              "26.1"
+            ],
+            "aliases": [
+              "CVE-2026-6357",
+              "GHSA-jp4c-xjxw-mgf9"
+            ],
+            "description": "pip prior to version 26.1 would run self-update check functionality after installing wheel files which required importing well-known Python modules names. These module imports were intentionally deferred to increase startup time of the pip CLI. The patch changes self-update functionality to run before wheels are installed to prevent newly-installed modules from being imported shortly after the installation of a wheel package. Users should still review package contents prior to installation."
+          },
+          {
+            "id": "PYSEC-2026-196",
+            "fix_versions": [
+              "26.1.2"
+            ],
+            "aliases": [
+              "GHSA-wf93-45jw-7689",
+              "CVE-2026-8643"
+            ],
+            "description": "pip would treat console_scripts and gui_scripts as paths instead of file names without sanitizing the resolved absolute path to the installation directory, leading to entry points being installed outside the installation directory."
+          },
+          {
+            "id": "PYSEC-2026-1795",
+            "fix_versions": [
+              "25.3"
+            ],
+            "aliases": [
+              "GHSA-4xh5-x5gv-qwph",
+              "CVE-2025-8869"
+            ],
+            "description": "When extracting a tar archive pip may not check symbolic links point into the extraction directory if the tarfile module doesn't implement PEP 706. Note that upgrading pip to a \"fixed\" version for this vulnerability doesn't fix all known vulnerabilities that are remediated by using a Python version that implements PEP 706. Note that this is a vulnerability in pip's fallback implementation of tar extraction for Python versions that don't implement PEP 706 and therefore are not secure to all vulnerabilities in the Python 'tarfile' module. If you're using a Python version that implements PEP 706 then pip doesn't use the \"vulnerable\" fallback code. Mitigations include upgrading to a version of pip that includes the fix, upgrading to a Python version that implements PEP 706 (Python >=3.9.17, >=3.10.12, >=3.11.4, or >=3.12), applying the linked patch, or inspecting source distributions (sdists) before installation as is already a best-practice."
+          },
+          {
+            "id": "PYSEC-2026-1796",
+            "fix_versions": [
+              "26.0"
+            ],
+            "aliases": [
+              "GHSA-6vgw-5pg2-w6jp",
+              "CVE-2026-1703"
+            ],
+            "description": "When pip is installing and extracting a maliciously crafted wheel archive, files may be extracted outside the installation directory. The path traversal is limited to prefixes of the installation directory, thus isn't able to inject or overwrite executable files in typical situations."
+          },
+          {
+            "id": "PYSEC-2026-196",
+            "fix_versions": [
+              "26.1.2"
+            ],
+            "aliases": [
+              "GHSA-wf93-45jw-7689",
+              "CVE-2026-8643"
+            ],
+            "description": "pip would treat console_scripts and gui_scripts as paths instead of file names without sanitizing the resolved absolute path to the installation directory, leading to entry points being installed outside the installation directory."
+          },
+          {
+            "id": "PYSEC-2026-2875",
+            "fix_versions": [
+              "26.1"
+            ],
+            "aliases": [
+              "GHSA-58qw-9mgm-455v",
+              "CVE-2026-3219"
+            ],
+            "description": "pip handles concatenated tar and ZIP files as ZIP files regardless of filename or whether a file is both a tar and ZIP file. This behavior could result in confusing installation behavior, such as installing \"incorrect\" files according to the filename of the archive. New behavior only proceeds with installation if the file identifies uniquely as a ZIP or tar archive, not as both."
+          },
+          {
+            "id": "PYSEC-2026-2876",
+            "fix_versions": [
+              "26.1"
+            ],
+            "aliases": [
+              "CVE-2026-6357",
+              "GHSA-jp4c-xjxw-mgf9"
+            ],
+            "description": "pip prior to version 26.1 would run self-update check functionality after installing wheel files which required importing well-known Python modules names. These module imports were intentionally deferred to increase startup time of the pip CLI. The patch changes self-update functionality to run before wheels are installed to prevent newly-installed modules from being imported shortly after the installation of a wheel package. Users should still review package contents prior to installation."
+          },
+          {
+            "id": "PYSEC-2026-3721",
+            "fix_versions": [
+              "26.2"
+            ],
+            "aliases": [
+              "CVE-2026-13346",
+              "GHSA-qwm4-qh6w-59xr"
+            ],
+            "description": "pip would incorrectly handle doubly-encoded package URLs from indexes allowing for files to be installed to arbitrary locations on disk even when installing wheels.     This vulnerability requires downloading or installing a package from a malicious package index to succeed, malicious packages alone are not able to exploit this vulnerability. Note that this vulnerability only materially impacts users running `pip download` with the `--only-binary` option as installing source distributions from an untrusted index is already an unsafe operation that executes code during install time."
+          },
+          {
+            "id": "PYSEC-2026-3721",
+            "fix_versions": [
+              "26.2.0"
+            ],
+            "aliases": [
+              "CVE-2026-13346",
+              "GHSA-qwm4-qh6w-59xr"
+            ],
+            "description": "pip would incorrectly handle doubly-encoded package URLs from indexes allowing for files to be installed to arbitrary locations on disk even when installing wheels.  This vulnerability requires downloading or installing a package from a malicious package index to succeed, malicious packages alone are not able to exploit this vulnerability. Note that this vulnerability only materially impacts users running `pip download` with the `--only-binary` option as installing source distributions from an untrusted index is already an unsafe operation that executes code during install time."
+          }
+        ]
+      },
+      {
+        "name": "pydantic",
+        "version": "2.13.5",
+        "vulns": []
+      },
+      {
+        "name": "pydantic-core",
+        "version": "2.46.5",
+        "vulns": []
+      },
+      {
+        "name": "starlette",
+        "version": "1.7.0",
+        "vulns": []
+      },
+      {
+        "name": "typing-inspection",
+        "version": "0.4.4",
+        "vulns": []
+      },
+      {
+        "name": "typing-extensions",
+        "version": "4.16.0",
+        "vulns": []
+      },
+      {
+        "name": "uvicorn",
+        "version": "0.54.0",
+        "vulns": []
+      }
+    ]
+  },
+  "targets": [
+    {
+      "type": "debian",
+      "package_count": 87,
+      "finding_count": 256,
+      "distinct_id_count": 119,
+      "severity_counts": {
+        "LOW": 78,
+        "HIGH": 57,
+        "MEDIUM": 76,
+        "UNKNOWN": 42,
+        "CRITICAL": 3
+      },
+      "distinct_id_severity_counts": {
+        "LOW": 38,
+        "HIGH": 19,
+        "MEDIUM": 43,
+        "UNKNOWN": 16,
+        "CRITICAL": 3
+      },
+      "with_known_fix": 58,
+      "without_known_fix": 198,
+      "packages": [
+        {
+          "name": "adduser",
+          "version": "3.152"
+        },
+        {
+          "name": "apt",
+          "version": "3.0.3"
+        },
+        {
+          "name": "base-files",
+          "version": "13.8+deb13u6"
+        },
+        {
+          "name": "base-passwd",
+          "version": "3.6.7"
+        },
+        {
+          "name": "bash",
+          "version": "5.2.37"
+        },
+        {
+          "name": "bsdutils",
+          "version": "2.41.5"
+        },
+        {
+          "name": "ca-certificates",
+          "version": "20250419"
+        },
+        {
+          "name": "coreutils",
+          "version": "9.7"
+        },
+        {
+          "name": "dash",
+          "version": "0.5.12"
+        },
+        {
+          "name": "debconf",
+          "version": "1.5.91"
+        },
+        {
+          "name": "debian-archive-keyring",
+          "version": "2025.1"
+        },
+        {
+          "name": "debianutils",
+          "version": "5.23.2"
+        },
+        {
+          "name": "diffutils",
+          "version": "3.10"
+        },
+        {
+          "name": "dpkg",
+          "version": "1.22.22"
+        },
+        {
+          "name": "findutils",
+          "version": "4.10.0"
+        },
+        {
+          "name": "gcc-14-base",
+          "version": "14.2.0"
+        },
+        {
+          "name": "grep",
+          "version": "3.11"
+        },
+        {
+          "name": "gzip",
+          "version": "1.13"
+        },
+        {
+          "name": "hostname",
+          "version": "3.25"
+        },
+        {
+          "name": "init-system-helpers",
+          "version": "1.69~deb13u1"
+        },
+        {
+          "name": "libacl1",
+          "version": "2.3.2"
+        },
+        {
+          "name": "libapt-pkg7.0",
+          "version": "3.0.3"
+        },
+        {
+          "name": "libattr1",
+          "version": "2.5.2"
+        },
+        {
+          "name": "libaudit-common",
+          "version": "4.0.2"
+        },
+        {
+          "name": "libaudit1",
+          "version": "4.0.2"
+        },
+        {
+          "name": "libblkid1",
+          "version": "2.41.5"
+        },
+        {
+          "name": "libbsd0",
+          "version": "0.12.2"
+        },
+        {
+          "name": "libbz2-1.0",
+          "version": "1.0.8"
+        },
+        {
+          "name": "libc-bin",
+          "version": "2.41"
+        },
+        {
+          "name": "libc6",
+          "version": "2.41"
+        },
+        {
+          "name": "libcap-ng0",
+          "version": "0.8.5"
+        },
+        {
+          "name": "libcap2",
+          "version": "2.75"
+        },
+        {
+          "name": "libcrypt1",
+          "version": "4.4.38"
+        },
+        {
+          "name": "libdb5.3t64",
+          "version": "5.3.28+dfsg2"
+        },
+        {
+          "name": "libdebconfclient0",
+          "version": "0.280"
+        },
+        {
+          "name": "libffi8",
+          "version": "3.4.8"
+        },
+        {
+          "name": "libgcc-s1",
+          "version": "14.2.0"
+        },
+        {
+          "name": "libgdbm6t64",
+          "version": "1.24"
+        },
+        {
+          "name": "libgmp10",
+          "version": "6.3.0+dfsg"
+        },
+        {
+          "name": "libhogweed6t64",
+          "version": "3.10.1"
+        },
+        {
+          "name": "liblastlog2-2",
+          "version": "2.41.5"
+        },
+        {
+          "name": "liblz4-1",
+          "version": "1.10.0"
+        },
+        {
+          "name": "liblzma5",
+          "version": "5.8.1"
+        },
+        {
+          "name": "libmd0",
+          "version": "1.1.0"
+        },
+        {
+          "name": "libmount1",
+          "version": "2.41.5"
+        },
+        {
+          "name": "libncursesw6",
+          "version": "6.5+20250216"
+        },
+        {
+          "name": "libnettle8t64",
+          "version": "3.10.1"
+        },
+        {
+          "name": "libpam-modules",
+          "version": "1.7.0"
+        },
+        {
+          "name": "libpam-modules-bin",
+          "version": "1.7.0"
+        },
+        {
+          "name": "libpam-runtime",
+          "version": "1.7.0"
+        },
+        {
+          "name": "libpam0g",
+          "version": "1.7.0"
+        },
+        {
+          "name": "libpcre2-8-0",
+          "version": "10.46"
+        },
+        {
+          "name": "libreadline8t64",
+          "version": "8.2"
+        },
+        {
+          "name": "libseccomp2",
+          "version": "2.6.0"
+        },
+        {
+          "name": "libselinux1",
+          "version": "3.8.1"
+        },
+        {
+          "name": "libsemanage-common",
+          "version": "3.8.1"
+        },
+        {
+          "name": "libsemanage2",
+          "version": "3.8.1"
+        },
+        {
+          "name": "libsepol2",
+          "version": "3.8.1"
+        },
+        {
+          "name": "libsmartcols1",
+          "version": "2.41.5"
+        },
+        {
+          "name": "libsqlite3-0",
+          "version": "3.46.1"
+        },
+        {
+          "name": "libssl3t64",
+          "version": "3.5.6"
+        },
+        {
+          "name": "libstdc++6",
+          "version": "14.2.0"
+        },
+        {
+          "name": "libsystemd0",
+          "version": "257.13"
+        },
+        {
+          "name": "libtinfo6",
+          "version": "6.5+20250216"
+        },
+        {
+          "name": "libudev1",
+          "version": "257.13"
+        },
+        {
+          "name": "libuuid1",
+          "version": "2.41.5"
+        },
+        {
+          "name": "libxxhash0",
+          "version": "0.8.3"
+        },
+        {
+          "name": "libzstd1",
+          "version": "1.5.7+dfsg"
+        },
+        {
+          "name": "login",
+          "version": "4.16.0-2+really2.41.5"
+        },
+        {
+          "name": "login.defs",
+          "version": "4.17.4"
+        },
+        {
+          "name": "mawk",
+          "version": "1.3.4.20250131"
+        },
+        {
+          "name": "mount",
+          "version": "2.41.5"
+        },
+        {
+          "name": "ncurses-base",
+          "version": "6.5+20250216"
+        },
+        {
+          "name": "ncurses-bin",
+          "version": "6.5+20250216"
+        },
+        {
+          "name": "netbase",
+          "version": "6.5"
+        },
+        {
+          "name": "openssl",
+          "version": "3.5.6"
+        },
+        {
+          "name": "openssl-provider-legacy",
+          "version": "3.5.6"
+        },
+        {
+          "name": "passwd",
+          "version": "4.17.4"
+        },
+        {
+          "name": "perl-base",
+          "version": "5.40.1"
+        },
+        {
+          "name": "readline-common",
+          "version": "8.2"
+        },
+        {
+          "name": "sed",
+          "version": "4.9"
+        },
+        {
+          "name": "sqv",
+          "version": "1.3.0"
+        },
+        {
+          "name": "sysvinit-utils",
+          "version": "3.14"
+        },
+        {
+          "name": "tar",
+          "version": "1.35+dfsg"
+        },
+        {
+          "name": "tzdata",
+          "version": "2026b"
+        },
+        {
+          "name": "util-linux",
+          "version": "2.41.5"
+        },
+        {
+          "name": "zlib1g",
+          "version": "1.3.dfsg+really1.3.1"
+        }
+      ],
+      "findings": [
+        {
+          "id": "CVE-2011-3374",
+          "name": "apt",
+          "version": "3.0.3",
+          "severity": "LOW",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2011-3374",
+          "title": "It was found that apt-key in apt, all versions, do not correctly valid ...",
+          "severity_source": "debian"
+        },
+        {
+          "id": "TEMP-0841856-B18BAF",
+          "name": "bash",
+          "version": "5.2.37-2+b9",
+          "severity": "LOW",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/TEMP-0841856-B18BAF",
+          "title": "[Privilege escalation possible to other user than root]",
+          "severity_source": "debian"
+        },
+        {
+          "id": "CVE-2026-76642",
+          "name": "bsdutils",
+          "version": "1:2.41.5-0+deb13u1",
+          "severity": "HIGH",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-76642",
+          "title": "util-linux: util-linux: failed external mount helper still runs privileged X-mount post-hooks",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-78408",
+          "name": "bsdutils",
+          "version": "1:2.41.5-0+deb13u1",
+          "severity": "HIGH",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-78408",
+          "title": "util-linux: util-linux: nsenter --join-cgroup leaks root cgroup migration authority",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-78409",
+          "name": "bsdutils",
+          "version": "1:2.41.5-0+deb13u1",
+          "severity": "HIGH",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-78409",
+          "title": "util-linux: util-linux: X-mount.subdir detached-tree resolution can escape via intermediate symlinks",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-78410",
+          "name": "bsdutils",
+          "version": "1:2.41.5-0+deb13u1",
+          "severity": "HIGH",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-78410",
+          "title": "util-linux: util-linux: restricted bind mounts do not pin the source, allowing X-mount.owner/group/mode redirection",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-3184",
+          "name": "bsdutils",
+          "version": "1:2.41.5-0+deb13u1",
+          "severity": "MEDIUM",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-3184",
+          "title": "util-linux: util-linux: Access control bypass due to improper hostname canonicalization",
+          "severity_source": "nvd"
+        },
+        {
+          "id": "CVE-2022-0563",
+          "name": "bsdutils",
+          "version": "1:2.41.5-0+deb13u1",
+          "severity": "LOW",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2022-0563",
+          "title": "util-linux: partial disclosure of arbitrary files in chfn and chsh when compiled with libreadline",
+          "severity_source": "debian"
+        },
+        {
+          "id": "CVE-2017-18018",
+          "name": "coreutils",
+          "version": "9.7-3",
+          "severity": "LOW",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2017-18018",
+          "title": "coreutils: race condition vulnerability in chown and chgrp",
+          "severity_source": "debian"
+        },
+        {
+          "id": "CVE-2025-5278",
+          "name": "coreutils",
+          "version": "9.7-3",
+          "severity": "LOW",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2025-5278",
+          "title": "coreutils: Heap Buffer Under-Read in GNU Coreutils sort via Key Specification",
+          "severity_source": "debian"
+        },
+        {
+          "id": "CVE-2026-56391",
+          "name": "coreutils",
+          "version": "9.7-3",
+          "severity": "LOW",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-56391",
+          "title": "coreutils: GNU coreutils uniq: Denial of Service and information disclosure via out-of-bounds read with multibyte input",
+          "severity_source": "debian"
+        },
+        {
+          "id": "CVE-2026-56392",
+          "name": "coreutils",
+          "version": "9.7-3",
+          "severity": "LOW",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-56392",
+          "title": "coreutils: GNU coreutils unexpand: Denial of Service via crafted tab stop values",
+          "severity_source": "debian"
+        },
+        {
+          "id": "CVE-2026-53910",
+          "name": "diffutils",
+          "version": "1:3.10-4",
+          "severity": "LOW",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-53910",
+          "title": "diffutils: heap‑based buffer overflow due to multiple signed integer overflows in line‑mapping calculations",
+          "severity_source": "debian"
+        },
+        {
+          "id": "CVE-2026-41992",
+          "name": "gzip",
+          "version": "1.13-1",
+          "severity": "HIGH",
+          "fixed_version": "1.13-1+deb13u1",
+          "status": "fixed",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-41992",
+          "title": "gzip: gzip: Information disclosure via global buffer overflow in LZH decompression",
+          "severity_source": "nvd"
+        },
+        {
+          "id": "CVE-2026-41991",
+          "name": "gzip",
+          "version": "1.13-1",
+          "severity": "MEDIUM",
+          "fixed_version": "1.13-1+deb13u1",
+          "status": "fixed",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-41991",
+          "title": "gzip: gzip: Arbitrary file overwrite via insecure temporary file handling in gzexe utility",
+          "severity_source": "nvd"
+        },
+        {
+          "id": "CVE-2026-54369",
+          "name": "libacl1",
+          "version": "2.3.2-2+b1",
+          "severity": "HIGH",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-54369",
+          "title": "acl: Symlink traversal privilege escalation via libacl functions",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-54370",
+          "name": "libacl1",
+          "version": "2.3.2-2+b1",
+          "severity": "MEDIUM",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-54370",
+          "title": "acl: TOCTOU Symlink Traversal via getfacl/setfacl",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2011-3374",
+          "name": "libapt-pkg7.0",
+          "version": "3.0.3",
+          "severity": "LOW",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2011-3374",
+          "title": "It was found that apt-key in apt, all versions, do not correctly valid ...",
+          "severity_source": "debian"
+        },
+        {
+          "id": "CVE-2026-54371",
+          "name": "libattr1",
+          "version": "1:2.5.2-3",
+          "severity": "MEDIUM",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-54371",
+          "title": "attr: attr: Symlink Traversal Privilege Escalation via getfattr and setfattr",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-76642",
+          "name": "libblkid1",
+          "version": "2.41.5-0+deb13u1",
+          "severity": "HIGH",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-76642",
+          "title": "util-linux: util-linux: failed external mount helper still runs privileged X-mount post-hooks",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-78408",
+          "name": "libblkid1",
+          "version": "2.41.5-0+deb13u1",
+          "severity": "HIGH",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-78408",
+          "title": "util-linux: util-linux: nsenter --join-cgroup leaks root cgroup migration authority",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-78409",
+          "name": "libblkid1",
+          "version": "2.41.5-0+deb13u1",
+          "severity": "HIGH",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-78409",
+          "title": "util-linux: util-linux: X-mount.subdir detached-tree resolution can escape via intermediate symlinks",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-78410",
+          "name": "libblkid1",
+          "version": "2.41.5-0+deb13u1",
+          "severity": "HIGH",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-78410",
+          "title": "util-linux: util-linux: restricted bind mounts do not pin the source, allowing X-mount.owner/group/mode redirection",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-3184",
+          "name": "libblkid1",
+          "version": "2.41.5-0+deb13u1",
+          "severity": "MEDIUM",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-3184",
+          "title": "util-linux: util-linux: Access control bypass due to improper hostname canonicalization",
+          "severity_source": "nvd"
+        },
+        {
+          "id": "CVE-2022-0563",
+          "name": "libblkid1",
+          "version": "2.41.5-0+deb13u1",
+          "severity": "LOW",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2022-0563",
+          "title": "util-linux: partial disclosure of arbitrary files in chfn and chsh when compiled with libreadline",
+          "severity_source": "debian"
+        },
+        {
+          "id": "CVE-2026-42250",
+          "name": "libbz2-1.0",
+          "version": "1.0.8-6",
+          "severity": "MEDIUM",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-42250",
+          "title": "bzip2: bzip2: Denial of Service in bzip2recover via a specially crafted file",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-18374",
+          "name": "libc-bin",
+          "version": "2.41-12+deb13u3",
+          "severity": "MEDIUM",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-18374",
+          "title": "glibc: glibc: Heap buffer overflow via attacker-controlled fopen mode string",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-19499",
+          "name": "libc-bin",
+          "version": "2.41-12+deb13u3",
+          "severity": "MEDIUM",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-19499",
+          "title": "glibc: Buffer Overflow in strfmon right-justification padding",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-19542",
+          "name": "libc-bin",
+          "version": "2.41-12+deb13u3",
+          "severity": "MEDIUM",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-19542",
+          "title": "glibc: Fix out-of-bounds array write in tdelete",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-5435",
+          "name": "libc-bin",
+          "version": "2.41-12+deb13u3",
+          "severity": "MEDIUM",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-5435",
+          "title": "glibc: glibc: Out-of-bounds write via TSIG record processing",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-5450",
+          "name": "libc-bin",
+          "version": "2.41-12+deb13u3",
+          "severity": "MEDIUM",
+          "fixed_version": "2.41-12+deb13u4",
+          "status": "fixed",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-5450",
+          "title": "glibc: glibc: Heap Buffer Overflow in `scanf` with `%mc` format specifier and large width",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-5928",
+          "name": "libc-bin",
+          "version": "2.41-12+deb13u3",
+          "severity": "MEDIUM",
+          "fixed_version": "2.41-12+deb13u4",
+          "status": "fixed",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-5928",
+          "title": "glibc: glibc: Information disclosure or denial of service via ungetwc function with specific wide character encodings",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-6238",
+          "name": "libc-bin",
+          "version": "2.41-12+deb13u3",
+          "severity": "MEDIUM",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-6238",
+          "title": "glibc: glibc: Application crash or uninitialized memory read via crafted DNS response",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-6368",
+          "name": "libc-bin",
+          "version": "2.41-12+deb13u3",
+          "severity": "MEDIUM",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-6368",
+          "title": "glibc: glibc: Process abort due to invalid memory in wordexp",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-6791",
+          "name": "libc-bin",
+          "version": "2.41-12+deb13u3",
+          "severity": "MEDIUM",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-6791",
+          "title": "glibc: Glibc: Denial of Service via stack exhaustion during tilde expansion",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-77117",
+          "name": "libc-bin",
+          "version": "2.41-12+deb13u3",
+          "severity": "MEDIUM",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-77117",
+          "title": "glibc: Non-progress DoS in SHIFT_JISX0213 -&gt",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-80489",
+          "name": "libc-bin",
+          "version": "2.41-12+deb13u3",
+          "severity": "MEDIUM",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-80489",
+          "title": "glibc: Non-progress DoS in EUC_JISX0213 -> UCS-4 conversion state",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-8674",
+          "name": "libc-bin",
+          "version": "2.41-12+deb13u3",
+          "severity": "MEDIUM",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-8674",
+          "title": "glibc: glibc DNS stub resolver: Denial of Service via long search domain in configuration",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-86805",
+          "name": "libc-bin",
+          "version": "2.41-12+deb13u3",
+          "severity": "MEDIUM",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-86805",
+          "title": "glibc: glibc: Privilege escalation and arbitrary code execution via TOCTOU race condition in dynamic loader",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-89092",
+          "name": "libc-bin",
+          "version": "2.41-12+deb13u3",
+          "severity": "MEDIUM",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-89092",
+          "title": "glibc: nscd stack overflow leads to degraded DNS resolution",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-95818",
+          "name": "libc-bin",
+          "version": "2.41-12+deb13u3",
+          "severity": "MEDIUM",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-95818",
+          "title": "glibc: glibc: Local attacker can cause denial of service and information disclosure via stack-based buffer overflow.",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2010-4756",
+          "name": "libc-bin",
+          "version": "2.41-12+deb13u3",
+          "severity": "LOW",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2010-4756",
+          "title": "glibc: glob implementation can cause excessive CPU and memory consumption due to crafted glob expressions",
+          "severity_source": "debian"
+        },
+        {
+          "id": "CVE-2018-20796",
+          "name": "libc-bin",
+          "version": "2.41-12+deb13u3",
+          "severity": "LOW",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2018-20796",
+          "title": "glibc: uncontrolled recursion in function check_dst_limits_calc_pos_1 in posix/regexec.c",
+          "severity_source": "debian"
+        },
+        {
+          "id": "CVE-2019-1010022",
+          "name": "libc-bin",
+          "version": "2.41-12+deb13u3",
+          "severity": "LOW",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2019-1010022",
+          "title": "glibc: stack guard protection bypass",
+          "severity_source": "debian"
+        },
+        {
+          "id": "CVE-2019-1010023",
+          "name": "libc-bin",
+          "version": "2.41-12+deb13u3",
+          "severity": "LOW",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2019-1010023",
+          "title": "glibc: running ldd on malicious ELF leads to code execution because of wrong size computation",
+          "severity_source": "debian"
+        },
+        {
+          "id": "CVE-2019-1010024",
+          "name": "libc-bin",
+          "version": "2.41-12+deb13u3",
+          "severity": "LOW",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2019-1010024",
+          "title": "glibc: ASLR bypass using cache of thread stack and heap",
+          "severity_source": "debian"
+        },
+        {
+          "id": "CVE-2019-1010025",
+          "name": "libc-bin",
+          "version": "2.41-12+deb13u3",
+          "severity": "LOW",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2019-1010025",
+          "title": "glibc: information disclosure of heap addresses of pthread_created thread",
+          "severity_source": "debian"
+        },
+        {
+          "id": "CVE-2019-9192",
+          "name": "libc-bin",
+          "version": "2.41-12+deb13u3",
+          "severity": "LOW",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2019-9192",
+          "title": "glibc: uncontrolled recursion in function check_dst_limits_calc_pos_1 in posix/regexec.c",
+          "severity_source": "debian"
+        },
+        {
+          "id": "CVE-2026-97399",
+          "name": "libc-bin",
+          "version": "2.41-12+deb13u3",
+          "severity": "LOW",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-97399",
+          "title": "glibc: glibc: Denial of Service via out-of-bounds read in strncasecmp",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-18374",
+          "name": "libc6",
+          "version": "2.41-12+deb13u3",
+          "severity": "MEDIUM",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-18374",
+          "title": "glibc: glibc: Heap buffer overflow via attacker-controlled fopen mode string",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-19499",
+          "name": "libc6",
+          "version": "2.41-12+deb13u3",
+          "severity": "MEDIUM",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-19499",
+          "title": "glibc: Buffer Overflow in strfmon right-justification padding",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-19542",
+          "name": "libc6",
+          "version": "2.41-12+deb13u3",
+          "severity": "MEDIUM",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-19542",
+          "title": "glibc: Fix out-of-bounds array write in tdelete",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-5435",
+          "name": "libc6",
+          "version": "2.41-12+deb13u3",
+          "severity": "MEDIUM",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-5435",
+          "title": "glibc: glibc: Out-of-bounds write via TSIG record processing",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-5450",
+          "name": "libc6",
+          "version": "2.41-12+deb13u3",
+          "severity": "MEDIUM",
+          "fixed_version": "2.41-12+deb13u4",
+          "status": "fixed",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-5450",
+          "title": "glibc: glibc: Heap Buffer Overflow in `scanf` with `%mc` format specifier and large width",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-5928",
+          "name": "libc6",
+          "version": "2.41-12+deb13u3",
+          "severity": "MEDIUM",
+          "fixed_version": "2.41-12+deb13u4",
+          "status": "fixed",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-5928",
+          "title": "glibc: glibc: Information disclosure or denial of service via ungetwc function with specific wide character encodings",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-6238",
+          "name": "libc6",
+          "version": "2.41-12+deb13u3",
+          "severity": "MEDIUM",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-6238",
+          "title": "glibc: glibc: Application crash or uninitialized memory read via crafted DNS response",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-6368",
+          "name": "libc6",
+          "version": "2.41-12+deb13u3",
+          "severity": "MEDIUM",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-6368",
+          "title": "glibc: glibc: Process abort due to invalid memory in wordexp",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-6791",
+          "name": "libc6",
+          "version": "2.41-12+deb13u3",
+          "severity": "MEDIUM",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-6791",
+          "title": "glibc: Glibc: Denial of Service via stack exhaustion during tilde expansion",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-77117",
+          "name": "libc6",
+          "version": "2.41-12+deb13u3",
+          "severity": "MEDIUM",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-77117",
+          "title": "glibc: Non-progress DoS in SHIFT_JISX0213 -&gt",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-80489",
+          "name": "libc6",
+          "version": "2.41-12+deb13u3",
+          "severity": "MEDIUM",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-80489",
+          "title": "glibc: Non-progress DoS in EUC_JISX0213 -> UCS-4 conversion state",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-8674",
+          "name": "libc6",
+          "version": "2.41-12+deb13u3",
+          "severity": "MEDIUM",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-8674",
+          "title": "glibc: glibc DNS stub resolver: Denial of Service via long search domain in configuration",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-86805",
+          "name": "libc6",
+          "version": "2.41-12+deb13u3",
+          "severity": "MEDIUM",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-86805",
+          "title": "glibc: glibc: Privilege escalation and arbitrary code execution via TOCTOU race condition in dynamic loader",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-89092",
+          "name": "libc6",
+          "version": "2.41-12+deb13u3",
+          "severity": "MEDIUM",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-89092",
+          "title": "glibc: nscd stack overflow leads to degraded DNS resolution",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-95818",
+          "name": "libc6",
+          "version": "2.41-12+deb13u3",
+          "severity": "MEDIUM",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-95818",
+          "title": "glibc: glibc: Local attacker can cause denial of service and information disclosure via stack-based buffer overflow.",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2010-4756",
+          "name": "libc6",
+          "version": "2.41-12+deb13u3",
+          "severity": "LOW",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2010-4756",
+          "title": "glibc: glob implementation can cause excessive CPU and memory consumption due to crafted glob expressions",
+          "severity_source": "debian"
+        },
+        {
+          "id": "CVE-2018-20796",
+          "name": "libc6",
+          "version": "2.41-12+deb13u3",
+          "severity": "LOW",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2018-20796",
+          "title": "glibc: uncontrolled recursion in function check_dst_limits_calc_pos_1 in posix/regexec.c",
+          "severity_source": "debian"
+        },
+        {
+          "id": "CVE-2019-1010022",
+          "name": "libc6",
+          "version": "2.41-12+deb13u3",
+          "severity": "LOW",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2019-1010022",
+          "title": "glibc: stack guard protection bypass",
+          "severity_source": "debian"
+        },
+        {
+          "id": "CVE-2019-1010023",
+          "name": "libc6",
+          "version": "2.41-12+deb13u3",
+          "severity": "LOW",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2019-1010023",
+          "title": "glibc: running ldd on malicious ELF leads to code execution because of wrong size computation",
+          "severity_source": "debian"
+        },
+        {
+          "id": "CVE-2019-1010024",
+          "name": "libc6",
+          "version": "2.41-12+deb13u3",
+          "severity": "LOW",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2019-1010024",
+          "title": "glibc: ASLR bypass using cache of thread stack and heap",
+          "severity_source": "debian"
+        },
+        {
+          "id": "CVE-2019-1010025",
+          "name": "libc6",
+          "version": "2.41-12+deb13u3",
+          "severity": "LOW",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2019-1010025",
+          "title": "glibc: information disclosure of heap addresses of pthread_created thread",
+          "severity_source": "debian"
+        },
+        {
+          "id": "CVE-2019-9192",
+          "name": "libc6",
+          "version": "2.41-12+deb13u3",
+          "severity": "LOW",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2019-9192",
+          "title": "glibc: uncontrolled recursion in function check_dst_limits_calc_pos_1 in posix/regexec.c",
+          "severity_source": "debian"
+        },
+        {
+          "id": "CVE-2026-97399",
+          "name": "libc6",
+          "version": "2.41-12+deb13u3",
+          "severity": "LOW",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-97399",
+          "title": "glibc: glibc: Denial of Service via out-of-bounds read in strncasecmp",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-76642",
+          "name": "liblastlog2-2",
+          "version": "2.41.5-0+deb13u1",
+          "severity": "HIGH",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-76642",
+          "title": "util-linux: util-linux: failed external mount helper still runs privileged X-mount post-hooks",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-78408",
+          "name": "liblastlog2-2",
+          "version": "2.41.5-0+deb13u1",
+          "severity": "HIGH",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-78408",
+          "title": "util-linux: util-linux: nsenter --join-cgroup leaks root cgroup migration authority",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-78409",
+          "name": "liblastlog2-2",
+          "version": "2.41.5-0+deb13u1",
+          "severity": "HIGH",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-78409",
+          "title": "util-linux: util-linux: X-mount.subdir detached-tree resolution can escape via intermediate symlinks",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-78410",
+          "name": "liblastlog2-2",
+          "version": "2.41.5-0+deb13u1",
+          "severity": "HIGH",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-78410",
+          "title": "util-linux: util-linux: restricted bind mounts do not pin the source, allowing X-mount.owner/group/mode redirection",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-3184",
+          "name": "liblastlog2-2",
+          "version": "2.41.5-0+deb13u1",
+          "severity": "MEDIUM",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-3184",
+          "title": "util-linux: util-linux: Access control bypass due to improper hostname canonicalization",
+          "severity_source": "nvd"
+        },
+        {
+          "id": "CVE-2022-0563",
+          "name": "liblastlog2-2",
+          "version": "2.41.5-0+deb13u1",
+          "severity": "LOW",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2022-0563",
+          "title": "util-linux: partial disclosure of arbitrary files in chfn and chsh when compiled with libreadline",
+          "severity_source": "debian"
+        },
+        {
+          "id": "TEMP-1147318-639065",
+          "name": "liblzma5",
+          "version": "5.8.1-1+deb13u1",
+          "severity": "UNKNOWN",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/TEMP-1147318-639065",
+          "title": "[GHSA-5qpq-xqfv-j9pg: Invalid write if a decoder is reinitialized after allocation failure]",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-76642",
+          "name": "libmount1",
+          "version": "2.41.5-0+deb13u1",
+          "severity": "HIGH",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-76642",
+          "title": "util-linux: util-linux: failed external mount helper still runs privileged X-mount post-hooks",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-78408",
+          "name": "libmount1",
+          "version": "2.41.5-0+deb13u1",
+          "severity": "HIGH",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-78408",
+          "title": "util-linux: util-linux: nsenter --join-cgroup leaks root cgroup migration authority",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-78409",
+          "name": "libmount1",
+          "version": "2.41.5-0+deb13u1",
+          "severity": "HIGH",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-78409",
+          "title": "util-linux: util-linux: X-mount.subdir detached-tree resolution can escape via intermediate symlinks",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-78410",
+          "name": "libmount1",
+          "version": "2.41.5-0+deb13u1",
+          "severity": "HIGH",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-78410",
+          "title": "util-linux: util-linux: restricted bind mounts do not pin the source, allowing X-mount.owner/group/mode redirection",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-3184",
+          "name": "libmount1",
+          "version": "2.41.5-0+deb13u1",
+          "severity": "MEDIUM",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-3184",
+          "title": "util-linux: util-linux: Access control bypass due to improper hostname canonicalization",
+          "severity_source": "nvd"
+        },
+        {
+          "id": "CVE-2022-0563",
+          "name": "libmount1",
+          "version": "2.41.5-0+deb13u1",
+          "severity": "LOW",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2022-0563",
+          "title": "util-linux: partial disclosure of arbitrary files in chfn and chsh when compiled with libreadline",
+          "severity_source": "debian"
+        },
+        {
+          "id": "CVE-2025-69720",
+          "name": "libncursesw6",
+          "version": "6.5+20250216-2",
+          "severity": "HIGH",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2025-69720",
+          "title": "ncurses: ncurses: Buffer overflow vulnerability may lead to arbitrary code execution.",
+          "severity_source": "nvd"
+        },
+        {
+          "id": "CVE-2025-6141",
+          "name": "libncursesw6",
+          "version": "6.5+20250216-2",
+          "severity": "LOW",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2025-6141",
+          "title": "gnu-ncurses: ncurses Stack Buffer Overflow",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-54411",
+          "name": "libpam-modules",
+          "version": "1.7.0-5",
+          "severity": "MEDIUM",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-54411",
+          "title": "linux-pam: Plaintext password recovery via timing discrepancy in pam_userdb module",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-54411",
+          "name": "libpam-modules-bin",
+          "version": "1.7.0-5",
+          "severity": "MEDIUM",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-54411",
+          "title": "linux-pam: Plaintext password recovery via timing discrepancy in pam_userdb module",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-54411",
+          "name": "libpam-runtime",
+          "version": "1.7.0-5",
+          "severity": "MEDIUM",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-54411",
+          "title": "linux-pam: Plaintext password recovery via timing discrepancy in pam_userdb module",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-54411",
+          "name": "libpam0g",
+          "version": "1.7.0-5",
+          "severity": "MEDIUM",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-54411",
+          "title": "linux-pam: Plaintext password recovery via timing discrepancy in pam_userdb module",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-86145",
+          "name": "libpcre2-8-0",
+          "version": "10.46-1~deb13u1",
+          "severity": "HIGH",
+          "fixed_version": "10.46-1~deb13u2",
+          "status": "fixed",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-86145",
+          "title": "pcre2: PCRE2: Out-of-bounds write allows arbitrary code execution via crafted regular expressions",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-89157",
+          "name": "libpcre2-8-0",
+          "version": "10.46-1~deb13u1",
+          "severity": "HIGH",
+          "fixed_version": "10.46-1~deb13u2",
+          "status": "fixed",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-89157",
+          "title": "pcre2: PCRE2: Out-of-bounds write via large pattern input",
+          "severity_source": "nvd"
+        },
+        {
+          "id": "CVE-2026-89161",
+          "name": "libpcre2-8-0",
+          "version": "10.46-1~deb13u1",
+          "severity": "HIGH",
+          "fixed_version": "10.46-1~deb13u2",
+          "status": "fixed",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-89161",
+          "title": "pcre2: PCRE2: Memory corruption vulnerability in pcre2_jit_match",
+          "severity_source": "nvd"
+        },
+        {
+          "id": "CVE-2026-89156",
+          "name": "libpcre2-8-0",
+          "version": "10.46-1~deb13u1",
+          "severity": "MEDIUM",
+          "fixed_version": "10.46-1~deb13u2",
+          "status": "fixed",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-89156",
+          "title": "PCRE2: PCRE2: Out-of-bounds read via invalid UTF data during JIT fallback",
+          "severity_source": "nvd"
+        },
+        {
+          "id": "CVE-2026-89158",
+          "name": "libpcre2-8-0",
+          "version": "10.46-1~deb13u1",
+          "severity": "MEDIUM",
+          "fixed_version": "10.46-1~deb13u2",
+          "status": "fixed",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-89158",
+          "title": "PCRE2: PCRE2: Out-of-bounds write via integer overflow on 32-bit platforms",
+          "severity_source": "nvd"
+        },
+        {
+          "id": "CVE-2026-89160",
+          "name": "libpcre2-8-0",
+          "version": "10.46-1~deb13u1",
+          "severity": "MEDIUM",
+          "fixed_version": "10.46-1~deb13u2",
+          "status": "fixed",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-89160",
+          "title": "pcre2: PCRE2: Denial of Service via out-of-bounds read during invalid UTF matching",
+          "severity_source": "nvd"
+        },
+        {
+          "id": "CVE-2026-89162",
+          "name": "libpcre2-8-0",
+          "version": "10.46-1~deb13u1",
+          "severity": "LOW",
+          "fixed_version": "10.46-1~deb13u2",
+          "status": "fixed",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-89162",
+          "title": "pcre2: PCRE2: Information disclosure via pcre2_serialize_encode",
+          "severity_source": "nvd"
+        },
+        {
+          "id": "TEMP-1149217-B31E38",
+          "name": "libpcre2-8-0",
+          "version": "10.46-1~deb13u1",
+          "severity": "UNKNOWN",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/TEMP-1149217-B31E38",
+          "title": "[GHSA-r9hj-j2rw-4q3m: PCRE2: out-of-bounds write in JIT matching with large stack allocations]",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-76642",
+          "name": "libsmartcols1",
+          "version": "2.41.5-0+deb13u1",
+          "severity": "HIGH",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-76642",
+          "title": "util-linux: util-linux: failed external mount helper still runs privileged X-mount post-hooks",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-78408",
+          "name": "libsmartcols1",
+          "version": "2.41.5-0+deb13u1",
+          "severity": "HIGH",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-78408",
+          "title": "util-linux: util-linux: nsenter --join-cgroup leaks root cgroup migration authority",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-78409",
+          "name": "libsmartcols1",
+          "version": "2.41.5-0+deb13u1",
+          "severity": "HIGH",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-78409",
+          "title": "util-linux: util-linux: X-mount.subdir detached-tree resolution can escape via intermediate symlinks",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-78410",
+          "name": "libsmartcols1",
+          "version": "2.41.5-0+deb13u1",
+          "severity": "HIGH",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-78410",
+          "title": "util-linux: util-linux: restricted bind mounts do not pin the source, allowing X-mount.owner/group/mode redirection",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-3184",
+          "name": "libsmartcols1",
+          "version": "2.41.5-0+deb13u1",
+          "severity": "MEDIUM",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-3184",
+          "title": "util-linux: util-linux: Access control bypass due to improper hostname canonicalization",
+          "severity_source": "nvd"
+        },
+        {
+          "id": "CVE-2022-0563",
+          "name": "libsmartcols1",
+          "version": "2.41.5-0+deb13u1",
+          "severity": "LOW",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2022-0563",
+          "title": "util-linux: partial disclosure of arbitrary files in chfn and chsh when compiled with libreadline",
+          "severity_source": "debian"
+        },
+        {
+          "id": "CVE-2026-11822",
+          "name": "libsqlite3-0",
+          "version": "3.46.1-7+deb13u1",
+          "severity": "HIGH",
+          "fixed_version": "3.46.1-7+deb13u2",
+          "status": "fixed",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-11822",
+          "title": "sqlite: SQLite: Arbitrary code execution via crafted FTS5 full-text search data",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-11824",
+          "name": "libsqlite3-0",
+          "version": "3.46.1-7+deb13u1",
+          "severity": "HIGH",
+          "fixed_version": "3.46.1-7+deb13u2",
+          "status": "fixed",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-11824",
+          "title": "sqlite: SQLite: Arbitrary code execution and crash via heap-based buffer overflow in FTS5",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-50812",
+          "name": "libsqlite3-0",
+          "version": "3.46.1-7+deb13u1",
+          "severity": "MEDIUM",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-50812",
+          "title": "sqlite: SQLite: Denial of Service via malformed changeset in Session Extension",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-50813",
+          "name": "libsqlite3-0",
+          "version": "3.46.1-7+deb13u1",
+          "severity": "MEDIUM",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-50813",
+          "title": "sqlite: SQLite: Information disclosure via Session Extension changeset merge path",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2021-45346",
+          "name": "libsqlite3-0",
+          "version": "3.46.1-7+deb13u1",
+          "severity": "LOW",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2021-45346",
+          "title": "sqlite: crafted SQL query allows a malicious user to obtain sensitive information",
+          "severity_source": "debian"
+        },
+        {
+          "id": "CVE-2025-70873",
+          "name": "libsqlite3-0",
+          "version": "3.46.1-7+deb13u1",
+          "severity": "LOW",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2025-70873",
+          "title": "sqlite: SQLite: Information Disclosure via Crafted ZIP File",
+          "severity_source": "debian"
+        },
+        {
+          "id": "CVE-2026-14456",
+          "name": "libssl3t64",
+          "version": "3.5.6-1~deb13u2",
+          "severity": "HIGH",
+          "fixed_version": "3.5.7-1~deb13u2",
+          "status": "fixed",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-14456",
+          "title": "openssl: OpenSSL: Denial of Service via unbounded memory growth in QUIC server",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-18798",
+          "name": "libssl3t64",
+          "version": "3.5.6-1~deb13u2",
+          "severity": "MEDIUM",
+          "fixed_version": "3.5.7-1~deb13u2",
+          "status": "fixed",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-18798",
+          "title": "openssl: QUIC server may trigger double free when processing INITIAL packet",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-63072",
+          "name": "libssl3t64",
+          "version": "3.5.6-1~deb13u2",
+          "severity": "MEDIUM",
+          "fixed_version": "3.5.7-1~deb13u2",
+          "status": "fixed",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-63072",
+          "title": "openssl: heap buffer overflow in CMS key unwrapping",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-63076",
+          "name": "libssl3t64",
+          "version": "3.5.6-1~deb13u2",
+          "severity": "MEDIUM",
+          "fixed_version": "3.5.7-1~deb13u2",
+          "status": "fixed",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-63076",
+          "title": "openssl: invalid pointer dereference in CMP server via crafted protectionAlg",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-14457",
+          "name": "libssl3t64",
+          "version": "3.5.6-1~deb13u2",
+          "severity": "LOW",
+          "fixed_version": "3.5.7-1~deb13u2",
+          "status": "fixed",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-14457",
+          "title": "openssl: RPK server signature algorithm selection can dereference a missing certificate",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-54874",
+          "name": "libssl3t64",
+          "version": "3.5.6-1~deb13u2",
+          "severity": "LOW",
+          "fixed_version": "3.5.7-1~deb13u2",
+          "status": "fixed",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-54874",
+          "title": "openssl: excessive memory use buffering DTLS records for a future epoch",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-63073",
+          "name": "libssl3t64",
+          "version": "3.5.6-1~deb13u2",
+          "severity": "LOW",
+          "fixed_version": "3.5.7-1~deb13u2",
+          "status": "fixed",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-63073",
+          "title": "openssl: untrusted sender DN used as format string in CMP response validation",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-63074",
+          "name": "libssl3t64",
+          "version": "3.5.6-1~deb13u2",
+          "severity": "LOW",
+          "fixed_version": "3.5.7-1~deb13u2",
+          "status": "fixed",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-63074",
+          "title": "openssl: CMP indefinite cache growth of ExtraCerts",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-63075",
+          "name": "libssl3t64",
+          "version": "3.5.6-1~deb13u2",
+          "severity": "LOW",
+          "fixed_version": "3.5.7-1~deb13u2",
+          "status": "fixed",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-63075",
+          "title": "openssl: QUIC ACK-only packet retention can cause memory exhaustion",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-75803",
+          "name": "libssl3t64",
+          "version": "3.5.6-1~deb13u2",
+          "severity": "LOW",
+          "fixed_version": "3.5.7-1~deb13u2",
+          "status": "fixed",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-75803",
+          "title": "openssl: openssl: AEAD forgeries possible with empty ciphertext in EVP_Cipher()",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-35189",
+          "name": "libssl3t64",
+          "version": "3.5.6-1~deb13u2",
+          "severity": "UNKNOWN",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-35189",
+          "title": "[Excessive Memory Allocation in Relative CRLDP Processing]",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-35191",
+          "name": "libssl3t64",
+          "version": "3.5.6-1~deb13u2",
+          "severity": "UNKNOWN",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-35191",
+          "title": "[QUIC Unvalidated Amplification Credit may be Over Accounted]",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-42772",
+          "name": "libssl3t64",
+          "version": "3.5.6-1~deb13u2",
+          "severity": "UNKNOWN",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-42772",
+          "title": "[Potential CPU DoS via O(n^2) Fragment Reassembly in QUIC]",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-54872",
+          "name": "libssl3t64",
+          "version": "3.5.6-1~deb13u2",
+          "severity": "UNKNOWN",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-54872",
+          "title": "[Timing Side-Channel in Scalar Multiplication for Non-NIST EC Curves]",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-54873",
+          "name": "libssl3t64",
+          "version": "3.5.6-1~deb13u2",
+          "severity": "UNKNOWN",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-54873",
+          "title": "[QUIC STREAM Fragment Metadata DoS]",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-54875",
+          "name": "libssl3t64",
+          "version": "3.5.6-1~deb13u2",
+          "severity": "UNKNOWN",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-54875",
+          "title": "[Non-Constant-Time SM2 Scalar Multiplication on ARM64 and RISC-V]",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-72897",
+          "name": "libssl3t64",
+          "version": "3.5.6-1~deb13u2",
+          "severity": "UNKNOWN",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-72897",
+          "title": "[Out-of-Bounds Access After SSL_set_SSL_CTX() During a Handshake]",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-75804",
+          "name": "libssl3t64",
+          "version": "3.5.6-1~deb13u2",
+          "severity": "UNKNOWN",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-75804",
+          "title": "[QUIC Connection-Level Flow Control is Not Enforced for Streams]",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-75805",
+          "name": "libssl3t64",
+          "version": "3.5.6-1~deb13u2",
+          "severity": "UNKNOWN",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-75805",
+          "title": "[NULL Pointer Dereference in CMP Client Revocation Response Handling]",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-75806",
+          "name": "libssl3t64",
+          "version": "3.5.6-1~deb13u2",
+          "severity": "UNKNOWN",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-75806",
+          "title": "[Unauthenticated and Undersized DTLS 1.2 AEAD Record Causes DoS]",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-77696",
+          "name": "libssl3t64",
+          "version": "3.5.6-1~deb13u2",
+          "severity": "UNKNOWN",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-77696",
+          "title": "[Timing Side-Channel in SM2 Signature Generation]",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-84782",
+          "name": "libssl3t64",
+          "version": "3.5.6-1~deb13u2",
+          "severity": "UNKNOWN",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-84782",
+          "title": "[DTLS Retransmits Handshake Messages From a Stale Buffer Offset]",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-84784",
+          "name": "libssl3t64",
+          "version": "3.5.6-1~deb13u2",
+          "severity": "UNKNOWN",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-84784",
+          "title": "[QUIC: Unbounded RETIRE_CONNECTION_ID Backlog]",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-16742",
+          "name": "libsystemd0",
+          "version": "257.13-1~deb13u1",
+          "severity": "HIGH",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-16742",
+          "title": "systemd: systemd-homed: Local privilege escalation via missing home-record signature verification",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-15059",
+          "name": "libsystemd0",
+          "version": "257.13-1~deb13u1",
+          "severity": "MEDIUM",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-15059",
+          "title": "systemd: systemd-oomd: Unprivileged users can terminate arbitrary processes via IPC API",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2013-4392",
+          "name": "libsystemd0",
+          "version": "257.13-1~deb13u1",
+          "severity": "LOW",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2013-4392",
+          "title": "systemd: TOCTOU race condition when updating file permissions and SELinux security contexts",
+          "severity_source": "debian"
+        },
+        {
+          "id": "CVE-2023-31437",
+          "name": "libsystemd0",
+          "version": "257.13-1~deb13u1",
+          "severity": "LOW",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2023-31437",
+          "title": "An issue was discovered in systemd 253. An attacker can modify a seale ...",
+          "severity_source": "debian"
+        },
+        {
+          "id": "CVE-2023-31438",
+          "name": "libsystemd0",
+          "version": "257.13-1~deb13u1",
+          "severity": "LOW",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2023-31438",
+          "title": "An issue was discovered in systemd 253. An attacker can truncate a sea ...",
+          "severity_source": "debian"
+        },
+        {
+          "id": "CVE-2023-31439",
+          "name": "libsystemd0",
+          "version": "257.13-1~deb13u1",
+          "severity": "LOW",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2023-31439",
+          "title": "An issue was discovered in systemd 253. An attacker can modify the con ...",
+          "severity_source": "debian"
+        },
+        {
+          "id": "CVE-2026-40228",
+          "name": "libsystemd0",
+          "version": "257.13-1~deb13u1",
+          "severity": "LOW",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-40228",
+          "title": "systemd: systemd-journald: Unintended output to user terminals via logger command",
+          "severity_source": "nvd"
+        },
+        {
+          "id": "CVE-2025-69720",
+          "name": "libtinfo6",
+          "version": "6.5+20250216-2",
+          "severity": "HIGH",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2025-69720",
+          "title": "ncurses: ncurses: Buffer overflow vulnerability may lead to arbitrary code execution.",
+          "severity_source": "nvd"
+        },
+        {
+          "id": "CVE-2025-6141",
+          "name": "libtinfo6",
+          "version": "6.5+20250216-2",
+          "severity": "LOW",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2025-6141",
+          "title": "gnu-ncurses: ncurses Stack Buffer Overflow",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-16742",
+          "name": "libudev1",
+          "version": "257.13-1~deb13u1",
+          "severity": "HIGH",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-16742",
+          "title": "systemd: systemd-homed: Local privilege escalation via missing home-record signature verification",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-15059",
+          "name": "libudev1",
+          "version": "257.13-1~deb13u1",
+          "severity": "MEDIUM",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-15059",
+          "title": "systemd: systemd-oomd: Unprivileged users can terminate arbitrary processes via IPC API",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2013-4392",
+          "name": "libudev1",
+          "version": "257.13-1~deb13u1",
+          "severity": "LOW",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2013-4392",
+          "title": "systemd: TOCTOU race condition when updating file permissions and SELinux security contexts",
+          "severity_source": "debian"
+        },
+        {
+          "id": "CVE-2023-31437",
+          "name": "libudev1",
+          "version": "257.13-1~deb13u1",
+          "severity": "LOW",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2023-31437",
+          "title": "An issue was discovered in systemd 253. An attacker can modify a seale ...",
+          "severity_source": "debian"
+        },
+        {
+          "id": "CVE-2023-31438",
+          "name": "libudev1",
+          "version": "257.13-1~deb13u1",
+          "severity": "LOW",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2023-31438",
+          "title": "An issue was discovered in systemd 253. An attacker can truncate a sea ...",
+          "severity_source": "debian"
+        },
+        {
+          "id": "CVE-2023-31439",
+          "name": "libudev1",
+          "version": "257.13-1~deb13u1",
+          "severity": "LOW",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2023-31439",
+          "title": "An issue was discovered in systemd 253. An attacker can modify the con ...",
+          "severity_source": "debian"
+        },
+        {
+          "id": "CVE-2026-40228",
+          "name": "libudev1",
+          "version": "257.13-1~deb13u1",
+          "severity": "LOW",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-40228",
+          "title": "systemd: systemd-journald: Unintended output to user terminals via logger command",
+          "severity_source": "nvd"
+        },
+        {
+          "id": "CVE-2026-76642",
+          "name": "libuuid1",
+          "version": "2.41.5-0+deb13u1",
+          "severity": "HIGH",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-76642",
+          "title": "util-linux: util-linux: failed external mount helper still runs privileged X-mount post-hooks",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-78408",
+          "name": "libuuid1",
+          "version": "2.41.5-0+deb13u1",
+          "severity": "HIGH",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-78408",
+          "title": "util-linux: util-linux: nsenter --join-cgroup leaks root cgroup migration authority",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-78409",
+          "name": "libuuid1",
+          "version": "2.41.5-0+deb13u1",
+          "severity": "HIGH",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-78409",
+          "title": "util-linux: util-linux: X-mount.subdir detached-tree resolution can escape via intermediate symlinks",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-78410",
+          "name": "libuuid1",
+          "version": "2.41.5-0+deb13u1",
+          "severity": "HIGH",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-78410",
+          "title": "util-linux: util-linux: restricted bind mounts do not pin the source, allowing X-mount.owner/group/mode redirection",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-3184",
+          "name": "libuuid1",
+          "version": "2.41.5-0+deb13u1",
+          "severity": "MEDIUM",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-3184",
+          "title": "util-linux: util-linux: Access control bypass due to improper hostname canonicalization",
+          "severity_source": "nvd"
+        },
+        {
+          "id": "CVE-2022-0563",
+          "name": "libuuid1",
+          "version": "2.41.5-0+deb13u1",
+          "severity": "LOW",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2022-0563",
+          "title": "util-linux: partial disclosure of arbitrary files in chfn and chsh when compiled with libreadline",
+          "severity_source": "debian"
+        },
+        {
+          "id": "CVE-2026-76642",
+          "name": "login",
+          "version": "1:4.16.0-2+really2.41.5-0+deb13u1",
+          "severity": "HIGH",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-76642",
+          "title": "util-linux: util-linux: failed external mount helper still runs privileged X-mount post-hooks",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-78408",
+          "name": "login",
+          "version": "1:4.16.0-2+really2.41.5-0+deb13u1",
+          "severity": "HIGH",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-78408",
+          "title": "util-linux: util-linux: nsenter --join-cgroup leaks root cgroup migration authority",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-78409",
+          "name": "login",
+          "version": "1:4.16.0-2+really2.41.5-0+deb13u1",
+          "severity": "HIGH",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-78409",
+          "title": "util-linux: util-linux: X-mount.subdir detached-tree resolution can escape via intermediate symlinks",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-78410",
+          "name": "login",
+          "version": "1:4.16.0-2+really2.41.5-0+deb13u1",
+          "severity": "HIGH",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-78410",
+          "title": "util-linux: util-linux: restricted bind mounts do not pin the source, allowing X-mount.owner/group/mode redirection",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-3184",
+          "name": "login",
+          "version": "1:4.16.0-2+really2.41.5-0+deb13u1",
+          "severity": "MEDIUM",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-3184",
+          "title": "util-linux: util-linux: Access control bypass due to improper hostname canonicalization",
+          "severity_source": "nvd"
+        },
+        {
+          "id": "CVE-2022-0563",
+          "name": "login",
+          "version": "1:4.16.0-2+really2.41.5-0+deb13u1",
+          "severity": "LOW",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2022-0563",
+          "title": "util-linux: partial disclosure of arbitrary files in chfn and chsh when compiled with libreadline",
+          "severity_source": "debian"
+        },
+        {
+          "id": "CVE-2007-5686",
+          "name": "login.defs",
+          "version": "1:4.17.4-2",
+          "severity": "LOW",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2007-5686",
+          "title": "initscripts in rPath Linux 1 sets insecure permissions for the /var/lo ...",
+          "severity_source": "debian"
+        },
+        {
+          "id": "CVE-2024-56433",
+          "name": "login.defs",
+          "version": "1:4.17.4-2",
+          "severity": "LOW",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2024-56433",
+          "title": "shadow-utils: Default subordinate ID configuration in /etc/login.defs could lead to compromise",
+          "severity_source": null
+        },
+        {
+          "id": "TEMP-0628843-DBAD28",
+          "name": "login.defs",
+          "version": "1:4.17.4-2",
+          "severity": "LOW",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/TEMP-0628843-DBAD28",
+          "title": "[more related to CVE-2005-4890]",
+          "severity_source": "debian"
+        },
+        {
+          "id": "CVE-2026-76642",
+          "name": "mount",
+          "version": "2.41.5-0+deb13u1",
+          "severity": "HIGH",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-76642",
+          "title": "util-linux: util-linux: failed external mount helper still runs privileged X-mount post-hooks",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-78408",
+          "name": "mount",
+          "version": "2.41.5-0+deb13u1",
+          "severity": "HIGH",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-78408",
+          "title": "util-linux: util-linux: nsenter --join-cgroup leaks root cgroup migration authority",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-78409",
+          "name": "mount",
+          "version": "2.41.5-0+deb13u1",
+          "severity": "HIGH",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-78409",
+          "title": "util-linux: util-linux: X-mount.subdir detached-tree resolution can escape via intermediate symlinks",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-78410",
+          "name": "mount",
+          "version": "2.41.5-0+deb13u1",
+          "severity": "HIGH",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-78410",
+          "title": "util-linux: util-linux: restricted bind mounts do not pin the source, allowing X-mount.owner/group/mode redirection",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-3184",
+          "name": "mount",
+          "version": "2.41.5-0+deb13u1",
+          "severity": "MEDIUM",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-3184",
+          "title": "util-linux: util-linux: Access control bypass due to improper hostname canonicalization",
+          "severity_source": "nvd"
+        },
+        {
+          "id": "CVE-2022-0563",
+          "name": "mount",
+          "version": "2.41.5-0+deb13u1",
+          "severity": "LOW",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2022-0563",
+          "title": "util-linux: partial disclosure of arbitrary files in chfn and chsh when compiled with libreadline",
+          "severity_source": "debian"
+        },
+        {
+          "id": "CVE-2025-69720",
+          "name": "ncurses-base",
+          "version": "6.5+20250216-2",
+          "severity": "HIGH",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2025-69720",
+          "title": "ncurses: ncurses: Buffer overflow vulnerability may lead to arbitrary code execution.",
+          "severity_source": "nvd"
+        },
+        {
+          "id": "CVE-2025-6141",
+          "name": "ncurses-base",
+          "version": "6.5+20250216-2",
+          "severity": "LOW",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2025-6141",
+          "title": "gnu-ncurses: ncurses Stack Buffer Overflow",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2025-69720",
+          "name": "ncurses-bin",
+          "version": "6.5+20250216-2",
+          "severity": "HIGH",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2025-69720",
+          "title": "ncurses: ncurses: Buffer overflow vulnerability may lead to arbitrary code execution.",
+          "severity_source": "nvd"
+        },
+        {
+          "id": "CVE-2025-6141",
+          "name": "ncurses-bin",
+          "version": "6.5+20250216-2",
+          "severity": "LOW",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2025-6141",
+          "title": "gnu-ncurses: ncurses Stack Buffer Overflow",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-14456",
+          "name": "openssl",
+          "version": "3.5.6-1~deb13u2",
+          "severity": "HIGH",
+          "fixed_version": "3.5.7-1~deb13u2",
+          "status": "fixed",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-14456",
+          "title": "openssl: OpenSSL: Denial of Service via unbounded memory growth in QUIC server",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-18798",
+          "name": "openssl",
+          "version": "3.5.6-1~deb13u2",
+          "severity": "MEDIUM",
+          "fixed_version": "3.5.7-1~deb13u2",
+          "status": "fixed",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-18798",
+          "title": "openssl: QUIC server may trigger double free when processing INITIAL packet",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-63072",
+          "name": "openssl",
+          "version": "3.5.6-1~deb13u2",
+          "severity": "MEDIUM",
+          "fixed_version": "3.5.7-1~deb13u2",
+          "status": "fixed",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-63072",
+          "title": "openssl: heap buffer overflow in CMS key unwrapping",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-63076",
+          "name": "openssl",
+          "version": "3.5.6-1~deb13u2",
+          "severity": "MEDIUM",
+          "fixed_version": "3.5.7-1~deb13u2",
+          "status": "fixed",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-63076",
+          "title": "openssl: invalid pointer dereference in CMP server via crafted protectionAlg",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-14457",
+          "name": "openssl",
+          "version": "3.5.6-1~deb13u2",
+          "severity": "LOW",
+          "fixed_version": "3.5.7-1~deb13u2",
+          "status": "fixed",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-14457",
+          "title": "openssl: RPK server signature algorithm selection can dereference a missing certificate",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-54874",
+          "name": "openssl",
+          "version": "3.5.6-1~deb13u2",
+          "severity": "LOW",
+          "fixed_version": "3.5.7-1~deb13u2",
+          "status": "fixed",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-54874",
+          "title": "openssl: excessive memory use buffering DTLS records for a future epoch",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-63073",
+          "name": "openssl",
+          "version": "3.5.6-1~deb13u2",
+          "severity": "LOW",
+          "fixed_version": "3.5.7-1~deb13u2",
+          "status": "fixed",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-63073",
+          "title": "openssl: untrusted sender DN used as format string in CMP response validation",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-63074",
+          "name": "openssl",
+          "version": "3.5.6-1~deb13u2",
+          "severity": "LOW",
+          "fixed_version": "3.5.7-1~deb13u2",
+          "status": "fixed",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-63074",
+          "title": "openssl: CMP indefinite cache growth of ExtraCerts",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-63075",
+          "name": "openssl",
+          "version": "3.5.6-1~deb13u2",
+          "severity": "LOW",
+          "fixed_version": "3.5.7-1~deb13u2",
+          "status": "fixed",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-63075",
+          "title": "openssl: QUIC ACK-only packet retention can cause memory exhaustion",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-75803",
+          "name": "openssl",
+          "version": "3.5.6-1~deb13u2",
+          "severity": "LOW",
+          "fixed_version": "3.5.7-1~deb13u2",
+          "status": "fixed",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-75803",
+          "title": "openssl: openssl: AEAD forgeries possible with empty ciphertext in EVP_Cipher()",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-35189",
+          "name": "openssl",
+          "version": "3.5.6-1~deb13u2",
+          "severity": "UNKNOWN",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-35189",
+          "title": "[Excessive Memory Allocation in Relative CRLDP Processing]",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-35191",
+          "name": "openssl",
+          "version": "3.5.6-1~deb13u2",
+          "severity": "UNKNOWN",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-35191",
+          "title": "[QUIC Unvalidated Amplification Credit may be Over Accounted]",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-42772",
+          "name": "openssl",
+          "version": "3.5.6-1~deb13u2",
+          "severity": "UNKNOWN",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-42772",
+          "title": "[Potential CPU DoS via O(n^2) Fragment Reassembly in QUIC]",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-54872",
+          "name": "openssl",
+          "version": "3.5.6-1~deb13u2",
+          "severity": "UNKNOWN",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-54872",
+          "title": "[Timing Side-Channel in Scalar Multiplication for Non-NIST EC Curves]",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-54873",
+          "name": "openssl",
+          "version": "3.5.6-1~deb13u2",
+          "severity": "UNKNOWN",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-54873",
+          "title": "[QUIC STREAM Fragment Metadata DoS]",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-54875",
+          "name": "openssl",
+          "version": "3.5.6-1~deb13u2",
+          "severity": "UNKNOWN",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-54875",
+          "title": "[Non-Constant-Time SM2 Scalar Multiplication on ARM64 and RISC-V]",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-72897",
+          "name": "openssl",
+          "version": "3.5.6-1~deb13u2",
+          "severity": "UNKNOWN",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-72897",
+          "title": "[Out-of-Bounds Access After SSL_set_SSL_CTX() During a Handshake]",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-75804",
+          "name": "openssl",
+          "version": "3.5.6-1~deb13u2",
+          "severity": "UNKNOWN",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-75804",
+          "title": "[QUIC Connection-Level Flow Control is Not Enforced for Streams]",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-75805",
+          "name": "openssl",
+          "version": "3.5.6-1~deb13u2",
+          "severity": "UNKNOWN",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-75805",
+          "title": "[NULL Pointer Dereference in CMP Client Revocation Response Handling]",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-75806",
+          "name": "openssl",
+          "version": "3.5.6-1~deb13u2",
+          "severity": "UNKNOWN",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-75806",
+          "title": "[Unauthenticated and Undersized DTLS 1.2 AEAD Record Causes DoS]",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-77696",
+          "name": "openssl",
+          "version": "3.5.6-1~deb13u2",
+          "severity": "UNKNOWN",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-77696",
+          "title": "[Timing Side-Channel in SM2 Signature Generation]",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-84782",
+          "name": "openssl",
+          "version": "3.5.6-1~deb13u2",
+          "severity": "UNKNOWN",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-84782",
+          "title": "[DTLS Retransmits Handshake Messages From a Stale Buffer Offset]",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-84784",
+          "name": "openssl",
+          "version": "3.5.6-1~deb13u2",
+          "severity": "UNKNOWN",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-84784",
+          "title": "[QUIC: Unbounded RETIRE_CONNECTION_ID Backlog]",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-14456",
+          "name": "openssl-provider-legacy",
+          "version": "3.5.6-1~deb13u2",
+          "severity": "HIGH",
+          "fixed_version": "3.5.7-1~deb13u2",
+          "status": "fixed",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-14456",
+          "title": "openssl: OpenSSL: Denial of Service via unbounded memory growth in QUIC server",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-18798",
+          "name": "openssl-provider-legacy",
+          "version": "3.5.6-1~deb13u2",
+          "severity": "MEDIUM",
+          "fixed_version": "3.5.7-1~deb13u2",
+          "status": "fixed",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-18798",
+          "title": "openssl: QUIC server may trigger double free when processing INITIAL packet",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-63072",
+          "name": "openssl-provider-legacy",
+          "version": "3.5.6-1~deb13u2",
+          "severity": "MEDIUM",
+          "fixed_version": "3.5.7-1~deb13u2",
+          "status": "fixed",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-63072",
+          "title": "openssl: heap buffer overflow in CMS key unwrapping",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-63076",
+          "name": "openssl-provider-legacy",
+          "version": "3.5.6-1~deb13u2",
+          "severity": "MEDIUM",
+          "fixed_version": "3.5.7-1~deb13u2",
+          "status": "fixed",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-63076",
+          "title": "openssl: invalid pointer dereference in CMP server via crafted protectionAlg",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-14457",
+          "name": "openssl-provider-legacy",
+          "version": "3.5.6-1~deb13u2",
+          "severity": "LOW",
+          "fixed_version": "3.5.7-1~deb13u2",
+          "status": "fixed",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-14457",
+          "title": "openssl: RPK server signature algorithm selection can dereference a missing certificate",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-54874",
+          "name": "openssl-provider-legacy",
+          "version": "3.5.6-1~deb13u2",
+          "severity": "LOW",
+          "fixed_version": "3.5.7-1~deb13u2",
+          "status": "fixed",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-54874",
+          "title": "openssl: excessive memory use buffering DTLS records for a future epoch",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-63073",
+          "name": "openssl-provider-legacy",
+          "version": "3.5.6-1~deb13u2",
+          "severity": "LOW",
+          "fixed_version": "3.5.7-1~deb13u2",
+          "status": "fixed",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-63073",
+          "title": "openssl: untrusted sender DN used as format string in CMP response validation",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-63074",
+          "name": "openssl-provider-legacy",
+          "version": "3.5.6-1~deb13u2",
+          "severity": "LOW",
+          "fixed_version": "3.5.7-1~deb13u2",
+          "status": "fixed",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-63074",
+          "title": "openssl: CMP indefinite cache growth of ExtraCerts",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-63075",
+          "name": "openssl-provider-legacy",
+          "version": "3.5.6-1~deb13u2",
+          "severity": "LOW",
+          "fixed_version": "3.5.7-1~deb13u2",
+          "status": "fixed",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-63075",
+          "title": "openssl: QUIC ACK-only packet retention can cause memory exhaustion",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-75803",
+          "name": "openssl-provider-legacy",
+          "version": "3.5.6-1~deb13u2",
+          "severity": "LOW",
+          "fixed_version": "3.5.7-1~deb13u2",
+          "status": "fixed",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-75803",
+          "title": "openssl: openssl: AEAD forgeries possible with empty ciphertext in EVP_Cipher()",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-35189",
+          "name": "openssl-provider-legacy",
+          "version": "3.5.6-1~deb13u2",
+          "severity": "UNKNOWN",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-35189",
+          "title": "[Excessive Memory Allocation in Relative CRLDP Processing]",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-35191",
+          "name": "openssl-provider-legacy",
+          "version": "3.5.6-1~deb13u2",
+          "severity": "UNKNOWN",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-35191",
+          "title": "[QUIC Unvalidated Amplification Credit may be Over Accounted]",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-42772",
+          "name": "openssl-provider-legacy",
+          "version": "3.5.6-1~deb13u2",
+          "severity": "UNKNOWN",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-42772",
+          "title": "[Potential CPU DoS via O(n^2) Fragment Reassembly in QUIC]",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-54872",
+          "name": "openssl-provider-legacy",
+          "version": "3.5.6-1~deb13u2",
+          "severity": "UNKNOWN",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-54872",
+          "title": "[Timing Side-Channel in Scalar Multiplication for Non-NIST EC Curves]",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-54873",
+          "name": "openssl-provider-legacy",
+          "version": "3.5.6-1~deb13u2",
+          "severity": "UNKNOWN",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-54873",
+          "title": "[QUIC STREAM Fragment Metadata DoS]",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-54875",
+          "name": "openssl-provider-legacy",
+          "version": "3.5.6-1~deb13u2",
+          "severity": "UNKNOWN",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-54875",
+          "title": "[Non-Constant-Time SM2 Scalar Multiplication on ARM64 and RISC-V]",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-72897",
+          "name": "openssl-provider-legacy",
+          "version": "3.5.6-1~deb13u2",
+          "severity": "UNKNOWN",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-72897",
+          "title": "[Out-of-Bounds Access After SSL_set_SSL_CTX() During a Handshake]",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-75804",
+          "name": "openssl-provider-legacy",
+          "version": "3.5.6-1~deb13u2",
+          "severity": "UNKNOWN",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-75804",
+          "title": "[QUIC Connection-Level Flow Control is Not Enforced for Streams]",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-75805",
+          "name": "openssl-provider-legacy",
+          "version": "3.5.6-1~deb13u2",
+          "severity": "UNKNOWN",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-75805",
+          "title": "[NULL Pointer Dereference in CMP Client Revocation Response Handling]",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-75806",
+          "name": "openssl-provider-legacy",
+          "version": "3.5.6-1~deb13u2",
+          "severity": "UNKNOWN",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-75806",
+          "title": "[Unauthenticated and Undersized DTLS 1.2 AEAD Record Causes DoS]",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-77696",
+          "name": "openssl-provider-legacy",
+          "version": "3.5.6-1~deb13u2",
+          "severity": "UNKNOWN",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-77696",
+          "title": "[Timing Side-Channel in SM2 Signature Generation]",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-84782",
+          "name": "openssl-provider-legacy",
+          "version": "3.5.6-1~deb13u2",
+          "severity": "UNKNOWN",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-84782",
+          "title": "[DTLS Retransmits Handshake Messages From a Stale Buffer Offset]",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-84784",
+          "name": "openssl-provider-legacy",
+          "version": "3.5.6-1~deb13u2",
+          "severity": "UNKNOWN",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-84784",
+          "title": "[QUIC: Unbounded RETIRE_CONNECTION_ID Backlog]",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2007-5686",
+          "name": "passwd",
+          "version": "1:4.17.4-2",
+          "severity": "LOW",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2007-5686",
+          "title": "initscripts in rPath Linux 1 sets insecure permissions for the /var/lo ...",
+          "severity_source": "debian"
+        },
+        {
+          "id": "CVE-2024-56433",
+          "name": "passwd",
+          "version": "1:4.17.4-2",
+          "severity": "LOW",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2024-56433",
+          "title": "shadow-utils: Default subordinate ID configuration in /etc/login.defs could lead to compromise",
+          "severity_source": null
+        },
+        {
+          "id": "TEMP-0628843-DBAD28",
+          "name": "passwd",
+          "version": "1:4.17.4-2",
+          "severity": "LOW",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/TEMP-0628843-DBAD28",
+          "title": "[more related to CVE-2005-4890]",
+          "severity_source": "debian"
+        },
+        {
+          "id": "CVE-2026-13221",
+          "name": "perl-base",
+          "version": "5.40.1-6",
+          "severity": "CRITICAL",
+          "fixed_version": "5.40.1-6+deb13u1",
+          "status": "fixed",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-13221",
+          "title": "perl: Perl: Incorrect regular expression processing via large regular expressions",
+          "severity_source": "nvd"
+        },
+        {
+          "id": "CVE-2026-42496",
+          "name": "perl-base",
+          "version": "5.40.1-6",
+          "severity": "CRITICAL",
+          "fixed_version": "5.40.1-6+deb13u1",
+          "status": "fixed",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-42496",
+          "title": "perl-archive-tar: perl-archive-tar: Path traversal via crafted symlinks allows arbitrary file access",
+          "severity_source": "nvd"
+        },
+        {
+          "id": "CVE-2026-8376",
+          "name": "perl-base",
+          "version": "5.40.1-6",
+          "severity": "CRITICAL",
+          "fixed_version": "5.40.1-6+deb13u1",
+          "status": "fixed",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-8376",
+          "title": "perl: Perl: Heap buffer overflow when compiling regular expressions on 32-bit builds",
+          "severity_source": "nvd"
+        },
+        {
+          "id": "CVE-2026-42497",
+          "name": "perl-base",
+          "version": "5.40.1-6",
+          "severity": "HIGH",
+          "fixed_version": "5.40.1-6+deb13u1",
+          "status": "fixed",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-42497",
+          "title": "perl-Archive-Tar: perl-Archive-Tar: Arbitrary file modification via crafted hardlinks during archive extraction",
+          "severity_source": "nvd"
+        },
+        {
+          "id": "CVE-2026-48962",
+          "name": "perl-base",
+          "version": "5.40.1-6",
+          "severity": "HIGH",
+          "fixed_version": "5.40.1-6+deb13u1",
+          "status": "fixed",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-48962",
+          "title": "perl-IO-Compress: perl-IO-Compress: Arbitrary code execution via attacker-controlled output glob",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-57432",
+          "name": "perl-base",
+          "version": "5.40.1-6",
+          "severity": "HIGH",
+          "fixed_version": "5.40.1-6+deb13u1",
+          "status": "fixed",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-57432",
+          "title": "perl: Perl: Information disclosure via integer overflow in pack/unpack operations",
+          "severity_source": "nvd"
+        },
+        {
+          "id": "CVE-2026-57433",
+          "name": "perl-base",
+          "version": "5.40.1-6",
+          "severity": "HIGH",
+          "fixed_version": "5.40.1-6+deb13u1",
+          "status": "fixed",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-57433",
+          "title": "Storable: Storable: Denial of Service via signed integer overflow in deserialization",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-9538",
+          "name": "perl-base",
+          "version": "5.40.1-6",
+          "severity": "HIGH",
+          "fixed_version": null,
+          "status": "fix_deferred",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-9538",
+          "title": "perl-Archive-Tar: perl-Archive-Tar: Denial of Service via crafted tar header with large entry size",
+          "severity_source": "nvd"
+        },
+        {
+          "id": "CVE-2025-15649",
+          "name": "perl-base",
+          "version": "5.40.1-6",
+          "severity": "MEDIUM",
+          "fixed_version": "5.40.1-6+deb13u1",
+          "status": "fixed",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2025-15649",
+          "title": "perl-IO-Compress: perl-IO-Compress: Denial of Service via malformed DOS date in zip header",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-12087",
+          "name": "perl-base",
+          "version": "5.40.1-6",
+          "severity": "MEDIUM",
+          "fixed_version": "5.40.1-6+deb13u1",
+          "status": "fixed",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-12087",
+          "title": "perl-Socket: perl-Socket: Information Disclosure due to Out-of-Bounds Read",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-15534",
+          "name": "perl-base",
+          "version": "5.40.1-6",
+          "severity": "MEDIUM",
+          "fixed_version": null,
+          "status": "fix_deferred",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-15534",
+          "title": "perl: Perl: Arbitrary code execution via out-of-bounds memory access in regular expression engine.",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-19487",
+          "name": "perl-base",
+          "version": "5.40.1-6",
+          "severity": "MEDIUM",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-19487",
+          "title": "perl: Perl: Incorrect regular expression matching can lead to wrong access or filtering decisions.",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-48959",
+          "name": "perl-base",
+          "version": "5.40.1-6",
+          "severity": "MEDIUM",
+          "fixed_version": "5.40.1-6+deb13u1",
+          "status": "fixed",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-48959",
+          "title": "perl-IO-Compress: perl-IO-Compress: CPU exhaustion via per-byte read loop in fastForward",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-48961",
+          "name": "perl-base",
+          "version": "5.40.1-6",
+          "severity": "MEDIUM",
+          "fixed_version": "5.40.1-6+deb13u1",
+          "status": "fixed",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-48961",
+          "title": "perl-IO-Compress: IO::Compress: Denial of Service in zipdetails CLI tool via malformed Info-ZIP Unix Extra Field",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-7010",
+          "name": "perl-base",
+          "version": "5.40.1-6",
+          "severity": "MEDIUM",
+          "fixed_version": "5.40.1-6+deb13u1",
+          "status": "fixed",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-7010",
+          "title": "HTTP::Tiny versions before 0.093 for Perl do not validate CRLF in HTTP ...",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-7017",
+          "name": "perl-base",
+          "version": "5.40.1-6",
+          "severity": "MEDIUM",
+          "fixed_version": "5.40.1-6+deb13u1",
+          "status": "fixed",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-7017",
+          "title": "HTTP::Tiny versions before 0.095 for Perl forward credential headers t ...",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2011-4116",
+          "name": "perl-base",
+          "version": "5.40.1-6",
+          "severity": "LOW",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2011-4116",
+          "title": "perl: File:: Temp insecure temporary file handling",
+          "severity_source": "debian"
+        },
+        {
+          "id": "CVE-2026-82560",
+          "name": "perl-base",
+          "version": "5.40.1-6",
+          "severity": "UNKNOWN",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-82560",
+          "title": "Pod::Text versions before 6.1.1 for Perl allow CPU and memory exhausti ...",
+          "severity_source": null
+        },
+        {
+          "id": "TEMP-0517018-A83CE6",
+          "name": "sysvinit-utils",
+          "version": "3.14-4",
+          "severity": "LOW",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/TEMP-0517018-A83CE6",
+          "title": "[sysvinit: no-root option in expert installer exposes locally exploitable security flaw]",
+          "severity_source": "debian"
+        },
+        {
+          "id": "CVE-2026-18477",
+          "name": "tar",
+          "version": "1.35+dfsg-3.1",
+          "severity": "MEDIUM",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-18477",
+          "title": "tar: tar: TOCTOU in incremental dumpdir 'X' rename handling allows restore path escape",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-18508",
+          "name": "tar",
+          "version": "1.35+dfsg-3.1",
+          "severity": "MEDIUM",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-18508",
+          "title": "tar: tar: --one-top-level hardlink targets not confined to top-level directory enabling arbitrary file overwrite",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-5704",
+          "name": "tar",
+          "version": "1.35+dfsg-3.1",
+          "severity": "MEDIUM",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-5704",
+          "title": "tar: tar: Hidden file injection via crafted archives",
+          "severity_source": "nvd"
+        },
+        {
+          "id": "CVE-2005-2541",
+          "name": "tar",
+          "version": "1.35+dfsg-3.1",
+          "severity": "LOW",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2005-2541",
+          "title": "tar: does not properly warn the user when extracting setuid or setgid files",
+          "severity_source": "debian"
+        },
+        {
+          "id": "TEMP-0290435-0B57B5",
+          "name": "tar",
+          "version": "1.35+dfsg-3.1",
+          "severity": "LOW",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/TEMP-0290435-0B57B5",
+          "title": "[tar's rmt command may have undesired side effects]",
+          "severity_source": "debian"
+        },
+        {
+          "id": "CVE-2026-76642",
+          "name": "util-linux",
+          "version": "2.41.5-0+deb13u1",
+          "severity": "HIGH",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-76642",
+          "title": "util-linux: util-linux: failed external mount helper still runs privileged X-mount post-hooks",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-78408",
+          "name": "util-linux",
+          "version": "2.41.5-0+deb13u1",
+          "severity": "HIGH",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-78408",
+          "title": "util-linux: util-linux: nsenter --join-cgroup leaks root cgroup migration authority",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-78409",
+          "name": "util-linux",
+          "version": "2.41.5-0+deb13u1",
+          "severity": "HIGH",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-78409",
+          "title": "util-linux: util-linux: X-mount.subdir detached-tree resolution can escape via intermediate symlinks",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-78410",
+          "name": "util-linux",
+          "version": "2.41.5-0+deb13u1",
+          "severity": "HIGH",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-78410",
+          "title": "util-linux: util-linux: restricted bind mounts do not pin the source, allowing X-mount.owner/group/mode redirection",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-3184",
+          "name": "util-linux",
+          "version": "2.41.5-0+deb13u1",
+          "severity": "MEDIUM",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-3184",
+          "title": "util-linux: util-linux: Access control bypass due to improper hostname canonicalization",
+          "severity_source": "nvd"
+        },
+        {
+          "id": "CVE-2022-0563",
+          "name": "util-linux",
+          "version": "2.41.5-0+deb13u1",
+          "severity": "LOW",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2022-0563",
+          "title": "util-linux: partial disclosure of arbitrary files in chfn and chsh when compiled with libreadline",
+          "severity_source": "debian"
+        },
+        {
+          "id": "CVE-2026-27171",
+          "name": "zlib1g",
+          "version": "1:1.3.dfsg+really1.3.1-1+b1",
+          "severity": "MEDIUM",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-27171",
+          "title": "zlib: zlib: Denial of Service via infinite loop in CRC32 combine functions",
+          "severity_source": "nvd"
+        },
+        {
+          "id": "CVE-2026-85091",
+          "name": "zlib1g",
+          "version": "1:1.3.dfsg+really1.3.1-1+b1",
+          "severity": "MEDIUM",
+          "fixed_version": null,
+          "status": "affected",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-85091",
+          "title": "zlib versions 1.3.1.2 through 1.3.2 contain a heap buffer overflow vul ...",
+          "severity_source": null
+        }
+      ]
+    },
+    {
+      "type": "python-pkg",
+      "package_count": 17,
+      "finding_count": 6,
+      "distinct_id_count": 6,
+      "severity_counts": {
+        "MEDIUM": 5,
+        "LOW": 1
+      },
+      "distinct_id_severity_counts": {
+        "MEDIUM": 5,
+        "LOW": 1
+      },
+      "with_known_fix": 6,
+      "without_known_fix": 0,
+      "packages": [
+        {
+          "name": "Jinja2",
+          "version": "3.1.6"
+        },
+        {
+          "name": "MarkupSafe",
+          "version": "3.0.3"
+        },
+        {
+          "name": "annotated-doc",
+          "version": "0.0.5"
+        },
+        {
+          "name": "annotated-types",
+          "version": "0.8.0"
+        },
+        {
+          "name": "anyio",
+          "version": "4.15.1"
+        },
+        {
+          "name": "click",
+          "version": "8.5.0"
+        },
+        {
+          "name": "fastapi",
+          "version": "0.142.0"
+        },
+        {
+          "name": "h11",
+          "version": "0.16.0"
+        },
+        {
+          "name": "idna",
+          "version": "3.20"
+        },
+        {
+          "name": "opentelemetry-api",
+          "version": "1.45.0"
+        },
+        {
+          "name": "pip",
+          "version": "25.0.1"
+        },
+        {
+          "name": "pydantic",
+          "version": "2.13.5"
+        },
+        {
+          "name": "pydantic_core",
+          "version": "2.46.5"
+        },
+        {
+          "name": "starlette",
+          "version": "1.7.0"
+        },
+        {
+          "name": "typing-inspection",
+          "version": "0.4.4"
+        },
+        {
+          "name": "typing_extensions",
+          "version": "4.16.0"
+        },
+        {
+          "name": "uvicorn",
+          "version": "0.54.0"
+        }
+      ],
+      "findings": [
+        {
+          "id": "CVE-2025-8869",
+          "name": "pip",
+          "version": "25.0.1",
+          "severity": "MEDIUM",
+          "fixed_version": "25.3",
+          "status": "fixed",
+          "link": "https://avd.aquasec.com/nvd/cve-2025-8869",
+          "title": "pip: pip missing checks on symbolic link extraction",
+          "severity_source": "ghsa"
+        },
+        {
+          "id": "CVE-2026-13346",
+          "name": "pip",
+          "version": "25.0.1",
+          "severity": "MEDIUM",
+          "fixed_version": "26.2.0",
+          "status": "fixed",
+          "link": "https://avd.aquasec.com/nvd/cve-2026-13346",
+          "title": "pip: pip: Arbitrary file installation via malicious package indexes",
+          "severity_source": "ghsa"
+        },
+        {
+          "id": "CVE-2026-3219",
+          "name": "pip",
+          "version": "25.0.1",
+          "severity": "MEDIUM",
+          "fixed_version": "26.1",
+          "status": "fixed",
+          "link": "https://avd.aquasec.com/nvd/cve-2026-3219",
+          "title": "pip: pip: Incorrect file installation due to improper archive handling",
+          "severity_source": "ghsa"
+        },
+        {
+          "id": "CVE-2026-6357",
+          "name": "pip",
+          "version": "25.0.1",
+          "severity": "MEDIUM",
+          "fixed_version": "26.1",
+          "status": "fixed",
+          "link": "https://avd.aquasec.com/nvd/cve-2026-6357",
+          "title": "pip: pip: Arbitrary code execution or information disclosure via malicious wheel package installation",
+          "severity_source": "ghsa"
+        },
+        {
+          "id": "CVE-2026-8643",
+          "name": "pip",
+          "version": "25.0.1",
+          "severity": "MEDIUM",
+          "fixed_version": "26.1.2",
+          "status": "fixed",
+          "link": "https://avd.aquasec.com/nvd/cve-2026-8643",
+          "title": "python-pip: Path traversal via malicious entry point name in pip wheel installation allows arbitrary file overwrite",
+          "severity_source": "ghsa"
+        },
+        {
+          "id": "CVE-2026-1703",
+          "name": "pip",
+          "version": "25.0.1",
+          "severity": "LOW",
+          "fixed_version": "26.0",
+          "status": "fixed",
+          "link": "https://avd.aquasec.com/nvd/cve-2026-1703",
+          "title": "pip: pip: Information disclosure via path traversal when installing crafted wheel archives",
+          "severity_source": "ghsa"
+        }
+      ]
+    }
+  ],
+  "raw_report_sha256": {
+    "trivy-image.json": "902b92957440056731736002028f450d13057be517f8382ab66d4a6fefbdf121",
+    "pip-audit-runtime.json": "c3f2f80d0674011526dbd9f1d3f5258e61dbc0a5c07aef1423cd8a1718cea0c6"
+  },
+  "limitations": [
+    "Matching installed versions against published advisories does not prove exploitability or absence of unknown vulnerabilities.",
+    "Debian findings include TEMP identifiers and repeat one advisory across multiple binary packages from a shared source package.",
+    "The CPython interpreter in /usr/local and bundled ensurepip wheels are not comprehensively covered by the installed-distribution audit.",
+    "Hosting platform, host kernel, future HTTPS proxy and public network configuration are outside this dependency scan."
+  ]
+}

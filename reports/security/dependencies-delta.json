@@ -1,0 +1,808 @@
+{
+  "initial_image": {
+    "tag": "franais-web:latest",
+    "docker_inspect_id": "sha256:cbeeceee67f108307850444cd2aba8616444dc93c62090f160b7a62cba6d299c",
+    "trivy_image_id": "sha256:003c66d8e92c8209049a32c114605ecb95d2d509aa80be548b019d374ccaaff8",
+    "architecture": "arm64",
+    "os": {
+      "Family": "debian",
+      "Name": "13.6"
+    },
+    "created": "2026-09-29T19:54:28.732870551Z"
+  },
+  "final_image": {
+    "tag": "franais-web:latest",
+    "docker_inspect_id": "sha256:06cc8ebf9625deee933acf639325fc9cbc22c7007cc4339f253aba17ef730de5",
+    "trivy_image_id": "sha256:c4031ddb80426d10820af2bbf76c88f956bfcbda1e6b4f61b5c8c75797b20851",
+    "architecture": "arm64",
+    "os": {
+      "Family": "debian",
+      "Name": "13.7"
+    },
+    "created": "2026-09-29T20:08:55.503771133Z"
+  },
+  "database": {
+    "Version": 2,
+    "NextUpdate": "2026-09-30T19:09:08.570009207Z",
+    "UpdatedAt": "2026-09-29T19:09:08.570009916Z",
+    "DownloadedAt": "2026-09-29T20:05:07.63522093Z"
+  },
+  "comparisons": [
+    {
+      "type": "debian",
+      "before": {
+        "package_count": 87,
+        "finding_count": 256,
+        "distinct_id_count": 119,
+        "severity_counts": {
+          "LOW": 78,
+          "HIGH": 57,
+          "MEDIUM": 76,
+          "UNKNOWN": 42,
+          "CRITICAL": 3
+        },
+        "with_known_fix": 58,
+        "without_known_fix": 198
+      },
+      "after": {
+        "package_count": 87,
+        "finding_count": 198,
+        "distinct_id_count": 83,
+        "severity_counts": {
+          "LOW": 59,
+          "HIGH": 44,
+          "MEDIUM": 53,
+          "UNKNOWN": 42
+        },
+        "with_known_fix": 0,
+        "without_known_fix": 198
+      },
+      "removed": [
+        {
+          "id": "CVE-2026-41991",
+          "name": "gzip",
+          "version": "1.13-1",
+          "severity": "MEDIUM",
+          "fixed_version": "1.13-1+deb13u1",
+          "status": "fixed",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-41991",
+          "title": "gzip: gzip: Arbitrary file overwrite via insecure temporary file handling in gzexe utility",
+          "severity_source": "nvd"
+        },
+        {
+          "id": "CVE-2026-41992",
+          "name": "gzip",
+          "version": "1.13-1",
+          "severity": "HIGH",
+          "fixed_version": "1.13-1+deb13u1",
+          "status": "fixed",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-41992",
+          "title": "gzip: gzip: Information disclosure via global buffer overflow in LZH decompression",
+          "severity_source": "nvd"
+        },
+        {
+          "id": "CVE-2026-5450",
+          "name": "libc-bin",
+          "version": "2.41-12+deb13u3",
+          "severity": "MEDIUM",
+          "fixed_version": "2.41-12+deb13u4",
+          "status": "fixed",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-5450",
+          "title": "glibc: glibc: Heap Buffer Overflow in `scanf` with `%mc` format specifier and large width",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-5928",
+          "name": "libc-bin",
+          "version": "2.41-12+deb13u3",
+          "severity": "MEDIUM",
+          "fixed_version": "2.41-12+deb13u4",
+          "status": "fixed",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-5928",
+          "title": "glibc: glibc: Information disclosure or denial of service via ungetwc function with specific wide character encodings",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-5450",
+          "name": "libc6",
+          "version": "2.41-12+deb13u3",
+          "severity": "MEDIUM",
+          "fixed_version": "2.41-12+deb13u4",
+          "status": "fixed",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-5450",
+          "title": "glibc: glibc: Heap Buffer Overflow in `scanf` with `%mc` format specifier and large width",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-5928",
+          "name": "libc6",
+          "version": "2.41-12+deb13u3",
+          "severity": "MEDIUM",
+          "fixed_version": "2.41-12+deb13u4",
+          "status": "fixed",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-5928",
+          "title": "glibc: glibc: Information disclosure or denial of service via ungetwc function with specific wide character encodings",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-86145",
+          "name": "libpcre2-8-0",
+          "version": "10.46-1~deb13u1",
+          "severity": "HIGH",
+          "fixed_version": "10.46-1~deb13u2",
+          "status": "fixed",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-86145",
+          "title": "pcre2: PCRE2: Out-of-bounds write allows arbitrary code execution via crafted regular expressions",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-89156",
+          "name": "libpcre2-8-0",
+          "version": "10.46-1~deb13u1",
+          "severity": "MEDIUM",
+          "fixed_version": "10.46-1~deb13u2",
+          "status": "fixed",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-89156",
+          "title": "PCRE2: PCRE2: Out-of-bounds read via invalid UTF data during JIT fallback",
+          "severity_source": "nvd"
+        },
+        {
+          "id": "CVE-2026-89157",
+          "name": "libpcre2-8-0",
+          "version": "10.46-1~deb13u1",
+          "severity": "HIGH",
+          "fixed_version": "10.46-1~deb13u2",
+          "status": "fixed",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-89157",
+          "title": "pcre2: PCRE2: Out-of-bounds write via large pattern input",
+          "severity_source": "nvd"
+        },
+        {
+          "id": "CVE-2026-89158",
+          "name": "libpcre2-8-0",
+          "version": "10.46-1~deb13u1",
+          "severity": "MEDIUM",
+          "fixed_version": "10.46-1~deb13u2",
+          "status": "fixed",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-89158",
+          "title": "PCRE2: PCRE2: Out-of-bounds write via integer overflow on 32-bit platforms",
+          "severity_source": "nvd"
+        },
+        {
+          "id": "CVE-2026-89160",
+          "name": "libpcre2-8-0",
+          "version": "10.46-1~deb13u1",
+          "severity": "MEDIUM",
+          "fixed_version": "10.46-1~deb13u2",
+          "status": "fixed",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-89160",
+          "title": "pcre2: PCRE2: Denial of Service via out-of-bounds read during invalid UTF matching",
+          "severity_source": "nvd"
+        },
+        {
+          "id": "CVE-2026-89161",
+          "name": "libpcre2-8-0",
+          "version": "10.46-1~deb13u1",
+          "severity": "HIGH",
+          "fixed_version": "10.46-1~deb13u2",
+          "status": "fixed",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-89161",
+          "title": "pcre2: PCRE2: Memory corruption vulnerability in pcre2_jit_match",
+          "severity_source": "nvd"
+        },
+        {
+          "id": "CVE-2026-89162",
+          "name": "libpcre2-8-0",
+          "version": "10.46-1~deb13u1",
+          "severity": "LOW",
+          "fixed_version": "10.46-1~deb13u2",
+          "status": "fixed",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-89162",
+          "title": "pcre2: PCRE2: Information disclosure via pcre2_serialize_encode",
+          "severity_source": "nvd"
+        },
+        {
+          "id": "CVE-2026-11822",
+          "name": "libsqlite3-0",
+          "version": "3.46.1-7+deb13u1",
+          "severity": "HIGH",
+          "fixed_version": "3.46.1-7+deb13u2",
+          "status": "fixed",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-11822",
+          "title": "sqlite: SQLite: Arbitrary code execution via crafted FTS5 full-text search data",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-11824",
+          "name": "libsqlite3-0",
+          "version": "3.46.1-7+deb13u1",
+          "severity": "HIGH",
+          "fixed_version": "3.46.1-7+deb13u2",
+          "status": "fixed",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-11824",
+          "title": "sqlite: SQLite: Arbitrary code execution and crash via heap-based buffer overflow in FTS5",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-14456",
+          "name": "libssl3t64",
+          "version": "3.5.6-1~deb13u2",
+          "severity": "HIGH",
+          "fixed_version": "3.5.7-1~deb13u2",
+          "status": "fixed",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-14456",
+          "title": "openssl: OpenSSL: Denial of Service via unbounded memory growth in QUIC server",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-14457",
+          "name": "libssl3t64",
+          "version": "3.5.6-1~deb13u2",
+          "severity": "LOW",
+          "fixed_version": "3.5.7-1~deb13u2",
+          "status": "fixed",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-14457",
+          "title": "openssl: RPK server signature algorithm selection can dereference a missing certificate",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-18798",
+          "name": "libssl3t64",
+          "version": "3.5.6-1~deb13u2",
+          "severity": "MEDIUM",
+          "fixed_version": "3.5.7-1~deb13u2",
+          "status": "fixed",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-18798",
+          "title": "openssl: QUIC server may trigger double free when processing INITIAL packet",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-54874",
+          "name": "libssl3t64",
+          "version": "3.5.6-1~deb13u2",
+          "severity": "LOW",
+          "fixed_version": "3.5.7-1~deb13u2",
+          "status": "fixed",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-54874",
+          "title": "openssl: excessive memory use buffering DTLS records for a future epoch",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-63072",
+          "name": "libssl3t64",
+          "version": "3.5.6-1~deb13u2",
+          "severity": "MEDIUM",
+          "fixed_version": "3.5.7-1~deb13u2",
+          "status": "fixed",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-63072",
+          "title": "openssl: heap buffer overflow in CMS key unwrapping",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-63073",
+          "name": "libssl3t64",
+          "version": "3.5.6-1~deb13u2",
+          "severity": "LOW",
+          "fixed_version": "3.5.7-1~deb13u2",
+          "status": "fixed",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-63073",
+          "title": "openssl: untrusted sender DN used as format string in CMP response validation",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-63074",
+          "name": "libssl3t64",
+          "version": "3.5.6-1~deb13u2",
+          "severity": "LOW",
+          "fixed_version": "3.5.7-1~deb13u2",
+          "status": "fixed",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-63074",
+          "title": "openssl: CMP indefinite cache growth of ExtraCerts",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-63075",
+          "name": "libssl3t64",
+          "version": "3.5.6-1~deb13u2",
+          "severity": "LOW",
+          "fixed_version": "3.5.7-1~deb13u2",
+          "status": "fixed",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-63075",
+          "title": "openssl: QUIC ACK-only packet retention can cause memory exhaustion",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-63076",
+          "name": "libssl3t64",
+          "version": "3.5.6-1~deb13u2",
+          "severity": "MEDIUM",
+          "fixed_version": "3.5.7-1~deb13u2",
+          "status": "fixed",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-63076",
+          "title": "openssl: invalid pointer dereference in CMP server via crafted protectionAlg",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-75803",
+          "name": "libssl3t64",
+          "version": "3.5.6-1~deb13u2",
+          "severity": "LOW",
+          "fixed_version": "3.5.7-1~deb13u2",
+          "status": "fixed",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-75803",
+          "title": "openssl: openssl: AEAD forgeries possible with empty ciphertext in EVP_Cipher()",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-14456",
+          "name": "openssl",
+          "version": "3.5.6-1~deb13u2",
+          "severity": "HIGH",
+          "fixed_version": "3.5.7-1~deb13u2",
+          "status": "fixed",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-14456",
+          "title": "openssl: OpenSSL: Denial of Service via unbounded memory growth in QUIC server",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-14457",
+          "name": "openssl",
+          "version": "3.5.6-1~deb13u2",
+          "severity": "LOW",
+          "fixed_version": "3.5.7-1~deb13u2",
+          "status": "fixed",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-14457",
+          "title": "openssl: RPK server signature algorithm selection can dereference a missing certificate",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-18798",
+          "name": "openssl",
+          "version": "3.5.6-1~deb13u2",
+          "severity": "MEDIUM",
+          "fixed_version": "3.5.7-1~deb13u2",
+          "status": "fixed",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-18798",
+          "title": "openssl: QUIC server may trigger double free when processing INITIAL packet",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-54874",
+          "name": "openssl",
+          "version": "3.5.6-1~deb13u2",
+          "severity": "LOW",
+          "fixed_version": "3.5.7-1~deb13u2",
+          "status": "fixed",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-54874",
+          "title": "openssl: excessive memory use buffering DTLS records for a future epoch",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-63072",
+          "name": "openssl",
+          "version": "3.5.6-1~deb13u2",
+          "severity": "MEDIUM",
+          "fixed_version": "3.5.7-1~deb13u2",
+          "status": "fixed",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-63072",
+          "title": "openssl: heap buffer overflow in CMS key unwrapping",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-63073",
+          "name": "openssl",
+          "version": "3.5.6-1~deb13u2",
+          "severity": "LOW",
+          "fixed_version": "3.5.7-1~deb13u2",
+          "status": "fixed",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-63073",
+          "title": "openssl: untrusted sender DN used as format string in CMP response validation",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-63074",
+          "name": "openssl",
+          "version": "3.5.6-1~deb13u2",
+          "severity": "LOW",
+          "fixed_version": "3.5.7-1~deb13u2",
+          "status": "fixed",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-63074",
+          "title": "openssl: CMP indefinite cache growth of ExtraCerts",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-63075",
+          "name": "openssl",
+          "version": "3.5.6-1~deb13u2",
+          "severity": "LOW",
+          "fixed_version": "3.5.7-1~deb13u2",
+          "status": "fixed",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-63075",
+          "title": "openssl: QUIC ACK-only packet retention can cause memory exhaustion",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-63076",
+          "name": "openssl",
+          "version": "3.5.6-1~deb13u2",
+          "severity": "MEDIUM",
+          "fixed_version": "3.5.7-1~deb13u2",
+          "status": "fixed",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-63076",
+          "title": "openssl: invalid pointer dereference in CMP server via crafted protectionAlg",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-75803",
+          "name": "openssl",
+          "version": "3.5.6-1~deb13u2",
+          "severity": "LOW",
+          "fixed_version": "3.5.7-1~deb13u2",
+          "status": "fixed",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-75803",
+          "title": "openssl: openssl: AEAD forgeries possible with empty ciphertext in EVP_Cipher()",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-14456",
+          "name": "openssl-provider-legacy",
+          "version": "3.5.6-1~deb13u2",
+          "severity": "HIGH",
+          "fixed_version": "3.5.7-1~deb13u2",
+          "status": "fixed",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-14456",
+          "title": "openssl: OpenSSL: Denial of Service via unbounded memory growth in QUIC server",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-14457",
+          "name": "openssl-provider-legacy",
+          "version": "3.5.6-1~deb13u2",
+          "severity": "LOW",
+          "fixed_version": "3.5.7-1~deb13u2",
+          "status": "fixed",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-14457",
+          "title": "openssl: RPK server signature algorithm selection can dereference a missing certificate",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-18798",
+          "name": "openssl-provider-legacy",
+          "version": "3.5.6-1~deb13u2",
+          "severity": "MEDIUM",
+          "fixed_version": "3.5.7-1~deb13u2",
+          "status": "fixed",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-18798",
+          "title": "openssl: QUIC server may trigger double free when processing INITIAL packet",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-54874",
+          "name": "openssl-provider-legacy",
+          "version": "3.5.6-1~deb13u2",
+          "severity": "LOW",
+          "fixed_version": "3.5.7-1~deb13u2",
+          "status": "fixed",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-54874",
+          "title": "openssl: excessive memory use buffering DTLS records for a future epoch",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-63072",
+          "name": "openssl-provider-legacy",
+          "version": "3.5.6-1~deb13u2",
+          "severity": "MEDIUM",
+          "fixed_version": "3.5.7-1~deb13u2",
+          "status": "fixed",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-63072",
+          "title": "openssl: heap buffer overflow in CMS key unwrapping",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-63073",
+          "name": "openssl-provider-legacy",
+          "version": "3.5.6-1~deb13u2",
+          "severity": "LOW",
+          "fixed_version": "3.5.7-1~deb13u2",
+          "status": "fixed",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-63073",
+          "title": "openssl: untrusted sender DN used as format string in CMP response validation",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-63074",
+          "name": "openssl-provider-legacy",
+          "version": "3.5.6-1~deb13u2",
+          "severity": "LOW",
+          "fixed_version": "3.5.7-1~deb13u2",
+          "status": "fixed",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-63074",
+          "title": "openssl: CMP indefinite cache growth of ExtraCerts",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-63075",
+          "name": "openssl-provider-legacy",
+          "version": "3.5.6-1~deb13u2",
+          "severity": "LOW",
+          "fixed_version": "3.5.7-1~deb13u2",
+          "status": "fixed",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-63075",
+          "title": "openssl: QUIC ACK-only packet retention can cause memory exhaustion",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-63076",
+          "name": "openssl-provider-legacy",
+          "version": "3.5.6-1~deb13u2",
+          "severity": "MEDIUM",
+          "fixed_version": "3.5.7-1~deb13u2",
+          "status": "fixed",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-63076",
+          "title": "openssl: invalid pointer dereference in CMP server via crafted protectionAlg",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-75803",
+          "name": "openssl-provider-legacy",
+          "version": "3.5.6-1~deb13u2",
+          "severity": "LOW",
+          "fixed_version": "3.5.7-1~deb13u2",
+          "status": "fixed",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-75803",
+          "title": "openssl: openssl: AEAD forgeries possible with empty ciphertext in EVP_Cipher()",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2025-15649",
+          "name": "perl-base",
+          "version": "5.40.1-6",
+          "severity": "MEDIUM",
+          "fixed_version": "5.40.1-6+deb13u1",
+          "status": "fixed",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2025-15649",
+          "title": "perl-IO-Compress: perl-IO-Compress: Denial of Service via malformed DOS date in zip header",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-12087",
+          "name": "perl-base",
+          "version": "5.40.1-6",
+          "severity": "MEDIUM",
+          "fixed_version": "5.40.1-6+deb13u1",
+          "status": "fixed",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-12087",
+          "title": "perl-Socket: perl-Socket: Information Disclosure due to Out-of-Bounds Read",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-13221",
+          "name": "perl-base",
+          "version": "5.40.1-6",
+          "severity": "CRITICAL",
+          "fixed_version": "5.40.1-6+deb13u1",
+          "status": "fixed",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-13221",
+          "title": "perl: Perl: Incorrect regular expression processing via large regular expressions",
+          "severity_source": "nvd"
+        },
+        {
+          "id": "CVE-2026-42496",
+          "name": "perl-base",
+          "version": "5.40.1-6",
+          "severity": "CRITICAL",
+          "fixed_version": "5.40.1-6+deb13u1",
+          "status": "fixed",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-42496",
+          "title": "perl-archive-tar: perl-archive-tar: Path traversal via crafted symlinks allows arbitrary file access",
+          "severity_source": "nvd"
+        },
+        {
+          "id": "CVE-2026-42497",
+          "name": "perl-base",
+          "version": "5.40.1-6",
+          "severity": "HIGH",
+          "fixed_version": "5.40.1-6+deb13u1",
+          "status": "fixed",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-42497",
+          "title": "perl-Archive-Tar: perl-Archive-Tar: Arbitrary file modification via crafted hardlinks during archive extraction",
+          "severity_source": "nvd"
+        },
+        {
+          "id": "CVE-2026-48959",
+          "name": "perl-base",
+          "version": "5.40.1-6",
+          "severity": "MEDIUM",
+          "fixed_version": "5.40.1-6+deb13u1",
+          "status": "fixed",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-48959",
+          "title": "perl-IO-Compress: perl-IO-Compress: CPU exhaustion via per-byte read loop in fastForward",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-48961",
+          "name": "perl-base",
+          "version": "5.40.1-6",
+          "severity": "MEDIUM",
+          "fixed_version": "5.40.1-6+deb13u1",
+          "status": "fixed",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-48961",
+          "title": "perl-IO-Compress: IO::Compress: Denial of Service in zipdetails CLI tool via malformed Info-ZIP Unix Extra Field",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-48962",
+          "name": "perl-base",
+          "version": "5.40.1-6",
+          "severity": "HIGH",
+          "fixed_version": "5.40.1-6+deb13u1",
+          "status": "fixed",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-48962",
+          "title": "perl-IO-Compress: perl-IO-Compress: Arbitrary code execution via attacker-controlled output glob",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-57432",
+          "name": "perl-base",
+          "version": "5.40.1-6",
+          "severity": "HIGH",
+          "fixed_version": "5.40.1-6+deb13u1",
+          "status": "fixed",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-57432",
+          "title": "perl: Perl: Information disclosure via integer overflow in pack/unpack operations",
+          "severity_source": "nvd"
+        },
+        {
+          "id": "CVE-2026-57433",
+          "name": "perl-base",
+          "version": "5.40.1-6",
+          "severity": "HIGH",
+          "fixed_version": "5.40.1-6+deb13u1",
+          "status": "fixed",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-57433",
+          "title": "Storable: Storable: Denial of Service via signed integer overflow in deserialization",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-7010",
+          "name": "perl-base",
+          "version": "5.40.1-6",
+          "severity": "MEDIUM",
+          "fixed_version": "5.40.1-6+deb13u1",
+          "status": "fixed",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-7010",
+          "title": "HTTP::Tiny versions before 0.093 for Perl do not validate CRLF in HTTP ...",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-7017",
+          "name": "perl-base",
+          "version": "5.40.1-6",
+          "severity": "MEDIUM",
+          "fixed_version": "5.40.1-6+deb13u1",
+          "status": "fixed",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-7017",
+          "title": "HTTP::Tiny versions before 0.095 for Perl forward credential headers t ...",
+          "severity_source": null
+        },
+        {
+          "id": "CVE-2026-8376",
+          "name": "perl-base",
+          "version": "5.40.1-6",
+          "severity": "CRITICAL",
+          "fixed_version": "5.40.1-6+deb13u1",
+          "status": "fixed",
+          "link": "https://security-tracker.debian.org/tracker/CVE-2026-8376",
+          "title": "perl: Perl: Heap buffer overflow when compiling regular expressions on 32-bit builds",
+          "severity_source": "nvd"
+        }
+      ],
+      "introduced": []
+    },
+    {
+      "type": "python-pkg",
+      "before": {
+        "package_count": 17,
+        "finding_count": 6,
+        "distinct_id_count": 6,
+        "severity_counts": {
+          "MEDIUM": 5,
+          "LOW": 1
+        },
+        "with_known_fix": 6,
+        "without_known_fix": 0
+      },
+      "after": {
+        "package_count": 16,
+        "finding_count": 0,
+        "distinct_id_count": 0,
+        "severity_counts": {},
+        "with_known_fix": 0,
+        "without_known_fix": 0
+      },
+      "removed": [
+        {
+          "id": "CVE-2025-8869",
+          "name": "pip",
+          "version": "25.0.1",
+          "severity": "MEDIUM",
+          "fixed_version": "25.3",
+          "status": "fixed",
+          "link": "https://avd.aquasec.com/nvd/cve-2025-8869",
+          "title": "pip: pip missing checks on symbolic link extraction",
+          "severity_source": "ghsa"
+        },
+        {
+          "id": "CVE-2026-13346",
+          "name": "pip",
+          "version": "25.0.1",
+          "severity": "MEDIUM",
+          "fixed_version": "26.2.0",
+          "status": "fixed",
+          "link": "https://avd.aquasec.com/nvd/cve-2026-13346",
+          "title": "pip: pip: Arbitrary file installation via malicious package indexes",
+          "severity_source": "ghsa"
+        },
+        {
+          "id": "CVE-2026-1703",
+          "name": "pip",
+          "version": "25.0.1",
+          "severity": "LOW",
+          "fixed_version": "26.0",
+          "status": "fixed",
+          "link": "https://avd.aquasec.com/nvd/cve-2026-1703",
+          "title": "pip: pip: Information disclosure via path traversal when installing crafted wheel archives",
+          "severity_source": "ghsa"
+        },
+        {
+          "id": "CVE-2026-3219",
+          "name": "pip",
+          "version": "25.0.1",
+          "severity": "MEDIUM",
+          "fixed_version": "26.1",
+          "status": "fixed",
+          "link": "https://avd.aquasec.com/nvd/cve-2026-3219",
+          "title": "pip: pip: Incorrect file installation due to improper archive handling",
+          "severity_source": "ghsa"
+        },
+        {
+          "id": "CVE-2026-6357",
+          "name": "pip",
+          "version": "25.0.1",
+          "severity": "MEDIUM",
+          "fixed_version": "26.1",
+          "status": "fixed",
+          "link": "https://avd.aquasec.com/nvd/cve-2026-6357",
+          "title": "pip: pip: Arbitrary code execution or information disclosure via malicious wheel package installation",
+          "severity_source": "ghsa"
+        },
+        {
+          "id": "CVE-2026-8643",
+          "name": "pip",
+          "version": "25.0.1",
+          "severity": "MEDIUM",
+          "fixed_version": "26.1.2",
+          "status": "fixed",
+          "link": "https://avd.aquasec.com/nvd/cve-2026-8643",
+          "title": "python-pip: Path traversal via malicious entry point name in pip wheel installation allows arbitrary file overwrite",
+          "severity_source": "ghsa"
+        }
+      ],
+      "introduced": []
+    }
+  ],
+  "cpython": {
+    "python": "3.12.14",
+    "pip_importable": false,
+    "ensurepip_module": "/usr/local/lib/python3.12/ensurepip/__init__.py",
+    "ensurepip_wheels": [
+      "pip-25.0.1-py3-none-any.whl"
+    ]
+  },
+  "notes": [
+    "Counts are package × advisory occurrences. TEMP Debian identifiers are included.",
+    "58 Debian occurrences and 6 pip occurrences present in the initial scan are absent from the final scan.",
+    "All 198 remaining Debian occurrences are kept in dependencies-final.json; no severity or unfixed advisory was ignored.",
+    "The inactive ensurepip pip-25.0.1 wheel still ships with CPython; this is not an installed runtime distribution and is outside these package scan counts."
+  ]
+}

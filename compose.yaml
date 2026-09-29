@@ -3,4 +3,19 @@ services:
     build: .
     ports:
       - "127.0.0.1:8000:8000"
+    environment:
+      ALLOWED_HOSTS: "${ALLOWED_HOSTS:-localhost,127.0.0.1}"
     init: true
+    read_only: true
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    pids_limit: 64
+    mem_limit: 256m
+    cpus: 1.0
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

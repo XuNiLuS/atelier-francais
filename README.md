@@ -25,7 +25,13 @@ docker compose up --build -d
 docker compose logs -f
 ```
 
-Le conteneur exécute Uvicorn avec un seul processus et l’utilisateur non root `atelier`. Son état de santé est vérifié via `/health`. Aucun volume n’est nécessaire. Après une modification du code ou des questions, relancer `docker compose up --build -d`.
+Le conteneur exécute Uvicorn avec un seul processus et l’utilisateur non root `atelier`. Les fichiers de l’application appartiennent à root et le système de fichiers du conteneur est en lecture seule. Il ne possède aucune capacité Linux supplémentaire et ne peut pas gagner de nouveaux privilèges. Aucun volume n’est nécessaire.
+
+`pip` est mis à jour et utilisé uniquement pendant la construction, puis retiré de l’environnement d’exécution avec ses bibliothèques embarquées. Pour ajouter une dépendance, modifier `requirements.txt` et reconstruire l’image.
+
+Docker Compose limite le conteneur à 256 Mo de mémoire, 1 CPU et 64 processus. Les journaux Docker sont limités à trois fichiers de 10 Mo. Uvicorn limite les connexions/tâches simultanées à 100 et désactive ses journaux d’accès ainsi que la confiance dans les en-têtes de proxy. Son état de santé est vérifié via `/health`. Ces limites sont un point de départ à ajuster selon la classe et l’hébergement.
+
+Après une modification du code ou des questions, relancer `docker compose up --build -d`. Le `Dockerfile` et `.dockerignore` autorisent seulement les fichiers nécessaires à l’application : si vous ajoutez un fichier au projet qui doit être présent dans l’image, mettre à jour cette liste.
 
 ### Accès depuis la classe
 
@@ -35,7 +41,13 @@ Par défaut, seul l’ordinateur qui lance Docker peut accéder à l’applicati
       - "0.0.0.0:8000:8000"
 ```
 
-Relancer Docker Compose, puis communiquer aux élèves l’adresse `http://ADRESSE_IP_DE_L_ORDINATEUR:8000`. Les appareils doivent être sur le même réseau et le pare-feu doit autoriser le port 8000. Il n’est pas nécessaire de configurer une redirection de port sur la box.
+Ajouter aussi l’adresse IP de l’ordinateur aux hôtes autorisés. Par exemple, pour `192.168.1.25` :
+
+```sh
+ALLOWED_HOSTS=localhost,127.0.0.1,192.168.1.25 docker compose up --build -d
+```
+
+Communiquer aux élèves l’adresse `http://192.168.1.25:8000`, en remplaçant l’exemple par l’adresse réelle de l’ordinateur. Les appareils doivent être sur le même réseau et le pare-feu doit autoriser le port 8000. Il n’est pas nécessaire de configurer une redirection de port sur la box. Cet accès HTTP concerne seulement le réseau local ; l’accès public exige HTTPS.
 
 ## Démarrer avec Python
 
@@ -52,7 +64,21 @@ Ouvrir [http://127.0.0.1:8000](http://127.0.0.1:8000). Arrêter le serveur avec 
 
 Sur Windows PowerShell, créer l’environnement avec `py -m venv .venv`, puis l’activer avec `.venv\Scripts\Activate.ps1` avant les deux dernières commandes.
 
-`python app.py` lance Uvicorn sur `127.0.0.1:8000`. Les variables d’environnement `HOST` et `PORT` permettent de changer cette adresse et ce port. Il est aussi possible de lancer directement `uvicorn app:app --host 127.0.0.1 --port 8000`.
+`python app.py` lance Uvicorn sur `127.0.0.1:8000`. Les variables d’environnement `HOST` et `PORT` permettent de changer cette adresse et ce port. `ALLOWED_HOSTS` définit les noms d’hôte acceptés, séparés par des virgules ; les valeurs par défaut sont `localhost,127.0.0.1`. Changer `HOST` ne change pas les hôtes autorisés.
+
+## Préparer un hébergement public
+
+L’application convient à un entraînement libre : aucun compte, cookie de session, enregistrement de résultat ou donnée personnelle n’est demandé. Un visiteur peut demander les corrections directement à l’API et recommencer ; le score n’est pas une note d’évaluation authentifiée. Le serveur d’hébergement et son proxy peuvent cependant conserver des adresses IP dans leurs journaux : minimiser ces journaux et leur durée de conservation.
+
+L’audit et ses limites sont détaillés dans [SECURITY.md](SECURITY.md). Avant l’ouverture au public :
+
+1. Placer l’application derrière le frontal HTTPS de l’hébergeur ou un reverse proxy avec certificat valide. Garder le port 8000 accessible seulement depuis ce frontal ; ne pas publier directement Uvicorn sur Internet. Aucun hébergement n’est configuré par ce dépôt.
+2. Définir les noms de domaine exacts dans `ALLOWED_HOSTS`, sans protocole, chemin ni port. Conserver `127.0.0.1` pour le contrôle de santé. Exemple : `ALLOWED_HOSTS=localhost,127.0.0.1,francais.exemple.fr docker compose up --build -d`. La même variable peut être enregistrée dans un fichier `.env` local non suivi par Git. Le proxy doit transmettre le vrai en-tête `Host` autorisé. Ne pas autoriser `*`.
+3. Configurer au frontal une limite de taille des requêtes, un délai maximum de réception des corps et des en-têtes, ainsi qu'une limitation du débit et des connexions. Prévoir que toute une classe peut partager une seule adresse IP publique : dimensionner ces limites à partir d’un essai simultané réel. La limite de 16 Ko de l’application et les limites Docker ne remplacent pas ces protections du frontal ni une protection contre les attaques distribuées.
+4. Servir tous les fichiers en HTTPS et activer HSTS au frontal une fois le domaine et le certificat validés. L’application ne fait pas confiance aux en-têtes `X-Forwarded-*`. Si une intégration future nécessite cette confiance, l’accorder uniquement aux adresses des proxies connus, jamais à `*`.
+5. Choisir une politique de mises à jour de l’image Python et des dépendances, reconstruire l’image après mise à jour, et vérifier l’application avant de la remettre en service. Le `Dockerfile` fixe le digest de la base auditée : actualiser explicitement ce digest et la version de `pip` lors des mises à jour. Il applique également les mises à jour Debian à la construction ; pour les récupérer même si la couche Docker est en cache, utiliser `docker compose build --pull --no-cache`, puis redémarrer et refaire le scan. `--pull` seul ne remplace pas un digest fixé.
+
+Les interfaces `/docs`, `/redoc` et `/openapi.json` sont désactivées. Les fichiers CSS et JavaScript viennent de l’application elle-même. Une politique CSP limite le chargement des ressources, l’intégration dans une iframe est interdite, et les réponses désactivent la détection automatique des types de fichiers et l’envoi du référent.
 
 ## Modifier les questions
 

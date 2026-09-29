@@ -21,7 +21,7 @@ class QuizTests(unittest.TestCase):
         }
 
     def setUp(self):
-        self.client = TestClient(app)
+        self.client = TestClient(app, base_url="http://localhost")
         self.addCleanup(self.client.close)
 
     def test_content_has_twenty_questions_and_both_tenses(self):
@@ -61,9 +61,7 @@ class QuizTests(unittest.TestCase):
                 self.assertTrue(response.content)
 
     def test_api_schema_describes_request_models(self):
-        response = self.client.get("/openapi.json")
-        self.assertEqual(response.status_code, 200)
-        schema = response.json()
+        schema = app.openapi()
         for route in ("/api/check", "/api/submit"):
             self.assertIn("requestBody", schema["paths"][route]["post"])
 

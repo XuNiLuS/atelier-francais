@@ -1,6 +1,8 @@
 """Un QCM de français, servi par FastAPI et corrigé côté serveur."""
 
+import asyncio
 import json
+import logging
 import os
 from pathlib import Path
 from typing import Literal
@@ -12,7 +14,9 @@ from fastapi.routing import APIRoute
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from pydantic import BaseModel, ConfigDict, StrictInt
+from starlette.datastructures import MutableHeaders
 from starlette.exceptions import HTTPException as StarletteHTTPException
+from starlette.middleware.trustedhost import TrustedHostMiddleware
 import uvicorn
 
 
@@ -20,6 +24,20 @@ BASE_DIR = Path(__file__).resolve().parent
 QUESTIONS_PATH = BASE_DIR / "data" / "questions.json"
 PUBLIC_FIELDS = ("id", "tense", "before", "verb", "after", "options")
 MAX_BODY_SIZE = 16 * 1024
+REQUEST_BODY_TIMEOUT = 10.0
+SECURITY_HEADERS = {
+    "Content-Security-Policy": (
+        "default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; "
+        "connect-src 'self'; base-uri 'none'; form-action 'none'; "
+        "frame-ancestors 'none'; object-src 'none'"
+    ),
+    "X-Frame-Options": "DENY",
+    "X-Content-Type-Options": "nosniff",
+    "Referrer-Policy": "no-referrer",
+    "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
+    "Cross-Origin-Resource-Policy": "same-origin",
+}
+logger = logging.getLogger(__name__)
 Answer = Literal["a", "b", "c", "d"]
 
 
@@ -51,18 +69,36 @@ class QuizResult(BaseModel):
 
 
 class LimitedJSONRequest(Request):
-    """Limiter le flux avant que FastAPI lise et valide le contenu JSON."""
+    """Borner la taille et la durée totale de lecture, même sans Content-Length."""
+
+    async def _read_limited_body(self):
+        body = bytearray()
+        async for chunk in self.stream():
+            if len(body) + len(chunk) > MAX_BODY_SIZE:
+                raise HTTPException(
+                    400, "La requête est trop volumineuse (16 Ko maximum)."
+                )
+            body.extend(chunk)
+        return bytes(body)
 
     async def body(self):
         if not hasattr(self, "_body"):
-            body = bytearray()
-            async for chunk in self.stream():
-                if len(body) + len(chunk) > MAX_BODY_SIZE:
-                    raise HTTPException(
-                        400, "La requête est trop volumineuse (16 Ko maximum)."
-                    )
-                body.extend(chunk)
-            self._body = bytes(body)
+            content_length = self.headers.get("content-length")
+            if content_length is not None:
+                try:
+                    if not content_length.isascii() or not content_length.isdecimal():
+                        raise ValueError
+                    declared_size = int(content_length)
+                except ValueError:
+                    raise HTTPException(400, "L’en-tête Content-Length est invalide.") from None
+                if declared_size > MAX_BODY_SIZE:
+                    raise HTTPException(400, "La requête est trop volumineuse (16 Ko maximum).")
+            try:
+                self._body = await asyncio.wait_for(
+                    self._read_limited_body(), timeout=REQUEST_BODY_TIMEOUT
+                )
+            except asyncio.TimeoutError:
+                raise HTTPException(408, "Le délai d’envoi de la réponse est dépassé. Réessaie.") from None
         return self._body
 
 
@@ -81,6 +117,41 @@ class JSONRoute(APIRoute):
             return await original_handler(request)
 
         return route_handler
+
+
+class SecurityHeadersMiddleware:
+    """Appliquer les protections aussi aux refus d'hôte et aux erreurs internes."""
+
+    def __init__(self, app):
+        self.app = app
+
+    async def __call__(self, scope, receive, send):
+        if scope["type"] != "http":
+            await self.app(scope, receive, send)
+            return
+        response_started = False
+
+        async def secure_send(message):
+            nonlocal response_started
+            if message["type"] == "http.response.start":
+                headers = MutableHeaders(scope=message)
+                headers.update(SECURITY_HEADERS)
+                if scope["path"].startswith("/api/"):
+                    headers["Cache-Control"] = "no-store"
+                response_started = True
+            await send(message)
+
+        try:
+            await self.app(scope, receive, secure_send)
+        except Exception:
+            # Le détail reste dans le journal du serveur, jamais dans la réponse.
+            logger.exception("Erreur interne pendant le traitement d’une requête.")
+            if response_started:
+                raise
+            response = JSONResponse(
+                {"error": "Une erreur interne est survenue. Réessaie."}, status_code=500
+            )
+            await response(scope, receive, secure_send)
 
 
 def load_questions(path=QUESTIONS_PATH):
@@ -138,21 +209,32 @@ def answer_result(question, selected):
     )
 
 
-def create_app():
-    app = FastAPI(title="L’atelier des temps", version="2.0.0")
+def create_app(allowed_hosts=None):
+    if allowed_hosts is None:
+        allowed_hosts = [
+            host.strip() for host in os.environ.get("ALLOWED_HOSTS", "localhost,127.0.0.1").split(",")
+        ]
+    if not isinstance(allowed_hosts, (list, tuple)) or not allowed_hosts or any(
+        not isinstance(host, str) or not host or any(char in host for char in "*/?#@")
+        or any(char.isspace() for char in host)
+        or (":" in host and not (host.startswith("[") and host.endswith("]")))
+        for host in allowed_hosts
+    ):
+        raise ValueError("ALLOWED_HOSTS doit lister des noms d’hôtes exacts, sans protocole, port ou joker.")
+
+    app = FastAPI(
+        title="L’atelier des temps", version="2.0.0",
+        docs_url=None, redoc_url=None, openapi_url=None, redirect_slashes=False,
+    )
+    app.add_middleware(TrustedHostMiddleware, allowed_hosts=allowed_hosts, www_redirect=False)
+    # Le dernier middleware ajouté enveloppe le précédent, y compris ses refus.
+    app.add_middleware(SecurityHeadersMiddleware)
     app.router.route_class = JSONRoute
     app.mount("/static", StaticFiles(directory=BASE_DIR / "static"), name="static")
     templates = Jinja2Templates(directory=BASE_DIR / "templates")
     questions = load_questions()
     questions_by_id = {question["id"]: question for question in questions}
     question_ids = {str(question["id"]) for question in questions}
-
-    @app.middleware("http")
-    async def disable_api_cache(request: Request, call_next):
-        response = await call_next(request)
-        if request.url.path.startswith("/api/"):
-            response.headers["Cache-Control"] = "no-store"
-        return response
 
     @app.exception_handler(RequestValidationError)
     async def invalid_payload(request: Request, error: RequestValidationError):
@@ -221,4 +303,11 @@ if __name__ == "__main__":
         app,
         host=os.environ.get("HOST", "127.0.0.1"),
         port=int(os.environ.get("PORT", "8000")),
+        proxy_headers=False,
+        server_header=False,
+        access_log=False,
+        limit_concurrency=100,
+        timeout_keep_alive=5,
+        timeout_graceful_shutdown=10,
+        backlog=128,
     )
