@@ -19,11 +19,13 @@ Publier **uniquement le contenu du dossier `dist/`**. Il contient les pages, les
 
 ## GitHub Pages
 
+Le projet est relié à [XuNiLuS/atelier-francais](https://github.com/XuNiLuS/atelier-francais), avec GitHub Actions comme source de publication et HTTPS activé. L’adresse attribuée est [https://xunilus.github.io/atelier-francais/](https://xunilus.github.io/atelier-francais/). Suivre chaque publication dans [Actions](https://github.com/XuNiLuS/atelier-francais/actions).
+
 GitHub Pages sert les fichiers statiques sans mise en veille d’une application. Avec GitHub Free, le dépôt source doit être **public** : son code et son historique deviennent consultables. Choisir cette visibilité avant de créer ou publier le dépôt. Voir les [plans compatibles avec Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages).
 
 Le workflow [.github/workflows/pages.yml](../.github/workflows/pages.yml) teste le projet, construit le site et publie `dist/` après chaque push sur `main`. Il utilise les permissions temporaires de GitHub Actions, sans jeton personnel à placer dans les secrets.
 
-Après choix de la visibilité :
+Pour reproduire cette installation sur un autre dépôt :
 
 1. Créer le dépôt GitHub, puis y pousser le dépôt local.
 2. Dans **Settings → Pages → Build and deployment**, sélectionner **GitHub Actions**.
@@ -31,7 +33,7 @@ Après choix de la visibilité :
 4. Attendre la réussite et ouvrir l’adresse affichée par GitHub.
 5. Vérifier HTTPS, les trois niveaux, une correction et un bilan complet.
 
-Les commits conservés seulement sur l’ordinateur ne publient rien. La présence du workflow ne crée pas de dépôt distant. Les publications suivantes suivent les push sur `main`. Le service reste soumis aux [limites de GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits).
+Les commits conservés seulement sur l’ordinateur ne publient rien. Sur un nouveau projet, la présence du workflow seule ne crée pas de dépôt distant. Les publications suivantes suivent les push sur `main`. Le service reste soumis aux [limites de GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits).
 
 ## Cloudflare Pages : conserver un dépôt privé
 

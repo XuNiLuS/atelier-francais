@@ -1,5 +1,7 @@
 # L’atelier de français
 
+**Site public : [xunilus.github.io/atelier-francais](https://xunilus.github.io/atelier-francais/)** · [Dépôt GitHub](https://github.com/XuNiLuS/atelier-francais)
+
 Des quiz de grammaire pour les **4e, 3e et secondes générales et technologiques**, avec une difficulté progressive. La page d’accueil présente les niveaux et les thèmes. Chaque quiz contient **20 questions**, soit **120 questions** dans cette version.
 
 | Niveau | Quiz disponibles |
@@ -143,4 +145,4 @@ Ouvrir ensuite le site pour vérifier la navigation, une réponse correcte, une 
 
 ## Git
 
-Le dépôt Git peut rester local. L’utilisation du site sur l’ordinateur ne nécessite aucun dépôt distant. Les environnements virtuels, caches, exports générés et fichiers `.env` sont exclus du suivi. Créer un dépôt distant ou activer un hébergement constitue une étape distincte.
+Le dépôt public est [XuNiLuS/atelier-francais](https://github.com/XuNiLuS/atelier-francais). La branche `main` est reliée à `origin/main` ; un `git push` déclenche les tests et la publication GitHub Pages. Les environnements virtuels, caches, exports générés et fichiers `.env` sont exclus du suivi. L’utilisation locale reste indépendante de GitHub.
