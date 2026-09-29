@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Un QCM de français pour les élèves de 4e : reconnaître les valeurs du passé simple et de l’imparfait, en 20 questions expliquées.">
+  <title>L’atelier des temps · Français 4e</title>
+  <link rel="icon" href="{{ url_for('static', filename='favicon.svg') }}" type="image/svg+xml">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script src="{{ url_for('static', filename='app.js') }}" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#question-title">Aller à la question</a>
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="L’atelier des temps, accueil">
+      <span class="brand-mark" aria-hidden="true">a<span>.</span></span>
+      <span>L’atelier <strong>des temps</strong></span>
+    </a>
+    <span class="class-label">FRANÇAIS <span>4<sup>e</sup></span></span>
+  </header>
+
+  <main class="page">
+    <div class="page-intro">
+      <div class="eyebrow"><span class="short-line" aria-hidden="true"></span> LES TEMPS DU RÉCIT</div>
+      <h1>À chaque temps, <em>sa valeur.</em></h1>
+      <p>Passé simple et imparfait : à toi de comprendre ce qu’ils expriment.</p>
+    </div>
+
+    <noscript><p class="notice">Active JavaScript dans ton navigateur pour répondre au QCM et afficher ta correction.</p></noscript>
+
+    <div class="workspace" id="quiz-workspace">
+      <aside class="sidebar" aria-label="Progression et aide">
+        <section class="journey">
+          <div class="section-heading"><h2>Ton parcours</h2><span class="small-pill">{{ questions|length }} questions</span></div>
+          <p class="progress-label"><strong id="answered-count">0</strong> / {{ questions|length }} réponses choisies</p>
+          <progress id="quiz-progress" max="{{ questions|length }}" value="0" aria-label="Questions avec une réponse"></progress>
+          <nav class="question-grid" aria-label="Aller à une question">
+            {% for question in questions %}
+            <button type="button" class="question-nav{% if loop.first %} current{% endif %}" data-index="{{ loop.index0 }}" aria-label="Question {{ loop.index }}, sans réponse" {% if loop.first %}aria-current="step"{% endif %}>{{ loop.index }}</button>
+            {% endfor %}
+          </nav>
+          <div class="grid-legend"><span><i class="legend-current" aria-hidden="true"></i> En cours</span><span><i class="legend-done" aria-hidden="true"></i> Répondue</span></div>
+          <p class="journey-note">Tu peux revenir sur une question et changer ta réponse avant la correction.</p>
+        </section>
+
+        <details class="help">
+          <summary><span class="help-icon" aria-hidden="true">?</span> Un coup de pouce</summary>
+          <div class="help-content">
+            <h3>L’imparfait</h3>
+            <p>Il peut décrire, exprimer une habitude ou montrer une action en cours à l’arrière-plan.</p>
+            <h3>Le passé simple</h3>
+            <p>Il peut présenter un événement de premier plan, une succession d’actions ou une action achevée et délimitée.</p>
+            <p class="help-tip">Lis les indices de la phrase : une action au passé simple n’est pas forcément courte !</p>
+          </div>
+        </details>
+        <div class="chapter-label" aria-hidden="true"><span>01</span> GRAMMAIRE · CONJUGAISON</div>
+      </aside>
+
+      <section class="exercise" aria-label="Questionnaire">
+        <form id="quiz-form">
+          <div class="exercise-top"><span id="question-position">QUESTION 01 / {{ questions|length }}</span><span class="tense-tag" id="tense-tag">{{ questions[0].tense }}</span></div>
+          <h2 id="question-title" tabindex="-1">Quelle est la valeur du verbe souligné ?</h2>
+          <p class="instruction">Une seule bonne réponse. Observe bien le contexte.</p>
+
+          {% for question in questions %}
+          <div class="question-panel" data-index="{{ loop.index0 }}" data-id="{{ question.id }}" {% if not loop.first %}hidden{% endif %}>
+            <blockquote class="sentence" id="sentence-{{ question.id }}"><span class="quote-mark" aria-hidden="true">“</span><p>{{ question.before }}<mark title="Verbe à analyser">{{ question.verb }}</mark>{{ question.after }}</p></blockquote>
+            <fieldset aria-describedby="sentence-{{ question.id }}">
+              <legend class="sr-only">Question {{ loop.index }} : choisis la valeur du verbe « {{ question.verb }} »</legend>
+              <div class="options">
+                {% for option in question.options %}
+                <label class="option"><input type="radio" name="question-{{ question.id }}" value="{{ option.id }}"><span class="option-letter" aria-hidden="true">{{ option.id|upper }}</span><span class="option-text">{{ option.label }}</span><span class="option-check" aria-hidden="true">✓</span></label>
+                {% endfor %}
+              </div>
+            </fieldset>
+          </div>
+          {% endfor %}
+
+          <p class="form-message" id="form-message" role="status" aria-live="polite"></p>
+          <div class="exercise-footer">
+            <button type="button" class="button button-secondary" id="previous-button" disabled>Précédente</button>
+            <span class="question-counter" id="question-counter" aria-hidden="true">01 / {{ questions|length }}</span>
+            <button type="button" class="button button-primary" id="next-button">Suivante</button>
+            <button type="submit" class="button button-primary" id="submit-button" hidden>Voir ma correction</button>
+          </div>
+        </form>
+        <p class="exercise-note"><span aria-hidden="true">✦</span> Prends ton temps : le plus important, c’est de comprendre.</p>
+      </section>
+    </div>
+
+    <section id="results" class="results" hidden aria-labelledby="results-title">
+      <div class="result-summary">
+        <div><div class="eyebrow">TA CORRECTION</div><h2 id="results-title" tabindex="-1">Le point sur tes réponses.</h2><p id="result-message"></p><div class="result-actions"><button type="button" class="button button-primary" id="restart-button">Recommencer le QCM</button><a class="button button-secondary" href="#correction-list">Lire les explications</a></div></div>
+        <div class="score"><span id="score-value">0</span><span>sur {{ questions|length }}</span><small>bonnes réponses</small></div>
+      </div>
+      <div class="tense-scores" id="tense-scores"></div>
+      <div class="correction-heading"><h3>Comprendre chaque réponse</h3><span>Le contexte donne les indices.</span></div>
+      <div id="correction-list" class="correction-list"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><span>L’atelier des temps</span><span>Un peu de pratique, beaucoup de progrès.</span></footer>
+  <script type="application/json" id="quiz-data">{{ questions|tojson }}</script>
+</body>
+</html>
