@@ -1,113 +1,90 @@
-# Audit de sécurité — L’atelier des temps
+# Sécurité — L’atelier de français
 
-Audit local du 29 septembre 2026, réalisé avant un éventuel hébergement public. Il couvre le code Python et JavaScript, les templates, les dépendances réellement présentes dans l’image Linux ARM64, la configuration Docker et des essais de requêtes hostiles. Aucun service public n’a été déployé ni testé.
+Ce document décrit l’architecture **entièrement statique** du site. Python et Jinja2 génèrent les pages avant publication ; le navigateur effectue les corrections et calcule les scores. L’hébergeur sert uniquement les fichiers de `dist/`.
 
-**Évolution du catalogue :** la version avec six quiz conserve les protections décrites ici. Ses 40 tests vérifient aussi l’isolation des corrections par quiz, le refus des identifiants inconnus et l’absence d’accès HTTP aux fichiers du catalogue. Les JSON et digests de scan ci-dessous restent ceux de l’image auditée avant cette évolution ; ils ne constituent pas un scan de chaque reconstruction ultérieure. Refaire le scan de l’image retenue pour une publication.
+**Les anciens audits FastAPI et les scans de son image Python/Debian ne s’appliquent pas à l’image Caddy actuelle.** Ils sont conservés comme archives ci-dessous. Ce document ne présente aucun nouveau résultat de scan Caddy et ne constitue pas une certification d’absence de faille.
 
-## Conclusion et limites
+## Périmètre et données
 
-Les scénarios testés n’ont pas permis de lire les fichiers du serveur, d’exécuter une injection HTML/JavaScript, ni d’obtenir des détails internes dans les réponses. Plusieurs défauts de préparation à Internet ont été corrigés ci-dessous. Cela ne constitue ni une certification ni une garantie d’absence de faille.
+Le site ne possède ni API de correction, ni compte, ni session, ni téléversement, ni base de données. Le choix d’un élève reste dans la mémoire de la page et ne déclenche aucun envoi de réponse au serveur. Recharger la page recommence l’essai ; les scores ne sont pas enregistrés.
 
-**L’ouverture publique reste conditionnée à la configuration du frontal HTTPS et à l’examen des avis résiduels de l’image système.** Les limites du serveur réduisent certains abus ; elles ne protègent pas contre une attaque distribuée ou la saturation du réseau.
+Les questions, les bonnes réponses et les explications sont publiques par conception. Le verrouillage d’un choix dans l’interface ne protège pas une note contre la modification du navigateur. **Le site convient à l’entraînement, pas à une évaluation authentifiée.**
 
-## Constats et corrections
+Aucune ressource distante ni outil d’analyse d’audience n’est ajouté par l’application. L’hébergement et son éventuel frontal peuvent cependant conserver des adresses IP, des URL et des informations de navigateur dans leurs journaux. Leurs règles de collecte et de conservation doivent être examinées pour le service choisi.
 
-| Constat avant l’audit | Portée réelle | Correction appliquée |
-| --- | --- | --- |
-| Un en-tête `Host` arbitraire est accepté et repris dans les URL absolues CSS/JS. | Empoisonnement de contenu possible avec un proxy/cache mal configuré ; pas d’exploitation directe d’un navigateur démontrée. | Hôtes exacts autorisés via `ALLOWED_HOSTS`, refus des jokers, URLs statiques relatives, redirections automatiques de slash désactivées. |
-| Un client peut garder un corps de requête ouvert sans limite de temps. | Risque d’épuisement des connexions/tâches ; la limite de taille seule ne suffit pas. | Lecture limitée à 10 secondes au total et 16 Kio, rejet anticipé des tailles déclarées excessives, concurrence Uvicorn plafonnée à 100. |
-| Pas de protections HTTP explicites pour les pages. | Mesures de défense supplémentaires ; aucune injection exploitable constatée dans le rendu existant. | CSP stricte sans `unsafe-inline` ni `unsafe-eval`, refus des iframes, `nosniff`, aucun référent, caméra/micro/géolocalisation interdits. |
-| Documentation API interactive publique avec dépendances CDN. | Surface et dépendances navigateur inutiles au QCM, sans secret exposé. | `/docs`, `/redoc`, `/openapi.json` désactivés. |
-| Image modifiable, sources détenues par l’utilisateur de service, copie générale du dossier. | Aggravation possible après compromission et risque d’inclure de futurs fichiers privés. | Copie explicite des seuls fichiers nécessaires, sources appartenant à root, service non-root, disque en lecture seule, aucune capability, interdiction de nouveaux privilèges. |
-| Pas de quotas de ressources ni de rotation des journaux. | Saturation mémoire/processus/disque en cas d’abus ou de panne. | 256 Mio de RAM, 1 CPU, 64 PID, journaux Docker limités à 3 × 10 Mo ; journaux d’accès Uvicorn désactivés. |
-| Avis connus sur l’ancienne image Linux et son installateur `pip`. | Présence signalée par scanners ; les conditions d’exploitation varient selon le paquet et l’architecture. | Base actualisée et fixée par digest, mises à jour Debian, `pip` mis à jour au build puis retiré de l’environnement d’exécution. Voir les résultats de scan conservés. |
+## Construction et rendu
 
-Les erreurs internes retournent un message générique. Les détails techniques restent dans les journaux d’erreur accessibles à l’exploitant. Les en-têtes de protection sont aussi ajoutés aux refus d’hôte et aux erreurs de l’application. Les erreurs de transport générées directement par l’hébergeur ou Uvicorn relèvent de leur propre configuration.
+`quiz_data.py` vérifie la structure du catalogue et des questions avant la génération. Les fichiers de contenu et les modèles sont des sources de confiance maintenues dans le dépôt : ils ne sont pas fournis par les visiteurs.
 
-## Résultats des scans de dépendances
+Jinja2 échappe le texte HTML et sérialise les données embarquées avec son filtre JSON. Le JavaScript crée les éléments de réponse avec des insertions textuelles, sans interpréter les libellés comme du HTML. La CSP limite les scripts et styles aux fichiers du site, sans `unsafe-inline` ni `unsafe-eval`. Ces protections doivent être conservées lors de l’ajout de questions ou de fonctionnalités.
 
-Image finale ARM64 : `sha256:06cc8ebf9625deee933acf639325fc9cbc22c7007cc4339f253aba17ef730de5`, avec Python 3.12.14 et Debian 13.7. Scan du 29 septembre 2026 à 20:10 UTC ; base d’avis Trivy datée de 19:09 UTC le même jour.
+L’exporteur copie les pages et ressources explicitement prévues. Il ne publie ni code Python, ni historique Git, ni rapports d’audit, ni fichier local `.env`. Publier **le contenu de `dist/` seulement**. Les corrigés font néanmoins partie des pages générées : leur présence ne doit pas être confondue avec une fuite de secrets.
 
-| Mesure | Avant | Après |
-| --- | ---: | ---: |
-| Distributions Python installées | 17 | 16 |
-| Avis Python distincts | 6, tous sur `pip` | 0 |
-| Occurrences Debian (paquet × avis) | 256 | 198 |
-| Identifiants Debian distincts | 119 | 83 |
-| Occurrences Debian critiques | 3 | 0 |
-| Occurrences Debian élevées | 57 | 44 |
-| Occurrences Debian avec correctif connu | 58 | 0 |
+La chaîne de construction reste à maintenir : dépendances Python de génération, image de construction, actions du workflow et comptes ayant accès au dépôt. Une modification malveillante de ces éléments pourrait produire un site altéré même sans serveur applicatif.
 
-Les 58 occurrences disposant d’un correctif ont été supprimées par les mises à jour. Les **198 occurrences résiduelles correspondent à 83 identifiants distincts**, dont 8 de sévérité élevée, 28 moyenne, 31 faible et 16 inconnue. Elles n’ont pas de version corrigée indiquée dans la base Debian consultée. Plusieurs paquets binaires peuvent partager un même avis ; certains identifiants Debian `TEMP` ne sont pas des CVE. Aucun avis n’a été masqué parce qu’il était sans correctif.
+## Protections selon le mode de service
 
-Les huit identifiants de sévérité élevée concernent :
+| Mode | Protections et limites |
+| --- | --- |
+| Docker avec Caddy | Le serveur applique sa configuration d’en-têtes HTTP. La configuration Compose restreint le conteneur. Le port livré est HTTP local, sans certificat public. |
+| Cloudflare Pages | Le fichier `_headers` généré définit les protections HTTP pour les fichiers statiques. Vérifier leur présence après déploiement. |
+| GitHub Pages | La CSP et la politique de référent présentes dans le HTML restent utilisables. Le fichier `_headers` n’est pas appliqué par GitHub Pages. Les protections nécessitant un en-tête HTTP personnalisé ne sont donc pas garanties par ce dépôt sur cet hébergeur. |
+| `python -m http.server` | Prévisualisation locale uniquement. Ce serveur n’applique pas `_headers` et n’est pas prévu pour une mise en production. |
 
-- util-linux : [CVE-2026-76642](https://security-tracker.debian.org/tracker/CVE-2026-76642), [CVE-2026-78408](https://security-tracker.debian.org/tracker/CVE-2026-78408), [CVE-2026-78409](https://security-tracker.debian.org/tracker/CVE-2026-78409), [CVE-2026-78410](https://security-tracker.debian.org/tracker/CVE-2026-78410) ; opérations de montage et de changement d’espace de noms.
-- ACL : [CVE-2026-54369](https://security-tracker.debian.org/tracker/CVE-2026-54369) ; liens symboliques et permissions.
-- ncurses : [CVE-2025-69720](https://security-tracker.debian.org/tracker/CVE-2025-69720) ; traitement de données de terminal.
-- systemd : [CVE-2026-16742](https://security-tracker.debian.org/tracker/CVE-2026-16742) ; fonctionnalité systemd-homed, avis associé aussi aux bibliothèques issues du paquet source.
-- Perl : [CVE-2026-9538](https://security-tracker.debian.org/tracker/CVE-2026-9538) ; traitement d’archives par Archive::Tar.
+En particulier, **`frame-ancestors` ne fonctionne pas dans une CSP définie par balise meta**. L’interdiction d’affichage en iframe exige un véritable en-tête HTTP et ne doit pas être annoncée comme assurée sur GitHub Pages. Une CSP meta ne remplace pas non plus les en-têtes `X-Content-Type-Options`, `Permissions-Policy` ou HSTS. Voir la [spécification CSP](https://w3c.github.io/webappsec-csp/#directive-frame-ancestors) et les [en-têtes Cloudflare Pages](https://developers.cloudflare.com/pages/configuration/headers/).
 
-Le QCM n’expose pas ces commandes ou traitements. L’exécution non-root, sans capacités et sur disque en lecture seule limite certains scénarios locaux. **Aucune chaîne d’exploitation depuis les routes du QCM n’a été identifiée**, mais le scan ne démontre pas l’inaccessibilité de chaque code vulnérable. Ces avis restent à surveiller et à réexaminer pour l’image réellement publiée.
+## Conteneur Caddy
 
-L’absence d’avis sur les 16 distributions Python installées ne couvre pas intégralement CPython et ses bibliothèques compilées. Des correctifs amont postérieurs à Python 3.12.14 concernent notamment des traitements d’authentification HTTP, d’archives et de XML, qui ne sont pas exposés par le QCM actuel. `pip` n’est plus importable dans l’image finale, mais CPython conserve l’archive inactive `ensurepip/_bundled/pip-25.0.1-py3-none-any.whl` : elle n’est pas une distribution installée et n’entre pas dans ce décompte. Ne pas réinstaller `pip` via `ensurepip` dans le conteneur de production.
+La construction Docker comporte deux étapes : Python fabrique `dist/`, puis l’image officielle Caddy reçoit seulement le site généré et sa configuration. L’environnement Python de génération et les sources du dépôt ne sont pas présents dans l’image de service.
 
-Les inventaires et tous les avis détectés, avec versions, sévérités, liens, métadonnées et empreintes des rapports bruts, sont conservés dans [le scan initial](reports/security/dependencies-initial.json), [le scan final](reports/security/dependencies-final.json) et [la comparaison avant/après](reports/security/dependencies-delta.json). Ils sont exclus de l’image applicative.
+Les restrictions prévues sont :
 
-## Contrôles effectués
+- utilisateur non root `10001:10001`, fichiers du site en lecture seule et absence de capacités Linux (la capacité réseau portée par le binaire Caddy est retirée à la construction) ;
+- `/data` en mémoire temporaire, limité à 16 Mio, sans exécution ni suid, pour la maintenance interne de Caddy ; aucune donnée élève et aucun stockage persistant ;
+- interdiction de nouveaux privilèges, administration Caddy désactivée et pas de sauvegarde automatique de sa configuration ;
+- aucune journalisation d’accès configurée ; les journaux de fonctionnement restent visibles par l’exploitant ;
+- limites Compose de 256 Mio de RAM, 1 CPU et 64 processus ; rotation des journaux Docker à 3 × 10 Mo ;
+- liaison à `127.0.0.1:8000` sur la machine hôte et contrôle de santé par `GET /`.
 
-- **31 tests automatisés réussis**, dont 15 tests de sécurité : types et champs stricts, corps invalides ou surdimensionnés, en-têtes, hôtes autorisés, erreurs internes, documentation masquée, fichiers sensibles et traversées encodées.
-- Injection simulée de `</script><script>…`, attributs `onerror` et `onload` dans les données de questions : HTML échappé, JSON embarqué correctement encodé. Le JavaScript utilise `textContent` et `createTextNode`, sans insertion HTML des réponses.
-- La correction reste consultable dans un navigateur sous la CSP, sans erreur JavaScript ni violation CSP observée.
-- Une requête HTTP réelle envoyée au ralenti dans Docker reçoit **408 après environ 10 secondes**. Quarante vérifications ciblées des délais sont passées après remplacement d’un middleware qui présentait une annulation intermittente.
-- Les refus des chemins `/.env`, `/.git/config`, `/app.py`, `/data/questions.json` et des traversées sous `/static` sont vérifiés. Aucune détection de secret dans les fichiers suivis inspectés ; ce contrôle n’est pas un inventaire de secrets de l’ordinateur ou du futur hébergeur.
-- Dans le conteneur : utilisateur non-root, sources détenues par root, écriture refusée par le système de fichiers, capabilities effectives nulles et `NoNewPrivs=1` vérifiés. Pages, API de correction et contrôle de santé fonctionnent.
+Un hébergeur qui utilise uniquement le `Dockerfile` n’applique pas nécessairement les réglages de `compose.yaml`. Les restrictions doivent alors être reproduites et vérifiées dans sa configuration. Les quotas ne remplacent pas une protection contre la saturation du réseau.
 
-## Fonctionnement public et données
+## Avant une ouverture publique
 
-L’application ne comporte ni compte, ni session, ni téléversement, ni base de données, ni commande système pilotée par une entrée utilisateur. Les réponses sont validées à partir d’identifiants et de quatre choix autorisés. Aucune URL fournie par l’utilisateur n’est chargée par le serveur. Le contrôle de santé contacte seulement son propre serveur HTTP local.
+Pour un hébergement statique managé, publier uniquement l’export, activer HTTPS et vérifier le comportement réel du site et de ses en-têtes sur l’adresse fournie. Le [guide de déploiement](docs/DEPLOIEMENT.md) détaille les deux solutions documentées.
 
-Aucun cookie ni CORS permissif n’est ajouté. Les API n’enregistrent pas de données ; une requête provenant d’un autre site ne peut donc pas modifier une session authentifiée. Si des comptes, résultats persistants, uploads ou fonctions d’administration sont ajoutés, il faudra refaire l’analyse de l’authentification, des autorisations, de CSRF, de la conservation des données et des entrées utilisateur.
+Pour une machine virtuelle publique, la configuration locale ne suffit pas. Il faut définir le domaine, un frontal HTTPS et le renouvellement du certificat, le pare-feu et l’accès au port 8000 depuis ce frontal seulement. Configurer aussi les limites de connexions et de débit, la protection contre les abus et la politique de journaux. Une classe peut partager une seule adresse IP : tester l’accès simultané avant de fixer un quota par IP. Aucun frontal public ni certificat n’est configuré ici.
 
-**Le score sert à l’entraînement.** Les corrections sont publiques par conception, et un visiteur peut envoyer directement d’autres réponses à l’API ou modifier son navigateur. Le verrouillage du premier choix dans l’interface n’authentifie pas une note d’examen.
+Maintenir l’OS hôte, Docker, Caddy et les outils de génération. Reconstruire après les mises à jour, tester l’image produite et analyser **cette image précise**, avec son architecture, son identifiant et une base d’avis à jour. Si une base Docker est fixée par digest, `--pull` ne remplace pas ce digest : il faut également actualiser la référence dans le `Dockerfile`.
 
-Les journaux de l’hébergeur ou de son proxy peuvent contenir les adresses IP et les URL visitées. Leur accès, leur contenu et leur durée de conservation doivent être configurés lors de la mise en ligne. Aucune donnée élève n’a été envoyée à un scanner distant : les analyses d’image ont porté sur une archive locale ; les consultations de vulnérabilités utilisent les noms et versions des paquets.
+Si des comptes, des résultats persistants, une interface d’administration ou des téléversements sont ajoutés, réexaminer l’authentification, les autorisations, les entrées, la conservation des données et les protections CSRF avant publication.
 
-## Export statique
+## Vérification de la migration statique
 
-`scripts/export_static.py` produit uniquement les pages et ressources à publier, sans serveur Python ni conteneur en ligne. Les corrections sont effectuées dans le navigateur et les réponses figurent donc dans les fichiers publics. Aucun compte, cookie ou stockage de résultats n’est ajouté. Les résultats restent destinés à l’entraînement.
+Le 29 septembre 2026 : 14 tests automatisés réussis sur les contenus, les exports et l’échappement HTML/JSON. Construction Docker et état de santé vérifiés ; l’image finale ne contient pas Python ni les sources des quiz. Les en-têtes HTTP sont présents sur les pages, ressources et erreurs 404 testées. Les chemins de sources, données JSON et ancienne API sont refusés. Un parcours de 20 réponses dans le navigateur donne le score attendu et ses 20 corrections, sans erreur JavaScript ou CSP observée. Ces contrôles fonctionnels ne sont pas un scan de vulnérabilités.
 
-Les pages exportées conservent l’échappement HTML/JSON et une CSP définie par balise meta. Le fichier `_headers` fournit les protections HTTP à Cloudflare Pages ; GitHub Pages ne l’applique pas. En particulier, une CSP meta ne peut pas interdire les iframes avec `frame-ancestors` : cette protection ne doit pas être considérée comme active sur GitHub Pages. Voir [le guide de déploiement](docs/DEPLOIEMENT.md).
-
-Les conditions ci-dessous concernent l’hébergement de la variante FastAPI/Docker.
-
-## Conditions à vérifier chez l’hébergeur
-
-1. HTTPS avec certificat valide et renouvellement, redirection HTTP vers HTTPS, puis HSTS une fois le domaine validé. Ce dépôt ne configure pas de certificat ni de domaine public.
-2. Port Uvicorn 8000 joignable uniquement par le frontal. Préserver un `Host` autorisé et configurer le domaine exact dans `ALLOWED_HOSTS`, en conservant `127.0.0.1` pour le contrôle de santé.
-3. Limites sur les en-têtes et corps lents, taille des requêtes, connexions et débit au frontal ; protection DDoS de l’hébergeur. Tester avec une classe entière, qui peut partager une seule IP, avant de fixer un quota par IP.
-4. Appliquer effectivement les restrictions Docker : un service managé qui utilise uniquement le `Dockerfile` n’applique pas nécessairement `compose.yaml`. Reconfigurer dans ce cas mémoire, CPU, processus, lecture seule, capacités et journaux dans son interface.
-5. Examiner les avis système sans correctif, suivre les mises à jour Debian/Python, reconstruire et refaire les scans avant publication et après chaque changement. Une autre architecture d’hébergement, notamment AMD64, doit être scannée séparément.
-
-Uvicorn ignore actuellement les en-têtes `X-Forwarded-*`. Ne pas autoriser globalement leur confiance pour contourner un problème de proxy. Le QCM utilise des chemins relatifs et n’a pas besoin de ces en-têtes pour fonctionner à la racine d’un domaine.
-
-## Refaire les vérifications
+## Vérifications à reproduire
 
 ```sh
-python -m pip install -r requirements-dev.txt
+python -m pip install -r requirements.txt
 python -m unittest discover -s tests -v
+python scripts/export_static.py
 docker compose build --pull --no-cache
 docker compose up -d --wait
+docker compose ps
 ```
 
-Le digest de base et la version de `pip` dans `Dockerfile` doivent être actualisés explicitement. Les dépendances transitives peuvent évoluer lors d’une reconstruction : le rapport s’applique à l’image identifiée dans ses métadonnées, pas à toute future image produite par ce dépôt. Les versions fixes et un scanner sans alerte ne dispensent pas de maintenance.
+Compléter ces contrôles par un essai dans le navigateur : navigation entre niveaux, corrections correctes et incorrectes, bilan et nouvel essai. Examiner les réponses HTTP du service choisi, la non-publication de `/.git/config`, `/.env` et des sources, ainsi que les restrictions effectives du conteneur.
 
-Les scans de référence utilisent **pip-audit 2.10.1** sur l’inventaire exact des distributions de l’image, puis **Trivy 0.74.0** sur une archive `docker save`, sans ignorer les avis sans correctif. Ne pas scanner seulement l’environnement Python de développement : ce n’est pas celui livré par Docker. Conserver la version du scanner, la date de sa base d’avis, l’architecture et le digest de chaque image analysée.
+Un inventaire des dépendances de construction ne suffit pas à analyser l’image finale Caddy. Inversement, l’analyse du conteneur ne couvre pas les outils et comptes qui construisent le site, ni les serveurs de GitHub ou de Cloudflare. Pour tout nouveau scan, conserver l’image exacte, l’architecture, la date, la version du scanner et celle de sa base d’avis. Ne pas ignorer les avis dépourvus de correctif.
 
-## Références
+## Archives de l’ancien audit FastAPI
 
-- [Recommandations OWASP pour les en-têtes HTTP](https://cheatsheetseries.owasp.org/cheatsheets/HTTP_Headers_Cheat_Sheet.html) : CSP, anti-iframe, types MIME et confidentialité du référent.
-- [TrustedHostMiddleware de Starlette](https://starlette.dev/middleware/#trustedhostmiddleware) : filtrage du nom d’hôte.
-- [Paramètres Uvicorn](https://www.uvicorn.org/settings/) : concurrence, temporisations et confiance dans les proxies. Le délai keep-alive ne remplace pas un délai de réception du corps.
-- [pip-audit](https://github.com/pypa/pip-audit) et [Trivy](https://trivy.dev/latest/docs/) : détection d’avis connus, distincte d’une preuve d’exploitation.
-- [Suivi de sécurité Debian](https://security-tracker.debian.org/tracker/) et [Python 3.12.14](https://www.python.org/downloads/release/python-31214/) : suivre aussi le système et l’interpréteur, qui ne sont pas entièrement couverts par le scan des distributions Python.
+L’audit du 29 septembre 2026 concernait l’ancienne application Python/FastAPI et une image Linux ARM64 identifiée dans les rapports. Les anciens nombres de tests, inventaires, résultats de vulnérabilités et vérifications de délais décrivent cette version historique uniquement. Ils ne prouvent ni la présence ni l’absence de vulnérabilités dans le site statique, Caddy ou une future reconstruction.
+
+Les pièces sont conservées sans modification :
+
+- [Inventaire et scan initiaux](reports/security/dependencies-initial.json).
+- [Inventaire et scan finaux de l’ancienne image](reports/security/dependencies-final.json).
+- [Comparaison avant/après de cet audit](reports/security/dependencies-delta.json).
+
+Ces rapports ne sont pas inclus dans `dist/` ni dans l’image servant le site. Aucun rapport de scan Caddy n’est joint à cette migration.

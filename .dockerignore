@@ -1,7 +1,10 @@
 # Le contexte de construction ne contient que les fichiers nécessaires.
 **
 !requirements.txt
-!app.py
+!quiz_data.py
+!scripts/
+!scripts/export_static.py
+!Caddyfile
 !templates/
 !templates/index.html
 !templates/base.html

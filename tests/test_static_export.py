@@ -49,7 +49,7 @@ class StaticExportTests(unittest.TestCase):
 
     def test_public_bundle_contains_only_generated_pages_and_public_assets(self):
         export_site(self.output)
-        self.assertFalse((self.output / "app.py").exists())
+        self.assertFalse((self.output / "quiz_data.py").exists())
         self.assertFalse((self.output / "data").exists())
         self.assertFalse((self.output / ".git").exists())
         self.assertFalse((self.output / "reports").exists())
@@ -62,7 +62,6 @@ class StaticExportTests(unittest.TestCase):
             match = re.search(r'<script type="application/json" id="quiz-data">(.*?)</script>', html, re.S)
             quiz = json.loads(match.group(1))
             self.assertEqual(quiz["id"], page.parent.name)
-            self.assertEqual(quiz["mode"], "static")
             self.assertEqual(len(quiz["questions"]), 20)
             for question in quiz["questions"]:
                 self.assertIn(question["answer"], "abcd")

@@ -87,4 +87,4 @@
   </main>
 
 {% endblock %}
-{% block data %}<script type="application/json" id="quiz-data">{{ {"id": quiz.id, "questions": questions, "mode": "static" if static_mode else "server"}|tojson }}</script>{% endblock %}
+{% block data %}<script type="application/json" id="quiz-data">{{ {"id": quiz.id, "questions": questions}|tojson }}</script>{% endblock %}

@@ -15,7 +15,7 @@ from jinja2 import Environment, FileSystemLoader, select_autoescape
 
 PROJECT_DIR = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(PROJECT_DIR))
-from app import BASE_DIR, LEVELS, SECURITY_HEADERS, load_catalog  # noqa: E402
+from quiz_data import BASE_DIR, LEVELS, SECURITY_HEADERS, load_catalog  # noqa: E402
 
 
 def export_site(output=PROJECT_DIR / "dist", base_path=""):
@@ -41,7 +41,7 @@ def export_site(output=PROJECT_DIR / "dist", base_path=""):
 
     def render(name, **context):
         return environment.get_template(name).render(
-            levels=LEVELS, site_root=base_path, static_mode=True,
+            levels=LEVELS, site_root=base_path,
             url_for=asset_url, **context,
         )
 
@@ -63,7 +63,7 @@ def export_site(output=PROJECT_DIR / "dist", base_path=""):
         '{% extends "base.html" %}{% block title %}Page introuvable{% endblock %}'
         '{% block content %}<main class="page" id="main-content"><h1>Page introuvable</h1>'
         '<p><a href="{{ site_root }}/">Revenir aux quiz</a></p></main>{% endblock %}'
-    ).render(levels=LEVELS, current_level=None, site_root=base_path, static_mode=True, url_for=asset_url)
+    ).render(levels=LEVELS, current_level=None, site_root=base_path, url_for=asset_url)
 
     if marker.is_file():
         shutil.rmtree(output)

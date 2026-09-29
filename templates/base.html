@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  {% if static_mode %}<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'"><meta name="referrer" content="no-referrer">{% endif %}
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'none'; base-uri 'none'; form-action 'none'; object-src 'none'"><meta name="referrer" content="no-referrer">
   <meta name="description" content="{% block description %}Des quiz de français expliqués pour progresser en 4e, en 3e et en seconde générale et technologique.{% endblock %}">
   <title>{% block title %}L’atelier de français · Du collège au lycée{% endblock %}</title>
   <link rel="icon" href="{{ url_for('static', path='favicon.svg').path }}" type="image/svg+xml">

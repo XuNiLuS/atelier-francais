@@ -1,0 +1,30 @@
+{
+	admin off
+	persist_config off
+	auto_https off
+}
+
+(security_headers) {
+	header {
+		-Server
+		Content-Security-Policy "default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'; object-src 'none'"
+		X-Frame-Options "DENY"
+		X-Content-Type-Options "nosniff"
+		Referrer-Policy "no-referrer"
+		Permissions-Policy "camera=(), microphone=(), geolocation=()"
+		Cross-Origin-Resource-Policy "same-origin"
+	}
+}
+
+http://:8000 {
+	root * /srv
+	import security_headers
+	file_server {
+		hide .atelier-static-export .nojekyll _headers
+	}
+	handle_errors {
+		import security_headers
+		rewrite * /404.html
+		file_server
+	}
+}

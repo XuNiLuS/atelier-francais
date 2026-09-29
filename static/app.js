@@ -1,9 +1,8 @@
-/* Correction par FastAPI ou localement dans l’export statique. Parcours conservé dans cet onglet. */
+/* Correction locale. Le parcours de cet essai reste uniquement dans cet onglet. */
 'use strict';
 
 const quiz = JSON.parse(document.getElementById('quiz-data').textContent);
 const questions = quiz.questions;
-const apiBase = `/api/quizzes/${encodeURIComponent(quiz.id)}`;
 const form = document.getElementById('quiz-form');
 const panels = [...document.querySelectorAll('.question-panel')];
 const navigation = [...document.querySelectorAll('.question-nav')];
@@ -96,47 +95,14 @@ function element(tag, className, text) {
   return node;
 }
 
-async function postJSON(url, body) {
-  // L’export public fonctionne sans serveur. Les corrigés sont publics,
-  // comme les API de la version FastAPI : ce sont des exercices d’entraînement.
-  if (quiz.mode === 'static') {
-    const resultFor = (question, selected) => ({
-      id: question.id,
-      selected,
-      correct_answer: question.answer,
-      is_correct: selected === question.answer,
-      explanation: question.explanation,
-    });
-    if (url === `${apiBase}/check`) {
-      const question = questions.find((item) => item.id === body.question_id);
-      if (!question) throw new Error('Cette question est introuvable.');
-      return resultFor(question, body.answer);
-    }
-    if (url === `${apiBase}/submit`) {
-      const results = questions.map((question) => resultFor(question, body.answers[String(question.id)]));
-      return { results, total: questions.length, score: results.filter((result) => result.is_correct).length };
-    }
-    throw new Error('Cette opération est indisponible.');
-  }
-  const controller = new AbortController();
-  const timeout = setTimeout(() => controller.abort(), 15000);
-  try {
-    const response = await fetch(url, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(body),
-      signal: controller.signal,
-    });
-    const payload = await response.json();
-    if (!response.ok) {
-      throw new Error(typeof payload.error === 'string'
-        ? payload.error
-        : 'La correction est indisponible pour le moment. Réessaie.');
-    }
-    return payload;
-  } finally {
-    clearTimeout(timeout);
-  }
+function resultFor(question, selected) {
+  return {
+    id: question.id,
+    selected,
+    correct_answer: question.answer,
+    is_correct: selected === question.answer,
+    explanation: question.explanation,
+  };
 }
 
 function correctionMatches(question, result, selected) {
@@ -148,11 +114,6 @@ function correctionMatches(question, result, selected) {
     && typeof result.explanation === 'string' && result.explanation.trim();
 }
 
-function requestError(error) {
-  return error.name === 'AbortError' || error instanceof TypeError || error instanceof SyntaxError
-    ? 'Impossible de joindre la correction. Ton choix et tes réponses vérifiées sont conservés sur cette page ; réessaie dans un instant.'
-    : error.message;
-}
 
 function renderFeedback(question, result) {
   const panel = panels[questions.indexOf(question)];
@@ -175,7 +136,7 @@ function renderFeedback(question, result) {
   });
 }
 
-async function checkAnswer() {
+function checkAnswer() {
   const question = questions[currentIndex];
   if (checking || submitting || verifiedAnswers.has(question.id)) return;
   const selected = selectedAnswer(question);
@@ -189,7 +150,7 @@ async function checkAnswer() {
   message.textContent = '';
   updateControls();
   try {
-    const result = await postJSON(`${apiBase}/check`, { question_id: question.id, answer: selected });
+    const result = resultFor(question, selected);
     if (!correctionMatches(question, result, selected)) {
       throw new Error('La correction reçue est incomplète. Ton choix est conservé ; réessaie.');
     }
@@ -198,7 +159,7 @@ async function checkAnswer() {
     updateProgress();
   } catch (error) {
     checkFailed = true;
-    message.textContent = requestError(error);
+    message.textContent = error.message || 'Un problème empêche la correction. Recharge le quiz.';
   } finally {
     checking = false;
     updateControls();
@@ -257,7 +218,7 @@ function renderResults(payload) {
   document.getElementById('results-title').focus();
 }
 
-async function submitAnswers() {
+function submitAnswers() {
   if (checking || submitting) return;
   const missingIndex = questions.findIndex((question) => !verifiedAnswers.has(question.id));
   if (missingIndex !== -1) {
@@ -265,13 +226,14 @@ async function submitAnswers() {
     message.textContent = 'Il reste des réponses à vérifier. Vérifie celle-ci, puis les suivantes, avant de voir ton bilan.';
     return;
   }
-  // Envoyer les premières réponses vérifiées, jamais les choix encore en brouillon.
+  // Calculer le bilan à partir des premières réponses vérifiées.
   const answers = Object.fromEntries([...verifiedAnswers].map(([id, result]) => [String(id), result.selected]));
   submitting = true;
   message.textContent = '';
   updateControls();
   try {
-    const payload = await postJSON(`${apiBase}/submit`, { answers });
+    const results = questions.map((question) => resultFor(question, answers[String(question.id)]));
+    const payload = { results, total: questions.length, score: results.filter((result) => result.is_correct).length };
     const validResults = Array.isArray(payload.results)
       && payload.results.length === questions.length
       && new Set(payload.results.map((result) => result.id)).size === questions.length
@@ -285,7 +247,7 @@ async function submitAnswers() {
     }
     renderResults(payload);
   } catch (error) {
-    message.textContent = requestError(error);
+    message.textContent = error.message || 'Un problème empêche la correction. Recharge le quiz.';
   } finally {
     submitting = false;
     updateControls();
