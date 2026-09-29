@@ -1,4 +1,4 @@
-/* Le serveur corrige les réponses. Le navigateur conserve le parcours de cet essai. */
+/* Correction par FastAPI ou localement dans l’export statique. Parcours conservé dans cet onglet. */
 'use strict';
 
 const quiz = JSON.parse(document.getElementById('quiz-data').textContent);
@@ -97,6 +97,27 @@ function element(tag, className, text) {
 }
 
 async function postJSON(url, body) {
+  // L’export public fonctionne sans serveur. Les corrigés sont publics,
+  // comme les API de la version FastAPI : ce sont des exercices d’entraînement.
+  if (quiz.mode === 'static') {
+    const resultFor = (question, selected) => ({
+      id: question.id,
+      selected,
+      correct_answer: question.answer,
+      is_correct: selected === question.answer,
+      explanation: question.explanation,
+    });
+    if (url === `${apiBase}/check`) {
+      const question = questions.find((item) => item.id === body.question_id);
+      if (!question) throw new Error('Cette question est introuvable.');
+      return resultFor(question, body.answer);
+    }
+    if (url === `${apiBase}/submit`) {
+      const results = questions.map((question) => resultFor(question, body.answers[String(question.id)]));
+      return { results, total: questions.length, score: results.filter((result) => result.is_correct).length };
+    }
+    throw new Error('Cette opération est indisponible.');
+  }
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), 15000);
   try {

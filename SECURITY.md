@@ -73,6 +73,14 @@ Aucun cookie ni CORS permissif n’est ajouté. Les API n’enregistrent pas de 
 
 Les journaux de l’hébergeur ou de son proxy peuvent contenir les adresses IP et les URL visitées. Leur accès, leur contenu et leur durée de conservation doivent être configurés lors de la mise en ligne. Aucune donnée élève n’a été envoyée à un scanner distant : les analyses d’image ont porté sur une archive locale ; les consultations de vulnérabilités utilisent les noms et versions des paquets.
 
+## Export statique
+
+`scripts/export_static.py` produit uniquement les pages et ressources à publier, sans serveur Python ni conteneur en ligne. Les corrections sont effectuées dans le navigateur et les réponses figurent donc dans les fichiers publics. Aucun compte, cookie ou stockage de résultats n’est ajouté. Les résultats restent destinés à l’entraînement.
+
+Les pages exportées conservent l’échappement HTML/JSON et une CSP définie par balise meta. Le fichier `_headers` fournit les protections HTTP à Cloudflare Pages ; GitHub Pages ne l’applique pas. En particulier, une CSP meta ne peut pas interdire les iframes avec `frame-ancestors` : cette protection ne doit pas être considérée comme active sur GitHub Pages. Voir [le guide de déploiement](docs/DEPLOIEMENT.md).
+
+Les conditions ci-dessous concernent l’hébergement de la variante FastAPI/Docker.
+
 ## Conditions à vérifier chez l’hébergeur
 
 1. HTTPS avec certificat valide et renouvellement, redirection HTTP vers HTTPS, puis HSTS une fois le domaine validé. Ce dépôt ne configure pas de certificat ni de domaine public.

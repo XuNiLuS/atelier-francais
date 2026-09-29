@@ -74,6 +74,17 @@ Sur Windows PowerShell, créer l’environnement avec `py -m venv .venv`, puis l
 
 ## Préparer un hébergement public
 
+Pour une publication gratuite **sans mise en veille**, un export HTML/CSS/JavaScript est disponible. Le projet Python/Docker reste utilisable ; la version exportée corrige les réponses dans le navigateur. La procédure et le déploiement automatique GitHub Pages sont décrits dans [docs/DEPLOIEMENT.md](docs/DEPLOIEMENT.md).
+
+```sh
+python scripts/export_static.py
+python -m http.server 8080 --bind 127.0.0.1 --directory dist
+```
+
+Le deuxième appel sert uniquement à prévisualiser l’export localement. Publier **le contenu de `dist/`**, jamais le dossier entier du projet. Pour GitHub Pages, le workflow prépare automatiquement le préfixe d’URL du dépôt et n’envoie que cet export. Dans cette version publique, les bonnes réponses et les explications sont incluses dans les pages : les scores sont des entraînements et non des notes authentifiées.
+
+Les conditions ci-dessous concernent un hébergement du **serveur FastAPI** ; l’export statique ne déploie pas de serveur Python.
+
 L’application convient à un entraînement libre : aucun compte, cookie de session, enregistrement de résultat ou donnée personnelle n’est demandé. Un visiteur peut demander les corrections directement à l’API et recommencer ; le score n’est pas une note d’évaluation authentifiée. Le serveur d’hébergement et son proxy peuvent cependant conserver des adresses IP dans leurs journaux : minimiser ces journaux et leur durée de conservation.
 
 L’audit et ses limites sont détaillés dans [SECURITY.md](SECURITY.md). Avant l’ouverture au public :
@@ -118,7 +129,7 @@ La liste du catalogue détermine les quiz accessibles. Les chemins de fichiers n
 | `POST /api/quizzes/{quiz_id}/check` | Envoyer `{"question_id":1,"answer":"a"}` pour recevoir la correction et l’explication du quiz choisi. |
 | `POST /api/quizzes/{quiz_id}/submit` | Envoyer `{"answers":{"1":"a","2":"b",...}}` pour recevoir le bilan de ce quiz. |
 
-Les routes historiques `/api/check` et `/api/submit` restent compatibles avec le premier quiz de 4e. L’interface utilise les routes identifiant explicitement le quiz. Les solutions ne sont pas incluses dans les pages initiales. Un identifiant de quiz inconnu renvoie 404.
+Les routes historiques `/api/check` et `/api/submit` restent compatibles avec le premier quiz de 4e. L’interface utilise les routes identifiant explicitement le quiz. Dans la version FastAPI, les solutions ne sont pas incluses dans les pages initiales. Un identifiant de quiz inconnu renvoie 404.
 
 ## Structure
 

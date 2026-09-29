@@ -280,7 +280,7 @@ def create_app(allowed_hosts=None):
     def render_page(request, name, **context):
         return templates.TemplateResponse(
             request=request, name=name,
-            context={"levels": LEVELS, "current_level": None, **context},
+            context={"levels": LEVELS, "current_level": None, "site_root": "", "static_mode": False, **context},
         )
 
     @app.exception_handler(RequestValidationError)

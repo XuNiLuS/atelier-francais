@@ -6,7 +6,7 @@
 {% block skip_label %}Aller à la question{% endblock %}
 {% block content %}
   <main class="page" id="main-content">
-    <a class="back-link" href="/niveaux/{{ current_level.id }}">← Les quiz de {{ current_level.name }}</a>
+    <a class="back-link" href="{{ site_root }}/niveaux/{{ current_level.id }}">← Les quiz de {{ current_level.name }}</a>
     <div class="page-intro">
       <div class="eyebrow"><span class="short-line" aria-hidden="true"></span> {{ current_level.name }} · {{ quiz.eyebrow }}</div>
       <h1>{{ quiz.title }}</h1>
@@ -77,7 +77,7 @@
 
     <section id="results" class="results" hidden aria-labelledby="results-title">
       <div class="result-summary">
-        <div><div class="eyebrow">TON BILAN</div><h2 id="results-title" tabindex="-1">Le point sur tes réponses.</h2><p id="result-message"></p><div class="result-actions"><button type="button" class="button button-primary" id="restart-button">Recommencer le QCM</button><a class="button button-secondary" href="#correction-list">Relire les explications</a><a class="button button-secondary" href="/niveaux/{{ current_level.id }}">Choisir un autre quiz</a></div></div>
+        <div><div class="eyebrow">TON BILAN</div><h2 id="results-title" tabindex="-1">Le point sur tes réponses.</h2><p id="result-message"></p><div class="result-actions"><button type="button" class="button button-primary" id="restart-button">Recommencer le QCM</button><a class="button button-secondary" href="#correction-list">Relire les explications</a><a class="button button-secondary" href="{{ site_root }}/niveaux/{{ current_level.id }}">Choisir un autre quiz</a></div></div>
         <div class="score"><span id="score-value">0</span><span>sur {{ questions|length }}</span><small>bonnes réponses</small></div>
       </div>
       <details class="topic-breakdown" id="topic-breakdown" open><summary>Le détail par notion</summary><div class="tense-scores" id="tense-scores"></div></details>
@@ -87,4 +87,4 @@
   </main>
 
 {% endblock %}
-{% block data %}<script type="application/json" id="quiz-data">{{ {"id": quiz.id, "questions": questions}|tojson }}</script>{% endblock %}
+{% block data %}<script type="application/json" id="quiz-data">{{ {"id": quiz.id, "questions": questions, "mode": "static" if static_mode else "server"}|tojson }}</script>{% endblock %}

@@ -17,7 +17,7 @@
   {% if not current_level %}
   <section class="level-cards" aria-label="Les trois niveaux">
     {% for level in levels %}
-    <a class="level-card" href="/niveaux/{{ level.id }}"><span class="eyebrow">{{ level.stage }}</span><h2>{{ level.name }}</h2><p>{{ level.description }}</p><span class="card-link">Voir les quiz <span aria-hidden="true">↗</span></span></a>
+    <a class="level-card" href="{{ site_root }}/niveaux/{{ level.id }}"><span class="eyebrow">{{ level.stage }}</span><h2>{{ level.name }}</h2><p>{{ level.description }}</p><span class="card-link">Voir les quiz <span aria-hidden="true">↗</span></span></a>
     {% endfor %}
   </section>
   {% endif %}
@@ -30,11 +30,11 @@
         <div class="quiz-card-meta"><span class="small-pill">{% for level in levels if level.id == quiz.level %}{{ level.name }}{% endfor %}</span><span>{{ quiz.count }} questions · 10–15 min</span></div>
         <h3>{{ quiz.title }}</h3><p>{{ quiz.description }}</p>
         <ul>{% for objective in quiz.objectives %}<li>{{ objective }}</li>{% endfor %}</ul>
-        <a class="button button-primary" href="/quiz/{{ quiz.id }}" aria-label="Commencer {{ quiz.title }} — {{ quiz.level }}">Commencer le quiz <span aria-hidden="true">→</span></a>
+        <a class="button button-primary" href="{{ site_root }}/quiz/{{ quiz.id }}" aria-label="Commencer {{ quiz.title }} — {{ quiz.level }}">Commencer le quiz <span aria-hidden="true">→</span></a>
       </article>
       {% endfor %}
     </div>
   </section>
-  <aside class="curriculum-note"><strong>Des repères adaptés à ta classe.</strong> Au collège, ces parcours anticipent les nouveaux programmes : 4e à la rentrée 2027 et 3e à la rentrée 2028. Ils travaillent une partie des notions de grammaire, avec des explications pour justifier tes choix. <a href="/programmes">Découvrir la progression et les sources</a>.</aside>
+  <aside class="curriculum-note"><strong>Des repères adaptés à ta classe.</strong> Au collège, ces parcours anticipent les nouveaux programmes : 4e à la rentrée 2027 et 3e à la rentrée 2028. Ils travaillent une partie des notions de grammaire, avec des explications pour justifier tes choix. <a href="{{ site_root }}/programmes">Découvrir la progression et les sources</a>.</aside>
 </main>
 {% endblock %}
