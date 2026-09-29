@@ -1,0 +1,128 @@
+[
+  {
+    "id": "4e-temps-recit",
+    "level": "4e",
+    "title": "Les temps du récit",
+    "description": "Passé simple et imparfait : reconnaître ce que les temps expriment.",
+    "eyebrow": "Reconnaître les valeurs",
+    "objectives": [
+      "Description, habitude et arrière-plan",
+      "Événements et actions délimitées"
+    ],
+    "help": [
+      {
+        "title": "L’imparfait",
+        "text": "Il décrit, exprime une habitude ou montre une action en cours à l’arrière-plan."
+      },
+      {
+        "title": "Le passé simple",
+        "text": "Il présente un événement au premier plan ou une action envisagée dans son ensemble. Une action peut durer longtemps !"
+      }
+    ]
+  },
+  {
+    "id": "4e-grammaire",
+    "level": "4e",
+    "title": "Classes, fonctions et accords",
+    "description": "Identifier les mots et les groupes pour comprendre les accords.",
+    "eyebrow": "Consolider les bases",
+    "objectives": [
+      "Distinguer classe grammaticale et fonction",
+      "Repérer les liens qui commandent un accord"
+    ],
+    "help": [
+      {
+        "title": "Classe et fonction",
+        "text": "La classe indique ce qu’est un mot (nom, adjectif, pronom…). La fonction indique son rôle dans la phrase (sujet, complément…)."
+      },
+      {
+        "title": "Une manipulation utile",
+        "text": "Remplace un groupe par un pronom ou cherche le mot auquel il se rapporte. Pour un accord, identifie d’abord le donneur d’accord."
+      }
+    ]
+  },
+  {
+    "id": "3e-temps-recit",
+    "level": "3e",
+    "title": "Les temps du récit",
+    "description": "Justifier les valeurs des temps à partir d’un contexte plus riche.",
+    "eyebrow": "Interpréter les indices",
+    "objectives": [
+      "Premier plan et arrière-plan du récit",
+      "Durée et répétition : éviter les faux indices"
+    ],
+    "help": [
+      {
+        "title": "Lire le contexte",
+        "text": "Une durée longue n’impose pas l’imparfait. Une série de faits répétés peut aussi être présentée comme un ensemble délimité au passé simple."
+      },
+      {
+        "title": "Justifier son choix",
+        "text": "Repère les bornes de temps, les expressions d’habitude et les relations entre les actions. Observe ce qui fait avancer le récit."
+      }
+    ]
+  },
+  {
+    "id": "3e-phrase-complexe",
+    "level": "3e",
+    "title": "La phrase complexe",
+    "description": "Comprendre comment les propositions s’articulent et se complètent.",
+    "eyebrow": "Relier les propositions",
+    "objectives": [
+      "Juxtaposition, coordination et subordination",
+      "Nature et fonction des subordonnées"
+    ],
+    "help": [
+      {
+        "title": "Repérer les propositions",
+        "text": "Cherche les verbes conjugués, puis les mots ou la ponctuation qui relient les propositions."
+      },
+      {
+        "title": "Reconnaître une subordonnée",
+        "text": "Une relative précise un antécédent. Une complétive complète notamment un verbe. Une interrogative indirecte rapporte une question ; une circonstancielle apporte une circonstance."
+      }
+    ]
+  },
+  {
+    "id": "seconde-temps-recit",
+    "level": "seconde",
+    "title": "Temps et effets de récit",
+    "description": "Affiner l’analyse du passé simple et de l’imparfait et de leurs effets.",
+    "eyebrow": "Analyser le point de vue sur l’action",
+    "objectives": [
+      "Valeurs temporelles et aspectuelles",
+      "Interprétation des choix du narrateur"
+    ],
+    "help": [
+      {
+        "title": "L’aspect",
+        "text": "L’aspect est la façon de présenter le déroulement d’un procès (une action ou un état). Le passé simple le saisit globalement, avec des limites ; l’imparfait le montre de l’intérieur, sans en présenter les limites."
+      },
+      {
+        "title": "Durée et présentation",
+        "text": "« Borné » ne signifie pas « bref ». Distingue la durée réelle de l’action et la manière dont le narrateur choisit de la présenter."
+      }
+    ]
+  },
+  {
+    "id": "seconde-syntaxe",
+    "level": "seconde",
+    "title": "Syntaxe et propositions relatives",
+    "description": "Analyser les relations entre propositions et le rôle des pronoms relatifs.",
+    "eyebrow": "Préciser l’analyse grammaticale",
+    "objectives": [
+      "Relations syntaxiques et logiques",
+      "Antécédent et fonction du pronom relatif"
+    ],
+    "help": [
+      {
+        "title": "Deux analyses distinctes",
+        "text": "La proposition relative a une fonction par rapport à son antécédent. Le pronom relatif a sa propre fonction à l’intérieur de cette proposition."
+      },
+      {
+        "title": "Reconstituer la phrase",
+        "text": "Remplace le pronom relatif par son antécédent pour retrouver sa fonction : « le livre que je lis » → « je lis le livre ». Observe aussi les prépositions."
+      }
+    ]
+  }
+]

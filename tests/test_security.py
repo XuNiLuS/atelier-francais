@@ -68,7 +68,7 @@ class SecurityTests(SecurityAssertions, unittest.TestCase):
 
     def test_security_headers_cover_pages_assets_health_and_errors(self):
         for path, status in (
-            ("/", 200), ("/health", 200), ("/static/app.js", 200),
+            ("/", 200), ("/quiz/4e-temps-recit", 200), ("/health", 200), ("/static/app.js", 200),
             ("/static/style.css", 200), ("/does-not-exist", 404),
             ("/api/check", 405),
         ):
@@ -121,7 +121,7 @@ class SecurityTests(SecurityAssertions, unittest.TestCase):
             self.assertEqual(client.get("/", headers={"Host": "attacker.example"}).status_code, 400)
 
     def test_static_resources_use_relative_urls_and_ignore_forwarded_host(self):
-        response = self.client.get("/", headers={
+        response = self.client.get("/quiz/4e-temps-recit", headers={
             "X-Forwarded-Host": "attacker.example",
             "X-Forwarded-Proto": "https",
         })
@@ -162,12 +162,12 @@ class SecurityTests(SecurityAssertions, unittest.TestCase):
         questions = copy.deepcopy(quiz_app.load_questions())
         attack = '</script><script id="xss-probe">alert("injection")</script>'
         questions[0]["before"] = attack
-        questions[0]["verb"] = '<img src=x onerror="alert(1)">'
+        questions[0]["focus"] = '<img src=x onerror="alert(1)">'
         questions[0]["options"][0]["label"] = '<svg onload="alert(2)">'
         with patch.object(quiz_app, "load_questions", return_value=questions):
             injected_app = quiz_app.create_app(allowed_hosts=["localhost"])
         with TestClient(injected_app, base_url="http://localhost") as client:
-            response = client.get("/")
+            response = client.get("/quiz/4e-temps-recit")
         self.assertEqual(response.status_code, 200)
         self.assertNotIn(attack, response.text)
         parser = TagCollector()
@@ -182,8 +182,8 @@ class SecurityTests(SecurityAssertions, unittest.TestCase):
         )
         self.assertIsNotNone(embedded)
         decoded = json.loads(embedded.group(1))
-        self.assertEqual(decoded[0]["before"], attack)
-        self.assertEqual(decoded[0]["verb"], questions[0]["verb"])
+        self.assertEqual(decoded["questions"][0]["before"], attack)
+        self.assertEqual(decoded["questions"][0]["focus"], questions[0]["focus"])
 
     def test_unexpected_errors_do_not_leak_details(self):
         private_detail = "private-database-password /home/teacher/secret.py"

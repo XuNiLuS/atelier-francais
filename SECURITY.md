@@ -2,6 +2,8 @@
 
 Audit local du 29 septembre 2026, réalisé avant un éventuel hébergement public. Il couvre le code Python et JavaScript, les templates, les dépendances réellement présentes dans l’image Linux ARM64, la configuration Docker et des essais de requêtes hostiles. Aucun service public n’a été déployé ni testé.
 
+**Évolution du catalogue :** la version avec six quiz conserve les protections décrites ici. Ses 40 tests vérifient aussi l’isolation des corrections par quiz, le refus des identifiants inconnus et l’absence d’accès HTTP aux fichiers du catalogue. Les JSON et digests de scan ci-dessous restent ceux de l’image auditée avant cette évolution ; ils ne constituent pas un scan de chaque reconstruction ultérieure. Refaire le scan de l’image retenue pour une publication.
+
 ## Conclusion et limites
 
 Les scénarios testés n’ont pas permis de lire les fichiers du serveur, d’exécuter une injection HTML/JavaScript, ni d’obtenir des détails internes dans les réponses. Plusieurs défauts de préparation à Internet ont été corrigés ci-dessous. Cela ne constitue ni une certification ni une garantie d’absence de faille.

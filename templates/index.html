@@ -1,29 +1,16 @@
-<!doctype html>
-<html lang="fr">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Un QCM de français pour les élèves de 4e : reconnaître les valeurs du passé simple et de l’imparfait, en 20 questions expliquées.">
-  <title>L’atelier des temps · Français 4e</title>
-  <link rel="icon" href="{{ url_for('static', path='favicon.svg').path }}" type="image/svg+xml">
-  <link rel="stylesheet" href="{{ url_for('static', path='style.css').path }}">
-  <script src="{{ url_for('static', path='app.js').path }}" defer></script>
-</head>
-<body>
-  <a class="skip-link" href="#question-title">Aller à la question</a>
-  <header class="site-header">
-    <a class="brand" href="/" aria-label="L’atelier des temps, accueil">
-      <span class="brand-mark" aria-hidden="true">a<span>.</span></span>
-      <span>L’atelier <strong>des temps</strong></span>
-    </a>
-    <span class="class-label">FRANÇAIS <span>4<sup>e</sup></span></span>
-  </header>
-
-  <main class="page">
+{% extends "base.html" %}
+{% block title %}{{ quiz.title }} · {{ current_level.name }} · L’atelier de français{% endblock %}
+{% block description %}{{ quiz.description }} {{ questions|length }} questions avec une correction expliquée, niveau {{ current_level.name }}.{% endblock %}
+{% block scripts %}<script src="{{ url_for('static', path='app.js').path }}" defer></script>{% endblock %}
+{% block skip_target %}#question-title{% endblock %}
+{% block skip_label %}Aller à la question{% endblock %}
+{% block content %}
+  <main class="page" id="main-content">
+    <a class="back-link" href="/niveaux/{{ current_level.id }}">← Les quiz de {{ current_level.name }}</a>
     <div class="page-intro">
-      <div class="eyebrow"><span class="short-line" aria-hidden="true"></span> LES TEMPS DU RÉCIT</div>
-      <h1>À chaque temps, <em>sa valeur.</em></h1>
-      <p>Passé simple et imparfait : à toi de comprendre ce qu’ils expriment.</p>
+      <div class="eyebrow"><span class="short-line" aria-hidden="true"></span> {{ current_level.name }} · {{ quiz.eyebrow }}</div>
+      <h1>{{ quiz.title }}</h1>
+      <p>{{ quiz.description }}</p>
     </div>
 
     <noscript><p class="notice">Active JavaScript dans ton navigateur pour répondre au QCM et afficher ta correction.</p></noscript>
@@ -46,11 +33,9 @@
         <details class="help">
           <summary><span class="help-icon" aria-hidden="true">?</span> Un coup de pouce</summary>
           <div class="help-content">
-            <h3>L’imparfait</h3>
-            <p>Il peut décrire, exprimer une habitude ou montrer une action en cours à l’arrière-plan.</p>
-            <h3>Le passé simple</h3>
-            <p>Il peut présenter un événement de premier plan, une succession d’actions ou une action achevée et délimitée.</p>
-            <p class="help-tip">Lis les indices de la phrase : une action au passé simple n’est pas forcément courte !</p>
+            {% for item in quiz.help %}
+            <h3>{{ item.title }}</h3><p>{{ item.text }}</p>
+            {% endfor %}
           </div>
         </details>
         <div class="chapter-label" aria-hidden="true"><span>01</span> GRAMMAIRE · CONJUGAISON</div>
@@ -58,15 +43,15 @@
 
       <section class="exercise" aria-label="Questionnaire">
         <form id="quiz-form">
-          <div class="exercise-top"><span id="question-position">QUESTION 01 / {{ questions|length }}</span><span class="tense-tag" id="tense-tag">{{ questions[0].tense }}</span></div>
-          <h2 id="question-title" tabindex="-1">Quelle est la valeur du verbe souligné ?</h2>
+          <div class="exercise-top"><span id="question-position">QUESTION 01 / {{ questions|length }}</span><span class="tense-tag" id="tense-tag">{{ questions[0].label }}</span></div>
+          <h2 id="question-title" tabindex="-1">{{ questions[0].prompt }}</h2>
           <p class="instruction">Choisis une réponse, puis vérifie-la pour lire l’explication. Une fois vérifiée, ta réponse est définitive pour cet essai.</p>
 
           {% for question in questions %}
           <div class="question-panel" data-index="{{ loop.index0 }}" data-id="{{ question.id }}" {% if not loop.first %}hidden{% endif %}>
-            <blockquote class="sentence" id="sentence-{{ question.id }}"><span class="quote-mark" aria-hidden="true">“</span><p>{{ question.before }}<mark title="Verbe à analyser">{{ question.verb }}</mark>{{ question.after }}</p></blockquote>
+            <blockquote class="sentence" id="sentence-{{ question.id }}"><span class="quote-mark" aria-hidden="true">“</span><p>{{ question.before }}<mark title="Élément à analyser">{{ question.focus }}</mark>{{ question.after }}</p></blockquote>
             <fieldset aria-describedby="sentence-{{ question.id }}">
-              <legend class="sr-only">Question {{ loop.index }} : choisis la valeur du verbe « {{ question.verb }} »</legend>
+              <legend class="sr-only">Question {{ loop.index }} : {{ question.prompt }} — « {{ question.focus }} »</legend>
               <div class="options">
                 {% for option in question.options %}
                 <label class="option"><input type="radio" name="question-{{ question.id }}" value="{{ option.id }}"><span class="option-letter" aria-hidden="true">{{ option.id|upper }}</span><span class="option-text">{{ option.label }}</span><span class="option-check" aria-hidden="true">✓</span></label>
@@ -92,16 +77,14 @@
 
     <section id="results" class="results" hidden aria-labelledby="results-title">
       <div class="result-summary">
-        <div><div class="eyebrow">TON BILAN</div><h2 id="results-title" tabindex="-1">Le point sur tes réponses.</h2><p id="result-message"></p><div class="result-actions"><button type="button" class="button button-primary" id="restart-button">Recommencer le QCM</button><a class="button button-secondary" href="#correction-list">Relire les explications</a></div></div></div>
+        <div><div class="eyebrow">TON BILAN</div><h2 id="results-title" tabindex="-1">Le point sur tes réponses.</h2><p id="result-message"></p><div class="result-actions"><button type="button" class="button button-primary" id="restart-button">Recommencer le QCM</button><a class="button button-secondary" href="#correction-list">Relire les explications</a><a class="button button-secondary" href="/niveaux/{{ current_level.id }}">Choisir un autre quiz</a></div></div>
         <div class="score"><span id="score-value">0</span><span>sur {{ questions|length }}</span><small>bonnes réponses</small></div>
       </div>
-      <div class="tense-scores" id="tense-scores"></div>
+      <details class="topic-breakdown" id="topic-breakdown" open><summary>Le détail par notion</summary><div class="tense-scores" id="tense-scores"></div></details>
       <div class="correction-heading"><h3>Comprendre chaque réponse</h3><span>Le contexte donne les indices.</span></div>
       <div id="correction-list" class="correction-list"></div>
     </section>
   </main>
 
-  <footer class="site-footer"><span>L’atelier des temps</span><span>Un peu de pratique, beaucoup de progrès.</span></footer>
-  <script type="application/json" id="quiz-data">{{ questions|tojson }}</script>
-</body>
-</html>
+{% endblock %}
+{% block data %}<script type="application/json" id="quiz-data">{{ {"id": quiz.id, "questions": questions}|tojson }}</script>{% endblock %}

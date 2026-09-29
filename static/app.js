@@ -1,7 +1,9 @@
 /* Le serveur corrige les réponses. Le navigateur conserve le parcours de cet essai. */
 'use strict';
 
-const questions = JSON.parse(document.getElementById('quiz-data').textContent);
+const quiz = JSON.parse(document.getElementById('quiz-data').textContent);
+const questions = quiz.questions;
+const apiBase = `/api/quizzes/${encodeURIComponent(quiz.id)}`;
 const form = document.getElementById('quiz-form');
 const panels = [...document.querySelectorAll('.question-panel')];
 const navigation = [...document.querySelectorAll('.question-nav')];
@@ -69,7 +71,8 @@ function showQuestion(index, focus = true) {
   const position = `${String(index + 1).padStart(2, '0')} / ${questions.length}`;
   document.getElementById('question-position').textContent = `QUESTION ${position}`;
   document.getElementById('question-counter').textContent = position;
-  document.getElementById('tense-tag').textContent = questions[index].tense;
+  document.getElementById('tense-tag').textContent = questions[index].label;
+  document.getElementById('question-title').textContent = questions[index].prompt;
   message.textContent = '';
   checkFailed = false;
   updateControls();
@@ -165,7 +168,7 @@ async function checkAnswer() {
   message.textContent = '';
   updateControls();
   try {
-    const result = await postJSON('/api/check', { question_id: question.id, answer: selected });
+    const result = await postJSON(`${apiBase}/check`, { question_id: question.id, answer: selected });
     if (!correctionMatches(question, result, selected)) {
       throw new Error('La correction reçue est incomplète. Ton choix est conservé ; réessaie.');
     }
@@ -186,22 +189,22 @@ async function checkAnswer() {
 function renderResults(payload) {
   const list = document.getElementById('correction-list');
   list.replaceChildren();
-  const scoresByTense = new Map();
+  const scoresByTopic = new Map();
 
   payload.results.forEach((result) => {
     const question = questions.find((item) => item.id === result.id);
-    const score = scoresByTense.get(question.tense) || { correct: 0, total: 0 };
+    const score = scoresByTopic.get(question.label) || { correct: 0, total: 0 };
     score.total += 1;
     if (result.is_correct) score.correct += 1;
-    scoresByTense.set(question.tense, score);
+    scoresByTopic.set(question.label, score);
 
     const card = element('article', `correction-card${result.is_correct ? '' : ' incorrect'}`);
     const meta = element('div', 'correction-meta');
-    meta.append(element('span', '', `QUESTION ${String(questions.indexOf(question) + 1).padStart(2, '0')} · ${question.tense}`));
+    meta.append(element('span', '', `QUESTION ${String(questions.indexOf(question) + 1).padStart(2, '0')} · ${question.label}`));
     meta.append(element('span', 'answer-status', result.is_correct ? '✓ Bonne réponse' : 'À revoir'));
     const sentence = element('p', 'correction-sentence');
-    sentence.append(document.createTextNode(question.before), element('mark', '', question.verb), document.createTextNode(question.after));
-    card.append(meta, sentence);
+    sentence.append(document.createTextNode(question.before), element('mark', '', question.focus), document.createTextNode(question.after));
+    card.append(meta, element('h4', 'correction-prompt', question.prompt), sentence);
     const selected = question.options.find((option) => option.id === result.selected);
     const correct = question.options.find((option) => option.id === result.correct_answer);
     if (!result.is_correct) card.append(element('p', 'correction-answer wrong', `Ta réponse : ${selected.label}`));
@@ -213,14 +216,15 @@ function renderResults(payload) {
 
   document.getElementById('score-value').textContent = payload.score;
   let feedback;
-  if (payload.score === payload.total) feedback = 'Tout juste ! Tu as bien repéré le rôle des temps dans le récit.';
-  else if (payload.score >= 15) feedback = 'De bons repères ! Lis les explications pour comprendre les quelques pièges.';
-  else if (payload.score >= 10) feedback = 'Tu es sur la bonne voie. Appuie-toi sur les indices de chaque phrase pour progresser.';
+  if (payload.score === payload.total) feedback = 'Tout juste ! Tu as su observer les phrases et analyser les indices.';
+  else if (payload.score / payload.total >= 0.75) feedback = 'De bons repères ! Lis les explications pour comprendre les quelques pièges.';
+  else if (payload.score / payload.total >= 0.5) feedback = 'Tu es sur la bonne voie. Appuie-toi sur les indices de chaque phrase pour progresser.';
   else feedback = 'Chaque essai aide à progresser. Prends le temps de lire les explications, puis réessaie.';
   document.getElementById('result-message').textContent = feedback;
   const tenseScores = document.getElementById('tense-scores');
   tenseScores.replaceChildren();
-  for (const [tense, score] of scoresByTense) {
+  document.getElementById('topic-breakdown').open = scoresByTopic.size <= 6;
+  for (const [tense, score] of scoresByTopic) {
     const item = element('div', 'tense-score');
     item.append(element('span', '', tense), element('strong', '', `${score.correct} / ${score.total}`));
     tenseScores.append(item);
@@ -246,7 +250,7 @@ async function submitAnswers() {
   message.textContent = '';
   updateControls();
   try {
-    const payload = await postJSON('/api/submit', { answers });
+    const payload = await postJSON(`${apiBase}/submit`, { answers });
     const validResults = Array.isArray(payload.results)
       && payload.results.length === questions.length
       && new Set(payload.results.map((result) => result.id)).size === questions.length

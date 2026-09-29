@@ -19,7 +19,8 @@ RUN apt-get update \
 COPY app.py ./
 COPY templates/ ./templates/
 COPY static/ ./static/
-COPY data/questions.json ./data/questions.json
+COPY data/catalog.json ./data/catalog.json
+COPY data/quizzes/ ./data/quizzes/
 
 USER atelier
 

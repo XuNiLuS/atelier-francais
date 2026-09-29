@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block title %}{% if current_level %}Quiz de {{ current_level.name }} · {% endif %}L’atelier de français{% endblock %}
+{% block content %}
+<main class="page catalog-page" id="main-content">
+  <div class="page-intro catalog-intro">
+    <div class="eyebrow"><span class="short-line" aria-hidden="true"></span> {% if current_level %}{{ current_level.stage }} · {{ current_level.name }}{% else %}DU COLLÈGE AU LYCÉE{% endif %}</div>
+    {% if current_level %}
+    <h1>Le français en <em>{{ current_level.name }}.</em></h1>
+    <p>{{ current_level.description }}</p>
+    {% else %}
+    <h1>Un peu de pratique,<br><em>beaucoup de progrès.</em></h1>
+    <p>Choisis ton niveau, observe les phrases et comprends chaque réponse.<br>Des quiz de grammaire pour avancer à ton rythme.</p>
+    {% endif %}
+    <div class="catalog-pills"><span>20 questions par quiz</span><span>Correction à chaque réponse</span><span>Sans inscription</span></div>
+  </div>
+
+  {% if not current_level %}
+  <section class="level-cards" aria-label="Les trois niveaux">
+    {% for level in levels %}
+    <a class="level-card" href="/niveaux/{{ level.id }}"><span class="eyebrow">{{ level.stage }}</span><h2>{{ level.name }}</h2><p>{{ level.description }}</p><span class="card-link">Voir les quiz <span aria-hidden="true">↗</span></span></a>
+    {% endfor %}
+  </section>
+  {% endif %}
+
+  <section class="quiz-catalog" aria-labelledby="catalog-title">
+    <div class="catalog-heading"><div><div class="eyebrow">À TOI DE JOUER</div><h2 id="catalog-title">{% if current_level %}Tes quiz de {{ current_level.name }}{% else %}Les premiers parcours{% endif %}</h2></div><span>{{ quizzes|length }} quiz disponibles</span></div>
+    <div class="quiz-cards">
+      {% for quiz in quizzes %}
+      <article class="quiz-card">
+        <div class="quiz-card-meta"><span class="small-pill">{% for level in levels if level.id == quiz.level %}{{ level.name }}{% endfor %}</span><span>{{ quiz.count }} questions · 10–15 min</span></div>
+        <h3>{{ quiz.title }}</h3><p>{{ quiz.description }}</p>
+        <ul>{% for objective in quiz.objectives %}<li>{{ objective }}</li>{% endfor %}</ul>
+        <a class="button button-primary" href="/quiz/{{ quiz.id }}" aria-label="Commencer {{ quiz.title }} — {{ quiz.level }}">Commencer le quiz <span aria-hidden="true">→</span></a>
+      </article>
+      {% endfor %}
+    </div>
+  </section>
+  <aside class="curriculum-note"><strong>Des repères adaptés à ta classe.</strong> Au collège, ces parcours anticipent les nouveaux programmes : 4e à la rentrée 2027 et 3e à la rentrée 2028. Ils travaillent une partie des notions de grammaire, avec des explications pour justifier tes choix. <a href="/programmes">Découvrir la progression et les sources</a>.</aside>
+</main>
+{% endblock %}

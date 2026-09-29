@@ -1,0 +1,562 @@
+[
+  {
+    "id": 1,
+    "label": "Classes de mots",
+    "prompt": "Quelle est la classe grammaticale du mot souligné ?",
+    "before": "Une lumière ",
+    "focus": "pâle",
+    "after": " éclairait le couloir.",
+    "options": [
+      {
+        "id": "a",
+        "label": "Adverbe"
+      },
+      {
+        "id": "b",
+        "label": "Adjectif"
+      },
+      {
+        "id": "c",
+        "label": "Nom commun"
+      },
+      {
+        "id": "d",
+        "label": "Déterminant"
+      }
+    ],
+    "answer": "b",
+    "explanation": "« Pâle » caractérise le nom « lumière ». Il peut varier avec ce nom : « des lumières pâles ». C’est un adjectif ; sa fonction dans ce groupe est épithète."
+  },
+  {
+    "id": 2,
+    "label": "Classes de mots",
+    "prompt": "Quelle est la classe grammaticale du mot souligné ?",
+    "before": "Ces billets, je ",
+    "focus": "les",
+    "after": " garde pour demain.",
+    "options": [
+      {
+        "id": "a",
+        "label": "Pronom personnel"
+      },
+      {
+        "id": "b",
+        "label": "Article défini"
+      },
+      {
+        "id": "c",
+        "label": "Adjectif"
+      },
+      {
+        "id": "d",
+        "label": "Préposition"
+      }
+    ],
+    "answer": "a",
+    "explanation": "« Les » remplace le groupe « ces billets » : « je garde ces billets » devient « je les garde ». Placé devant le verbe, il est ici un pronom personnel, et non un article devant un nom."
+  },
+  {
+    "id": 3,
+    "label": "Classes de mots",
+    "prompt": "Quelle est la classe grammaticale du mot souligné ?",
+    "before": "",
+    "focus": "Quelques",
+    "after": " joueuses rangent les ballons après la séance.",
+    "options": [
+      {
+        "id": "a",
+        "label": "Pronom personnel"
+      },
+      {
+        "id": "b",
+        "label": "Adverbe"
+      },
+      {
+        "id": "c",
+        "label": "Nom commun"
+      },
+      {
+        "id": "d",
+        "label": "Déterminant indéfini"
+      }
+    ],
+    "answer": "d",
+    "explanation": "« Quelques » accompagne le nom « joueuses » et indique une quantité imprécise. Il pourrait être remplacé par « plusieurs » ; c’est un déterminant indéfini au pluriel."
+  },
+  {
+    "id": 4,
+    "label": "Classes de mots",
+    "prompt": "Quelle est la classe grammaticale du mot souligné ?",
+    "before": "La lampe brille ",
+    "focus": "faiblement",
+    "after": " dans la pièce.",
+    "options": [
+      {
+        "id": "a",
+        "label": "Adjectif"
+      },
+      {
+        "id": "b",
+        "label": "Pronom personnel"
+      },
+      {
+        "id": "c",
+        "label": "Adverbe"
+      },
+      {
+        "id": "d",
+        "label": "Préposition"
+      }
+    ],
+    "answer": "c",
+    "explanation": "« Faiblement » précise la manière dont la lampe brille. On peut le remplacer par « fortement » ; il reste invariable si l’on écrit « les lampes brillent faiblement ». C’est un adverbe."
+  },
+  {
+    "id": 5,
+    "label": "Classes de mots",
+    "prompt": "Quelle est la classe grammaticale du mot souligné ?",
+    "before": "Je crois ",
+    "focus": "que",
+    "after": " la porte est ouverte.",
+    "options": [
+      {
+        "id": "a",
+        "label": "Conjonction de subordination"
+      },
+      {
+        "id": "b",
+        "label": "Pronom relatif"
+      },
+      {
+        "id": "c",
+        "label": "Préposition"
+      },
+      {
+        "id": "d",
+        "label": "Déterminant"
+      }
+    ],
+    "answer": "a",
+    "explanation": "« Que » introduit la proposition qui complète le verbe « crois ». Il ne reprend aucun nom et n’a pas de fonction à l’intérieur de « la porte est ouverte » : c’est une conjonction de subordination."
+  },
+  {
+    "id": 6,
+    "label": "Classes de mots",
+    "prompt": "Quelle est la classe grammaticale du mot souligné ?",
+    "before": "Le livre ",
+    "focus": "que",
+    "after": " tu m’as prêté raconte une traversée du désert.",
+    "options": [
+      {
+        "id": "a",
+        "label": "Conjonction de subordination"
+      },
+      {
+        "id": "b",
+        "label": "Préposition"
+      },
+      {
+        "id": "c",
+        "label": "Pronom relatif"
+      },
+      {
+        "id": "d",
+        "label": "Déterminant"
+      }
+    ],
+    "answer": "c",
+    "explanation": "« Que » reprend le nom « livre » et a une fonction dans la relative : « tu m’as prêté le livre ». Il y est COD du verbe « as prêté ». C’est donc un pronom relatif, et non une conjonction."
+  },
+  {
+    "id": 7,
+    "label": "Fonctions grammaticales",
+    "prompt": "Quelle est la fonction du groupe souligné ?",
+    "before": "",
+    "focus": "Les branches du vieux pommier",
+    "after": " touchent presque la fenêtre.",
+    "options": [
+      {
+        "id": "a",
+        "label": "Complément d’objet direct"
+      },
+      {
+        "id": "b",
+        "label": "Sujet du verbe « touchent »"
+      },
+      {
+        "id": "c",
+        "label": "Complément du nom « fenêtre »"
+      },
+      {
+        "id": "d",
+        "label": "Complément circonstanciel de lieu"
+      }
+    ],
+    "answer": "b",
+    "explanation": "On peut écrire « Ce sont les branches du vieux pommier qui touchent presque la fenêtre ». Le groupe commande l’accord du verbe au pluriel ; il est sujet."
+  },
+  {
+    "id": 8,
+    "label": "Fonctions grammaticales",
+    "prompt": "Quelle est la fonction de la proposition soulignée ?",
+    "before": "Je souhaite ",
+    "focus": "que le voyage se passe bien",
+    "after": ".",
+    "options": [
+      {
+        "id": "a",
+        "label": "Sujet du verbe « souhaite »"
+      },
+      {
+        "id": "b",
+        "label": "Attribut du sujet « je »"
+      },
+      {
+        "id": "c",
+        "label": "Complément circonstanciel de temps"
+      },
+      {
+        "id": "d",
+        "label": "Complément d’objet direct de « souhaite »"
+      }
+    ],
+    "answer": "d",
+    "explanation": "Toute la proposition complète directement « souhaite ». On peut la remplacer par « cela » : « Je souhaite cela ». Cette subordonnée conjonctive a donc la fonction de COD."
+  },
+  {
+    "id": 9,
+    "label": "Fonctions grammaticales",
+    "prompt": "Quelle est la fonction du groupe souligné ?",
+    "before": "Avant le départ, les visiteurs parlent ",
+    "focus": "au guide",
+    "after": ".",
+    "options": [
+      {
+        "id": "a",
+        "label": "Complément d’objet direct"
+      },
+      {
+        "id": "b",
+        "label": "Attribut du sujet"
+      },
+      {
+        "id": "c",
+        "label": "Complément du nom"
+      },
+      {
+        "id": "d",
+        "label": "Complément d’objet indirect"
+      }
+    ],
+    "answer": "d",
+    "explanation": "Le verbe se construit ici avec la préposition « à » : parler à quelqu’un. « Au guide » peut être remplacé par « lui » : « les visiteurs lui parlent ». C’est un COI du verbe « parlent »."
+  },
+  {
+    "id": 10,
+    "label": "Fonctions grammaticales",
+    "prompt": "Quelle est la fonction du groupe souligné ?",
+    "before": "",
+    "focus": "Malgré la pluie",
+    "after": ", les élèves poursuivent leur randonnée.",
+    "options": [
+      {
+        "id": "a",
+        "label": "Complément circonstanciel de cause"
+      },
+      {
+        "id": "b",
+        "label": "Complément circonstanciel d’opposition"
+      },
+      {
+        "id": "c",
+        "label": "Complément circonstanciel de condition"
+      },
+      {
+        "id": "d",
+        "label": "Complément circonstanciel de temps"
+      }
+    ],
+    "answer": "b",
+    "explanation": "Le groupe présente un obstacle qui n’empêche pas la randonnée. On peut reformuler « Bien qu’il pleuve, les élèves poursuivent leur randonnée » : il exprime une opposition, plus précisément une concession, et non la cause de la randonnée."
+  },
+  {
+    "id": 11,
+    "label": "Fonctions grammaticales",
+    "prompt": "Quelle est la fonction du groupe souligné ?",
+    "before": "La maison ",
+    "focus": "de mes grands-parents",
+    "after": " possède un grand jardin.",
+    "options": [
+      {
+        "id": "a",
+        "label": "Complément d’objet indirect"
+      },
+      {
+        "id": "b",
+        "label": "Sujet du verbe « possède »"
+      },
+      {
+        "id": "c",
+        "label": "Complément du nom « maison »"
+      },
+      {
+        "id": "d",
+        "label": "Complément circonstanciel de lieu"
+      }
+    ],
+    "answer": "c",
+    "explanation": "« De mes grands-parents » dépend du nom « maison », qu’il précise. Ce n’est pas un complément du verbe « possède ». Le groupe prépositionnel a la fonction de complément du nom."
+  },
+  {
+    "id": 12,
+    "label": "Fonctions grammaticales",
+    "prompt": "Quelle est la fonction du groupe souligné ?",
+    "before": "",
+    "focus": "En cas de panne",
+    "after": ", le gardien utilisera cette lampe.",
+    "options": [
+      {
+        "id": "a",
+        "label": "Complément circonstanciel de condition"
+      },
+      {
+        "id": "b",
+        "label": "Complément circonstanciel de cause"
+      },
+      {
+        "id": "c",
+        "label": "Complément d’objet indirect"
+      },
+      {
+        "id": "d",
+        "label": "Complément du nom « lampe »"
+      }
+    ],
+    "answer": "a",
+    "explanation": "« En cas de panne » indique dans quelle situation la lampe sera utilisée. La reformulation « S’il y a une panne » fait apparaître la condition. Le groupe peut aussi se placer en fin de phrase."
+  },
+  {
+    "id": 13,
+    "label": "Fonctions grammaticales",
+    "prompt": "Quelle est la fonction du mot souligné ?",
+    "before": "Après leur promenade, les enfants semblent ",
+    "focus": "heureux",
+    "after": ".",
+    "options": [
+      {
+        "id": "a",
+        "label": "Épithète du nom « enfants »"
+      },
+      {
+        "id": "b",
+        "label": "Attribut du sujet"
+      },
+      {
+        "id": "c",
+        "label": "Complément d’objet direct"
+      },
+      {
+        "id": "d",
+        "label": "Complément circonstanciel de manière"
+      }
+    ],
+    "answer": "b",
+    "explanation": "« Heureux » indique une caractéristique des enfants par l’intermédiaire du verbe « semblent ». On peut écrire « les enfants sont heureux ». L’adjectif est attribut du sujet « les enfants »."
+  },
+  {
+    "id": 14,
+    "label": "Fonctions grammaticales",
+    "prompt": "Quelle est la fonction du groupe souligné ?",
+    "before": "Mon voisin, ",
+    "focus": "ancien marin",
+    "after": ", connaît bien cette île.",
+    "options": [
+      {
+        "id": "a",
+        "label": "Épithète du nom « île »"
+      },
+      {
+        "id": "b",
+        "label": "Complément du nom « voisin »"
+      },
+      {
+        "id": "c",
+        "label": "Complément d’objet direct"
+      },
+      {
+        "id": "d",
+        "label": "Apposition au nom « voisin »"
+      }
+    ],
+    "answer": "d",
+    "explanation": "Le groupe nominal « ancien marin », détaché par des virgules, désigne la même personne que « mon voisin ». On peut reformuler « Mon voisin est un ancien marin » : le groupe est une apposition."
+  },
+  {
+    "id": 15,
+    "label": "Accord sujet-verbe",
+    "prompt": "Quelle forme complète correctement la phrase au présent ?",
+    "before": "Toi et moi ",
+    "focus": "…",
+    "after": " les costumes pour demain.",
+    "options": [
+      {
+        "id": "a",
+        "label": "préparons"
+      },
+      {
+        "id": "b",
+        "label": "préparez"
+      },
+      {
+        "id": "c",
+        "label": "préparent"
+      },
+      {
+        "id": "d",
+        "label": "prépare"
+      }
+    ],
+    "answer": "a",
+    "explanation": "Le sujet réunit la deuxième personne « toi » et la première personne « moi ». On peut le remplacer par « nous » ; le verbe est donc à la première personne du pluriel : « nous préparons »."
+  },
+  {
+    "id": 16,
+    "label": "Accord avec être",
+    "prompt": "Quelle forme du participe passé complète correctement la phrase ?",
+    "before": "Les deux voyageuses sont ",
+    "focus": "…",
+    "after": " avant midi.",
+    "options": [
+      {
+        "id": "a",
+        "label": "arrivé"
+      },
+      {
+        "id": "b",
+        "label": "arrivée"
+      },
+      {
+        "id": "c",
+        "label": "arrivées"
+      },
+      {
+        "id": "d",
+        "label": "arrivés"
+      }
+    ],
+    "answer": "c",
+    "explanation": "Avec l’auxiliaire « être », le participe passé de « arriver » s’accorde avec le sujet. « Les deux voyageuses » est féminin pluriel : on écrit « arrivées »."
+  },
+  {
+    "id": 17,
+    "label": "Accord avec avoir",
+    "prompt": "Quelle forme du participe passé complète correctement la phrase ?",
+    "before": "Ces histoires, Nora les a ",
+    "focus": "…",
+    "after": " hier.",
+    "options": [
+      {
+        "id": "a",
+        "label": "raconté"
+      },
+      {
+        "id": "b",
+        "label": "racontée"
+      },
+      {
+        "id": "c",
+        "label": "racontées"
+      },
+      {
+        "id": "d",
+        "label": "racontés"
+      }
+    ],
+    "answer": "c",
+    "explanation": "« Les », placé avant « a raconté », est le COD et reprend « ces histoires », féminin pluriel. Avec « avoir », le participe passé s’accorde avec le COD lorsque celui-ci le précède : « racontées »."
+  },
+  {
+    "id": 18,
+    "label": "Accord des verbes pronominaux",
+    "prompt": "Quelle forme du participe passé complète correctement la phrase ?",
+    "before": "Lina et Zoé se sont ",
+    "focus": "…",
+    "after": " à la bibliothèque.",
+    "options": [
+      {
+        "id": "a",
+        "label": "rencontrées"
+      },
+      {
+        "id": "b",
+        "label": "rencontré"
+      },
+      {
+        "id": "c",
+        "label": "rencontrée"
+      },
+      {
+        "id": "d",
+        "label": "rencontrés"
+      }
+    ],
+    "answer": "a",
+    "explanation": "Lina et Zoé ont rencontré l’une l’autre : « se » est ici COD, placé avant le participe passé, et renvoie à deux personnes de genre féminin. On écrit donc « rencontrées ». La présence de « être » dans un verbe pronominal ne suffit pas toujours à décider : il faut analyser « se »."
+  },
+  {
+    "id": 19,
+    "label": "Accord dans le groupe nominal",
+    "prompt": "Quel adjectif complète correctement le groupe nominal ?",
+    "before": "Elle a cueilli quelques fleurs ",
+    "focus": "…",
+    "after": " pour décorer la table.",
+    "options": [
+      {
+        "id": "a",
+        "label": "blanc"
+      },
+      {
+        "id": "b",
+        "label": "blancs"
+      },
+      {
+        "id": "c",
+        "label": "blanche"
+      },
+      {
+        "id": "d",
+        "label": "blanches"
+      }
+    ],
+    "answer": "d",
+    "explanation": "Le déterminant indéfini « quelques » introduit un groupe au pluriel. L’adjectif s’accorde avec « fleurs », féminin pluriel : « quelques fleurs blanches ». On retrouve la même chaîne d’accord avec « plusieurs fleurs blanches »."
+  },
+  {
+    "id": 20,
+    "label": "Accord sujet-verbe",
+    "prompt": "Quelle forme complète correctement la phrase au présent ?",
+    "before": "C’est toi qui ",
+    "focus": "…",
+    "after": " le carnet de bord.",
+    "options": [
+      {
+        "id": "a",
+        "label": "remplit"
+      },
+      {
+        "id": "b",
+        "label": "remplis"
+      },
+      {
+        "id": "c",
+        "label": "remplissent"
+      },
+      {
+        "id": "d",
+        "label": "remplir"
+      }
+    ],
+    "answer": "b",
+    "explanation": "Le sujet de « remplir » est le pronom relatif « qui », dont l’antécédent est « toi ». L’accord se fait à la deuxième personne du singulier, comme dans « tu remplis » : « C’est toi qui remplis »."
+  }
+]

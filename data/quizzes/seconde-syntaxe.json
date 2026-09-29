@@ -1,0 +1,562 @@
+[
+  {
+    "id": 1,
+    "label": "Juxtaposition",
+    "prompt": "Comment les deux propositions sont-elles reliées ?",
+    "before": "Le vent tomba",
+    "focus": " ; ",
+    "after": "les voiles cessèrent de claquer.",
+    "options": [
+      {
+        "id": "a",
+        "label": "Par coordination, grâce à une conjonction de coordination."
+      },
+      {
+        "id": "b",
+        "label": "Par subordination : la seconde complète un mot de la première."
+      },
+      {
+        "id": "c",
+        "label": "Il n’y a qu’une seule proposition car il n’y a qu’une phrase."
+      },
+      {
+        "id": "d",
+        "label": "Par juxtaposition : un signe de ponctuation relie les propositions."
+      }
+    ],
+    "answer": "d",
+    "explanation": "Les deux propositions ont chacune un verbe conjugué, « tomba » et « cessèrent ». Un point-virgule les sépare, sans mot de liaison : elles sont juxtaposées. Une phrase peut contenir plusieurs propositions."
+  },
+  {
+    "id": 2,
+    "label": "Coordination et sens",
+    "prompt": "Quelle analyse associe correctement construction et sens ?",
+    "before": "La piste paraissait sûre, ",
+    "focus": "mais",
+    "after": " elle menait à une impasse.",
+    "options": [
+      {
+        "id": "a",
+        "label": "Une juxtaposition exprimant une simple addition."
+      },
+      {
+        "id": "b",
+        "label": "Une coordination exprimant une opposition à ce qu’on pouvait attendre."
+      },
+      {
+        "id": "c",
+        "label": "Une subordination relative précisant le nom piste."
+      },
+      {
+        "id": "d",
+        "label": "Une coordination exprimant la cause de la sûreté de la piste."
+      }
+    ],
+    "answer": "b",
+    "explanation": "« Mais » est une conjonction de coordination. Elle relie deux propositions et oppose l’apparence rassurante au résultat décevant. Identifier le lien syntaxique permet ici de mieux comprendre la surprise créée par la phrase."
+  },
+  {
+    "id": 3,
+    "label": "Subordination",
+    "prompt": "Quel lien la proposition soulignée entretient-elle avec le reste de la phrase ?",
+    "before": "Le personnage ",
+    "focus": "qui attend sur le quai",
+    "after": " tient une lettre froissée.",
+    "options": [
+      {
+        "id": "a",
+        "label": "C’est une subordonnée relative qui apporte une précision sur personnage."
+      },
+      {
+        "id": "b",
+        "label": "C’est une proposition indépendante juxtaposée."
+      },
+      {
+        "id": "c",
+        "label": "C’est une proposition coordonnée par qui."
+      },
+      {
+        "id": "d",
+        "label": "C’est la proposition principale, dont toutes les autres dépendent."
+      }
+    ],
+    "answer": "a",
+    "explanation": "« Qui » reprend le nom « personnage » et introduit une proposition qui dépend de ce nom. La relative aide à identifier le personnage concerné. Elle ne fonctionne pas comme une proposition indépendante reliée par coordination."
+  },
+  {
+    "id": 4,
+    "label": "Repérer la relative",
+    "prompt": "Quelle propriété permet d’identifier la proposition soulignée comme une relative ?",
+    "before": "J’ai retrouvé le carnet ",
+    "focus": "que tu avais perdu",
+    "after": ".",
+    "options": [
+      {
+        "id": "a",
+        "label": "Que ne reprend aucun mot et n’a aucune fonction dans la subordonnée."
+      },
+      {
+        "id": "b",
+        "label": "Le seul fait que la proposition soit au passé suffit."
+      },
+      {
+        "id": "c",
+        "label": "Que reprend carnet et occupe une fonction dans la subordonnée."
+      },
+      {
+        "id": "d",
+        "label": "Toute proposition placée après un nom est obligatoirement une relative."
+      }
+    ],
+    "answer": "c",
+    "explanation": "On peut reconstruire « tu avais perdu le carnet ». « Que » reprend « carnet » et remplit la fonction de COD de « avais perdu ». C’est ce double rôle de reprise et de fonction qui caractérise ici le pronom relatif."
+  },
+  {
+    "id": 5,
+    "label": "Fonction de qui",
+    "prompt": "Quelle est la fonction du pronom relatif souligné dans sa proposition ?",
+    "before": "Les branches ",
+    "focus": "qui",
+    "after": " surplombent le mur retiennent la neige.",
+    "options": [
+      {
+        "id": "a",
+        "label": "Sujet du verbe surplombent."
+      },
+      {
+        "id": "b",
+        "label": "COD du verbe surplombent."
+      },
+      {
+        "id": "c",
+        "label": "Complément du nom branches."
+      },
+      {
+        "id": "d",
+        "label": "Sujet du verbe retiennent dans la proposition principale."
+      }
+    ],
+    "answer": "a",
+    "explanation": "Dans la relative, ce sont les branches qui surplombent le mur : « qui » occupe la place du sujet de « surplombent ». Le sujet de « retiennent » est le groupe nominal entier « les branches qui surplombent le mur »."
+  },
+  {
+    "id": 6,
+    "label": "Fonction de que",
+    "prompt": "Quelle est la fonction du pronom relatif souligné ?",
+    "before": "La décision ",
+    "focus": "que",
+    "after": " le comité a prise surprend les habitants.",
+    "options": [
+      {
+        "id": "a",
+        "label": "Sujet du verbe a prise."
+      },
+      {
+        "id": "b",
+        "label": "COI du verbe surprend."
+      },
+      {
+        "id": "c",
+        "label": "COD du verbe a prise."
+      },
+      {
+        "id": "d",
+        "label": "Complément du nom comité."
+      }
+    ],
+    "answer": "c",
+    "explanation": "Le comité a pris quoi ? La décision. « Que » reprend cette décision et est COD de « a prise ». Le sujet de la relative est « le comité » ; il ne faut pas le confondre avec le pronom relatif."
+  },
+  {
+    "id": 7,
+    "label": "Dont et le verbe",
+    "prompt": "Quelle construction explique le choix de dont ?",
+    "before": "Voici l’incident ",
+    "focus": "dont",
+    "after": " la témoin a parlé aux enquêteurs.",
+    "options": [
+      {
+        "id": "a",
+        "label": "Parler quelque chose : dont remplace un COD."
+      },
+      {
+        "id": "b",
+        "label": "Parler de quelque chose : dont représente de cet incident."
+      },
+      {
+        "id": "c",
+        "label": "Parler à quelqu’un : dont représente aux enquêteurs."
+      },
+      {
+        "id": "d",
+        "label": "Être quelque chose : dont est attribut du sujet."
+      }
+    ],
+    "answer": "b",
+    "explanation": "On reconstruit « la témoin a parlé de cet incident ». Le verbe parler se construit ici avec « de » : « dont » remplace ce groupe et remplit la fonction de COI de « a parlé ». Le groupe « aux enquêteurs » a un autre rôle."
+  },
+  {
+    "id": 8,
+    "label": "Dont et le nom",
+    "prompt": "Quelle est ici la fonction de dont ?",
+    "before": "Ils restaurent une maison ",
+    "focus": "dont",
+    "after": " les fenêtres donnent sur la place.",
+    "options": [
+      {
+        "id": "a",
+        "label": "COD du verbe restaurent."
+      },
+      {
+        "id": "b",
+        "label": "Sujet du verbe donnent."
+      },
+      {
+        "id": "c",
+        "label": "COI du verbe donnent."
+      },
+      {
+        "id": "d",
+        "label": "Complément du nom fenêtres."
+      }
+    ],
+    "answer": "d",
+    "explanation": "La relation est « les fenêtres de cette maison ». « Dont » remplace « de cette maison » et complète le nom « fenêtres ». Le sujet de « donnent » est « les fenêtres » : dont n’est donc pas toujours complément d’un verbe."
+  },
+  {
+    "id": 9,
+    "label": "Auquel",
+    "prompt": "Pourquoi auquel convient-il dans cette relative ?",
+    "before": "Le projet ",
+    "focus": "auquel",
+    "after": " elle pense demande plusieurs mois de travail.",
+    "options": [
+      {
+        "id": "a",
+        "label": "Penser de ce projet impose systématiquement dont."
+      },
+      {
+        "id": "b",
+        "label": "Auquel reprend elle et doit donc être au féminin."
+      },
+      {
+        "id": "c",
+        "label": "Penser à ce projet impose à, combiné avec lequel au masculin singulier."
+      },
+      {
+        "id": "d",
+        "label": "Auquel est une conjonction qui ne reprend aucun nom."
+      }
+    ],
+    "answer": "c",
+    "explanation": "Dans le sens envisagé, on pense « à ce projet ». Le pronom reprend « projet », masculin singulier, et conserve la préposition à : à + lequel donne auquel. La fonction du pronom est COI de « pense »."
+  },
+  {
+    "id": 10,
+    "label": "Duquel",
+    "prompt": "Quelle analyse de duquel est correcte ?",
+    "before": "Nous atteignîmes un vieux mur au pied ",
+    "focus": "duquel",
+    "after": " poussaient des orties.",
+    "options": [
+      {
+        "id": "a",
+        "label": "Il reprend mur dans le groupe au pied de ce mur."
+      },
+      {
+        "id": "b",
+        "label": "Il reprend orties et doit donc être au pluriel."
+      },
+      {
+        "id": "c",
+        "label": "Il est sujet du verbe poussaient."
+      },
+      {
+        "id": "d",
+        "label": "Il est une conjonction de coordination entre deux phrases."
+      }
+    ],
+    "answer": "a",
+    "explanation": "Le groupe reconstruit est « au pied de ce mur ». « Duquel » reprend « mur », masculin singulier, et correspond à de + lequel. Cette forme conserve la construction du groupe prépositionnel ; le sujet de « poussaient » est « des orties »."
+  },
+  {
+    "id": 11,
+    "label": "Où et le temps",
+    "prompt": "Que reprend le pronom relatif où ?",
+    "before": "Je n’oublierai jamais le jour ",
+    "focus": "où",
+    "after": " nous avons ouvert ce musée.",
+    "options": [
+      {
+        "id": "a",
+        "label": "Le musée : il désigne obligatoirement un lieu."
+      },
+      {
+        "id": "b",
+        "label": "Je : il désigne la personne qui parle."
+      },
+      {
+        "id": "c",
+        "label": "Aucun mot : où est toujours une conjonction sans antécédent."
+      },
+      {
+        "id": "d",
+        "label": "Le jour : il exprime un repère de temps dans la relative."
+      }
+    ],
+    "answer": "d",
+    "explanation": "On peut reformuler « nous avons ouvert ce musée ce jour-là ». « Où » reprend donc « le jour » et exprime ici le temps. Le pronom relatif où peut reprendre un repère temporel aussi bien qu’un lieu."
+  },
+  {
+    "id": 12,
+    "label": "Relative ou conjonctive",
+    "prompt": "Quelle analyse du mot souligné est correcte ?",
+    "before": "La responsable affirme ",
+    "focus": "que",
+    "after": " le dossier est complet.",
+    "options": [
+      {
+        "id": "a",
+        "label": "Que est un pronom relatif qui reprend responsable."
+      },
+      {
+        "id": "b",
+        "label": "Que est une conjonction de subordination, sans antécédent ni fonction dans la subordonnée."
+      },
+      {
+        "id": "c",
+        "label": "Que est un pronom relatif COD de est."
+      },
+      {
+        "id": "d",
+        "label": "Que est une conjonction de coordination exprimant l’opposition."
+      }
+    ],
+    "answer": "b",
+    "explanation": "« Que » ne remplace aucun nom dans « le dossier est complet ». Il introduit une subordonnée conjonctive qui complète le verbe « affirme ». À la différence d’un pronom relatif, il n’occupe pas lui-même de fonction dans cette subordonnée."
+  },
+  {
+    "id": 13,
+    "label": "Relativisation",
+    "prompt": "Quelle fusion des deux phrases conserve le sens et la construction ?",
+    "before": "J’ai consulté un document. ",
+    "focus": "Ce document contient les résultats.",
+    "after": "",
+    "options": [
+      {
+        "id": "a",
+        "label": "J’ai consulté un document que contient les résultats."
+      },
+      {
+        "id": "b",
+        "label": "J’ai consulté un document qui contient les résultats."
+      },
+      {
+        "id": "c",
+        "label": "J’ai consulté un document dont contient les résultats."
+      },
+      {
+        "id": "d",
+        "label": "J’ai consulté un document auquel contient les résultats."
+      }
+    ],
+    "answer": "b",
+    "explanation": "Dans la deuxième phrase, « ce document » est sujet de « contient ». Pour reprendre ce nom dans une relative, on utilise donc qui. Le choix du pronom dépend de sa fonction dans la relative, pas seulement de la place du nom dans la première phrase."
+  },
+  {
+    "id": 14,
+    "label": "Éviter la redondance",
+    "prompt": "Quelle reformulation est correcte en français écrit standard ?",
+    "before": "C’est un résultat. ",
+    "focus": "Nous sommes fiers de ce résultat.",
+    "after": "",
+    "options": [
+      {
+        "id": "a",
+        "label": "C’est un résultat dont nous en sommes fiers."
+      },
+      {
+        "id": "b",
+        "label": "C’est un résultat que nous sommes fiers."
+      },
+      {
+        "id": "c",
+        "label": "C’est un résultat auquel nous sommes fiers."
+      },
+      {
+        "id": "d",
+        "label": "C’est un résultat dont nous sommes fiers."
+      }
+    ],
+    "answer": "d",
+    "explanation": "On est fier « de ce résultat » : dont reprend ce complément. Ajouter « en » répéterait la même reprise. Que et auquel ne conservent pas la construction « être fier de »."
+  },
+  {
+    "id": 15,
+    "label": "Relative déterminative",
+    "prompt": "Quel rôle joue la relative sans virgules dans ce contexte ?",
+    "before": "Certains élèves ont rendu un brouillon, d’autres non. Les élèves ",
+    "focus": "qui ont rendu un brouillon",
+    "after": " recevront un commentaire.",
+    "options": [
+      {
+        "id": "a",
+        "label": "Elle affirme que tous les élèves ont rendu un brouillon."
+      },
+      {
+        "id": "b",
+        "label": "Elle ajoute une information sans limiter le groupe concerné."
+      },
+      {
+        "id": "c",
+        "label": "Elle précise le groupe d’élèves concerné par le commentaire."
+      },
+      {
+        "id": "d",
+        "label": "Elle est indépendante du nom élèves."
+      }
+    ],
+    "answer": "c",
+    "explanation": "La relative permet de sélectionner, parmi les élèves, ceux qui recevront le commentaire. Elle est dite déterminative. La supprimer ferait disparaître cette restriction et ferait porter la promesse sur l’ensemble des élèves."
+  },
+  {
+    "id": 16,
+    "label": "Relative explicative",
+    "prompt": "Quel rôle joue la relative encadrée de virgules ?",
+    "before": "La directrice, ",
+    "focus": "qui venait d’arriver",
+    "after": ", salua l’équipe.",
+    "options": [
+      {
+        "id": "a",
+        "label": "Elle ajoute une information sur une personne déjà identifiée."
+      },
+      {
+        "id": "b",
+        "label": "Elle sélectionne nécessairement une directrice parmi plusieurs."
+      },
+      {
+        "id": "c",
+        "label": "Elle constitue une deuxième proposition principale indépendante."
+      },
+      {
+        "id": "d",
+        "label": "Elle précise l’objet salué par la directrice."
+      }
+    ],
+    "answer": "a",
+    "explanation": "La directrice est déjà identifiée dans cet énoncé. La relative détachée par des virgules ajoute une précision sur elle : c’est une relative explicative. On peut la retirer tout en conservant « La directrice salua l’équipe »."
+  },
+  {
+    "id": 17,
+    "label": "Accorder le pronom",
+    "prompt": "Quel pronom complète correctement la phrase ?",
+    "before": "Les annonces ",
+    "focus": "…",
+    "after": " nous avons répondu concernaient des stages.",
+    "options": [
+      {
+        "id": "a",
+        "label": "auxquelles"
+      },
+      {
+        "id": "b",
+        "label": "auquel"
+      },
+      {
+        "id": "c",
+        "label": "desquelles"
+      },
+      {
+        "id": "d",
+        "label": "lesquelles"
+      }
+    ],
+    "answer": "a",
+    "explanation": "On répond « à des annonces ». Le pronom reprend « annonces », féminin pluriel, et conserve la préposition à : on écrit auxquelles. Auquel ne s’accorde pas avec l’antécédent ; desquelles et lesquelles ne gardent pas la construction du verbe."
+  },
+  {
+    "id": 18,
+    "label": "Propositions imbriquées",
+    "prompt": "Combien de propositions organisées autour d’un verbe conjugué contient cette phrase ?",
+    "before": "",
+    "focus": "Je crois que le livre que tu lis appartient à ma sœur.",
+    "after": "",
+    "options": [
+      {
+        "id": "a",
+        "label": "Une."
+      },
+      {
+        "id": "b",
+        "label": "Deux."
+      },
+      {
+        "id": "c",
+        "label": "Quatre."
+      },
+      {
+        "id": "d",
+        "label": "Trois."
+      }
+    ],
+    "answer": "d",
+    "explanation": "On repère « crois », « appartient » et « lis » : il y a trois propositions. La conjonctive « que le livre que tu lis appartient à ma sœur » dépend de « crois », et la relative « que tu lis » dépend du nom « livre » à l’intérieur de cette conjonctive."
+  },
+  {
+    "id": 19,
+    "label": "Nature et fonction",
+    "prompt": "Quelle analyse distingue correctement la relative et le pronom qui l’introduit ?",
+    "before": "L’auteur ",
+    "focus": "dont je relis les romans",
+    "after": " sera présent demain.",
+    "options": [
+      {
+        "id": "a",
+        "label": "La proposition est une conjonctive ; dont n’a aucune fonction."
+      },
+      {
+        "id": "b",
+        "label": "La proposition est une relative ; dont est complément du nom romans."
+      },
+      {
+        "id": "c",
+        "label": "La proposition est une principale ; dont est sujet de relis."
+      },
+      {
+        "id": "d",
+        "label": "La proposition est une relative ; dont est COD de relis."
+      }
+    ],
+    "answer": "b",
+    "explanation": "La relative complète le nom « auteur ». À l’intérieur, « dont » reprend « de cet auteur » dans « les romans de cet auteur » : il complète donc « romans ». Le COD de « relis » est « les romans », pas dont."
+  },
+  {
+    "id": 20,
+    "label": "Syntaxe et interprétation",
+    "prompt": "Quelle reformulation explicite le sens suggéré par les deux-points ?",
+    "before": "Il ferma les volets",
+    "focus": " : ",
+    "after": "la lumière l’éblouissait.",
+    "options": [
+      {
+        "id": "a",
+        "label": "Il ferma les volets bien que la lumière ne l’éblouisse pas."
+      },
+      {
+        "id": "b",
+        "label": "Il ferma les volets pour que la lumière l’éblouisse davantage."
+      },
+      {
+        "id": "c",
+        "label": "Il ferma les volets parce que la lumière l’éblouissait."
+      },
+      {
+        "id": "d",
+        "label": "Il ferma les volets avant que la lumière existe."
+      }
+    ],
+    "answer": "c",
+    "explanation": "La seconde proposition donne la raison de l’action racontée dans la première. La juxtaposition par deux-points suggère ce lien ; la subordination avec parce que le rend explicite. Une relation de sens peut donc être exprimée par plusieurs constructions."
+  }
+]

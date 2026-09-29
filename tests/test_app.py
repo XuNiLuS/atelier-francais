@@ -27,23 +27,23 @@ class QuizTests(unittest.TestCase):
     def test_content_has_twenty_questions_and_both_tenses(self):
         self.assertEqual([question["id"] for question in self.questions], list(range(1, 21)))
         self.assertEqual(
-            Counter(question["tense"] for question in self.questions),
+            Counter(question["label"] for question in self.questions),
             {"Imparfait": 10, "Passé simple": 10},
         )
 
-    def test_home_renders_questions_without_solutions(self):
-        response = self.client.get("/")
+    def test_quiz_renders_questions_without_solutions(self):
+        response = self.client.get("/quiz/4e-temps-recit")
         self.assertEqual(response.status_code, 200)
         self.assertIn("text/html", response.headers["Content-Type"])
         self.assertEqual(response.template.name, "index.html")
-        self.assertIn("L’atelier des temps", response.text)
+        self.assertIn("L’atelier de français", response.text)
         public_questions = response.context["questions"]
         self.assertEqual(len(public_questions), 20)
         for question, original in zip(public_questions, self.questions):
             self.assertNotIn("answer", question)
             self.assertNotIn("explanation", question)
             self.assertNotIn(original["explanation"], response.text)
-            self.assertIn("verb", question)
+            self.assertIn("focus", question)
             self.assertEqual(len(question["options"]), 4)
         for name in ("app.js", "style.css", "favicon.svg"):
             self.assertIn(f"/static/{name}", response.text)
@@ -62,7 +62,7 @@ class QuizTests(unittest.TestCase):
 
     def test_api_schema_describes_request_models(self):
         schema = app.openapi()
-        for route in ("/api/check", "/api/submit"):
+        for route in ("/api/quizzes/{quiz_id}/check", "/api/quizzes/{quiz_id}/submit"):
             self.assertIn("requestBody", schema["paths"][route]["post"])
 
     def test_health(self):
@@ -230,8 +230,9 @@ class QuizTests(unittest.TestCase):
         invalid_datasets.append(duplicate_id)
         for field, value in (
             ("id", True),
-            ("tense", "futur"),
-            ("verb", ""),
+            ("label", ""),
+            ("prompt", ""),
+            ("focus", ""),
             ("explanation", ""),
             ("answer", "e"),
             ("options", [{"id": "a", "label": "Même option"}] * 4),

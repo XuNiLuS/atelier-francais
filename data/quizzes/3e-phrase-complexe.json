@@ -1,0 +1,562 @@
+[
+  {
+    "id": 1,
+    "label": "Relier les propositions",
+    "prompt": "Comment les deux propositions sont-elles reliées ?",
+    "before": "",
+    "focus": "Le rideau se leva ; les spectateurs retinrent leur souffle.",
+    "after": "",
+    "options": [
+      {
+        "id": "a",
+        "label": "Par une conjonction de coordination."
+      },
+      {
+        "id": "b",
+        "label": "Par un pronom relatif."
+      },
+      {
+        "id": "c",
+        "label": "Par juxtaposition."
+      },
+      {
+        "id": "d",
+        "label": "Par une conjonction de subordination."
+      }
+    ],
+    "answer": "c",
+    "explanation": "Les propositions ont chacune leur verbe conjugué : « se leva » et « retinrent ». Elles sont séparées par un point-virgule, sans mot de liaison : elles sont juxtaposées."
+  },
+  {
+    "id": 2,
+    "label": "Coordination",
+    "prompt": "Quelle analyse du lien entre les propositions est correcte ?",
+    "before": "Le débat fut prolongé, ",
+    "focus": "car",
+    "after": " plusieurs élèves souhaitaient encore intervenir.",
+    "options": [
+      {
+        "id": "a",
+        "label": "« Car » coordonne les deux propositions et introduit une explication."
+      },
+      {
+        "id": "b",
+        "label": "« Car » introduit une proposition subordonnée relative."
+      },
+      {
+        "id": "c",
+        "label": "Les propositions sont seulement juxtaposées."
+      },
+      {
+        "id": "d",
+        "label": "« Car » est un pronom qui remplace « le débat »."
+      }
+    ],
+    "answer": "a",
+    "explanation": "« Car » est une conjonction de coordination. Le lien de sens est explicatif, mais il ne faut pas le confondre avec la construction grammaticale : les propositions sont coordonnées, et non subordonnées."
+  },
+  {
+    "id": 3,
+    "label": "Subordination",
+    "prompt": "Quel lien grammatical unit le passage souligné au reste de la phrase ?",
+    "before": "Nous avons déplacé la réunion ",
+    "focus": "parce que la salle était inondée",
+    "after": ".",
+    "options": [
+      {
+        "id": "a",
+        "label": "Une coordination, parce que les deux propositions ont un verbe."
+      },
+      {
+        "id": "b",
+        "label": "Une juxtaposition, parce que le passage suit la principale."
+      },
+      {
+        "id": "c",
+        "label": "Une proposition relative qui complète le nom « réunion »."
+      },
+      {
+        "id": "d",
+        "label": "Une subordination : le passage dépend de la principale et exprime la cause."
+      }
+    ],
+    "answer": "d",
+    "explanation": "La locution « parce que » introduit une subordonnée circonstancielle de cause. La présence de deux verbes ne suffit pas à conclure à une coordination : il faut observer le mot qui relie les propositions."
+  },
+  {
+    "id": 4,
+    "label": "Identifier une relative",
+    "prompt": "Quelle est la nature de la proposition soulignée ?",
+    "before": "Le manuscrit ",
+    "focus": "que l’archiviste a retrouvé",
+    "after": " éclaire cette période de l’histoire locale.",
+    "options": [
+      {
+        "id": "a",
+        "label": "Une proposition subordonnée interrogative indirecte."
+      },
+      {
+        "id": "b",
+        "label": "Une proposition subordonnée relative."
+      },
+      {
+        "id": "c",
+        "label": "Une proposition indépendante coordonnée."
+      },
+      {
+        "id": "d",
+        "label": "Une proposition subordonnée conjonctive complétive."
+      }
+    ],
+    "answer": "b",
+    "explanation": "La proposition précise le nom « manuscrit », son antécédent. « Que » reprend ce manuscrit : l’archiviste a retrouvé le manuscrit. Cette reprise permet de reconnaître un pronom relatif et une subordonnée relative."
+  },
+  {
+    "id": 5,
+    "label": "Identifier une complétive",
+    "prompt": "Quelle est la nature de la proposition soulignée ?",
+    "before": "L’archiviste pense ",
+    "focus": "que le manuscrit est authentique",
+    "after": ".",
+    "options": [
+      {
+        "id": "a",
+        "label": "Une proposition subordonnée relative."
+      },
+      {
+        "id": "b",
+        "label": "Une proposition subordonnée interrogative indirecte."
+      },
+      {
+        "id": "c",
+        "label": "Une proposition indépendante juxtaposée."
+      },
+      {
+        "id": "d",
+        "label": "Une proposition subordonnée conjonctive complétive."
+      }
+    ],
+    "answer": "d",
+    "explanation": "La proposition donne le contenu de ce que pense l’archiviste. On peut dire « L’archiviste pense cela ». « Que » n’a pas d’antécédent et ne remplace aucun mot : c’est ici une conjonction de subordination."
+  },
+  {
+    "id": 6,
+    "label": "Interrogation indirecte",
+    "prompt": "Quel rôle joue « si » dans le passage souligné ?",
+    "before": "La journaliste demande ",
+    "focus": "si la bibliothèque ouvrira dimanche",
+    "after": ".",
+    "options": [
+      {
+        "id": "a",
+        "label": "Il introduit une condition de l’action de demander."
+      },
+      {
+        "id": "b",
+        "label": "Il remplace le nom « bibliothèque »."
+      },
+      {
+        "id": "c",
+        "label": "Il introduit une question rapportée indirectement."
+      },
+      {
+        "id": "d",
+        "label": "Il coordonne deux propositions indépendantes."
+      }
+    ],
+    "answer": "c",
+    "explanation": "La question directe serait « La bibliothèque ouvrira-t-elle dimanche ? ». Après « demande », elle devient une subordonnée interrogative indirecte introduite par « si » ; ce « si » n’exprime pas une condition."
+  },
+  {
+    "id": 7,
+    "label": "Fonction du pronom relatif",
+    "prompt": "Quelle est la fonction du mot souligné dans la subordonnée ?",
+    "before": "Les arguments ",
+    "focus": "que",
+    "after": " tu présentes méritent une réponse précise.",
+    "options": [
+      {
+        "id": "a",
+        "label": "Sujet du verbe « présentes »."
+      },
+      {
+        "id": "b",
+        "label": "Complément d’objet direct du verbe « présentes »."
+      },
+      {
+        "id": "c",
+        "label": "Complément circonstanciel de temps."
+      },
+      {
+        "id": "d",
+        "label": "Attribut du sujet « tu »."
+      }
+    ],
+    "answer": "b",
+    "explanation": "On peut reconstruire la phrase « Tu présentes les arguments ». « Tu » est le sujet ; « les arguments » est le COD de « présentes ». Le pronom relatif « que », qui reprend ce groupe, a donc la fonction COD dans la relative."
+  },
+  {
+    "id": 8,
+    "label": "Fonction du pronom relatif",
+    "prompt": "Quelle est la fonction du mot souligné dans la subordonnée ?",
+    "before": "Les bénévoles ",
+    "focus": "qui",
+    "after": " organisent la collecte ont préparé des affiches.",
+    "options": [
+      {
+        "id": "a",
+        "label": "Sujet du verbe « organisent »."
+      },
+      {
+        "id": "b",
+        "label": "Complément d’objet direct du verbe « organisent »."
+      },
+      {
+        "id": "c",
+        "label": "Complément du nom « collecte »."
+      },
+      {
+        "id": "d",
+        "label": "Complément circonstanciel de lieu."
+      }
+    ],
+    "answer": "a",
+    "explanation": "Dans la relative, ce sont les bénévoles qui organisent la collecte. « Qui » reprend « les bénévoles » et commande le verbe « organisent » au pluriel : il est sujet de ce verbe."
+  },
+  {
+    "id": 9,
+    "label": "Forme emphatique",
+    "prompt": "Quelle analyse de la construction « c’est… que » est correcte ?",
+    "before": "C’est ",
+    "focus": "ce poème",
+    "after": " que les élèves ont choisi pour la cérémonie.",
+    "options": [
+      {
+        "id": "a",
+        "label": "C’est une forme passive qui présente le poème comme sujet."
+      },
+      {
+        "id": "b",
+        "label": "C’est une forme emphatique qui met en relief le COD de « ont choisi »."
+      },
+      {
+        "id": "c",
+        "label": "C’est une forme négative qui exclut ce poème."
+      },
+      {
+        "id": "d",
+        "label": "C’est une interrogation directe sur le choix des élèves."
+      }
+    ],
+    "answer": "b",
+    "explanation": "La phrase sans mise en relief serait « Les élèves ont choisi ce poème pour la cérémonie ». Le groupe « ce poème », COD de « ont choisi », est extrait et encadré par « c’est… que ». Cette construction emphatique insiste sur l’élément choisi."
+  },
+  {
+    "id": 10,
+    "label": "Fonction de la subordonnée",
+    "prompt": "La transformation « Je le constate » aide à reconnaître quelle fonction ?",
+    "before": "Je constate ",
+    "focus": "que les inscriptions augmentent",
+    "after": ".",
+    "options": [
+      {
+        "id": "a",
+        "label": "La proposition est sujet du verbe « constate »."
+      },
+      {
+        "id": "b",
+        "label": "La proposition est complément circonstanciel de temps."
+      },
+      {
+        "id": "c",
+        "label": "La proposition est complément du nom « inscriptions »."
+      },
+      {
+        "id": "d",
+        "label": "La proposition est COD du verbe « constate »."
+      }
+    ],
+    "answer": "d",
+    "explanation": "Le pronom « le » remplace tout le contenu constaté. La complétive occupe donc la place d’un complément d’objet direct du verbe « constate ». Il faut distinguer sa nature, complétive, de sa fonction, COD."
+  },
+  {
+    "id": 11,
+    "label": "Concession",
+    "prompt": "Quelle relation logique exprime la subordonnée soulignée ?",
+    "before": "",
+    "focus": "Bien que son équipe ait peu de moyens",
+    "after": ", la metteuse en scène maintient le spectacle.",
+    "options": [
+      {
+        "id": "a",
+        "label": "La concession : une difficulté n’empêche pas la réalisation du spectacle."
+      },
+      {
+        "id": "b",
+        "label": "La cause qui oblige à annuler le spectacle."
+      },
+      {
+        "id": "c",
+        "label": "Le but recherché par la metteuse en scène."
+      },
+      {
+        "id": "d",
+        "label": "La condition nécessaire à la réalisation du spectacle."
+      }
+    ],
+    "answer": "a",
+    "explanation": "Le manque de moyens pourrait empêcher le spectacle ; pourtant, celui-ci est maintenu. La locution « bien que » introduit cette concession et se construit ici avec le subjonctif « ait »."
+  },
+  {
+    "id": 12,
+    "label": "But",
+    "prompt": "Quelle est la fonction de la proposition soulignée ?",
+    "before": "Le guide parle distinctement ",
+    "focus": "pour que chacun entende les consignes",
+    "after": ".",
+    "options": [
+      {
+        "id": "a",
+        "label": "Complément d’objet direct du verbe « parle »."
+      },
+      {
+        "id": "b",
+        "label": "Complément circonstanciel de cause."
+      },
+      {
+        "id": "c",
+        "label": "Complément circonstanciel de but."
+      },
+      {
+        "id": "d",
+        "label": "Complément du nom « guide »."
+      }
+    ],
+    "answer": "c",
+    "explanation": "La subordonnée introduite par « pour que » indique le résultat recherché par le guide : faire entendre les consignes. Elle exprime donc le but, sans affirmer que chacun les a effectivement entendues."
+  },
+  {
+    "id": 13,
+    "label": "Conséquence",
+    "prompt": "Quelle relation logique la proposition soulignée exprime-t-elle ?",
+    "before": "Le couloir était si étroit ",
+    "focus": "que les élèves devaient avancer un par un",
+    "after": ".",
+    "options": [
+      {
+        "id": "a",
+        "label": "La cause de l’étroitesse du couloir."
+      },
+      {
+        "id": "b",
+        "label": "Le but poursuivi par le couloir."
+      },
+      {
+        "id": "c",
+        "label": "La conséquence de l’étroitesse du couloir."
+      },
+      {
+        "id": "d",
+        "label": "Une condition encore hypothétique."
+      }
+    ],
+    "answer": "c",
+    "explanation": "La construction « si… que » relie l’intensité de l’adjectif « étroit » à son résultat. L’obligation d’avancer un par un est la conséquence, et non la cause, de l’étroitesse."
+  },
+  {
+    "id": 14,
+    "label": "Condition",
+    "prompt": "Quelle valeur prend « si » dans cette phrase ?",
+    "before": "",
+    "focus": "Si le ciel se dégage",
+    "after": ", nous observerons les étoiles depuis la cour.",
+    "options": [
+      {
+        "id": "a",
+        "label": "Il introduit une question rapportée après un verbe de parole."
+      },
+      {
+        "id": "b",
+        "label": "Il introduit la condition dont dépend l’observation."
+      },
+      {
+        "id": "c",
+        "label": "Il annonce une conséquence déjà réalisée."
+      },
+      {
+        "id": "d",
+        "label": "Il remplace un nom employé avant lui."
+      }
+    ],
+    "answer": "b",
+    "explanation": "L’observation aura lieu à la condition que le ciel se dégage. Contrairement à « Je demande si le ciel se dégage », cette phrase ne rapporte pas une question : la subordonnée est circonstancielle de condition."
+  },
+  {
+    "id": 15,
+    "label": "Transformer la phrase",
+    "prompt": "Quelle réécriture remplace la subordination par une coordination en conservant l’explication ?",
+    "before": "",
+    "focus": "Le sentier est fermé parce que la falaise menace de s’effondrer.",
+    "after": "",
+    "options": [
+      {
+        "id": "a",
+        "label": "Le sentier est fermé quand la falaise menace de s’effondrer."
+      },
+      {
+        "id": "b",
+        "label": "Le sentier est fermé ; la falaise menace de s’effondrer."
+      },
+      {
+        "id": "c",
+        "label": "Le sentier est fermé, mais la falaise menace de s’effondrer."
+      },
+      {
+        "id": "d",
+        "label": "Le sentier est fermé, car la falaise menace de s’effondrer."
+      }
+    ],
+    "answer": "d",
+    "explanation": "« Car » coordonne les deux propositions en gardant le lien explicatif. Le point-virgule créerait une juxtaposition ; « quand » conserverait une subordination en exprimant le temps ; « mais » introduirait une opposition."
+  },
+  {
+    "id": 16,
+    "label": "Rapporter une question",
+    "prompt": "Quelle réécriture au discours indirect respecte la syntaxe de l’écrit ?",
+    "before": "Le lecteur demande : « ",
+    "focus": "Pourquoi le récit s’arrête-t-il ici ?",
+    "after": " »",
+    "options": [
+      {
+        "id": "a",
+        "label": "Le lecteur demande pourquoi le récit s’arrête ici."
+      },
+      {
+        "id": "b",
+        "label": "Le lecteur demande pourquoi le récit s’arrête-t-il ici."
+      },
+      {
+        "id": "c",
+        "label": "Le lecteur demande que pourquoi le récit s’arrête ici."
+      },
+      {
+        "id": "d",
+        "label": "Le lecteur demande est-ce que pourquoi le récit s’arrête ici."
+      }
+    ],
+    "answer": "a",
+    "explanation": "L’interrogative indirecte conserve le mot interrogatif « pourquoi », mais abandonne l’inversion « s’arrête-t-il ». Elle dépend de « demande » et s’intègre dans une phrase déclarative, sans point d’interrogation final."
+  },
+  {
+    "id": 17,
+    "label": "Repérer la principale",
+    "prompt": "Quelle proposition reste-t-il si l’on supprime la relative soulignée ?",
+    "before": "Le roman ",
+    "focus": "que notre classe étudie",
+    "after": " est épuisé en librairie.",
+    "options": [
+      {
+        "id": "a",
+        "label": "Le roman est épuisé en librairie."
+      },
+      {
+        "id": "b",
+        "label": "Que notre classe étudie."
+      },
+      {
+        "id": "c",
+        "label": "Notre classe étudie en librairie."
+      },
+      {
+        "id": "d",
+        "label": "Le roman que notre classe étudie."
+      }
+    ],
+    "answer": "a",
+    "explanation": "La relative est insérée entre le sujet « Le roman » et le verbe « est ». En retirant uniquement cette expansion du nom, on retrouve la principale « Le roman est épuisé en librairie ». Une principale n’est donc pas toujours un bloc placé avant la subordonnée."
+  },
+  {
+    "id": 18,
+    "label": "Groupe nominal étendu",
+    "prompt": "Quelle est la fonction du groupe entier souligné dans la phrase ?",
+    "before": "",
+    "focus": "Les lettres que ma grand-mère conservait dans une boîte",
+    "after": " racontent son enfance à la campagne.",
+    "options": [
+      {
+        "id": "a",
+        "label": "COD du verbe « racontent »."
+      },
+      {
+        "id": "b",
+        "label": "Complément circonstanciel de lieu."
+      },
+      {
+        "id": "c",
+        "label": "Sujet du verbe « racontent »."
+      },
+      {
+        "id": "d",
+        "label": "Attribut du sujet « son enfance »."
+      }
+    ],
+    "answer": "c",
+    "explanation": "Tout le groupe peut être remplacé par « elles » : « Elles racontent son enfance à la campagne ». Son noyau est « lettres », précisé par la relative « que ma grand-mère conservait dans une boîte ». Cette expansion ne change pas la fonction sujet du groupe nominal entier."
+  },
+  {
+    "id": 19,
+    "label": "Déplacer une subordonnée",
+    "prompt": "Quelle analyse est confortée par le déplacement de ce passage à la fin de la phrase ?",
+    "before": "",
+    "focus": "Lorsque le débat se termina",
+    "after": ", nous rangeâmes les chaises.",
+    "options": [
+      {
+        "id": "a",
+        "label": "C’est une relative qui précise le nom « débat »."
+      },
+      {
+        "id": "b",
+        "label": "C’est une subordonnée circonstancielle de temps."
+      },
+      {
+        "id": "c",
+        "label": "C’est une complétive COD du verbe « rangeâmes »."
+      },
+      {
+        "id": "d",
+        "label": "C’est une proposition indépendante coordonnée."
+      }
+    ],
+    "answer": "b",
+    "explanation": "On peut écrire « Nous rangeâmes les chaises lorsque le débat se termina ». La subordonnée donne le moment du rangement et peut être déplacée comme un complément circonstanciel de temps. « Lorsque » reste un mot subordonnant."
+  },
+  {
+    "id": 20,
+    "label": "Fonction de « dont »",
+    "prompt": "Quelle est la fonction du pronom relatif souligné dans la subordonnée ?",
+    "before": "J’ai choisi un recueil ",
+    "focus": "dont",
+    "after": " le titre m’intriguait.",
+    "options": [
+      {
+        "id": "a",
+        "label": "Sujet du verbe « intriguait »."
+      },
+      {
+        "id": "b",
+        "label": "Complément d’objet direct du verbe « ai choisi »."
+      },
+      {
+        "id": "c",
+        "label": "Complément circonstanciel de temps."
+      },
+      {
+        "id": "d",
+        "label": "Complément du nom « titre »."
+      }
+    ],
+    "answer": "d",
+    "explanation": "La relation se reconstruit ainsi : « Le titre de ce recueil m’intriguait ». « Dont » représente « de ce recueil » et complète donc le nom « titre ». Le sujet de « intriguait » est le groupe « le titre », pas le pronom « dont »."
+  }
+]

@@ -1,0 +1,562 @@
+[
+  {
+    "id": 1,
+    "label": "Aspect borné",
+    "prompt": "Comment le passé simple présente-t-il les dix années évoquées ?",
+    "before": "Pendant dix ans, de son installation à son départ, la peintre ",
+    "focus": "habita",
+    "after": " cet atelier.",
+    "options": [
+      {
+        "id": "a",
+        "label": "Comme une période envisagée dans son ensemble, avec des limites."
+      },
+      {
+        "id": "b",
+        "label": "Comme une action nécessairement très brève."
+      },
+      {
+        "id": "c",
+        "label": "Comme une situation observée seulement en cours de déroulement."
+      },
+      {
+        "id": "d",
+        "label": "Comme une habitude encore actuelle."
+      }
+    ],
+    "answer": "a",
+    "explanation": "Le début et la fin du séjour sont indiqués. Le passé simple donne une vue globale de cette période : on parle ici d’aspect borné. Borné ne signifie pas bref, puisque le séjour dure dix ans."
+  },
+  {
+    "id": 2,
+    "label": "Aspect non borné",
+    "prompt": "Que montre l’imparfait au moment où le train passa ?",
+    "before": "Lorsque le train passa sous le pont, une femme ",
+    "focus": "lisait",
+    "after": " près de la fenêtre.",
+    "options": [
+      {
+        "id": "a",
+        "label": "La lecture complète, du début à la dernière page."
+      },
+      {
+        "id": "b",
+        "label": "La lecture en cours, sans en montrer les limites à cet instant."
+      },
+      {
+        "id": "c",
+        "label": "Une lecture répétée à chaque passage du train."
+      },
+      {
+        "id": "d",
+        "label": "Une lecture qui commence seulement après le passage du train."
+      }
+    ],
+    "answer": "b",
+    "explanation": "Le narrateur saisit la femme au milieu de sa lecture. L’imparfait adopte un point de vue interne au déroulement, dit non borné : il ne montre pas ici le début ni la fin. Cela ne prouve pas que la lecture ne se terminera jamais."
+  },
+  {
+    "id": 3,
+    "label": "Habitude",
+    "prompt": "Quel indice permet d’interpréter cet imparfait comme une habitude ?",
+    "before": "Durant son enfance, chaque fois qu’un orage approchait, Nora ",
+    "focus": "comptait",
+    "after": " les secondes entre l’éclair et le tonnerre.",
+    "options": [
+      {
+        "id": "a",
+        "label": "Le sujet est un prénom féminin."
+      },
+      {
+        "id": "b",
+        "label": "Le verbe exprime nécessairement une action très longue."
+      },
+      {
+        "id": "c",
+        "label": "« Chaque fois » indique la répétition dans des circonstances semblables."
+      },
+      {
+        "id": "d",
+        "label": "Le mot « enfance » signifie que l’action n’a eu lieu qu’une fois."
+      }
+    ],
+    "answer": "c",
+    "explanation": "L’expression « chaque fois » fait revenir le même comportement à plusieurs occasions. L’imparfait présente donc une habitude de Nora ; ce n’est pas seulement le sens du verbe compter qui permet cette interprétation."
+  },
+  {
+    "id": 4,
+    "label": "Premier plan",
+    "prompt": "Quel rôle joue le verbe au passé simple dans ce passage ?",
+    "before": "Les invités échangeaient des propos tranquilles lorsqu’un verre ",
+    "focus": "éclata",
+    "after": " au fond de la salle.",
+    "options": [
+      {
+        "id": "a",
+        "label": "Il décrit une propriété permanente de la salle."
+      },
+      {
+        "id": "b",
+        "label": "Il présente une action qui se répète tous les soirs."
+      },
+      {
+        "id": "c",
+        "label": "Il laisse entendre que le verre est toujours en train d’éclater."
+      },
+      {
+        "id": "d",
+        "label": "Il détache un événement nouveau sur un arrière-plan déjà installé."
+      }
+    ],
+    "answer": "d",
+    "explanation": "« Échangeaient » installe une activité en cours. « Éclata » introduit l’événement qui modifie la scène et fait progresser le récit : c’est le premier plan. Le contraste entre les deux temps organise l’attention du lecteur."
+  },
+  {
+    "id": 5,
+    "label": "Description",
+    "prompt": "Quelle interprétation de l’imparfait est la mieux justifiée ?",
+    "before": "À travers la vitre, la voyageuse observait la place. Une statue ",
+    "focus": "occupait",
+    "after": " son centre, entre deux bassins.",
+    "options": [
+      {
+        "id": "a",
+        "label": "Il raconte l’installation de la statue à cet instant."
+      },
+      {
+        "id": "b",
+        "label": "Il présente un élément du décor tel qu’il apparaît à la voyageuse."
+      },
+      {
+        "id": "c",
+        "label": "Il indique que la statue changeait régulièrement de place."
+      },
+      {
+        "id": "d",
+        "label": "Il résume la disparition complète de la statue."
+      }
+    ],
+    "answer": "b",
+    "explanation": "Le verbe situe la statue dans le paysage observé. L’imparfait construit ici la description du décor ; il ne raconte ni l’arrivée ni le déplacement de la statue."
+  },
+  {
+    "id": 6,
+    "label": "Répétition bornée",
+    "prompt": "Pourquoi le passé simple est-il compatible avec une action répétée ?",
+    "before": "Cette nuit-là, la gardienne ",
+    "focus": "frappa",
+    "after": " trois fois à la porte, puis repartit.",
+    "options": [
+      {
+        "id": "a",
+        "label": "Le passé simple interdit toute répétition : cette phrase est incorrecte."
+      },
+      {
+        "id": "b",
+        "label": "La gardienne recommence la même action chaque nuit."
+      },
+      {
+        "id": "c",
+        "label": "Les trois coups sont regroupés en un épisode achevé."
+      },
+      {
+        "id": "d",
+        "label": "Le nombre de coups reste indéterminé."
+      }
+    ],
+    "answer": "c",
+    "explanation": "« Trois fois » compte les répétitions et « puis repartit » clôt l’épisode. Le passé simple peut donc présenter un ensemble d’actions répétées comme un tout borné. La répétition n’impose pas toujours l’imparfait."
+  },
+  {
+    "id": 7,
+    "label": "Changer le temps",
+    "prompt": "Si l’on remplace « marchait » par « marcha », quel changement de point de vue obtient-on ?",
+    "before": "À l’aube, le voyageur ",
+    "focus": "marchait",
+    "after": " le long du canal.",
+    "options": [
+      {
+        "id": "a",
+        "label": "La marche devient obligatoirement plus rapide."
+      },
+      {
+        "id": "b",
+        "label": "La marche se situe automatiquement avant tous les autres événements."
+      },
+      {
+        "id": "c",
+        "label": "Le voyageur effectue nécessairement plusieurs promenades."
+      },
+      {
+        "id": "d",
+        "label": "La marche est présentée globalement comme un épisode du récit."
+      }
+    ],
+    "answer": "d",
+    "explanation": "« Marchait » montre la marche dans son déroulement. « Marcha » la présente globalement, comme une étape du récit, même si sa durée exacte reste inconnue. Changer le temps ne change pas automatiquement la vitesse du personnage."
+  },
+  {
+    "id": 8,
+    "label": "État délimité",
+    "prompt": "Que montre cet emploi du passé simple avec un état ?",
+    "before": "De sa fondation à sa fermeture, cette école ",
+    "focus": "fut",
+    "after": " un lieu d’accueil pour les enfants du quartier.",
+    "options": [
+      {
+        "id": "a",
+        "label": "Un état peut être présenté comme une période délimitée."
+      },
+      {
+        "id": "b",
+        "label": "Le passé simple ne peut jamais s’employer avec le verbe être."
+      },
+      {
+        "id": "c",
+        "label": "Le rôle d’accueil a nécessairement duré un instant."
+      },
+      {
+        "id": "d",
+        "label": "Le narrateur ne donne aucune limite à l’existence de l’école."
+      }
+    ],
+    "answer": "a",
+    "explanation": "« De sa fondation à sa fermeture » encadre toute une période. « Fut » présente cet état dans son ensemble. Le passé simple ne sert donc pas uniquement à raconter des gestes ou des changements brusques."
+  },
+  {
+    "id": 9,
+    "label": "Simultanéité",
+    "prompt": "Comment interpréter les deux actions à l’imparfait ?",
+    "before": "Pendant que le frère réparait la lampe, sa sœur ",
+    "focus": "cherchait",
+    "after": " une nouvelle ampoule dans le placard.",
+    "options": [
+      {
+        "id": "a",
+        "label": "La sœur commence nécessairement après la fin de la réparation."
+      },
+      {
+        "id": "b",
+        "label": "Les deux actions sont présentées comme des habitudes quotidiennes."
+      },
+      {
+        "id": "c",
+        "label": "Leurs déroulements se recouvrent dans le temps."
+      },
+      {
+        "id": "d",
+        "label": "La recherche de l’ampoule est explicitement terminée."
+      }
+    ],
+    "answer": "c",
+    "explanation": "« Pendant que » relie deux activités simultanées. Les imparfaits les montrent en cours, sans en raconter les limites. La phrase ne précise ni leur achèvement ni une répétition habituelle."
+  },
+  {
+    "id": 10,
+    "label": "Succession",
+    "prompt": "Quel effet produit la série de passés simples ?",
+    "before": "La journaliste déplia le message, ",
+    "focus": "relut",
+    "after": " la dernière ligne, puis décrocha le téléphone.",
+    "options": [
+      {
+        "id": "a",
+        "label": "Elle superpose trois actions présentées comme simultanées."
+      },
+      {
+        "id": "b",
+        "label": "Elle décrit uniquement les qualités habituelles de la journaliste."
+      },
+      {
+        "id": "c",
+        "label": "Elle situe les trois actions avant un autre passé grâce à un temps composé."
+      },
+      {
+        "id": "d",
+        "label": "Elle organise trois étapes successives qui font avancer la scène."
+      }
+    ],
+    "answer": "d",
+    "explanation": "Les verbes et « puis » guident le lecteur d’une étape à l’autre. Le passé simple présente chacune globalement et construit la progression du récit. Ce n’est pas un temps composé exprimant à lui seul l’antériorité."
+  },
+  {
+    "id": 11,
+    "label": "Limite du sens",
+    "prompt": "Que peut-on affirmer à partir de cet imparfait ?",
+    "before": "À notre arrivée, l’artisan ",
+    "focus": "sculptait",
+    "after": " une petite figure dans le bois.",
+    "options": [
+      {
+        "id": "a",
+        "label": "Le travail était en cours à notre arrivée ; sa fin n’est pas indiquée."
+      },
+      {
+        "id": "b",
+        "label": "L’artisan n’a jamais achevé sa sculpture."
+      },
+      {
+        "id": "c",
+        "label": "L’artisan venait obligatoirement de commencer sa sculpture."
+      },
+      {
+        "id": "d",
+        "label": "L’artisan avait déjà terminé sa sculpture à notre arrivée."
+      }
+    ],
+    "answer": "a",
+    "explanation": "L’imparfait place le regard à l’intérieur du travail. Il ne permet pas de décider si l’artisan terminera ensuite sa sculpture. Une action montrée sans ses limites n’est pas nécessairement une action réellement inachevée."
+  },
+  {
+    "id": 12,
+    "label": "Imparfait narratif",
+    "prompt": "Dans ce passage daté, quel emploi particulier de l’imparfait reconnaît-on ?",
+    "before": "Le conseil refusa sa proposition. Le lendemain, à midi précis, elle ",
+    "focus": "quittait",
+    "after": " définitivement la ville.",
+    "options": [
+      {
+        "id": "a",
+        "label": "Un imparfait d’habitude : elle quitte la ville tous les midis."
+      },
+      {
+        "id": "b",
+        "label": "Un imparfait narratif présentant un événement unique qui fait progresser le récit."
+      },
+      {
+        "id": "c",
+        "label": "Une description de la forme de la ville."
+      },
+      {
+        "id": "d",
+        "label": "Une action nécessairement simultanée au refus du conseil."
+      }
+    ],
+    "answer": "b",
+    "explanation": "« Le lendemain », « à midi précis » et « définitivement » situent un départ unique après le refus. Cet imparfait narratif donne à voir l’événement en train de se produire. L’imparfait n’est donc pas toujours limité à l’arrière-plan ou aux habitudes."
+  },
+  {
+    "id": 13,
+    "label": "Comparer deux vues",
+    "prompt": "Quel changement produit « trembla » à la place de « tremblait » ?",
+    "before": "Devant la porte close, la sentinelle ",
+    "focus": "tremblait",
+    "after": " de peur.",
+    "options": [
+      {
+        "id": "a",
+        "label": "La peur devient nécessairement plus forte."
+      },
+      {
+        "id": "b",
+        "label": "La phrase indique désormais une habitude quotidienne."
+      },
+      {
+        "id": "c",
+        "label": "Le tremblement se déroule obligatoirement dans le présent du lecteur."
+      },
+      {
+        "id": "d",
+        "label": "La peur manifestée par le tremblement est présentée globalement comme un épisode."
+      }
+    ],
+    "answer": "d",
+    "explanation": "« Tremblait » donne à voir un état en cours. « Trembla » le présente comme un épisode borné du passé. La différence porte sur la manière d’envisager la situation, pas sur une mesure certaine de l’intensité de la peur."
+  },
+  {
+    "id": 14,
+    "label": "Durée et temps",
+    "prompt": "Pourquoi l’expression « pendant un mois » convient-elle avec ce passé simple ?",
+    "before": "Pendant un mois, l’archéologue ",
+    "focus": "chercha",
+    "after": " l’entrée du passage ; elle renonça ensuite.",
+    "options": [
+      {
+        "id": "a",
+        "label": "Une recherche longue peut être racontée comme un épisode achevé."
+      },
+      {
+        "id": "b",
+        "label": "Le passé simple signifie toujours que la recherche a réussi."
+      },
+      {
+        "id": "c",
+        "label": "Une durée exprimée en mois exige obligatoirement l’imparfait."
+      },
+      {
+        "id": "d",
+        "label": "Le passé simple transforme un mois en un instant dans l’histoire."
+      }
+    ],
+    "answer": "a",
+    "explanation": "« Pendant un mois » mesure l’épisode et « renonça ensuite » en marque la clôture. Le passé simple présente toute la recherche comme un ensemble. Achever une recherche ne signifie pas nécessairement trouver ce que l’on cherchait."
+  },
+  {
+    "id": 15,
+    "label": "Portée de l’imparfait",
+    "prompt": "Quelle conclusion respecte ce que dit la phrase ?",
+    "before": "Quand le navire entra dans la baie, le phare ",
+    "focus": "brillait",
+    "after": " au-dessus des rochers.",
+    "options": [
+      {
+        "id": "a",
+        "label": "Le phare n’avait jamais été éteint auparavant."
+      },
+      {
+        "id": "b",
+        "label": "Le phare était allumé à ce moment-là, sans indication sur son extinction."
+      },
+      {
+        "id": "c",
+        "label": "Le phare s’allumait exactement au moment de l’entrée du navire."
+      },
+      {
+        "id": "d",
+        "label": "Le phare allait nécessairement s’éteindre une seconde plus tard."
+      }
+    ],
+    "answer": "b",
+    "explanation": "L’imparfait montre une situation en cours au moment de l’événement au passé simple. Il ne précise ni l’allumage ni l’extinction du phare. Il ne faut pas transformer l’absence de bornes dans la présentation en absence réelle de début ou de fin."
+  },
+  {
+    "id": 16,
+    "label": "Rythme du récit",
+    "prompt": "Quel effet produit ici le passé simple associé à « vingt années » ?",
+    "before": "Dans ce refuge isolé, le savant ",
+    "focus": "passa",
+    "after": " vingt années à étudier le ciel. Un soir, il reçut enfin une visite.",
+    "options": [
+      {
+        "id": "a",
+        "label": "Il détaille nécessairement chacune des journées de ces vingt années."
+      },
+      {
+        "id": "b",
+        "label": "Il indique que les vingt années durent quelques secondes dans l’histoire."
+      },
+      {
+        "id": "c",
+        "label": "Il résume une longue période avant de raconter un événement particulier."
+      },
+      {
+        "id": "d",
+        "label": "Il impose que la visite se produise avant le séjour."
+      }
+    ],
+    "answer": "c",
+    "explanation": "Une seule phrase embrasse vingt années : le récit condense cette période, puis se resserre sur une visite. La durée de l’histoire peut être longue alors que le texte qui la raconte est court. Le passé simple participe ici à cette vue d’ensemble."
+  },
+  {
+    "id": 17,
+    "label": "Arrière-plan actif",
+    "prompt": "Pourquoi l’imparfait ne signifie-t-il pas ici que la scène est immobile ?",
+    "before": "Quand la grille s’ouvrit, plusieurs enfants ",
+    "focus": "couraient",
+    "after": " déjà vers la sortie.",
+    "options": [
+      {
+        "id": "a",
+        "label": "Il peut montrer une activité en mouvement comme arrière-plan d’un autre événement."
+      },
+      {
+        "id": "b",
+        "label": "Il annule le sens du verbe courir."
+      },
+      {
+        "id": "c",
+        "label": "Il transforme automatiquement le mouvement en habitude."
+      },
+      {
+        "id": "d",
+        "label": "Il prouve que la course est déjà terminée."
+      }
+    ],
+    "answer": "a",
+    "explanation": "« Couraient » garde le sens d’une activité en mouvement. L’imparfait montre cette activité déjà engagée lorsque la grille s’ouvre. L’opposition arrière-plan / premier plan concerne l’organisation du récit, pas l’opposition immobilité / mouvement."
+  },
+  {
+    "id": 18,
+    "label": "Durée habituelle",
+    "prompt": "Quelle valeur domine malgré la durée précise de chaque séance ?",
+    "before": "Tous les après-midi, pendant deux heures, le musicien ",
+    "focus": "répétait",
+    "after": " le même passage avant le concert du soir.",
+    "options": [
+      {
+        "id": "a",
+        "label": "Un événement unique sans répétition."
+      },
+      {
+        "id": "b",
+        "label": "Une série nécessairement achevée de deux séances seulement."
+      },
+      {
+        "id": "c",
+        "label": "Une habitude : des séances se répètent selon le même rythme."
+      },
+      {
+        "id": "d",
+        "label": "Un fait situé dans le futur par rapport au narrateur."
+      }
+    ],
+    "answer": "c",
+    "explanation": "« Tous les après-midi » indique la répétition des séances ; « pendant deux heures » mesure chacune d’elles. On peut donc préciser la durée de chaque occurrence tout en utilisant l’imparfait pour présenter une habitude."
+  },
+  {
+    "id": 19,
+    "label": "Choisir une formulation",
+    "prompt": "On veut raconter les trois heures de surveillance comme un épisode complet. Quelle formulation convient ?",
+    "before": "De neuf heures à midi, le gardien ",
+    "focus": "surveillait",
+    "after": " la cour.",
+    "options": [
+      {
+        "id": "a",
+        "label": "À midi, le gardien surveillait encore la cour."
+      },
+      {
+        "id": "b",
+        "label": "À notre arrivée, le gardien surveillait la cour."
+      },
+      {
+        "id": "c",
+        "label": "Comme chaque jour, le gardien surveillait la cour."
+      },
+      {
+        "id": "d",
+        "label": "De neuf heures à midi, le gardien surveilla la cour."
+      }
+    ],
+    "answer": "d",
+    "explanation": "« Surveilla » présente globalement la surveillance entre les deux limites horaires. Les formulations avec « à midi » ou « à notre arrivée » saisissent l’activité en cours ; « comme chaque jour » oriente vers l’habitude. Le choix dépend du point de vue voulu."
+  },
+  {
+    "id": 20,
+    "label": "Synthèse",
+    "prompt": "Quelle règle explique le mieux le choix entre passé simple et imparfait dans un récit ?",
+    "before": "Il ",
+    "focus": "attendit",
+    "after": " une heure. La pluie tombait quand il repartit.",
+    "options": [
+      {
+        "id": "a",
+        "label": "Le passé simple exprime toujours une durée courte et l’imparfait une durée longue."
+      },
+      {
+        "id": "b",
+        "label": "Le passé simple présente ici un épisode global, l’imparfait une situation en cours."
+      },
+      {
+        "id": "c",
+        "label": "Le passé simple exprime uniquement des actions uniques, l’imparfait uniquement des répétitions."
+      },
+      {
+        "id": "d",
+        "label": "L’imparfait indique toujours une action qui ne se terminera jamais."
+      }
+    ],
+    "answer": "b",
+    "explanation": "L’attente, pourtant longue d’une heure, est envisagée globalement au passé simple. La pluie est présentée en cours au moment du départ. Le contexte et le point de vue sur le déroulement comptent davantage qu’une opposition simpliste entre court et long."
+  }
+]

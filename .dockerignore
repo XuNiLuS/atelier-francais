@@ -4,9 +4,14 @@
 !app.py
 !templates/
 !templates/index.html
+!templates/base.html
+!templates/home.html
+!templates/programmes.html
 !static/
 !static/app.js
 !static/style.css
 !static/favicon.svg
 !data/
-!data/questions.json
+!data/catalog.json
+!data/quizzes/
+!data/quizzes/*.json
