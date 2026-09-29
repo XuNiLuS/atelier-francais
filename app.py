@@ -1,15 +1,86 @@
-"""Un QCM de français, servi par Flask et corrigé côté serveur."""
+"""Un QCM de français, servi par FastAPI et corrigé côté serveur."""
 
 import json
 import os
 from pathlib import Path
+from typing import Literal
 
-from flask import Flask, jsonify, render_template, request
-from werkzeug.exceptions import BadRequest, RequestEntityTooLarge
+from fastapi import FastAPI, HTTPException, Request
+from fastapi.exceptions import RequestValidationError
+from fastapi.responses import HTMLResponse, JSONResponse
+from fastapi.routing import APIRoute
+from fastapi.staticfiles import StaticFiles
+from fastapi.templating import Jinja2Templates
+from pydantic import BaseModel, ConfigDict, StrictInt
+from starlette.exceptions import HTTPException as StarletteHTTPException
+import uvicorn
 
 
-QUESTIONS_PATH = Path(__file__).parent / "data" / "questions.json"
+BASE_DIR = Path(__file__).resolve().parent
+QUESTIONS_PATH = BASE_DIR / "data" / "questions.json"
 PUBLIC_FIELDS = ("id", "tense", "before", "verb", "after", "options")
+MAX_BODY_SIZE = 16 * 1024
+Answer = Literal["a", "b", "c", "d"]
+
+
+class CheckRequest(BaseModel):
+    model_config = ConfigDict(extra="forbid", strict=True)
+
+    question_id: StrictInt
+    answer: Answer
+
+
+class SubmitRequest(BaseModel):
+    model_config = ConfigDict(extra="forbid", strict=True)
+
+    answers: dict[str, Answer]
+
+
+class AnswerResult(BaseModel):
+    id: int
+    selected: Answer
+    correct_answer: Answer
+    is_correct: bool
+    explanation: str
+
+
+class QuizResult(BaseModel):
+    score: int
+    total: int
+    results: list[AnswerResult]
+
+
+class LimitedJSONRequest(Request):
+    """Limiter le flux avant que FastAPI lise et valide le contenu JSON."""
+
+    async def body(self):
+        if not hasattr(self, "_body"):
+            body = bytearray()
+            async for chunk in self.stream():
+                if len(body) + len(chunk) > MAX_BODY_SIZE:
+                    raise HTTPException(
+                        400, "La requête est trop volumineuse (16 Ko maximum)."
+                    )
+                body.extend(chunk)
+            self._body = bytes(body)
+        return self._body
+
+
+class JSONRoute(APIRoute):
+    def get_route_handler(self):
+        original_handler = super().get_route_handler()
+
+        async def route_handler(request: Request):
+            if request.url.path.startswith("/api/"):
+                content_type = request.headers.get("content-type", "").split(";", 1)[0].strip().lower()
+                if content_type != "application/json" and not (
+                    content_type.startswith("application/") and content_type.endswith("+json")
+                ):
+                    raise HTTPException(400, "La requête doit être envoyée au format JSON.")
+                request = LimitedJSONRequest(request.scope, request.receive)
+            return await original_handler(request)
+
+        return route_handler
 
 
 def load_questions(path=QUESTIONS_PATH):
@@ -57,71 +128,84 @@ def load_questions(path=QUESTIONS_PATH):
     return questions
 
 
+def answer_result(question, selected):
+    return AnswerResult(
+        id=question["id"],
+        selected=selected,
+        correct_answer=question["answer"],
+        is_correct=selected == question["answer"],
+        explanation=question["explanation"],
+    )
+
+
 def create_app():
-    app = Flask(__name__)
-    app.config["MAX_CONTENT_LENGTH"] = 16 * 1024
-    app.json.ensure_ascii = False
+    app = FastAPI(title="L’atelier des temps", version="2.0.0")
+    app.router.route_class = JSONRoute
+    app.mount("/static", StaticFiles(directory=BASE_DIR / "static"), name="static")
+    templates = Jinja2Templates(directory=BASE_DIR / "templates")
     questions = load_questions()
+    questions_by_id = {question["id"]: question for question in questions}
     question_ids = {str(question["id"]) for question in questions}
 
-    @app.get("/")
-    def index():
-        # La solution et les explications ne sont envoyées qu'après soumission.
+    @app.middleware("http")
+    async def disable_api_cache(request: Request, call_next):
+        response = await call_next(request)
+        if request.url.path.startswith("/api/"):
+            response.headers["Cache-Control"] = "no-store"
+        return response
+
+    @app.exception_handler(RequestValidationError)
+    async def invalid_payload(request: Request, error: RequestValidationError):
+        if any(item["type"] == "json_invalid" for item in error.errors()):
+            message = "Le contenu JSON de la requête est invalide."
+        elif request.url.path == "/api/check":
+            message = "Envoyez uniquement « question_id » (un entier) et « answer » (a, b, c ou d)."
+        else:
+            message = "Envoyez uniquement « answers », un objet associant chaque question à a, b, c ou d."
+        return JSONResponse({"error": message}, status_code=400)
+
+    @app.exception_handler(StarletteHTTPException)
+    async def http_error(_request: Request, error: StarletteHTTPException):
+        messages = {
+            "There was an error parsing the body": "Le contenu JSON de la requête est invalide.",
+            "Not Found": "Cette ressource est introuvable.",
+            "Method Not Allowed": "Cette méthode n’est pas autorisée.",
+        }
+        message = messages.get(error.detail, error.detail)
+        return JSONResponse({"error": message}, status_code=error.status_code, headers=error.headers)
+
+    @app.get("/", response_class=HTMLResponse, include_in_schema=False)
+    def index(request: Request):
+        # La solution et les explications ne sont envoyées qu'après une réponse.
         public_questions = [
             {field: question[field] for field in PUBLIC_FIELDS}
             for question in questions
         ]
-        return render_template("index.html", questions=public_questions)
+        return templates.TemplateResponse(
+            request=request, name="index.html", context={"questions": public_questions}
+        )
 
     @app.get("/health")
     def health():
-        return jsonify(status="ok")
+        return {"status": "ok"}
 
-    @app.errorhandler(RequestEntityTooLarge)
-    def payload_too_large(_error):
-        return jsonify(error="La requête est trop volumineuse (16 Ko maximum)."), 400
+    @app.post("/api/check", response_model=AnswerResult)
+    def check(payload: CheckRequest):
+        question = questions_by_id.get(payload.question_id)
+        if question is None:
+            raise HTTPException(400, "Choisissez un identifiant de question valide.")
+        return answer_result(question, payload.answer)
 
-    @app.after_request
-    def disable_api_cache(response):
-        if request.path.startswith("/api/"):
-            response.headers["Cache-Control"] = "no-store"
-        return response
-
-    @app.post("/api/submit")
-    def submit():
-        if not request.is_json:
-            return jsonify(error="La requête doit être envoyée au format JSON."), 400
-        try:
-            payload = request.get_json()
-        except (BadRequest, RecursionError):
-            return jsonify(error="Le contenu JSON de la requête est invalide."), 400
-
-        if not isinstance(payload, dict) or set(payload) != {"answers"}:
-            return jsonify(error="Envoyez un objet JSON contenant uniquement « answers »."), 400
-        answers = payload["answers"]
-        if not isinstance(answers, dict):
-            return jsonify(error="Le champ « answers » doit contenir un objet de réponses."), 400
-        if set(answers) != question_ids:
-            return jsonify(error="Répondez à toutes les questions, sans identifiant supplémentaire."), 400
-
-        for question in questions:
-            selected = answers[str(question["id"])]
-            valid_options = {option["id"] for option in question["options"]}
-            if not isinstance(selected, str) or selected not in valid_options:
-                return jsonify(error=f"Choisissez une réponse valide pour la question {question['id']}."), 400
-
-        results = []
-        for question in questions:
-            selected = answers[str(question["id"])]
-            results.append({
-                "id": question["id"],
-                "selected": selected,
-                "correct_answer": question["answer"],
-                "is_correct": selected == question["answer"],
-                "explanation": question["explanation"],
-            })
-        return jsonify(
-            score=sum(result["is_correct"] for result in results),
+    @app.post("/api/submit", response_model=QuizResult)
+    def submit(payload: SubmitRequest):
+        if set(payload.answers) != question_ids:
+            raise HTTPException(400, "Répondez à toutes les questions, sans identifiant supplémentaire.")
+        results = [
+            answer_result(question, payload.answers[str(question["id"])])
+            for question in questions
+        ]
+        return QuizResult(
+            score=sum(result.is_correct for result in results),
             total=len(questions),
             results=results,
         )
@@ -133,8 +217,8 @@ app = create_app()
 
 
 if __name__ == "__main__":
-    app.run(
+    uvicorn.run(
+        app,
         host=os.environ.get("HOST", "127.0.0.1"),
         port=int(os.environ.get("PORT", "8000")),
-        debug=False,
     )
