@@ -1,0 +1,562 @@
+[
+  {
+    "id": 1,
+    "label": "Identifier une forme",
+    "prompt": "À quel mode et à quel temps la forme soulignée appartient-elle ?",
+    "before": "Il est essentiel que tu ",
+    "focus": "saches",
+    "after": " expliquer ton raisonnement.",
+    "options": [
+      {
+        "id": "a",
+        "label": "À l’indicatif présent."
+      },
+      {
+        "id": "b",
+        "label": "Au subjonctif passé."
+      },
+      {
+        "id": "c",
+        "label": "Au subjonctif présent."
+      },
+      {
+        "id": "d",
+        "label": "À l’impératif présent."
+      }
+    ],
+    "answer": "c",
+    "explanation": "« Saches » est la forme de savoir au subjonctif présent avec « tu ». L’expression « il est essentiel que » introduit ici une nécessité et appelle ce mode. À l’indicatif présent, on écrirait « tu sais »."
+  },
+  {
+    "id": 2,
+    "label": "Identifier une forme",
+    "prompt": "Quelle est l’analyse de la forme verbale soulignée ?",
+    "before": "Nous sommes ravis que vous ",
+    "focus": "ayez réussi",
+    "after": " votre expérience.",
+    "options": [
+      {
+        "id": "a",
+        "label": "Un subjonctif passé."
+      },
+      {
+        "id": "b",
+        "label": "Un passé composé de l’indicatif."
+      },
+      {
+        "id": "c",
+        "label": "Un conditionnel passé."
+      },
+      {
+        "id": "d",
+        "label": "Un subjonctif présent."
+      }
+    ],
+    "answer": "a",
+    "explanation": "L’auxiliaire « ayez » est au subjonctif présent et il est suivi du participe passé « réussi ». Cette association forme le subjonctif passé. Le passé composé de l’indicatif serait « vous avez réussi »."
+  },
+  {
+    "id": 3,
+    "label": "Conjugaison",
+    "prompt": "Quelle forme complète cette phrase au subjonctif présent ?",
+    "before": "La responsable souhaite que nous ",
+    "focus": "…",
+    "after": " le rangement ensemble.",
+    "options": [
+      {
+        "id": "a",
+        "label": "finissons"
+      },
+      {
+        "id": "b",
+        "label": "finirons"
+      },
+      {
+        "id": "c",
+        "label": "finirions"
+      },
+      {
+        "id": "d",
+        "label": "finissions"
+      }
+    ],
+    "answer": "d",
+    "explanation": "Avec « nous », finir donne « finissions » au subjonctif présent. Le souhait exprimé par « souhaite que » appelle ce mode. « Finissons » est un présent de l’indicatif, « finirons » un futur et « finirions » un conditionnel."
+  },
+  {
+    "id": 4,
+    "label": "Conjugaison",
+    "prompt": "Quelle forme du verbe être convient après « il faut que » ?",
+    "before": "Il faut que les issues de secours ",
+    "focus": "…",
+    "after": " accessibles.",
+    "options": [
+      {
+        "id": "a",
+        "label": "sont"
+      },
+      {
+        "id": "b",
+        "label": "soient"
+      },
+      {
+        "id": "c",
+        "label": "seront"
+      },
+      {
+        "id": "d",
+        "label": "seraient"
+      }
+    ],
+    "answer": "b",
+    "explanation": "La nécessité exprimée par « il faut que » se construit avec le subjonctif. Le sujet « les issues de secours » est au pluriel : on choisit « soient », et non les formes de l’indicatif proposées."
+  },
+  {
+    "id": 5,
+    "label": "Conjugaison",
+    "prompt": "Quelle forme du verbe avoir complète correctement cette phrase ?",
+    "before": "Je souhaite que mon partenaire ",
+    "focus": "…",
+    "after": " le temps de présenter ses idées.",
+    "options": [
+      {
+        "id": "a",
+        "label": "a"
+      },
+      {
+        "id": "b",
+        "label": "aura"
+      },
+      {
+        "id": "c",
+        "label": "aurait"
+      },
+      {
+        "id": "d",
+        "label": "ait"
+      }
+    ],
+    "answer": "d",
+    "explanation": "Le souhait introduit par « je souhaite que » appelle le subjonctif. Avec le sujet singulier « mon partenaire », avoir devient « ait » au subjonctif présent."
+  },
+  {
+    "id": 6,
+    "label": "Conjugaison",
+    "prompt": "Quelle forme de faire au subjonctif présent convient au sujet « vous » ?",
+    "before": "Le professeur demande que vous ",
+    "focus": "…",
+    "after": " attention aux unités.",
+    "options": [
+      {
+        "id": "a",
+        "label": "faites"
+      },
+      {
+        "id": "b",
+        "label": "faisiez"
+      },
+      {
+        "id": "c",
+        "label": "fassiez"
+      },
+      {
+        "id": "d",
+        "label": "feriez"
+      }
+    ],
+    "answer": "c",
+    "explanation": "Le radical de faire au subjonctif présent est « fass- ». Avec « vous », on écrit « fassiez ». « Faisiez » est l’imparfait de l’indicatif et « feriez » le conditionnel présent."
+  },
+  {
+    "id": 7,
+    "label": "Conjugaison",
+    "prompt": "Quelle forme complète correctement cette phrase ?",
+    "before": "Il vaut mieux que les visiteurs ",
+    "focus": "…",
+    "after": " directement à l’accueil.",
+    "options": [
+      {
+        "id": "a",
+        "label": "vont"
+      },
+      {
+        "id": "b",
+        "label": "aillent"
+      },
+      {
+        "id": "c",
+        "label": "iront"
+      },
+      {
+        "id": "d",
+        "label": "iraient"
+      }
+    ],
+    "answer": "b",
+    "explanation": "« Il vaut mieux que » exprime une appréciation et se construit ici avec le subjonctif. Aller est irrégulier : à la troisième personne du pluriel, son subjonctif présent est « aillent »."
+  },
+  {
+    "id": 8,
+    "label": "Formation",
+    "prompt": "Quels éléments composent le subjonctif passé souligné ?",
+    "before": "Je regrette que tu ",
+    "focus": "aies oublié",
+    "after": " le rendez-vous.",
+    "options": [
+      {
+        "id": "a",
+        "label": "Avoir au subjonctif présent et le participe passé du verbe oublier."
+      },
+      {
+        "id": "b",
+        "label": "Avoir à l’indicatif présent et le participe passé du verbe oublier."
+      },
+      {
+        "id": "c",
+        "label": "Avoir au conditionnel présent et l’infinitif oublier."
+      },
+      {
+        "id": "d",
+        "label": "Être au subjonctif présent et le participe passé du verbe oublier."
+      }
+    ],
+    "answer": "a",
+    "explanation": "Le subjonctif passé se forme avec avoir ou être au subjonctif présent, suivi du participe passé. Ici, « aies » est l’auxiliaire avoir ; « oublié » porte le sens de l’action regrettée."
+  },
+  {
+    "id": 9,
+    "label": "Formation et accord",
+    "prompt": "Quelle forme au subjonctif passé convient pour une arrivée déjà accomplie ?",
+    "before": "Je suis heureux que ma cousine ",
+    "focus": "…",
+    "after": " avant le début de la fête.",
+    "options": [
+      {
+        "id": "a",
+        "label": "ait arrivée"
+      },
+      {
+        "id": "b",
+        "label": "soit arrivée"
+      },
+      {
+        "id": "c",
+        "label": "soit arrivé"
+      },
+      {
+        "id": "d",
+        "label": "serait arrivée"
+      }
+    ],
+    "answer": "b",
+    "explanation": "Arriver se conjugue avec être aux temps composés. Le subjonctif passé combine « soit » et « arrivée », accordé au féminin singulier avec « ma cousine ». « Serait arrivée » serait un conditionnel passé."
+  },
+  {
+    "id": 10,
+    "label": "Valeur en contexte",
+    "prompt": "Que marque ici le choix du subjonctif passé ?",
+    "before": "Aujourd’hui, je suis surpris que l’équipe ",
+    "focus": "ait rendu",
+    "after": " son rapport dès hier.",
+    "options": [
+      {
+        "id": "a",
+        "label": "Le rapport sera nécessairement rendu demain."
+      },
+      {
+        "id": "b",
+        "label": "Le rapport est en cours de rédaction au moment de la surprise."
+      },
+      {
+        "id": "c",
+        "label": "Le rapport est rendu chaque semaine par habitude."
+      },
+      {
+        "id": "d",
+        "label": "Le rapport a été rendu avant le moment où la surprise est exprimée."
+      }
+    ],
+    "answer": "d",
+    "explanation": "La forme composée « ait rendu » présente l’action comme accomplie ; « dès hier » situe clairement cette remise avant la réaction d’aujourd’hui. Le subjonctif est appelé par l’expression du sentiment de surprise."
+  },
+  {
+    "id": 11,
+    "label": "Choix du mode",
+    "prompt": "Quel mode convient au verbe après « avant que » ?",
+    "before": "Nous vérifierons les billets avant que le spectacle ",
+    "focus": "commence",
+    "after": ".",
+    "options": [
+      {
+        "id": "a",
+        "label": "Le subjonctif, même si cette forme ressemble à celle de l’indicatif présent."
+      },
+      {
+        "id": "b",
+        "label": "L’indicatif, parce que « que » impose toujours ce mode."
+      },
+      {
+        "id": "c",
+        "label": "L’impératif, parce qu’il s’agit d’une consigne."
+      },
+      {
+        "id": "d",
+        "label": "L’infinitif, obligatoire après toute conjonction."
+      }
+    ],
+    "answer": "a",
+    "explanation": "« Avant que » se construit avec le subjonctif. Pour « commencer », la forme « commence » est identique au présent de l’indicatif et du subjonctif : la construction syntaxique permet de reconnaître le mode."
+  },
+  {
+    "id": 12,
+    "label": "Valeur en contexte",
+    "prompt": "Le subjonctif signifie-t-il que la fatigue du personnage est forcément incertaine ?",
+    "before": "Sa fatigue est bien réelle : bien qu’elle ",
+    "focus": "soit",
+    "after": " épuisée, Naïma achève sa présentation.",
+    "options": [
+      {
+        "id": "a",
+        "label": "Oui : le subjonctif indique toujours qu’un fait est faux."
+      },
+      {
+        "id": "b",
+        "label": "Oui : « bien que » transforme automatiquement tout fait en hypothèse."
+      },
+      {
+        "id": "c",
+        "label": "Non : « bien que » impose ici le subjonctif pour exprimer une concession, même si le fait est réel."
+      },
+      {
+        "id": "d",
+        "label": "Non : « soit » est un futur de l’indicatif."
+      }
+    ],
+    "answer": "c",
+    "explanation": "La phrase confirme d’abord la fatigue. « Bien que » présente ensuite cette fatigue comme un obstacle qui n’empêche pas Naïma d’achever sa présentation. Le mode dépend de la construction concessive, pas d’une incertitude sur la fatigue."
+  },
+  {
+    "id": 13,
+    "label": "Valeur en contexte",
+    "prompt": "Quelle intention explique l’emploi de la subordonnée soulignée ?",
+    "before": "Nous avons agrandi les caractères ",
+    "focus": "pour que tous les lecteurs puissent lire l’affiche",
+    "after": ".",
+    "options": [
+      {
+        "id": "a",
+        "label": "Donner la cause passée de l’agrandissement."
+      },
+      {
+        "id": "b",
+        "label": "Affirmer une conséquence déjà vérifiée pour chaque lecteur."
+      },
+      {
+        "id": "c",
+        "label": "Exprimer le but recherché par l’agrandissement."
+      },
+      {
+        "id": "d",
+        "label": "Rapporter directement les paroles des lecteurs."
+      }
+    ],
+    "answer": "c",
+    "explanation": "« Pour que » introduit un but et appelle le subjonctif : « puissent ». L’agrandissement vise une lecture accessible à tous, mais la phrase n’affirme pas que chaque lecteur a effectivement lu l’affiche."
+  },
+  {
+    "id": 14,
+    "label": "Choix du mode",
+    "prompt": "Quelle forme complète la condition introduite par « à condition que » ?",
+    "before": "Vous pouvez emprunter la salle à condition que vous ",
+    "focus": "…",
+    "after": " le matériel ensuite.",
+    "options": [
+      {
+        "id": "a",
+        "label": "rangez"
+      },
+      {
+        "id": "b",
+        "label": "rangiez"
+      },
+      {
+        "id": "c",
+        "label": "rangerez"
+      },
+      {
+        "id": "d",
+        "label": "rangeriez"
+      }
+    ],
+    "answer": "b",
+    "explanation": "La locution « à condition que » se construit avec le subjonctif. Avec « vous », ranger donne « rangiez ». La construction se distingue de « si vous rangez », où « si » introduit ici un indicatif."
+  },
+  {
+    "id": 15,
+    "label": "Choix du mode",
+    "prompt": "Quelle forme convient après la locution « sans que » ?",
+    "before": "Les élèves ont préparé la surprise sans que leur professeure ",
+    "focus": "…",
+    "after": " le projet.",
+    "options": [
+      {
+        "id": "a",
+        "label": "connaît"
+      },
+      {
+        "id": "b",
+        "label": "connaîtra"
+      },
+      {
+        "id": "c",
+        "label": "connaîtrait"
+      },
+      {
+        "id": "d",
+        "label": "connaisse"
+      }
+    ],
+    "answer": "d",
+    "explanation": "« Sans que » se construit avec le subjonctif. Le sujet « leur professeure » est singulier : « connaisse » convient. Les trois autres formes appartiennent à l’indicatif."
+  },
+  {
+    "id": 16,
+    "label": "Conjugaison",
+    "prompt": "Quelle forme de pouvoir complète la phrase ?",
+    "before": "Le documentaliste ouvre plus tôt afin que nous ",
+    "focus": "…",
+    "after": " terminer nos recherches.",
+    "options": [
+      {
+        "id": "a",
+        "label": "puissions"
+      },
+      {
+        "id": "b",
+        "label": "pouvons"
+      },
+      {
+        "id": "c",
+        "label": "pourrons"
+      },
+      {
+        "id": "d",
+        "label": "pourrions"
+      }
+    ],
+    "answer": "a",
+    "explanation": "« Afin que » exprime un but et appelle le subjonctif. Le subjonctif présent de pouvoir est irrégulier : « que nous puissions ». « Pourrions » serait un conditionnel présent."
+  },
+  {
+    "id": 17,
+    "label": "Valeur en contexte",
+    "prompt": "Pourquoi le subjonctif est-il employé après « je doute que » ?",
+    "before": "Je doute que cette seule photographie ",
+    "focus": "suffise",
+    "after": " à établir la date du bâtiment.",
+    "options": [
+      {
+        "id": "a",
+        "label": "Le locuteur met en doute la possibilité de tirer cette conclusion."
+      },
+      {
+        "id": "b",
+        "label": "Le locuteur affirme la conclusion comme une certitude."
+      },
+      {
+        "id": "c",
+        "label": "Le locuteur donne un ordre directement à la photographie."
+      },
+      {
+        "id": "d",
+        "label": "Le locuteur rapporte un événement futur depuis un passé."
+      }
+    ],
+    "answer": "a",
+    "explanation": "L’expression affirmative « je doute que » marque une réserve et se construit avec le subjonctif. « Suffise » présente la capacité de la photographie à prouver la date comme mise en question, non comme certaine."
+  },
+  {
+    "id": 18,
+    "label": "Choix du mode",
+    "prompt": "Quelle forme respecte la certitude affirmée dans cette phrase ?",
+    "before": "Je sais que la réponse ",
+    "focus": "…",
+    "after": " dans le dernier paragraphe.",
+    "options": [
+      {
+        "id": "a",
+        "label": "soit"
+      },
+      {
+        "id": "b",
+        "label": "fût"
+      },
+      {
+        "id": "c",
+        "label": "est"
+      },
+      {
+        "id": "d",
+        "label": "serait"
+      }
+    ],
+    "answer": "c",
+    "explanation": "« Je sais que » affirme ici un savoir et appelle l’indicatif : « est ». La présence du mot « que » n’impose pas à elle seule le subjonctif ; il faut examiner la construction et le sens du verbe principal."
+  },
+  {
+    "id": 19,
+    "label": "Conjugaison",
+    "prompt": "Quelle forme au subjonctif passé convient à une rédaction achevée ?",
+    "before": "Je suis content que les rédacteurs ",
+    "focus": "…",
+    "after": " la conclusion avant mon arrivée.",
+    "options": [
+      {
+        "id": "a",
+        "label": "ont écrit"
+      },
+      {
+        "id": "b",
+        "label": "aient écrit"
+      },
+      {
+        "id": "c",
+        "label": "écrivent"
+      },
+      {
+        "id": "d",
+        "label": "auraient écrit"
+      }
+    ],
+    "answer": "b",
+    "explanation": "« Aient écrit » associe avoir au subjonctif présent et le participe passé « écrit ». C’est la forme composée demandée. « Écrivent » serait un subjonctif présent dans cette construction, tandis que « ont écrit » et « auraient écrit » sont à l’indicatif."
+  },
+  {
+    "id": 20,
+    "label": "Comparer les formes",
+    "prompt": "Quelle analyse distingue les deux formes identiques « chantions » ?",
+    "before": "",
+    "focus": "Autrefois, nous chantions tous les vendredis. / Il faut que nous chantions plus doucement.",
+    "after": "",
+    "options": [
+      {
+        "id": "a",
+        "label": "Les deux sont nécessairement à l’imparfait de l’indicatif."
+      },
+      {
+        "id": "b",
+        "label": "Les deux sont nécessairement au conditionnel présent."
+      },
+      {
+        "id": "c",
+        "label": "La première est à l’impératif ; la seconde au futur simple."
+      },
+      {
+        "id": "d",
+        "label": "La première est à l’imparfait de l’indicatif ; la seconde au subjonctif présent."
+      }
+    ],
+    "answer": "d",
+    "explanation": "« Autrefois » installe une habitude passée à l’imparfait. « Il faut que » appelle le subjonctif dans la deuxième phrase. Une terminaison identique ne suffit donc pas à identifier le temps et le mode : le contexte est décisif."
+  }
+]

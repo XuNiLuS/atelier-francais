@@ -1,0 +1,562 @@
+[
+  {
+    "id": 1,
+    "label": "Justifier un accord",
+    "prompt": "Quelle forme de l’adjectif complète correctement la phrase ?",
+    "before": "Les cartes de navigation, malgré l’usure de leur papier, restent ",
+    "focus": "…",
+    "after": ".",
+    "options": [
+      {
+        "id": "a",
+        "label": "précis"
+      },
+      {
+        "id": "b",
+        "label": "précises"
+      },
+      {
+        "id": "c",
+        "label": "précise"
+      },
+      {
+        "id": "d",
+        "label": "précisement"
+      }
+    ],
+    "answer": "b",
+    "explanation": "L’adjectif attribut se rapporte au sujet « les cartes de navigation », dont le noyau « cartes » est féminin pluriel. On écrit donc précises. Le nom « papier », plus proche, ne commande pas cet accord."
+  },
+  {
+    "id": 2,
+    "label": "Repérer le sujet",
+    "prompt": "Quelle forme du verbe convient ?",
+    "before": "L’organisation des ateliers et des visites ",
+    "focus": "…",
+    "after": " une préparation minutieuse.",
+    "options": [
+      {
+        "id": "a",
+        "label": "nécessitent"
+      },
+      {
+        "id": "b",
+        "label": "nécessites"
+      },
+      {
+        "id": "c",
+        "label": "nécessite"
+      },
+      {
+        "id": "d",
+        "label": "nécessitons"
+      }
+    ],
+    "answer": "c",
+    "explanation": "Le sujet a pour noyau « organisation », au singulier. « Des ateliers et des visites » complète ce nom sans devenir sujet du verbe. L’accord se fait donc à la troisième personne du singulier."
+  },
+  {
+    "id": 3,
+    "label": "Repérer le sujet",
+    "prompt": "Pourquoi le verbe est-il au pluriel ?",
+    "before": "Les conclusions de cette longue enquête ",
+    "focus": "restent",
+    "after": " provisoires.",
+    "options": [
+      {
+        "id": "a",
+        "label": "Le noyau du groupe sujet est conclusions, au pluriel."
+      },
+      {
+        "id": "b",
+        "label": "Le verbe s’accorde avec enquête, le nom le plus proche."
+      },
+      {
+        "id": "c",
+        "label": "L’adjectif longue impose la troisième personne du pluriel."
+      },
+      {
+        "id": "d",
+        "label": "Le mot de impose toujours un verbe pluriel."
+      }
+    ],
+    "answer": "a",
+    "explanation": "Le groupe entier « les conclusions de cette longue enquête » est sujet. Son noyau est « conclusions » ; le complément du nom, singulier, ne change pas son nombre. Un pronom de remplacement serait elles."
+  },
+  {
+    "id": 4,
+    "label": "Repérer le sujet",
+    "prompt": "Quelle forme respecte l’accord avec le sujet placé après le verbe ?",
+    "before": "Au bout de l’allée, derrière un rideau d’arbres, se ",
+    "focus": "…",
+    "after": " deux pavillons abandonnés.",
+    "options": [
+      {
+        "id": "a",
+        "label": "dresse"
+      },
+      {
+        "id": "b",
+        "label": "dresses"
+      },
+      {
+        "id": "c",
+        "label": "dressez"
+      },
+      {
+        "id": "d",
+        "label": "dressent"
+      }
+    ],
+    "answer": "d",
+    "explanation": "Le sujet est « deux pavillons abandonnés », placé après le verbe. Il impose la troisième personne du pluriel : se dressent. Les compléments de lieu qui précèdent le verbe ne sont pas sujets."
+  },
+  {
+    "id": 5,
+    "label": "Justifier un accord",
+    "prompt": "Quelle forme convient dans la proposition relative ?",
+    "before": "Le comité examine les pétitions qui ",
+    "focus": "…",
+    "after": " une nouvelle bibliothèque.",
+    "options": [
+      {
+        "id": "a",
+        "label": "réclament"
+      },
+      {
+        "id": "b",
+        "label": "réclame"
+      },
+      {
+        "id": "c",
+        "label": "réclames"
+      },
+      {
+        "id": "d",
+        "label": "réclamons"
+      }
+    ],
+    "answer": "a",
+    "explanation": "Dans la relative, qui est sujet et reprend « les pétitions ». Ce pluriel commande réclament. Le sujet de la principale, « le comité », ne commande pas le verbe de la relative."
+  },
+  {
+    "id": 6,
+    "label": "Classes et accords",
+    "prompt": "Quelle analyse explique la terminaison du mot souligné ?",
+    "before": "L’oratrice présente des arguments soigneusement ",
+    "focus": "organisés",
+    "after": ".",
+    "options": [
+      {
+        "id": "a",
+        "label": "Organisés s’accorde avec oratrice, nom féminin singulier."
+      },
+      {
+        "id": "b",
+        "label": "Organisés s’accorde avec soigneusement, adverbe pluriel."
+      },
+      {
+        "id": "c",
+        "label": "Organisés se rapporte à arguments, nom masculin pluriel."
+      },
+      {
+        "id": "d",
+        "label": "Organisés est un verbe conjugué qui s’accorde avec des."
+      }
+    ],
+    "answer": "c",
+    "explanation": "Le participe passé employé comme adjectif qualifie les arguments. Il prend donc le masculin pluriel. L’adverbe « soigneusement » précise la manière et reste invariable ; il n’est pas donneur d’accord."
+  },
+  {
+    "id": 7,
+    "label": "Chaînes d’accord",
+    "prompt": "Quel groupe nominal est correctement accordé ?",
+    "before": "Le bibliothécaire présente ",
+    "focus": "…",
+    "after": " aux visiteurs.",
+    "options": [
+      {
+        "id": "a",
+        "label": "de nouvelle éditions illustrées"
+      },
+      {
+        "id": "b",
+        "label": "de nouvelles éditions illustrée"
+      },
+      {
+        "id": "c",
+        "label": "de nouveaux éditions illustrés"
+      },
+      {
+        "id": "d",
+        "label": "de nouvelles éditions illustrées"
+      }
+    ],
+    "answer": "d",
+    "explanation": "Le nom « éditions » est féminin pluriel. Les adjectifs nouvelles et illustrées prennent les mêmes marques. Devant l’adjectif placé avant un nom pluriel, on emploie ici de : de nouvelles éditions."
+  },
+  {
+    "id": 8,
+    "label": "Repérer le sujet",
+    "prompt": "Quelle forme du verbe complète correctement la phrase ?",
+    "before": "Le comédien et la régisseuse, malgré leur fatigue, ",
+    "focus": "…",
+    "after": " la salle.",
+    "options": [
+      {
+        "id": "a",
+        "label": "prépare"
+      },
+      {
+        "id": "b",
+        "label": "préparent"
+      },
+      {
+        "id": "c",
+        "label": "prépares"
+      },
+      {
+        "id": "d",
+        "label": "préparons"
+      }
+    ],
+    "answer": "b",
+    "explanation": "Les deux groupes nominaux coordonnés désignent deux personnes distinctes et constituent ensemble le sujet. Le verbe se met à la troisième personne du pluriel : préparent. « Leur fatigue » n’est pas sujet."
+  },
+  {
+    "id": 9,
+    "label": "Repérer le sujet",
+    "prompt": "Pourquoi le singulier est-il nécessaire ?",
+    "before": "Chacun des itinéraires proposés ",
+    "focus": "présente",
+    "after": " un intérêt différent.",
+    "options": [
+      {
+        "id": "a",
+        "label": "Le sujet est le pronom chacun, singulier."
+      },
+      {
+        "id": "b",
+        "label": "Le nom itinéraires, pluriel, impose en réalité présentent."
+      },
+      {
+        "id": "c",
+        "label": "Le mot proposés commande toujours un verbe au singulier."
+      },
+      {
+        "id": "d",
+        "label": "Le verbe est invariable après des."
+      }
+    ],
+    "answer": "a",
+    "explanation": "Le pronom « chacun » est le noyau du sujet et appelle un verbe au singulier. « Des itinéraires proposés » précise l’ensemble dans lequel on considère chaque élément, sans changer le nombre du pronom."
+  },
+  {
+    "id": 10,
+    "label": "Repérer le sujet",
+    "prompt": "Quelle forme respecte la construction du sujet ?",
+    "before": "Aucun de ces témoignages contradictoires ne ",
+    "focus": "…",
+    "after": " cette hypothèse.",
+    "options": [
+      {
+        "id": "a",
+        "label": "confirment"
+      },
+      {
+        "id": "b",
+        "label": "confirmes"
+      },
+      {
+        "id": "c",
+        "label": "confirmons"
+      },
+      {
+        "id": "d",
+        "label": "confirme"
+      }
+    ],
+    "answer": "d",
+    "explanation": "« Aucun » est ici un pronom singulier : il est le noyau du sujet. Le groupe « de ces témoignages contradictoires » le complète. Le verbe s’accorde donc au singulier, même si un nom pluriel précède immédiatement."
+  },
+  {
+    "id": 11,
+    "label": "Classes et fonctions",
+    "prompt": "Pourquoi vous ne commande-t-il pas l’accord du verbe ?",
+    "before": "Les archivistes vous ",
+    "focus": "transmettent",
+    "after": " les copies demain.",
+    "options": [
+      {
+        "id": "a",
+        "label": "Vous est sujet et le verbe doit donc s’écrire transmettez."
+      },
+      {
+        "id": "b",
+        "label": "Les copies est le sujet placé après le verbe."
+      },
+      {
+        "id": "c",
+        "label": "Vous est un complément ; le sujet est les archivistes."
+      },
+      {
+        "id": "d",
+        "label": "Archivistes est un adjectif qui ne peut pas appartenir au sujet."
+      }
+    ],
+    "answer": "c",
+    "explanation": "On reconstruit « les archivistes transmettent les copies à vous ». Le pronom vous est complément d’objet indirect ; le groupe « les archivistes » est sujet. La proximité du pronom ne modifie pas l’accord à la troisième personne du pluriel."
+  },
+  {
+    "id": 12,
+    "label": "Justifier un accord",
+    "prompt": "Quelle forme de l’attribut du sujet convient ?",
+    "before": "Après la réorganisation du chantier, les ouvrières paraissent ",
+    "focus": "…",
+    "after": " du résultat.",
+    "options": [
+      {
+        "id": "a",
+        "label": "satisfaits"
+      },
+      {
+        "id": "b",
+        "label": "satisfaites"
+      },
+      {
+        "id": "c",
+        "label": "satisfaite"
+      },
+      {
+        "id": "d",
+        "label": "satisfait"
+      }
+    ],
+    "answer": "b",
+    "explanation": "« Satisfaites » est attribut du sujet « les ouvrières ». Il prend le féminin pluriel du sujet. Le nom « résultat », dans le complément qui suit, ne commande pas l’accord de cet attribut."
+  },
+  {
+    "id": 13,
+    "label": "Repérer le sujet",
+    "prompt": "Quelle forme complète correctement la phrase ?",
+    "before": "Comparer attentivement les différentes versions du poème ",
+    "focus": "…",
+    "after": " de la patience.",
+    "options": [
+      {
+        "id": "a",
+        "label": "demandent"
+      },
+      {
+        "id": "b",
+        "label": "demandes"
+      },
+      {
+        "id": "c",
+        "label": "demandons"
+      },
+      {
+        "id": "d",
+        "label": "demande"
+      }
+    ],
+    "answer": "d",
+    "explanation": "Le sujet est le groupe infinitif entier « comparer attentivement les différentes versions du poème ». Considéré comme une activité, il commande la troisième personne du singulier. « Les différentes versions » est complément du verbe comparer, pas sujet de demande."
+  },
+  {
+    "id": 14,
+    "label": "Personne et accord",
+    "prompt": "Quelle forme respecte la personne du pronom repris par qui ?",
+    "before": "C’est nous qui ",
+    "focus": "…",
+    "after": " en charge la dernière étape.",
+    "options": [
+      {
+        "id": "a",
+        "label": "prennent"
+      },
+      {
+        "id": "b",
+        "label": "prenons"
+      },
+      {
+        "id": "c",
+        "label": "prend"
+      },
+      {
+        "id": "d",
+        "label": "prenez"
+      }
+    ],
+    "answer": "b",
+    "explanation": "Qui est sujet de la relative et reprend nous. Le verbe se met donc à la première personne du pluriel : prenons. La forme c’est n’impose pas la troisième personne au verbe de cette relative."
+  },
+  {
+    "id": 15,
+    "label": "Personne et accord",
+    "prompt": "Quelle forme convient avec ces deux sujets coordonnés ?",
+    "before": "Toi et moi ",
+    "focus": "…",
+    "after": " responsables du matériel prêté.",
+    "options": [
+      {
+        "id": "a",
+        "label": "sont"
+      },
+      {
+        "id": "b",
+        "label": "êtes"
+      },
+      {
+        "id": "c",
+        "label": "sommes"
+      },
+      {
+        "id": "d",
+        "label": "suis"
+      }
+    ],
+    "answer": "c",
+    "explanation": "Le groupe « toi et moi » peut être remplacé par nous. La présence du locuteur conduit à la première personne du pluriel : sommes. On ne choisit pas la personne du seul pronom le plus proche."
+  },
+  {
+    "id": 16,
+    "label": "Classes et accords",
+    "prompt": "Quelle distinction explique ces deux formes ?",
+    "before": "La comédienne répond calmement, d’une voix ",
+    "focus": "calme",
+    "after": ".",
+    "options": [
+      {
+        "id": "a",
+        "label": "Calmement est un adverbe invariable ; calme est un adjectif accordé avec voix."
+      },
+      {
+        "id": "b",
+        "label": "Calmement et calme sont deux adverbes toujours invariables."
+      },
+      {
+        "id": "c",
+        "label": "Calmement est un adjectif accordé avec comédienne."
+      },
+      {
+        "id": "d",
+        "label": "Calme est un nom masculin qui commande l’accord de voix."
+      }
+    ],
+    "answer": "a",
+    "explanation": "« Calmement » modifie le verbe répond et reste invariable. « Calme » qualifie le nom voix : c’est un adjectif féminin singulier, même si cette forme ne porte pas de marque visible différente du masculin."
+  },
+  {
+    "id": 17,
+    "label": "Justifier un accord",
+    "prompt": "Quelle forme convient au début de la phrase ?",
+    "before": "",
+    "focus": "…",
+    "after": " par la précision des relevés, les chercheuses de l’institut reprirent leurs calculs.",
+    "options": [
+      {
+        "id": "a",
+        "label": "Étonnées"
+      },
+      {
+        "id": "b",
+        "label": "Étonnés"
+      },
+      {
+        "id": "c",
+        "label": "Étonnée"
+      },
+      {
+        "id": "d",
+        "label": "Étonné"
+      }
+    ],
+    "answer": "a",
+    "explanation": "Le participe passé détaché se rapporte au groupe « les chercheuses de l’institut », dont le noyau est féminin pluriel. Il prend donc la forme étonnées. « La précision des relevés » explique l’étonnement, mais ne commande pas cet accord."
+  },
+  {
+    "id": 18,
+    "label": "Repérer le sujet",
+    "prompt": "Quelle forme du verbe principal convient ?",
+    "before": "Le plan que plusieurs experts étudient depuis une semaine ",
+    "focus": "…",
+    "after": " confidentiel.",
+    "options": [
+      {
+        "id": "a",
+        "label": "restent"
+      },
+      {
+        "id": "b",
+        "label": "reste"
+      },
+      {
+        "id": "c",
+        "label": "restes"
+      },
+      {
+        "id": "d",
+        "label": "restons"
+      }
+    ],
+    "answer": "b",
+    "explanation": "Le sujet du verbe principal est « le plan que plusieurs experts étudient depuis une semaine », dont le noyau plan est singulier. « Plusieurs experts » est sujet du verbe de la relative seulement. Il faut distinguer les deux relations sujet-verbe."
+  },
+  {
+    "id": 19,
+    "label": "Classes et fonctions",
+    "prompt": "Quelle analyse du mot souligné justifie son accord ?",
+    "before": "Nous examinons ces nouvelles preuves ",
+    "focus": "convaincantes",
+    "after": " avec attention.",
+    "options": [
+      {
+        "id": "a",
+        "label": "C’est un adverbe modifiant examinons et variable au pluriel."
+      },
+      {
+        "id": "b",
+        "label": "C’est un verbe dont le sujet est nous."
+      },
+      {
+        "id": "c",
+        "label": "C’est un adjectif attribut du sujet nous."
+      },
+      {
+        "id": "d",
+        "label": "C’est un adjectif épithète du nom preuves, féminin pluriel."
+      }
+    ],
+    "answer": "d",
+    "explanation": "« Convaincantes » qualifie directement le nom preuves dans le groupe nominal. Il en reçoit le féminin pluriel. « Nous » commande le verbe examinons, mais pas l’accord de cet adjectif épithète."
+  },
+  {
+    "id": 20,
+    "label": "Réécrire en accordant",
+    "prompt": "Quelle réécriture met tout le groupe sujet au pluriel et conserve les accords ?",
+    "before": "",
+    "focus": "Cette curieuse silhouette silencieuse disparaît derrière le mur.",
+    "after": "",
+    "options": [
+      {
+        "id": "a",
+        "label": "Ces curieuse silhouettes silencieuses disparaissent derrière le mur."
+      },
+      {
+        "id": "b",
+        "label": "Ces curieuses silhouettes silencieuse disparaissent derrière le mur."
+      },
+      {
+        "id": "c",
+        "label": "Ces curieuses silhouettes silencieuses disparaissent derrière le mur."
+      },
+      {
+        "id": "d",
+        "label": "Ces curieuses silhouettes silencieuses disparaît derrière le mur."
+      }
+    ],
+    "answer": "c",
+    "explanation": "Le déterminant devient ces ; le nom et les deux adjectifs prennent le pluriel. Le sujet entier étant désormais pluriel, le verbe devient disparaissent. Il faut suivre à la fois la chaîne d’accord du groupe nominal et celle du sujet avec le verbe."
+  }
+]

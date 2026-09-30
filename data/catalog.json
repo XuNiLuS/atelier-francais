@@ -42,23 +42,129 @@
     ]
   },
   {
-    "id": "3e-temps-recit",
-    "level": "3e",
-    "title": "Les temps du récit",
-    "description": "Justifier les valeurs des temps à partir d’un contexte plus riche.",
-    "eyebrow": "Interpréter les indices",
+    "id": "4e-formes-verbales",
+    "level": "4e",
+    "title": "Temps composés et voix passive",
+    "description": "Décomposer les formes verbales et comprendre les relations entre les actions.",
+    "eyebrow": "Observer les auxiliaires",
     "objectives": [
-      "Premier plan et arrière-plan du récit",
-      "Durée et répétition : éviter les faux indices"
+      "Reconnaître plus-que-parfait, passé antérieur, futur antérieur et conditionnel passé",
+      "Comprendre l’antériorité et distinguer voix active et passive"
     ],
     "help": [
       {
-        "title": "Lire le contexte",
-        "text": "Une durée longue n’impose pas l’imparfait. Une série de faits répétés peut aussi être présentée comme un ensemble délimité au passé simple."
+        "title": "Un temps composé",
+        "text": "Il associe « avoir » ou « être » à un participe passé. Le temps de l’auxiliaire aide à identifier l’ensemble : avait fini, eut fini, aura fini, aurait fini."
       },
       {
-        "title": "Justifier son choix",
-        "text": "Repère les bornes de temps, les expressions d’habitude et les relations entre les actions. Observe ce qui fait avancer le récit."
+        "title": "Situer les actions",
+        "text": "Un temps composé peut présenter une action comme accomplie avant un repère passé ou futur. Cherche ce repère dans le reste de la phrase."
+      },
+      {
+        "title": "La voix passive",
+        "text": "Le sujet reçoit l’action, souvent accomplie par un agent introduit par « par ». Attention : « elle est partie » est à la voix active ; l’auxiliaire « être » ne suffit pas à reconnaître le passif."
+      }
+    ]
+  },
+  {
+    "id": "4e-phrase-complexe",
+    "level": "4e",
+    "title": "Explorer la phrase complexe",
+    "description": "Repérer les propositions, leurs liens et les premières imbrications.",
+    "eyebrow": "Comprendre les liens dans la phrase",
+    "objectives": [
+      "Relier une subordonnée à sa principale ou à son antécédent",
+      "Reconnaître relatives, conjonctives et interrogatives indirectes"
+    ],
+    "help": [
+      {
+        "title": "Chercher ce qui est complété",
+        "text": "Une relative précise un nom ou un pronom. Une conjonctive complétive complète notamment un verbe. Demande-toi à quel élément se rattache la proposition."
+      },
+      {
+        "title": "Reconnaître une question rapportée",
+        "text": "Une interrogative indirecte totale est introduite par « si » et correspond à une question oui/non. Une interrogative partielle porte sur un élément : où, quand, comment, combien…"
+      },
+      {
+        "title": "Déplier une phrase longue",
+        "text": "Repère chaque verbe conjugué et son sujet. Une forme composée compte pour un seul noyau verbal. Une subordonnée peut contenir une autre subordonnée."
+      }
+    ]
+  },
+  {
+    "id": "4e-paroles-rapportees",
+    "level": "4e",
+    "title": "Rapporter des paroles",
+    "description": "Passer du discours direct au discours indirect en conservant le sens.",
+    "eyebrow": "Suivre qui parle, quand et où",
+    "objectives": [
+      "Distinguer citation directe et paroles intégrées au récit",
+      "Adapter les personnes, les repères et les temps au contexte"
+    ],
+    "help": [
+      {
+        "title": "Identifier les personnes",
+        "text": "Avant de changer « je », « tu » ou un possessif, identifie qui parle et à qui. Le même mot ne désigne pas toujours la même personne selon le locuteur."
+      },
+      {
+        "title": "Garder les mêmes repères",
+        "text": "Dans un récit écrit plus tard, « demain » peut devenir « le lendemain » et « hier », « la veille ». Calcule toujours la date depuis le moment de la parole rapportée."
+      },
+      {
+        "title": "Transposer dans un récit au passé",
+        "text": "Quand l’exercice demande la concordance au passé, le présent devient imparfait, le passé composé devient plus-que-parfait et le futur simple devient conditionnel présent. Ces changements dépendent du contexte du récit."
+      }
+    ]
+  },
+  {
+    "id": "3e-temps-recit",
+    "level": "3e",
+    "title": "Conditionnel et hypothèses",
+    "description": "Former le conditionnel présent et passé, interpréter ses emplois et construire des hypothèses.",
+    "eyebrow": "Consolider le conditionnel",
+    "objectives": [
+      "Distinguer les formes simples et composées du conditionnel",
+      "Comprendre le futur du passé et les valeurs modales",
+      "Construire des hypothèses portant sur le présent ou le passé"
+    ],
+    "help": [
+      {
+        "title": "Un temps de l’indicatif",
+        "text": "Le conditionnel présent associe le radical du futur aux terminaisons de l’imparfait. Le conditionnel passé se forme avec avoir ou être au conditionnel présent, suivi du participe passé."
+      },
+      {
+        "title": "Lire le contexte",
+        "text": "Le conditionnel peut situer un futur depuis le passé, exprimer une hypothèse, atténuer une demande ou présenter une information non confirmée. Il ne signifie pas toujours le doute."
+      },
+      {
+        "title": "Construire une hypothèse",
+        "text": "Compare « si j’avais le temps, je viendrais » et « si j’avais eu le temps, je serais venu ». Dans ces constructions de condition, le conditionnel se place dans la conséquence, pas après si."
+      }
+    ]
+  },
+  {
+    "id": "3e-subjonctif",
+    "level": "3e",
+    "title": "Le subjonctif présent et passé",
+    "description": "Reconnaître et former le subjonctif, puis justifier son emploi dans des constructions variées.",
+    "eyebrow": "Choisir le mode et le temps",
+    "objectives": [
+      "Former le présent et le passé du subjonctif",
+      "Identifier les emplois après un verbe ou une conjonction",
+      "Distinguer temps, mode et sens en contexte"
+    ],
+    "help": [
+      {
+        "title": "Présent ou passé",
+        "text": "Le subjonctif passé associe un auxiliaire au subjonctif présent et un participe passé : qu’elle ait compris, qu’il soit venu. La forme composée permet de présenter un fait comme accompli."
+      },
+      {
+        "title": "Observer la construction",
+        "text": "Il faut que, pour que, avant que, bien que ou à condition que appellent le subjonctif. Le mot que ne suffit pas à reconnaître ce mode : « je sais qu’il est là » contient un indicatif."
+      },
+      {
+        "title": "Ne pas réduire le mode au doute",
+        "text": "Le subjonctif intervient aussi dans une nécessité, un souhait, un but ou une concession. Avec bien que, il peut porter sur un fait parfaitement réel."
       }
     ]
   },
@@ -84,23 +190,159 @@
     ]
   },
   {
-    "id": "seconde-temps-recit",
-    "level": "seconde",
-    "title": "Temps et effets de récit",
-    "description": "Affiner l’analyse du passé simple et de l’imparfait et de leurs effets.",
-    "eyebrow": "Analyser le point de vue sur l’action",
+    "id": "3e-paroles-rapportees",
+    "level": "3e",
+    "title": "Paroles et pensées rapportées",
+    "description": "Passer du direct à l’indirect et reconnaître les effets du discours indirect libre dans un récit.",
+    "eyebrow": "Faire entendre les voix du récit",
     "objectives": [
-      "Valeurs temporelles et aspectuelles",
-      "Interprétation des choix du narrateur"
+      "Distinguer direct, indirect et indirect libre",
+      "Transposer les pronoms, les temps et les repères",
+      "Comprendre l’effet des pensées de personnage sur le récit"
     ],
     "help": [
       {
-        "title": "L’aspect",
-        "text": "L’aspect est la façon de présenter le déroulement d’un procès (une action ou un état). Le passé simple le saisit globalement, avec des limites ; l’imparfait le montre de l’intérieur, sans en présenter les limites."
+        "title": "Direct et indirect",
+        "text": "Le direct détache une réplique, souvent entre guillemets. L’indirect l’intègre à la phrase : elle affirme que…, il demande si…, elle demande de partir. Les pronoms et les repères sont adaptés au récit."
       },
       {
-        "title": "Durée et présentation",
-        "text": "« Borné » ne signifie pas « bref ». Distingue la durée réelle de l’action et la manière dont le narrateur choisit de la présenter."
+        "title": "L’indirect libre",
+        "text": "Les paroles ou les pensées d’un personnage se mêlent au récit, sans guillemets ni subordination introductrice. Le contexte, la troisième personne, les temps du récit et les marques d’émotion aident à l’identifier."
+      },
+      {
+        "title": "Vérifier les références",
+        "text": "Avant de transformer une phrase, repère qui parle, à qui, quand et où. Un demain peut devenir le lendemain ; le je du personnage doit rester la même personne après transposition."
+      }
+    ]
+  },
+  {
+    "id": "3e-accords",
+    "level": "3e",
+    "title": "Justifier les accords",
+    "description": "Retrouver le donneur d’accord malgré les expansions, les relatifs et les groupes éloignés.",
+    "eyebrow": "Raisonner avant d’accorder",
+    "objectives": [
+      "Accorder dans un groupe nominal étendu",
+      "Justifier les accords des adjectifs selon leur fonction",
+      "Accorder le participe passé avec un COD relatif antéposé",
+      "Accorder le verbe avec un sujet développé ou un pronom indéfini"
+    ],
+    "help": [
+      {
+        "title": "Retrouver le noyau du sujet",
+        "text": "Dans « la porte des ateliers », le noyau est porte : le verbe reste au singulier. Chacun et aucun sont aussi des sujets singuliers, même s’ils sont suivis d’un groupe pluriel."
+      },
+      {
+        "title": "L’adjectif suit ce qu’il qualifie",
+        "text": "Qu’il soit épithète, attribut ou en apposition, l’adjectif s’accorde avec le nom ou le pronom auquel il se rapporte. La proximité d’un autre nom ne suffit pas à commander l’accord."
+      },
+      {
+        "title": "Participe passé avec avoir",
+        "text": "Cherche le COD et sa place. S’il précède le participe, l’accord se fait avec lui : les histoires qu’elle a racontées. Un COI placé avant le verbe ne déclenche pas cet accord."
+      }
+    ]
+  },
+  {
+    "id": "seconde-temps-recit",
+    "level": "seconde",
+    "title": "Temps, aspect et concordance",
+    "description": "Comparer les valeurs des temps et reconstruire les relations temporelles dans un énoncé.",
+    "eyebrow": "Situer les faits et analyser leur présentation",
+    "objectives": [
+      "Valeurs du présent, temps simples et composés",
+      "Antériorité, simultanéité et futur du passé",
+      "Distinguer accompli et borné"
+    ],
+    "help": [
+      {
+        "title": "Situer un fait",
+        "text": "Repère le moment de la parole et les autres événements. Un fait peut être antérieur, simultané ou postérieur à un repère lui-même présent, passé ou futur."
+      },
+      {
+        "title": "Deux manières de parler de l’aspect",
+        "text": "Accompli/non accompli distingue notamment une forme composée présentant un fait déjà réalisé à un repère et sa forme simple. Borné/non borné oppose une vue globale de l’épisode à une vue intérieure de son déroulement. Le passé simple peut être borné sans être un temps composé."
+      },
+      {
+        "title": "Rapporter au passé",
+        "text": "Dans les contextes travaillés ici, l’imparfait peut exprimer la simultanéité avec un passé, le plus-que-parfait l’antériorité, et le conditionnel un futur vu depuis ce passé. Lis les repères du contexte avant de choisir."
+      }
+    ]
+  },
+  {
+    "id": "seconde-modes-modalisation",
+    "level": "seconde",
+    "title": "Modes et modalisation",
+    "description": "Comprendre comment les formes verbales et les mots choisis nuancent une affirmation, une demande ou un jugement.",
+    "eyebrow": "Interpréter l’engagement du locuteur",
+    "objectives": [
+      "Distinguer forme grammaticale et valeur en contexte",
+      "Analyser les emplois modaux du conditionnel",
+      "Repérer une hypothèse, une obligation ou une appréciation"
+    ],
+    "help": [
+      {
+        "title": "Un mode ne suffit pas",
+        "text": "L’indicatif ne garantit pas qu’une affirmation est vraie. Le subjonctif peut présenter un fait admis à travers un sentiment ou une construction particulière. L’impératif sert notamment à conseiller, demander ou ordonner."
+      },
+      {
+        "title": "Le conditionnel",
+        "text": "Le conditionnel est classé ici parmi les temps de l’indicatif. Il peut exprimer un futur du passé ou prendre des valeurs modales : hypothèse, politesse, information non confirmée… Le contexte permet de les distinguer."
+      },
+      {
+        "title": "La modalisation",
+        "text": "Modaliser, c’est laisser percevoir sa position à l’égard d’un propos : assurance, réserve, appréciation… Observe aussi les adverbes, les verbes comme devoir et pouvoir, et l’attribution d’une information à une source."
+      }
+    ]
+  },
+  {
+    "id": "seconde-accords",
+    "level": "seconde",
+    "title": "Accords et chaînes grammaticales",
+    "description": "Justifier les accords dans des groupes et des phrases où le donneur d’accord peut être éloigné.",
+    "eyebrow": "Identifier avant d’accorder",
+    "objectives": [
+      "Accords dans le groupe nominal et de l’attribut",
+      "Sujets éloignés, inversés ou coordonnés",
+      "Classes et fonctions utiles pour justifier un accord"
+    ],
+    "help": [
+      {
+        "title": "Dans le groupe nominal",
+        "text": "Le déterminant et les adjectifs reçoivent généralement le genre et le nombre du nom auquel ils se rapportent. Un complément du nom ne commande pas automatiquement l’accord des autres mots."
+      },
+      {
+        "title": "Avec le verbe",
+        "text": "Cherche le sujet entier puis son noyau. La proximité d’un nom ou d’un pronom ne suffit pas : distingue le sujet des compléments, y compris quand le sujet est placé après le verbe."
+      },
+      {
+        "title": "Dans une relative",
+        "text": "Qui peut être sujet d’un verbe et reprendre un antécédent éloigné. Retrouve cet antécédent pour déterminer le nombre et la personne de l’accord."
+      }
+    ]
+  },
+  {
+    "id": "seconde-phrase-complexe",
+    "level": "seconde",
+    "title": "Phrase complexe et relations de sens",
+    "description": "Analyser les liens entre propositions, leur organisation et ce que leurs constructions font comprendre.",
+    "eyebrow": "Relier construction et interprétation",
+    "objectives": [
+      "Distinguer lien syntaxique et relation logique",
+      "Lire des propositions coordonnées ou imbriquées",
+      "Réécrire en conservant le sens"
+    ],
+    "help": [
+      {
+        "title": "Construction et sens",
+        "text": "Juxtaposition, coordination et subordination décrivent la construction. Cause, résultat, opposition ou succession décrivent des relations de sens. Une même relation logique peut s’exprimer avec différentes constructions."
+      },
+      {
+        "title": "Relier sans subordonner",
+        "text": "Un signe de ponctuation peut juxtaposer deux propositions. Un adverbe comme pourtant ou ainsi peut alors préciser leur lien de sens sans devenir une conjonction de subordination."
+      },
+      {
+        "title": "Lire l’imbrication",
+        "text": "Une subordonnée peut en contenir une autre. Cherche, pour chaque proposition, le verbe ou l’ensemble dont elle dépend. Les auxiliaires et participes d’un temps composé forment un seul noyau verbal."
       }
     ]
   },

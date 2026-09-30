@@ -1,0 +1,562 @@
+[
+  {
+    "id": 1,
+    "label": "Rapporter des paroles",
+    "prompt": "Comment les paroles de la pâtissière sont-elles rapportées ?",
+    "before": "",
+    "focus": "« Le four est encore chaud », avertit la pâtissière.",
+    "after": "",
+    "options": [
+      {
+        "id": "a",
+        "label": "Au discours indirect."
+      },
+      {
+        "id": "b",
+        "label": "Au discours direct."
+      },
+      {
+        "id": "c",
+        "label": "Sous la forme d’un récit sans paroles rapportées."
+      },
+      {
+        "id": "d",
+        "label": "Sous la forme d’une interrogation indirecte."
+      }
+    ],
+    "answer": "b",
+    "explanation": "Les guillemets isolent les paroles telles que le récit les donne à entendre : « Le four est encore chaud ». Le verbe « avertit » indique qui parle, dans une incise."
+  },
+  {
+    "id": 2,
+    "label": "Rapporter des paroles",
+    "prompt": "Comment l’annonce du gardien est-elle rapportée ?",
+    "before": "",
+    "focus": "Le gardien annonce que le stade ferme à dix-huit heures.",
+    "after": "",
+    "options": [
+      {
+        "id": "a",
+        "label": "Au discours direct."
+      },
+      {
+        "id": "b",
+        "label": "Sous la forme d’une question directe."
+      },
+      {
+        "id": "c",
+        "label": "Sous la forme d’une consigne à l’impératif."
+      },
+      {
+        "id": "d",
+        "label": "Au discours indirect."
+      }
+    ],
+    "answer": "d",
+    "explanation": "Les paroles sont intégrées à la phrase du narrateur dans une proposition introduite par « que », après le verbe « annonce ». Il n’y a pas de citation autonome entre guillemets."
+  },
+  {
+    "id": 3,
+    "label": "Rapporter des paroles",
+    "prompt": "Quel est le rôle du groupe souligné ?",
+    "before": "« Cette ruche abrite une nouvelle reine », ",
+    "focus": "précisa l’apiculteur",
+    "after": ".",
+    "options": [
+      {
+        "id": "a",
+        "label": "Indiquer qui prononce la réplique et comment elle s’insère dans l’échange."
+      },
+      {
+        "id": "b",
+        "label": "Faire partie des paroles prononcées par l’apiculteur."
+      },
+      {
+        "id": "c",
+        "label": "Donner le lieu où se trouve la ruche."
+      },
+      {
+        "id": "d",
+        "label": "Transformer la réplique en interrogation indirecte."
+      }
+    ],
+    "answer": "a",
+    "explanation": "« Précisa l’apiculteur » est une incise : le verbe de parole attribue la réplique à l’apiculteur. Ce groupe est hors des guillemets et n’appartient pas aux paroles citées."
+  },
+  {
+    "id": 4,
+    "label": "Rapporter des paroles",
+    "prompt": "Un narrateur extérieur rapporte ces paroles en gardant « dit » au présent. Quelle phrase convient ?",
+    "before": "Farah dit : ",
+    "focus": "« Je termine mon croquis. »",
+    "after": "",
+    "options": [
+      {
+        "id": "a",
+        "label": "Farah dit que je termine mon croquis."
+      },
+      {
+        "id": "b",
+        "label": "Farah dit qu’elle termines son croquis."
+      },
+      {
+        "id": "c",
+        "label": "Farah dit qu’elle termine son croquis."
+      },
+      {
+        "id": "d",
+        "label": "Farah dit qu’elle termine mon croquis."
+      }
+    ],
+    "answer": "c",
+    "explanation": "« Je » désigne Farah : il devient « elle ». Le croquis appartient à Farah, donc « mon » devient « son ». Le verbe introducteur reste au présent et « termine » garde ici le même temps."
+  },
+  {
+    "id": 5,
+    "label": "Rapporter des paroles",
+    "prompt": "Je rapporte moi-même cette remarque de Nadia. Quelle phrase convient ?",
+    "before": "Nadia me dit : ",
+    "focus": "« Tu dessines très précisément. »",
+    "after": "",
+    "options": [
+      {
+        "id": "a",
+        "label": "Nadia me dit qu’elle dessine très précisément."
+      },
+      {
+        "id": "b",
+        "label": "Nadia me dit que tu dessines très précisément."
+      },
+      {
+        "id": "c",
+        "label": "Nadia me dit que nous dessinons très précisément."
+      },
+      {
+        "id": "d",
+        "label": "Nadia me dit que je dessine très précisément."
+      }
+    ],
+    "answer": "d",
+    "explanation": "Dans les paroles de Nadia, « tu » me désigne. Quand je rapporte sa remarque, je parle donc de moi avec « je ». La personne grammaticale dépend de l’identité du locuteur et du destinataire."
+  },
+  {
+    "id": 6,
+    "label": "Rapporter des paroles",
+    "prompt": "Un narrateur extérieur rapporte ces paroles. Quelle transformation convient ?",
+    "before": "Maëlle et Yasmine déclarent : ",
+    "focus": "« Nous participerons au relais. »",
+    "after": "",
+    "options": [
+      {
+        "id": "a",
+        "label": "Maëlle et Yasmine déclarent que nous participerons au relais."
+      },
+      {
+        "id": "b",
+        "label": "Maëlle et Yasmine déclarent qu’elles participeront au relais."
+      },
+      {
+        "id": "c",
+        "label": "Maëlle et Yasmine déclarent qu’elle participera au relais."
+      },
+      {
+        "id": "d",
+        "label": "Maëlle et Yasmine déclarent que vous participerez au relais."
+      }
+    ],
+    "answer": "b",
+    "explanation": "« Nous » désigne les deux locutrices, Maëlle et Yasmine. Le narrateur extérieur les désigne par « elles » ; le verbe s’accorde à la troisième personne du pluriel. Le futur est conservé après « déclarent » au présent."
+  },
+  {
+    "id": 7,
+    "label": "Rapporter des paroles",
+    "prompt": "Un narrateur extérieur rapporte ces paroles. Quelle phrase conserve l’identité du propriétaire des gants ?",
+    "before": "Samir dit : ",
+    "focus": "« Je cherche mes gants. »",
+    "after": "",
+    "options": [
+      {
+        "id": "a",
+        "label": "Samir dit qu’il cherche mes gants."
+      },
+      {
+        "id": "b",
+        "label": "Samir dit que je cherche ses gants."
+      },
+      {
+        "id": "c",
+        "label": "Samir dit qu’il cherche ses gants."
+      },
+      {
+        "id": "d",
+        "label": "Samir dit qu’il cherche nos gants."
+      }
+    ],
+    "answer": "c",
+    "explanation": "Samir est à la fois celui qui cherche et le propriétaire des gants. « Je » devient « il » et « mes » devient « ses ». Garder « mes » désignerait les gants du narrateur, et changerait l’information."
+  },
+  {
+    "id": 8,
+    "label": "Rapporter des paroles",
+    "prompt": "Je suis le destinataire et je rapporte la phrase d’Amina. Quelle formulation convient ?",
+    "before": "Amina me dit : ",
+    "focus": "« Je te prête mon compas. »",
+    "after": "",
+    "options": [
+      {
+        "id": "a",
+        "label": "Amina me dit qu’elle me prête son compas."
+      },
+      {
+        "id": "b",
+        "label": "Amina me dit qu’elle te prête son compas."
+      },
+      {
+        "id": "c",
+        "label": "Amina me dit que je lui prête mon compas."
+      },
+      {
+        "id": "d",
+        "label": "Amina me dit qu’elle me prête mon compas."
+      }
+    ],
+    "answer": "a",
+    "explanation": "Amina est « je » dans la réplique et devient « elle » dans mon récit. Le destinataire « te », c’est moi : il devient « me ». Enfin, le compas appartient à Amina : « mon » devient « son »."
+  },
+  {
+    "id": 9,
+    "label": "Rapporter des paroles",
+    "prompt": "Quelle phrase rapporte correctement cette question au discours indirect ?",
+    "before": "Le vendeur demande à l’acheteuse : ",
+    "focus": "« Avez-vous besoin d’un sac ? »",
+    "after": "",
+    "options": [
+      {
+        "id": "a",
+        "label": "Le vendeur demande à l’acheteuse si elle a besoin d’un sac."
+      },
+      {
+        "id": "b",
+        "label": "Le vendeur demande à l’acheteuse qu’elle a besoin d’un sac."
+      },
+      {
+        "id": "c",
+        "label": "Le vendeur demande à l’acheteuse si a-t-elle besoin d’un sac."
+      },
+      {
+        "id": "d",
+        "label": "Le vendeur demande à l’acheteuse quand elle a besoin d’un sac."
+      }
+    ],
+    "answer": "a",
+    "explanation": "La question appelle oui ou non : elle devient une interrogative indirecte introduite par « si ». « Vous » désigne l’acheteuse, donc devient « elle », et l’ordre ordinaire sujet-verbe est rétabli."
+  },
+  {
+    "id": 10,
+    "label": "Rapporter des paroles",
+    "prompt": "Quelle phrase conserve le sens de la question au discours indirect ?",
+    "before": "La passagère demande : ",
+    "focus": "« Quand le bateau accoste-t-il ? »",
+    "after": "",
+    "options": [
+      {
+        "id": "a",
+        "label": "La passagère demande si le bateau accoste."
+      },
+      {
+        "id": "b",
+        "label": "La passagère demande quand le bateau accoste-t-il."
+      },
+      {
+        "id": "c",
+        "label": "La passagère demande quand le bateau accoste."
+      },
+      {
+        "id": "d",
+        "label": "La passagère demande que le bateau accoste."
+      }
+    ],
+    "answer": "c",
+    "explanation": "La question porte sur le moment, indiqué par « quand » : ce mot est conservé. On retire l’inversion « accoste-t-il », marque de la question directe. « Si » ferait porter la question sur la réalisation de l’accostage, et non sur son heure."
+  },
+  {
+    "id": 11,
+    "label": "Rapporter des paroles",
+    "prompt": "Un narrateur extérieur rapporte cette consigne. Quelle phrase en conserve le sens ?",
+    "before": "La professeure dit aux élèves : ",
+    "focus": "« Rangez vos calculatrices. »",
+    "after": "",
+    "options": [
+      {
+        "id": "a",
+        "label": "La professeure dit aux élèves de ranger ses calculatrices."
+      },
+      {
+        "id": "b",
+        "label": "La professeure dit aux élèves s’ils rangent leurs calculatrices."
+      },
+      {
+        "id": "c",
+        "label": "La professeure dit aux élèves de ranger vos calculatrices."
+      },
+      {
+        "id": "d",
+        "label": "La professeure dit aux élèves de ranger leurs calculatrices."
+      }
+    ],
+    "answer": "d",
+    "explanation": "L’ordre à l’impératif peut être rapporté avec « de » suivi de l’infinitif : « de ranger ». Les calculatrices appartiennent aux élèves : « vos » devient « leurs » dans le récit d’un narrateur extérieur."
+  },
+  {
+    "id": 12,
+    "label": "Rapporter des paroles",
+    "prompt": "Le narrateur écrit le 20 juin et adopte les repères d’un récit au passé. Quel groupe désigne la même date que « aujourd’hui » ?",
+    "before": "Le 12 juin, Zoé avait annoncé : « Aujourd’hui, j’expose mes dessins. » Le narrateur rapporte : Zoé avait annoncé qu’elle exposait ses dessins ",
+    "focus": "…",
+    "after": ".",
+    "options": [
+      {
+        "id": "a",
+        "label": "la veille"
+      },
+      {
+        "id": "b",
+        "label": "ce jour-là"
+      },
+      {
+        "id": "c",
+        "label": "le lendemain"
+      },
+      {
+        "id": "d",
+        "label": "le jour où le narrateur écrit"
+      }
+    ],
+    "answer": "b",
+    "explanation": "« Aujourd’hui » désignait le 12 juin, jour de la parole de Zoé. Dans le récit écrit plus tard, « ce jour-là » renvoie à cette même date. Il ne faut pas le confondre avec le 20 juin, jour de l’écriture."
+  },
+  {
+    "id": 13,
+    "label": "Rapporter des paroles",
+    "prompt": "Le narrateur raconte l’échange une semaine plus tard, avec les repères du récit au passé. Quel groupe conserve la date annoncée ?",
+    "before": "Le 4 mars, Esteban avait promis : « Je reviendrai demain. » Le narrateur rapporte : Esteban avait promis qu’il reviendrait ",
+    "focus": "…",
+    "after": ".",
+    "options": [
+      {
+        "id": "a",
+        "label": "la veille, le 3 mars"
+      },
+      {
+        "id": "b",
+        "label": "ce jour-là, le 4 mars"
+      },
+      {
+        "id": "c",
+        "label": "le lendemain, le 5 mars"
+      },
+      {
+        "id": "d",
+        "label": "une semaine après sa promesse, le 11 mars"
+      }
+    ],
+    "answer": "c",
+    "explanation": "Le « demain » d’Esteban se calcule à partir du 4 mars : c’est le 5 mars. Dans un récit postérieur, « le lendemain » conserve ce repère. On ne calcule pas la date à partir du moment où le narrateur raconte."
+  },
+  {
+    "id": 14,
+    "label": "Rapporter des paroles",
+    "prompt": "Le récit est écrit le 18 novembre. Quel groupe conserve la date évoquée par Lila le 10 novembre ?",
+    "before": "Le 10 novembre, Lila avait déclaré : « J’ai envoyé le colis hier. » Le narrateur rapporte : Lila avait déclaré qu’elle avait envoyé le colis ",
+    "focus": "…",
+    "after": ".",
+    "options": [
+      {
+        "id": "a",
+        "label": "la veille, le 9 novembre"
+      },
+      {
+        "id": "b",
+        "label": "le lendemain, le 11 novembre"
+      },
+      {
+        "id": "c",
+        "label": "ce jour-là, le 10 novembre"
+      },
+      {
+        "id": "d",
+        "label": "la veille de l’écriture, le 17 novembre"
+      }
+    ],
+    "answer": "a",
+    "explanation": "« Hier » se rapporte au jour où Lila a parlé, le 10 novembre. Il désigne donc le 9 novembre. « La veille » transpose ce repère dans le récit au passé sans changer la date de l’envoi."
+  },
+  {
+    "id": 15,
+    "label": "Rapporter des paroles",
+    "prompt": "Je suis à Paris et le guide m’appelle de Brest. Quelle formulation situe correctement la pluie à Brest ?",
+    "before": "Le guide me dit au téléphone : ",
+    "focus": "« Il pleut ici. »",
+    "after": "",
+    "options": [
+      {
+        "id": "a",
+        "label": "Le guide me dit qu’il pleut ici, à Paris."
+      },
+      {
+        "id": "b",
+        "label": "Le guide me dit qu’il pleut là-bas, à Brest."
+      },
+      {
+        "id": "c",
+        "label": "Le guide me dit qu’il pleut partout en France."
+      },
+      {
+        "id": "d",
+        "label": "Le guide me dit qu’il ne pleut pas à Brest."
+      }
+    ],
+    "answer": "b",
+    "explanation": "Dans la parole du guide, « ici » désigne son lieu, Brest. Depuis Paris, je peux reprendre ce lieu avec « là-bas, à Brest ». Conserver « ici, à Paris » déplacerait à tort la pluie vers le lieu du narrateur."
+  },
+  {
+    "id": 16,
+    "label": "Rapporter des paroles",
+    "prompt": "Quelle transposition au discours indirect applique la concordance des temps du récit au passé ?",
+    "before": "Dans la scène racontée, Noémie déclara : ",
+    "focus": "« Je dessine un plan. »",
+    "after": "",
+    "options": [
+      {
+        "id": "a",
+        "label": "Noémie déclara qu’elle dessinerait un plan."
+      },
+      {
+        "id": "b",
+        "label": "Noémie déclara qu’elle avait dessiné un plan."
+      },
+      {
+        "id": "c",
+        "label": "Noémie déclara qu’elle aurait dessiné un plan."
+      },
+      {
+        "id": "d",
+        "label": "Noémie déclara qu’elle dessinait un plan."
+      }
+    ],
+    "answer": "d",
+    "explanation": "Le dessin est en cours au moment de la déclaration. Avec la transposition au passé demandée, le présent « dessine » devient l’imparfait « dessinait ». Le plus-que-parfait présenterait le dessin comme antérieur à la déclaration."
+  },
+  {
+    "id": 17,
+    "label": "Rapporter des paroles",
+    "prompt": "Quelle transposition au discours indirect applique la concordance des temps du récit au passé ?",
+    "before": "Le voisin expliqua : ",
+    "focus": "« J’ai oublié le code. »",
+    "after": "",
+    "options": [
+      {
+        "id": "a",
+        "label": "Le voisin expliqua qu’il oubliait le code."
+      },
+      {
+        "id": "b",
+        "label": "Le voisin expliqua qu’il oublierait le code."
+      },
+      {
+        "id": "c",
+        "label": "Le voisin expliqua qu’il aurait oublié le code."
+      },
+      {
+        "id": "d",
+        "label": "Le voisin expliqua qu’il avait oublié le code."
+      }
+    ],
+    "answer": "d",
+    "explanation": "L’oubli précède l’explication. Dans la concordance au passé demandée, « ai oublié » devient « avait oublié », au plus-que-parfait. On conserve ainsi l’antériorité de l’oubli par rapport au moment où le voisin parle."
+  },
+  {
+    "id": 18,
+    "label": "Rapporter des paroles",
+    "prompt": "Quelle transposition au discours indirect applique la concordance des temps du récit au passé ?",
+    "before": "L’organisatrice annonça : ",
+    "focus": "« J’ouvrirai la billetterie à midi. »",
+    "after": "",
+    "options": [
+      {
+        "id": "a",
+        "label": "L’organisatrice annonça qu’elle ouvrait la billetterie à midi."
+      },
+      {
+        "id": "b",
+        "label": "L’organisatrice annonça qu’elle ouvrirait la billetterie à midi."
+      },
+      {
+        "id": "c",
+        "label": "L’organisatrice annonça qu’elle avait ouvert la billetterie à midi."
+      },
+      {
+        "id": "d",
+        "label": "L’organisatrice annonça qu’elle aurait ouvert la billetterie à midi."
+      }
+    ],
+    "answer": "b",
+    "explanation": "L’ouverture est annoncée comme postérieure à la parole de l’organisatrice. Le futur « ouvrirai » devient « ouvrirait » dans la transposition au passé demandée. Ce conditionnel exprime ici le futur vu depuis un moment passé."
+  },
+  {
+    "id": 19,
+    "label": "Rapporter des paroles",
+    "prompt": "Éva parle d’elle-même. Quelle réplique correspond au discours indirect donné ?",
+    "before": "",
+    "focus": "Éva affirme qu’elle adore la voile.",
+    "after": "",
+    "options": [
+      {
+        "id": "a",
+        "label": "Éva affirme : « Tu adores la voile. »"
+      },
+      {
+        "id": "b",
+        "label": "Éva affirme : « Nous adorons la voile. »"
+      },
+      {
+        "id": "c",
+        "label": "Éva affirme : « J’adore la voile. »"
+      },
+      {
+        "id": "d",
+        "label": "Éva affirme : « Je déteste la voile. »"
+      }
+    ],
+    "answer": "c",
+    "explanation": "Le sujet « elle » du discours indirect désigne Éva. Quand Éva parle elle-même, elle dit « je ». Le présent et le sens du verbe « adorer » sont conservés puisque le verbe introducteur « affirme » reste au présent."
+  },
+  {
+    "id": 20,
+    "label": "Rapporter des paroles",
+    "prompt": "Comment le narrateur enchaîne-t-il les paroles dans cette phrase ?",
+    "before": "",
+    "focus": "Hugo murmura : « Je suis inquiet », puis ajouta que personne ne devait sortir.",
+    "after": "",
+    "options": [
+      {
+        "id": "a",
+        "label": "Il passe du discours direct au discours indirect."
+      },
+      {
+        "id": "b",
+        "label": "Il passe du discours indirect au discours direct."
+      },
+      {
+        "id": "c",
+        "label": "Il emploie seulement le discours direct."
+      },
+      {
+        "id": "d",
+        "label": "Il ne rapporte aucune parole."
+      }
+    ],
+    "answer": "a",
+    "explanation": "« Je suis inquiet » est donné entre guillemets au discours direct. La suite est intégrée après le verbe « ajouta » dans la conjonctive « que personne ne devait sortir » : elle relève du discours indirect."
+  }
+]

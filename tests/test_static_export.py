@@ -9,6 +9,7 @@ import unittest
 from urllib.parse import urlsplit
 
 from scripts.export_static import export_site
+from quiz_data import load_catalog
 
 
 class Links(HTMLParser):
@@ -31,8 +32,8 @@ class StaticExportTests(unittest.TestCase):
     def test_export_at_root_and_repository_path_has_no_broken_internal_links(self):
         for prefix in ("", "/atelier-francais"):
             result = export_site(self.output, prefix)
-            self.assertEqual(result["quizzes"], 6)
-            self.assertEqual(result["pages"], 12)
+            self.assertEqual(result["quizzes"], len(load_catalog()))
+            self.assertEqual(result["pages"], len(load_catalog()) + 6)
             for page in self.output.rglob("*.html"):
                 parser = Links()
                 parser.feed(page.read_text())

@@ -1,0 +1,562 @@
+[
+  {
+    "id": 1,
+    "label": "Construction et sens",
+    "prompt": "Quelle comparaison distingue la construction et le sens de ces deux phrases ?",
+    "before": "",
+    "focus": "Le chemin est fermé, car une roche le bloque. / Le chemin est fermé : une roche le bloque.",
+    "after": "",
+    "options": [
+      {
+        "id": "a",
+        "label": "Les deux phrases sont subordonnées parce qu’elles expriment une explication."
+      },
+      {
+        "id": "b",
+        "label": "Les deux phrases sont coordonnées, même lorsque le mot de liaison disparaît."
+      },
+      {
+        "id": "c",
+        "label": "La première coordonne les propositions ; la seconde les juxtapose, avec un lien explicatif dans les deux cas."
+      },
+      {
+        "id": "d",
+        "label": "La seconde phrase ne peut exprimer aucun lien de sens sans conjonction."
+      }
+    ],
+    "answer": "c",
+    "explanation": "Car construit une coordination, tandis que les deux-points construisent ici une juxtaposition. Dans les deux formulations, le blocage explique la fermeture. La relation logique et la relation syntaxique doivent être distinguées."
+  },
+  {
+    "id": 2,
+    "label": "Construction et sens",
+    "prompt": "Comment analyser le rôle de pourtant dans cette phrase ?",
+    "before": "Le signal est faible ; ",
+    "focus": "pourtant",
+    "after": " nous le percevons nettement.",
+    "options": [
+      {
+        "id": "a",
+        "label": "C’est un adverbe de liaison qui marque une opposition entre les deux propositions."
+      },
+      {
+        "id": "b",
+        "label": "C’est un pronom relatif qui reprend signal."
+      },
+      {
+        "id": "c",
+        "label": "C’est une conjonction de subordination qui rend la seconde proposition dépendante."
+      },
+      {
+        "id": "d",
+        "label": "C’est un verbe qui constitue une troisième proposition."
+      }
+    ],
+    "answer": "a",
+    "explanation": "Pourtant est un adverbe de liaison : il oppose la perception nette du signal à ce que sa faiblesse pouvait laisser attendre. Les deux propositions restent sur le même plan ; l’adverbe précise leur lien argumentatif sans introduire de subordination."
+  },
+  {
+    "id": 3,
+    "label": "Liens de sens",
+    "prompt": "Quel lien les deux-points invitent-ils à comprendre ?",
+    "before": "La promenade fut reportée",
+    "focus": " : ",
+    "after": "la passerelle était devenue impraticable.",
+    "options": [
+      {
+        "id": "a",
+        "label": "La seconde proposition donne le but recherché par la passerelle."
+      },
+      {
+        "id": "b",
+        "label": "La seconde proposition raconte nécessairement un fait postérieur au report."
+      },
+      {
+        "id": "c",
+        "label": "La seconde proposition contredit obligatoirement la première."
+      },
+      {
+        "id": "d",
+        "label": "La seconde proposition explique la décision racontée dans la première."
+      }
+    ],
+    "answer": "d",
+    "explanation": "L’état de la passerelle justifie le report de la promenade. Les deux-points orientent la lecture vers cette explication, alors qu’aucune conjonction ne l’exprime directement."
+  },
+  {
+    "id": 4,
+    "label": "Liens de sens",
+    "prompt": "Quelle relation ainsi explicite-t-il ?",
+    "before": "Les bénévoles ont dégagé les accès ; ",
+    "focus": "ainsi",
+    "after": " les secours ont pu entrer.",
+    "options": [
+      {
+        "id": "a",
+        "label": "Le second fait est la cause qui a empêché de dégager les accès."
+      },
+      {
+        "id": "b",
+        "label": "Le second fait est présenté comme rendu possible par le premier."
+      },
+      {
+        "id": "c",
+        "label": "Les deux faits sont présentés comme incompatibles."
+      },
+      {
+        "id": "d",
+        "label": "Le second fait est une simple définition du mot bénévoles."
+      }
+    ],
+    "answer": "b",
+    "explanation": "Le dégagement des accès permet l’entrée des secours. Ainsi marque ici une conséquence ou un résultat du premier fait. Il aide à interpréter le rapport entre les deux propositions."
+  },
+  {
+    "id": 5,
+    "label": "Analyser la dépendance",
+    "prompt": "Quelle manipulation met en évidence la fonction de la subordonnée ?",
+    "before": "La conservatrice reconnaît ",
+    "focus": "que cette restauration est nécessaire",
+    "after": ".",
+    "options": [
+      {
+        "id": "a",
+        "label": "Remplacer toute la subordonnée par cela : « La conservatrice reconnaît cela. »"
+      },
+      {
+        "id": "b",
+        "label": "Déplacer seulement que à la fin de la phrase."
+      },
+      {
+        "id": "c",
+        "label": "Accorder nécessaire avec conservatrice."
+      },
+      {
+        "id": "d",
+        "label": "Remplacer la conservatrice par la restauration sans autre changement."
+      }
+    ],
+    "answer": "a",
+    "explanation": "La substitution par cela montre que la proposition occupe la place du COD de reconnaît. Cette analyse porte sur la fonction de la subordonnée entière, et non sur la fonction des mots qui la composent."
+  },
+  {
+    "id": 6,
+    "label": "Propositions imbriquées",
+    "prompt": "De quel verbe dépend directement la subordonnée soulignée ?",
+    "before": "L’éditeur annonce que l’autrice pense ",
+    "focus": "que le titre doit changer",
+    "after": ".",
+    "options": [
+      {
+        "id": "a",
+        "label": "Du verbe annonce, sans proposition intermédiaire."
+      },
+      {
+        "id": "b",
+        "label": "Du verbe pense."
+      },
+      {
+        "id": "c",
+        "label": "Du verbe changer."
+      },
+      {
+        "id": "d",
+        "label": "Du nom éditeur."
+      }
+    ],
+    "answer": "b",
+    "explanation": "Le contenu de la pensée de l’autrice est « que le titre doit changer ». Cette conjonctive dépend directement de pense. L’ensemble « que l’autrice pense que le titre doit changer » dépend, lui, de annonce : les subordonnées sont imbriquées."
+  },
+  {
+    "id": 7,
+    "label": "Analyser la dépendance",
+    "prompt": "Quelle est la fonction de la proposition entière soulignée ?",
+    "before": "",
+    "focus": "Que les deux équipes coopèrent",
+    "after": " facilitera l’enquête.",
+    "options": [
+      {
+        "id": "a",
+        "label": "COD du verbe coopèrent."
+      },
+      {
+        "id": "b",
+        "label": "Complément du nom enquête."
+      },
+      {
+        "id": "c",
+        "label": "Complément circonstanciel de lieu."
+      },
+      {
+        "id": "d",
+        "label": "Sujet du verbe facilitera."
+      }
+    ],
+    "answer": "d",
+    "explanation": "On peut remplacer toute la proposition par cela : « Cela facilitera l’enquête ». Elle occupe donc la fonction sujet du verbe principal. Une proposition subordonnée n’est pas forcément un complément placé après un verbe."
+  },
+  {
+    "id": 8,
+    "label": "Repérer les propositions",
+    "prompt": "Combien de propositions construites autour d’un verbe conjugué contient cette phrase ?",
+    "before": "",
+    "focus": "Lara espère revenir ; son frère attend que la réceptionniste les appelle.",
+    "after": "",
+    "options": [
+      {
+        "id": "a",
+        "label": "Une."
+      },
+      {
+        "id": "b",
+        "label": "Deux."
+      },
+      {
+        "id": "c",
+        "label": "Trois."
+      },
+      {
+        "id": "d",
+        "label": "Quatre."
+      }
+    ],
+    "answer": "c",
+    "explanation": "Les verbes conjugués sont espère, attend et appelle. Revenir est un infinitif dépendant de espère, sans sujet propre exprimé : il ne constitue pas ici une quatrième proposition. Il faut distinguer forme infinitive et verbe conjugué."
+  },
+  {
+    "id": 9,
+    "label": "Repérer les propositions",
+    "prompt": "Pourquoi faut-il compter deux propositions construites autour de verbes conjugués dans cette phrase ?",
+    "before": "",
+    "focus": "Le réceptionniste a souri lorsque la délégation est entrée.",
+    "after": "",
+    "options": [
+      {
+        "id": "a",
+        "label": "Chaque auxiliaire doit former une proposition séparée de son participe."
+      },
+      {
+        "id": "b",
+        "label": "Lorsque est un verbe conjugué qui remplace une proposition."
+      },
+      {
+        "id": "c",
+        "label": "Toute phrase sans point-virgule ne peut contenir qu’une proposition."
+      },
+      {
+        "id": "d",
+        "label": "A souri et est entrée sont chacun une seule forme verbale composée."
+      }
+    ],
+    "answer": "d",
+    "explanation": "Le passé composé associe un auxiliaire et un participe passé, mais forme un seul noyau verbal : a souri, puis est entrée. Les deux propositions sont reliées par lorsque, qui marque une subordination."
+  },
+  {
+    "id": 10,
+    "label": "Analyser la dépendance",
+    "prompt": "Quels éléments et coordonne-t-il dans cette phrase ?",
+    "before": "La directrice confirme ",
+    "focus": "que les salles sont prêtes et que les guides ont été prévenus",
+    "after": ".",
+    "options": [
+      {
+        "id": "a",
+        "label": "Deux subordonnées complétives qui dépendent du même verbe confirme."
+      },
+      {
+        "id": "b",
+        "label": "Deux groupes nominaux sujets du verbe confirme."
+      },
+      {
+        "id": "c",
+        "label": "Une principale et une relative introduite par et."
+      },
+      {
+        "id": "d",
+        "label": "Deux mots isolés qui n’ont aucun verbe dans leur groupe."
+      }
+    ],
+    "answer": "a",
+    "explanation": "Les deux contenus confirmés sont les propositions « que les salles sont prêtes » et « que les guides ont été prévenus ». Elles sont coordonnées par et tout en restant subordonnées au même verbe principal. Coordination et subordination peuvent donc se combiner."
+  },
+  {
+    "id": 11,
+    "label": "Construction de la phrase",
+    "prompt": "Dans quelle phrase et relie-t-il des groupes nominaux plutôt que des propositions ?",
+    "before": "",
+    "focus": "Repérer ce qui est coordonné, et pas seulement le mot de liaison.",
+    "after": "",
+    "options": [
+      {
+        "id": "a",
+        "label": "La costumière ajuste la cape et le décorateur installe le fauteuil."
+      },
+      {
+        "id": "b",
+        "label": "La costumière et le décorateur préparent la scène."
+      },
+      {
+        "id": "c",
+        "label": "La costumière est prête et les acteurs arrivent."
+      },
+      {
+        "id": "d",
+        "label": "Les rideaux se lèvent et la lumière change."
+      }
+    ],
+    "answer": "b",
+    "explanation": "Dans la bonne réponse, et relie « la costumière » et « le décorateur », deux groupes nominaux formant ensemble le sujet d’un seul verbe. La présence de et ne suffit donc pas à prouver qu’une phrase contient plusieurs propositions."
+  },
+  {
+    "id": 12,
+    "label": "Manipuler la phrase",
+    "prompt": "Que montre la possibilité de déplacer le passage souligné au début de la phrase ?",
+    "before": "Les spectateurs gagnent leurs places ",
+    "focus": "lorsque les portes s’ouvrent",
+    "after": ".",
+    "options": [
+      {
+        "id": "a",
+        "label": "La subordonnée est le COD indispensable de gagnent."
+      },
+      {
+        "id": "b",
+        "label": "Le mot lorsque reprend le nom places comme un pronom relatif."
+      },
+      {
+        "id": "c",
+        "label": "La subordonnée apporte un repère temporel à la proposition principale."
+      },
+      {
+        "id": "d",
+        "label": "La subordonnée constitue le sujet de s’ouvrent."
+      }
+    ],
+    "answer": "c",
+    "explanation": "On obtient « Lorsque les portes s’ouvrent, les spectateurs gagnent leurs places ». Le passage exprime le moment de l’action principale et peut être déplacé comme un complément circonstanciel. Le déplacement est un indice à confronter au sens."
+  },
+  {
+    "id": 13,
+    "label": "Manipuler la phrase",
+    "prompt": "Quelle réécriture conserve l’explication tout en remplaçant la subordonnée par un groupe prépositionnel ?",
+    "before": "",
+    "focus": "Le départ est retardé parce que le moteur est en panne.",
+    "after": "",
+    "options": [
+      {
+        "id": "a",
+        "label": "Le départ est retardé malgré le bon état du moteur."
+      },
+      {
+        "id": "b",
+        "label": "Le départ est retardé à cause de la panne du moteur."
+      },
+      {
+        "id": "c",
+        "label": "Le départ est retardé pour réparer le moteur."
+      },
+      {
+        "id": "d",
+        "label": "Le départ est retardé avant la vérification du moteur."
+      }
+    ],
+    "answer": "b",
+    "explanation": "« À cause de la panne du moteur » reprend le contenu explicatif de « parce que le moteur est en panne ». La relation de cause subsiste, mais elle est exprimée par un groupe prépositionnel, introduit par la locution à cause de et contenant le groupe nominal la panne du moteur."
+  },
+  {
+    "id": 14,
+    "label": "Liens de sens",
+    "prompt": "Quelle formulation ajoute un lien de conséquence explicite entre les deux faits ?",
+    "before": "",
+    "focus": "Le projecteur s’est éteint ; la lecture a été interrompue.",
+    "after": "",
+    "options": [
+      {
+        "id": "a",
+        "label": "Le projecteur s’est éteint ; auparavant, la lecture avait été interrompue."
+      },
+      {
+        "id": "b",
+        "label": "Le projecteur s’est éteint ; pourtant, la lecture n’a pas été interrompue."
+      },
+      {
+        "id": "c",
+        "label": "Le projecteur s’est éteint parce que la lecture a été interrompue."
+      },
+      {
+        "id": "d",
+        "label": "Le projecteur s’est éteint ; par conséquent, la lecture a été interrompue."
+      }
+    ],
+    "answer": "d",
+    "explanation": "« Par conséquent » présente l’interruption comme un résultat de l’extinction. Les autres propositions changent l’ordre, nient l’interruption ou inversent le lien causal. Un connecteur oriente donc l’interprétation des faits."
+  },
+  {
+    "id": 15,
+    "label": "Liens de sens",
+    "prompt": "Que peut-on déduire de cette seule succession de faits ?",
+    "before": "La pendule sonna onze heures",
+    "focus": " ; ",
+    "after": "un visiteur frappa à la porte.",
+    "options": [
+      {
+        "id": "a",
+        "label": "Les faits se succèdent dans le récit, mais leur lien causal n’est pas établi."
+      },
+      {
+        "id": "b",
+        "label": "La pendule a nécessairement provoqué la visite."
+      },
+      {
+        "id": "c",
+        "label": "Le visiteur a nécessairement fait sonner la pendule avant de frapper."
+      },
+      {
+        "id": "d",
+        "label": "La juxtaposition prouve toujours une opposition entre les faits."
+      }
+    ],
+    "answer": "a",
+    "explanation": "Les deux événements sont présentés l’un après l’autre. Rien n’affirme que la sonnerie provoque le coup frappé à la porte. Il faut éviter de confondre succession temporelle et relation de cause."
+  },
+  {
+    "id": 16,
+    "label": "Manipuler la phrase",
+    "prompt": "Quelle transformation conserve l’opposition entre l’attente et le résultat ?",
+    "before": "",
+    "focus": "Le résumé est très bref, mais il permet de comprendre l’intrigue.",
+    "after": "",
+    "options": [
+      {
+        "id": "a",
+        "label": "Le résumé est très bref ; auparavant, il permet de comprendre l’intrigue."
+      },
+      {
+        "id": "b",
+        "label": "Le résumé est très bref parce qu’il ne permet pas de comprendre l’intrigue."
+      },
+      {
+        "id": "c",
+        "label": "Le résumé est très bref ; pourtant, il permet de comprendre l’intrigue."
+      },
+      {
+        "id": "d",
+        "label": "Le résumé est très bref pour empêcher de comprendre l’intrigue."
+      }
+    ],
+    "answer": "c",
+    "explanation": "Mais et pourtant mettent ici en relation la brièveté et un résultat qui dépasse l’attente. La conjonction de coordination mais est remplacée par l’adverbe de liaison pourtant. Les deux formulations conservent le même lien d’opposition."
+  },
+  {
+    "id": 17,
+    "label": "Manipuler la phrase",
+    "prompt": "Quelle fusion fait du contenu de la première phrase une subordonnée COD ?",
+    "before": "",
+    "focus": "Le témoin est arrivé. Je le sais.",
+    "after": "",
+    "options": [
+      {
+        "id": "a",
+        "label": "Le témoin, qui est arrivé, me sait."
+      },
+      {
+        "id": "b",
+        "label": "Le témoin est arrivé, car je le sais."
+      },
+      {
+        "id": "c",
+        "label": "Quand je sais, le témoin est arrivé."
+      },
+      {
+        "id": "d",
+        "label": "Je sais que le témoin est arrivé."
+      }
+    ],
+    "answer": "d",
+    "explanation": "Le pronom le reprend le fait exprimé par « le témoin est arrivé ». La fusion « je sais que… » place ce contenu dans une complétive COD de sais. Les autres formulations changent le sens ou la construction."
+  },
+  {
+    "id": 18,
+    "label": "Propositions imbriquées",
+    "prompt": "Quelle analyse décrit correctement l’ensemble souligné ?",
+    "before": "Nous apprenons ",
+    "focus": "que la sortie est maintenue parce que la météo s’améliore",
+    "after": ".",
+    "options": [
+      {
+        "id": "a",
+        "label": "Deux propositions indépendantes seulement juxtaposées."
+      },
+      {
+        "id": "b",
+        "label": "Une subordonnée complétive contient elle-même une subordonnée donnant une cause."
+      },
+      {
+        "id": "c",
+        "label": "Un groupe nominal sans verbe conjugué."
+      },
+      {
+        "id": "d",
+        "label": "Une principale qui ne dépend d’aucun mot extérieur au passage."
+      }
+    ],
+    "answer": "b",
+    "explanation": "L’ensemble souligné complète apprenons. À l’intérieur, « parce que la météo s’améliore » explique le maintien de la sortie. Une proposition subordonnée peut donc contenir une autre subordonnée."
+  },
+  {
+    "id": 19,
+    "label": "Liens de sens",
+    "prompt": "Dans ce raisonnement, que justifie la proposition introduite par car ?",
+    "before": "Elle est probablement revenue, ",
+    "focus": "car son vélo est devant la maison",
+    "after": ".",
+    "options": [
+      {
+        "id": "a",
+        "label": "L’hypothèse du locuteur sur le retour de cette personne."
+      },
+      {
+        "id": "b",
+        "label": "Le fait matériel que le vélo a provoqué son retour."
+      },
+      {
+        "id": "c",
+        "label": "Un ordre adressé à la personne de revenir."
+      },
+      {
+        "id": "d",
+        "label": "Une certitude imposée par le seul emploi du mot car."
+      }
+    ],
+    "answer": "a",
+    "explanation": "La présence du vélo sert d’indice pour soutenir une hypothèse, marquée par probablement. La seconde proposition justifie ici le raisonnement du locuteur ; elle ne désigne pas nécessairement la cause réelle du retour."
+  },
+  {
+    "id": 20,
+    "label": "Analyser la dépendance",
+    "prompt": "Quel découpage respecte la structure de cette phrase ?",
+    "before": "",
+    "focus": "La critique observe que les couleurs changent quand on éclaire le tableau de côté.",
+    "after": "",
+    "options": [
+      {
+        "id": "a",
+        "label": "La critique [observe que] les couleurs changent quand on éclaire le tableau de côté."
+      },
+      {
+        "id": "b",
+        "label": "La critique observe que les couleurs [changent quand] on éclaire le tableau de côté."
+      },
+      {
+        "id": "c",
+        "label": "La critique observe [que les couleurs changent [quand on éclaire le tableau de côté]]."
+      },
+      {
+        "id": "d",
+        "label": "La critique observe [que les couleurs] changent [quand on éclaire] le tableau de côté."
+      }
+    ],
+    "answer": "c",
+    "explanation": "La complétive entière dépend de observe. À l’intérieur, la subordonnée introduite par quand précise la circonstance du changement des couleurs. Les mots introducteurs restent avec les propositions qu’ils introduisent ; on ne les groupe pas avec le verbe précédent."
+  }
+]

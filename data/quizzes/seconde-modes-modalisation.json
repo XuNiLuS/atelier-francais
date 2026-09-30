@@ -1,0 +1,562 @@
+[
+  {
+    "id": 1,
+    "label": "Modes et sens",
+    "prompt": "Que permet d’affirmer l’emploi de l’indicatif dans cette phrase ?",
+    "before": "Le personnage prétend que sa machine ",
+    "focus": "fonctionne",
+    "after": " sans aucune source d’énergie, mais le récit démontrera qu’il ment.",
+    "options": [
+      {
+        "id": "a",
+        "label": "Le fonctionnement est nécessairement prouvé dans le monde réel."
+      },
+      {
+        "id": "b",
+        "label": "Le verbe exprime un ordre adressé au lecteur."
+      },
+      {
+        "id": "c",
+        "label": "L’indicatif signale ici un souhait dont la réalisation est demandée."
+      },
+      {
+        "id": "d",
+        "label": "Le personnage présente le fonctionnement comme un fait, sans que le mode en garantisse la vérité."
+      }
+    ],
+    "answer": "d",
+    "explanation": "L’indicatif sert ici à présenter un contenu comme un fait dans le discours du personnage. Il ne rend pas ce contenu vrai : le contexte annonce précisément un mensonge. Il faut distinguer présentation grammaticale et vérité de l’information."
+  },
+  {
+    "id": 2,
+    "label": "Modes et sens",
+    "prompt": "Quelle analyse explique le subjonctif dans cette demande ?",
+    "before": "La responsable exige que chacun ",
+    "focus": "soit",
+    "after": " présent à la répétition générale.",
+    "options": [
+      {
+        "id": "a",
+        "label": "Le subjonctif prouve que personne ne sera présent."
+      },
+      {
+        "id": "b",
+        "label": "La présence est envisagée à travers une exigence."
+      },
+      {
+        "id": "c",
+        "label": "Le verbe raconte une présence constatée la veille."
+      },
+      {
+        "id": "d",
+        "label": "Le mode exprime nécessairement une hésitation de la responsable."
+      }
+    ],
+    "answer": "b",
+    "explanation": "« Exige que » présente la présence comme ce qui est demandé. Le subjonctif dépend ici de cette construction de volonté ; il n’annonce ni une absence certaine ni un simple doute."
+  },
+  {
+    "id": 3,
+    "label": "Modes et sens",
+    "prompt": "Pourquoi le subjonctif ne signifie-t-il pas que le fait est incertain ?",
+    "before": "Son absence est confirmée. Je regrette qu’elle ",
+    "focus": "soit",
+    "after": " absente aujourd’hui.",
+    "options": [
+      {
+        "id": "a",
+        "label": "L’absence est connue ; le subjonctif l’inscrit dans l’expression d’un regret."
+      },
+      {
+        "id": "b",
+        "label": "Le subjonctif efface la confirmation donnée juste avant."
+      },
+      {
+        "id": "c",
+        "label": "Le locuteur ordonne à la personne de s’absenter."
+      },
+      {
+        "id": "d",
+        "label": "La phrase ne peut parler que d’une absence future."
+      }
+    ],
+    "answer": "a",
+    "explanation": "La première phrase affirme l’absence. « Regretter que » fait ensuite porter un sentiment sur ce fait déjà établi et appelle le subjonctif. La règle « subjonctif égale doute » serait donc trop simple."
+  },
+  {
+    "id": 4,
+    "label": "Modes et sens",
+    "prompt": "Quelle valeur l’impératif prend-il dans ce conseil ?",
+    "before": "Pour rendre votre conclusion plus claire, ",
+    "focus": "distinguez",
+    "after": " le bilan de l’ouverture.",
+    "options": [
+      {
+        "id": "a",
+        "label": "La description d’une pratique habituelle sans adresse à quelqu’un."
+      },
+      {
+        "id": "b",
+        "label": "Une hypothèse sur ce que les destinataires ont fait hier."
+      },
+      {
+        "id": "c",
+        "label": "Un conseil directement adressé aux destinataires."
+      },
+      {
+        "id": "d",
+        "label": "L’annonce certaine d’un événement futur."
+      }
+    ],
+    "answer": "c",
+    "explanation": "L’impératif invite les destinataires à agir. Ici, « pour rendre votre conclusion plus claire » précise la visée d’un conseil ; le contexte ne présente pas cette distinction comme un fait déjà réalisé."
+  },
+  {
+    "id": 5,
+    "label": "Valeurs modales",
+    "prompt": "Comment le conditionnel modifie-t-il la prise en charge de l’information ?",
+    "before": "D’après une information qui reste à confirmer, un nouveau théâtre ",
+    "focus": "ouvrirait",
+    "after": " dans le quartier.",
+    "options": [
+      {
+        "id": "a",
+        "label": "Le locuteur transmet une information sans la donner comme confirmée."
+      },
+      {
+        "id": "b",
+        "label": "Le locuteur annonce un événement postérieur à un verbe de parole au passé."
+      },
+      {
+        "id": "c",
+        "label": "Le locuteur atteste personnellement l’ouverture déjà accomplie."
+      },
+      {
+        "id": "d",
+        "label": "Le locuteur formule une demande polie adressée au théâtre."
+      }
+    ],
+    "answer": "a",
+    "explanation": "La source et « reste à confirmer » signalent une information non vérifiée. Le conditionnel met à distance l’affirmation. Il ne suffit pas de le repérer : le contexte permet de distinguer cet emploi modal du futur du passé."
+  },
+  {
+    "id": 6,
+    "label": "Valeurs modales",
+    "prompt": "Quel effet produit le conditionnel dans cette requête ?",
+    "before": "Devant le guichet, la voyageuse demande : « Je ",
+    "focus": "souhaiterais",
+    "after": " modifier ma réservation, s’il vous plaît. »",
+    "options": [
+      {
+        "id": "a",
+        "label": "Il raconte obligatoirement une réservation antérieure à une autre."
+      },
+      {
+        "id": "b",
+        "label": "Il présente une information journalistique non confirmée."
+      },
+      {
+        "id": "c",
+        "label": "Il atténue la formulation de la demande."
+      },
+      {
+        "id": "d",
+        "label": "Il indique que la voyageuse ne veut plus rien demander."
+      }
+    ],
+    "answer": "c",
+    "explanation": "« Souhaiterais » rend la demande moins directe que « je souhaite ». Le contexte du guichet et la formule de politesse permettent d’identifier cet emploi d’atténuation, sans imposer une action future par rapport à un récit passé."
+  },
+  {
+    "id": 7,
+    "label": "Valeurs modales",
+    "prompt": "Quelle interprétation du conditionnel est justifiée ici ?",
+    "before": "Sans l’aide de ces bénévoles, le musée ",
+    "focus": "serait",
+    "after": " fermé ; leur présence permet pourtant de le maintenir ouvert.",
+    "options": [
+      {
+        "id": "a",
+        "label": "Il affirme la fermeture effective et actuelle du musée."
+      },
+      {
+        "id": "b",
+        "label": "Il présente une situation hypothétique contraire à la situation actuelle."
+      },
+      {
+        "id": "c",
+        "label": "Il rapporte une fermeture annoncée dans un récit au passé."
+      },
+      {
+        "id": "d",
+        "label": "Il atténue une demande de fermeture adressée aux bénévoles."
+      }
+    ],
+    "answer": "b",
+    "explanation": "La seconde partie précise que le musée reste ouvert. « Serait fermé » envisage ce qui se passerait dans l’hypothèse où l’aide manquerait. Le conditionnel porte ici une valeur modale, et non celle d’un simple futur du passé."
+  },
+  {
+    "id": 8,
+    "label": "Modes et sens",
+    "prompt": "Quelle valeur le futur simple prend-il dans cette consigne ?",
+    "before": "Au début de l’épreuve, la surveillante dit : « Vous ",
+    "focus": "déposerez",
+    "after": " vos téléphones dans la boîte avant de vous asseoir. »",
+    "options": [
+      {
+        "id": "a",
+        "label": "Une prévision météorologique indépendante des candidats."
+      },
+      {
+        "id": "b",
+        "label": "Un fait habituel situé dans un passé révolu."
+      },
+      {
+        "id": "c",
+        "label": "Une information transmise avec réserve par un journaliste."
+      },
+      {
+        "id": "d",
+        "label": "Une instruction adressée aux candidats."
+      }
+    ],
+    "answer": "d",
+    "explanation": "La surveillante prescrit une action. Le futur simple conserve son orientation vers l’après, mais il a aussi ici une valeur d’instruction. La modalité d’un énoncé ne dépend donc pas uniquement d’un mode comme l’impératif."
+  },
+  {
+    "id": 9,
+    "label": "Nuancer un énoncé",
+    "prompt": "Quel sens de devoir le contexte invite-t-il à retenir ?",
+    "before": "Sa lampe est allumée et son manteau est accroché dans l’entrée : elle ",
+    "focus": "doit",
+    "after": " être chez elle, suppose son voisin.",
+    "options": [
+      {
+        "id": "a",
+        "label": "Une obligation imposée par un règlement cité dans la phrase."
+      },
+      {
+        "id": "b",
+        "label": "Une capacité physique à entrer dans le logement."
+      },
+      {
+        "id": "c",
+        "label": "Une probabilité déduite de plusieurs indices."
+      },
+      {
+        "id": "d",
+        "label": "Une interdiction adressée directement à la voisine."
+      }
+    ],
+    "answer": "c",
+    "explanation": "La lampe et le manteau servent d’indices, et « suppose » précise la démarche du voisin. « Doit être » exprime ici une déduction probable. Devoir ne signifie pas toujours être obligé de."
+  },
+  {
+    "id": 10,
+    "label": "Nuancer un énoncé",
+    "prompt": "Quel sens de devoir convient dans cette phrase ?",
+    "before": "Le règlement impose une protection : chaque visiteur ",
+    "focus": "doit",
+    "after": " porter un casque dans l’atelier.",
+    "options": [
+      {
+        "id": "a",
+        "label": "Une obligation fixée par le règlement."
+      },
+      {
+        "id": "b",
+        "label": "Une simple probabilité inférée à partir d’un casque aperçu."
+      },
+      {
+        "id": "c",
+        "label": "Un souhait personnel que le visiteur n’est pas tenu de suivre."
+      },
+      {
+        "id": "d",
+        "label": "La capacité physique du visiteur à soulever un casque."
+      }
+    ],
+    "answer": "a",
+    "explanation": "« Le règlement impose » établit une obligation. Le verbe devoir ne marque donc pas ici une supposition sur ce que fait le visiteur, mais ce qui lui est prescrit."
+  },
+  {
+    "id": 11,
+    "label": "Nuancer un énoncé",
+    "prompt": "Comment interpréter pouvoir dans cet avertissement ?",
+    "before": "Même correctement fixé, ce matériau ",
+    "focus": "peut",
+    "after": " se fissurer sous l’effet d’un froid extrême.",
+    "options": [
+      {
+        "id": "a",
+        "label": "Il donne une autorisation au matériau."
+      },
+      {
+        "id": "b",
+        "label": "Il garantit qu’une fissure se produira dans tous les cas."
+      },
+      {
+        "id": "c",
+        "label": "Il raconte une fissure déjà constatée hier."
+      },
+      {
+        "id": "d",
+        "label": "Il exprime une possibilité, sans affirmer que la fissure se produira."
+      }
+    ],
+    "answer": "d",
+    "explanation": "Le locuteur envisage un risque possible. « Peut » ne donne ici ni une permission ni une certitude : l’énoncé laisse ouverte la réalisation du phénomène."
+  },
+  {
+    "id": 12,
+    "label": "Nuancer un énoncé",
+    "prompt": "Quel changement produit le remplacement de peut-être par assurément ?",
+    "before": "Cette interprétation est ",
+    "focus": "peut-être",
+    "after": " la plus convaincante.",
+    "options": [
+      {
+        "id": "a",
+        "label": "Le jugement devient automatiquement démontré par une preuve."
+      },
+      {
+        "id": "b",
+        "label": "Le locuteur exprime une adhésion plus forte à son jugement."
+      },
+      {
+        "id": "c",
+        "label": "Le propos se transforme en ordre adressé au lecteur."
+      },
+      {
+        "id": "d",
+        "label": "Le jugement est situé dans un passé antérieur au débat."
+      }
+    ],
+    "answer": "b",
+    "explanation": "« Peut-être » réserve une marge d’incertitude ; « assurément » affiche une forte assurance. Ce changement concerne l’engagement du locuteur, pas la valeur objective d’une éventuelle démonstration."
+  },
+  {
+    "id": 13,
+    "label": "Choisir une formulation",
+    "prompt": "Quelle réécriture transforme l’affirmation en hypothèse prudente ?",
+    "before": "",
+    "focus": "Cette lettre explique son départ.",
+    "after": "",
+    "options": [
+      {
+        "id": "a",
+        "label": "Cette lettre explique certainement son départ."
+      },
+      {
+        "id": "b",
+        "label": "Cette lettre pourrait expliquer son départ."
+      },
+      {
+        "id": "c",
+        "label": "Cette lettre explique assurément son départ."
+      },
+      {
+        "id": "d",
+        "label": "Cette lettre explique sans aucun doute son départ."
+      }
+    ],
+    "answer": "b",
+    "explanation": "« Pourrait expliquer » présente l’explication comme possible. Les trois autres formulations renforcent au contraire l’assurance. Nuancer une hypothèse consiste ici à modifier la prise en charge du lien proposé."
+  },
+  {
+    "id": 14,
+    "label": "Modes et sens",
+    "prompt": "Le fait est confirmé : quelle analyse du subjonctif reste correcte ?",
+    "before": "Nous savons qu’il est très tard. Bien qu’il ",
+    "focus": "soit",
+    "after": " tard, les chercheurs poursuivent leur discussion.",
+    "options": [
+      {
+        "id": "a",
+        "label": "Le mode prouve que l’heure avancée n’est qu’une rumeur."
+      },
+      {
+        "id": "b",
+        "label": "Le mode transforme le fait en un ordre de terminer la discussion."
+      },
+      {
+        "id": "c",
+        "label": "Le mode oblige à situer la discussion dans le futur."
+      },
+      {
+        "id": "d",
+        "label": "Le subjonctif est appelé par bien que, même si le fait est admis."
+      }
+    ],
+    "answer": "d",
+    "explanation": "La première phrase confirme l’heure tardive. « Bien que » introduit ensuite une concession avec le subjonctif. Le mode dépend de cette construction et ne signifie pas à lui seul que le fait est douteux."
+  },
+  {
+    "id": 15,
+    "label": "Modes et sens",
+    "prompt": "Pourquoi la présence de l’indicatif n’exclut-elle pas ici toute incertitude ?",
+    "before": "Je crois que cette version ",
+    "focus": "convient",
+    "after": " mieux, mais je souhaite encore entendre vos arguments.",
+    "options": [
+      {
+        "id": "a",
+        "label": "L’indicatif annule forcément toute hésitation exprimée ailleurs."
+      },
+      {
+        "id": "b",
+        "label": "Convient est en réalité un impératif adressé aux lecteurs."
+      },
+      {
+        "id": "c",
+        "label": "Le verbe croire et la suite de la phrase nuancent l’assurance du locuteur."
+      },
+      {
+        "id": "d",
+        "label": "La phrase affirme que les autres arguments sont nécessairement faux."
+      }
+    ],
+    "answer": "c",
+    "explanation": "Après « je crois que » affirmatif, « convient » est à l’indicatif. Pourtant, « je crois » et le souhait de poursuivre l’échange laissent place à la discussion. La modalisation se lit dans tout l’énoncé, pas seulement dans le mode du verbe."
+  },
+  {
+    "id": 16,
+    "label": "Modes et sens",
+    "prompt": "Quelle portée a l’impératif à la première personne du pluriel ?",
+    "before": "Avant de décider, ",
+    "focus": "comparons",
+    "after": " ensemble les deux solutions.",
+    "options": [
+      {
+        "id": "a",
+        "label": "Le locuteur s’inclut dans une action proposée au groupe."
+      },
+      {
+        "id": "b",
+        "label": "Le locuteur s’exclut nécessairement du travail demandé."
+      },
+      {
+        "id": "c",
+        "label": "Le locuteur rapporte un ordre donné uniquement la veille."
+      },
+      {
+        "id": "d",
+        "label": "Le locuteur affirme que la comparaison est déjà terminée."
+      }
+    ],
+    "answer": "a",
+    "explanation": "« Comparons » est un impératif à la première personne du pluriel. Il invite le groupe, locuteur compris, à effectuer une démarche commune. Il ne constate pas un travail accompli."
+  },
+  {
+    "id": 17,
+    "label": "Modes et sens",
+    "prompt": "Quel mode verbal porte ici la consigne ?",
+    "before": "Sur le panneau de l’atelier : « Ne pas ",
+    "focus": "franchir",
+    "after": " la ligne jaune. »",
+    "options": [
+      {
+        "id": "a",
+        "label": "L’infinitif, employé pour formuler une interdiction."
+      },
+      {
+        "id": "b",
+        "label": "L’impératif à la deuxième personne du pluriel."
+      },
+      {
+        "id": "c",
+        "label": "Le subjonctif présent à la troisième personne."
+      },
+      {
+        "id": "d",
+        "label": "Le conditionnel présent à valeur de politesse."
+      }
+    ],
+    "answer": "a",
+    "explanation": "« Franchir » est un infinitif, sans marque de personne. Sur un panneau, l’infinitif peut avoir une valeur de consigne. Il faut distinguer le mode grammatical de la valeur d’ordre ou d’interdiction."
+  },
+  {
+    "id": 18,
+    "label": "Forme et valeur",
+    "prompt": "Quelle analyse sépare correctement le temps verbal et son emploi ?",
+    "before": "Avec un peu plus de lumière, nous ",
+    "focus": "verrions",
+    "after": " les détails du relief.",
+    "options": [
+      {
+        "id": "a",
+        "label": "Subjonctif présent, indiquant un fait nécessairement faux."
+      },
+      {
+        "id": "b",
+        "label": "Imparfait de l’indicatif, racontant une habitude certaine."
+      },
+      {
+        "id": "c",
+        "label": "Impératif présent, donnant un ordre directement au relief."
+      },
+      {
+        "id": "d",
+        "label": "Conditionnel présent, temps de l’indicatif, employé ici avec une valeur hypothétique."
+      }
+    ],
+    "answer": "d",
+    "explanation": "« Verrions » est un conditionnel présent, classé parmi les temps de l’indicatif dans la terminologie retenue ici. Le complément « avec un peu plus de lumière » introduit une condition : l’emploi est modal, à valeur hypothétique."
+  },
+  {
+    "id": 19,
+    "label": "Nuancer un énoncé",
+    "prompt": "Qu’exprime l’adverbe souligné ?",
+    "before": "La représentation est ",
+    "focus": "malheureusement",
+    "after": " annulée.",
+    "options": [
+      {
+        "id": "a",
+        "label": "L’adverbe indique que l’annulation est seulement possible."
+      },
+      {
+        "id": "b",
+        "label": "L’adverbe exprime une appréciation défavorable de l’annulation."
+      },
+      {
+        "id": "c",
+        "label": "L’adverbe donne la date précise de l’annulation."
+      },
+      {
+        "id": "d",
+        "label": "L’adverbe transforme automatiquement le présent en subjonctif."
+      }
+    ],
+    "answer": "b",
+    "explanation": "« Malheureusement » ne change ni le mode ni la date du verbe. Il ajoute une réaction du locuteur, qui juge l’annulation regrettable. La modalisation peut donc être exprimée par un adverbe."
+  },
+  {
+    "id": 20,
+    "label": "Interpréter le contexte",
+    "prompt": "Quel effet produit la mention de la source ?",
+    "before": "",
+    "focus": "Selon le gardien, la porte était déjà ouverte à six heures.",
+    "after": "",
+    "options": [
+      {
+        "id": "a",
+        "label": "Elle prouve automatiquement que le gardien ment."
+      },
+      {
+        "id": "b",
+        "label": "Elle transforme le récit en une demande polie."
+      },
+      {
+        "id": "c",
+        "label": "Elle attribue l’information au gardien, sans garantir à elle seule qu’elle est vraie ou fausse."
+      },
+      {
+        "id": "d",
+        "label": "Elle affirme que le narrateur a lui-même vu la porte à six heures."
+      }
+    ],
+    "answer": "c",
+    "explanation": "« Selon le gardien » précise l’origine de l’information. Le narrateur la rapporte en l’attribuant à quelqu’un d’autre. Cette attribution ne suffit pas à conclure à la vérité ou à la fausseté du témoignage."
+  }
+]

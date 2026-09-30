@@ -1,0 +1,562 @@
+[
+  {
+    "id": 1,
+    "label": "Analyser la phrase",
+    "prompt": "Quel est le rôle de la proposition soulignée ?",
+    "before": "Lorsque le signal retentit, ",
+    "focus": "les nageurs regagnent le bassin",
+    "after": ".",
+    "options": [
+      {
+        "id": "a",
+        "label": "C’est une subordonnée relative."
+      },
+      {
+        "id": "b",
+        "label": "C’est une subordonnée interrogative indirecte."
+      },
+      {
+        "id": "c",
+        "label": "C’est la proposition principale."
+      },
+      {
+        "id": "d",
+        "label": "C’est une subordonnée de condition."
+      }
+    ],
+    "answer": "c",
+    "explanation": "« Lorsque le signal retentit » dépend de « les nageurs regagnent le bassin » et situe l’action dans le temps. La proposition soulignée est donc la principale ; elle ne commence pas par un mot subordonnant."
+  },
+  {
+    "id": 2,
+    "label": "Analyser la phrase",
+    "prompt": "Quelle est la nature de la proposition soulignée ?",
+    "before": "La mosaïque ",
+    "focus": "qui orne le vestibule",
+    "after": " représente des poissons.",
+    "options": [
+      {
+        "id": "a",
+        "label": "Une proposition subordonnée relative."
+      },
+      {
+        "id": "b",
+        "label": "Une proposition subordonnée conjonctive complétive."
+      },
+      {
+        "id": "c",
+        "label": "Une proposition subordonnée interrogative indirecte."
+      },
+      {
+        "id": "d",
+        "label": "Une proposition indépendante coordonnée."
+      }
+    ],
+    "answer": "a",
+    "explanation": "« Qui » est un pronom relatif : il reprend le nom « mosaïque » et occupe la fonction sujet de « orne ». La proposition précise ce nom ; c’est une relative."
+  },
+  {
+    "id": 3,
+    "label": "Analyser la phrase",
+    "prompt": "Quelle est la nature de la proposition soulignée ?",
+    "before": "La responsable assure ",
+    "focus": "que le concours commencera à neuf heures",
+    "after": ".",
+    "options": [
+      {
+        "id": "a",
+        "label": "Une proposition subordonnée relative."
+      },
+      {
+        "id": "b",
+        "label": "Une proposition subordonnée interrogative indirecte."
+      },
+      {
+        "id": "c",
+        "label": "Une proposition subordonnée de condition."
+      },
+      {
+        "id": "d",
+        "label": "Une proposition subordonnée conjonctive complétive."
+      }
+    ],
+    "answer": "d",
+    "explanation": "La proposition complète le verbe « assure » et peut être remplacée par « cela » : « La responsable assure cela. » Ici, « que » ne reprend aucun nom ; c’est une conjonction de subordination."
+  },
+  {
+    "id": 4,
+    "label": "Analyser la phrase",
+    "prompt": "Quel nom la relative soulignée précise-t-elle ?",
+    "before": "Le restaurateur examine une gravure ",
+    "focus": "dont les couleurs ont pâli",
+    "after": ".",
+    "options": [
+      {
+        "id": "a",
+        "label": "Le nom « restaurateur »."
+      },
+      {
+        "id": "b",
+        "label": "Le nom « gravure »."
+      },
+      {
+        "id": "c",
+        "label": "Le nom « couleurs »."
+      },
+      {
+        "id": "d",
+        "label": "Le verbe « examine »."
+      }
+    ],
+    "answer": "b",
+    "explanation": "Ce sont les couleurs de la gravure qui ont pâli. « Dont » reprend donc « gravure », l’antécédent de la relative. Le nom « couleurs » appartient à cette relative."
+  },
+  {
+    "id": 5,
+    "label": "Analyser la phrase",
+    "prompt": "Quelle est la fonction de la proposition soulignée ?",
+    "before": "Le mécanicien constate ",
+    "focus": "que la courroie est usée",
+    "after": ".",
+    "options": [
+      {
+        "id": "a",
+        "label": "Sujet du verbe « constate »."
+      },
+      {
+        "id": "b",
+        "label": "COD du verbe « constate »."
+      },
+      {
+        "id": "c",
+        "label": "Complément circonstanciel de cause."
+      },
+      {
+        "id": "d",
+        "label": "Complément du nom « mécanicien »."
+      }
+    ],
+    "answer": "b",
+    "explanation": "On peut dire « Le mécanicien le constate » : la proposition est remplacée par le pronom COD « le ». Elle indique le contenu du constat, sans préposition après le verbe."
+  },
+  {
+    "id": 6,
+    "label": "Analyser la phrase",
+    "prompt": "Quelle est la classe grammaticale du mot souligné ?",
+    "before": "Le pont ",
+    "focus": "que",
+    "after": " nous traversons vient d’être réparé.",
+    "options": [
+      {
+        "id": "a",
+        "label": "Une conjonction de subordination."
+      },
+      {
+        "id": "b",
+        "label": "Une conjonction de coordination."
+      },
+      {
+        "id": "c",
+        "label": "Un adverbe interrogatif."
+      },
+      {
+        "id": "d",
+        "label": "Un pronom relatif."
+      }
+    ],
+    "answer": "d",
+    "explanation": "« Que » reprend « le pont ». Dans la relative, on peut retrouver « Nous traversons le pont » : le pronom a donc une fonction, COD de « traversons »."
+  },
+  {
+    "id": 7,
+    "label": "Analyser la phrase",
+    "prompt": "Quelle est la classe grammaticale du mot souligné ?",
+    "before": "La botaniste explique ",
+    "focus": "que",
+    "after": " cette plante résiste au gel.",
+    "options": [
+      {
+        "id": "a",
+        "label": "Une conjonction de subordination."
+      },
+      {
+        "id": "b",
+        "label": "Un pronom relatif."
+      },
+      {
+        "id": "c",
+        "label": "Un pronom personnel."
+      },
+      {
+        "id": "d",
+        "label": "Une préposition."
+      }
+    ],
+    "answer": "a",
+    "explanation": "« Que » introduit le contenu de l’explication. Il ne reprend aucun antécédent et n’a pas de fonction à l’intérieur de « cette plante résiste au gel », contrairement au pronom relatif."
+  },
+  {
+    "id": 8,
+    "label": "Analyser la phrase",
+    "prompt": "Quel type de question la proposition soulignée rapporte-t-elle ?",
+    "before": "Le libraire demande ",
+    "focus": "si nous avons réservé cet album",
+    "after": ".",
+    "options": [
+      {
+        "id": "a",
+        "label": "Une question partielle portant sur un lieu."
+      },
+      {
+        "id": "b",
+        "label": "Une question partielle portant sur une personne."
+      },
+      {
+        "id": "c",
+        "label": "Une question totale, à laquelle on pourrait répondre par oui ou par non."
+      },
+      {
+        "id": "d",
+        "label": "Une question partielle portant sur une quantité."
+      }
+    ],
+    "answer": "c",
+    "explanation": "La question directe serait « Avez-vous réservé cet album ? » On peut répondre oui ou non. « Si » introduit ici une interrogative indirecte totale, et non une condition."
+  },
+  {
+    "id": 9,
+    "label": "Analyser la phrase",
+    "prompt": "Quel type de question est rapporté dans la proposition soulignée ?",
+    "before": "Le stagiaire veut savoir ",
+    "focus": "comment on règle ce projecteur",
+    "after": ".",
+    "options": [
+      {
+        "id": "a",
+        "label": "Une interrogation totale qui appelle oui ou non."
+      },
+      {
+        "id": "b",
+        "label": "Une interrogation partielle portant sur le moment."
+      },
+      {
+        "id": "c",
+        "label": "Une interrogation partielle portant sur la cause."
+      },
+      {
+        "id": "d",
+        "label": "Une interrogation partielle portant sur la manière de faire."
+      }
+    ],
+    "answer": "d",
+    "explanation": "Le mot « comment » demande une méthode : on ne peut pas répondre seulement par oui ou par non. La question ne porte que sur une partie de l’information, la manière de régler le projecteur."
+  },
+  {
+    "id": 10,
+    "label": "Analyser la phrase",
+    "prompt": "Quelle est la fonction de la proposition soulignée ?",
+    "before": "Je me demande ",
+    "focus": "combien coûte cette boussole",
+    "after": ".",
+    "options": [
+      {
+        "id": "a",
+        "label": "Complément circonstanciel de prix."
+      },
+      {
+        "id": "b",
+        "label": "COD du verbe « demande »."
+      },
+      {
+        "id": "c",
+        "label": "Complément du nom « boussole »."
+      },
+      {
+        "id": "d",
+        "label": "Sujet du verbe « coûte »."
+      }
+    ],
+    "answer": "b",
+    "explanation": "Toute la proposition exprime ce que je me demande : « Je me le demande. » Elle est COD de « demande ». Il ne faut pas confondre la fonction de toute la proposition avec celle d’un mot à l’intérieur."
+  },
+  {
+    "id": 11,
+    "label": "Analyser la phrase",
+    "prompt": "Quelle relation la proposition soulignée exprime-t-elle ?",
+    "before": "",
+    "focus": "Si tu conserves le reçu",
+    "after": ", tu pourras échanger ces chaussures.",
+    "options": [
+      {
+        "id": "a",
+        "label": "Une cause présentée comme déjà réalisée."
+      },
+      {
+        "id": "b",
+        "label": "Une opposition entre deux goûts."
+      },
+      {
+        "id": "c",
+        "label": "Une condition posée pour l’échange annoncé."
+      },
+      {
+        "id": "d",
+        "label": "Le contenu d’une question indirecte."
+      }
+    ],
+    "answer": "c",
+    "explanation": "L’échange est annoncé sous une condition : conserver le reçu. « Si » ne suit pas ici un verbe comme « demander » ou « savoir » ; la proposition ne rapporte donc pas une question."
+  },
+  {
+    "id": 12,
+    "label": "Analyser la phrase",
+    "prompt": "Dans cette phrase, que marque « alors que » ?",
+    "before": "Léo aime travailler seul, ",
+    "focus": "alors que Jade préfère le travail en groupe",
+    "after": ".",
+    "options": [
+      {
+        "id": "a",
+        "label": "Une opposition entre deux préférences."
+      },
+      {
+        "id": "b",
+        "label": "Une condition à remplir pour travailler."
+      },
+      {
+        "id": "c",
+        "label": "Une conséquence du choix de Léo."
+      },
+      {
+        "id": "d",
+        "label": "Le but poursuivi par Jade."
+      }
+    ],
+    "answer": "a",
+    "explanation": "Les préférences sont mises en contraste : seul d’un côté, en groupe de l’autre. « Alors que » a ici une valeur d’opposition ; il ne sert pas à dater deux événements."
+  },
+  {
+    "id": 13,
+    "label": "Analyser la phrase",
+    "prompt": "Quel remplacement conserve l’opposition entre les deux habitudes ?",
+    "before": "Omar choisit toujours les escaliers, ",
+    "focus": "tandis que",
+    "after": " son frère préfère l’ascenseur.",
+    "options": [
+      {
+        "id": "a",
+        "label": "Alors que."
+      },
+      {
+        "id": "b",
+        "label": "Parce que."
+      },
+      {
+        "id": "c",
+        "label": "À condition que."
+      },
+      {
+        "id": "d",
+        "label": "Afin que."
+      }
+    ],
+    "answer": "a",
+    "explanation": "« Tandis que » et « alors que » opposent ici deux habitudes. « Parce que » donnerait une cause, « à condition que » une condition et « afin que » un but : ces liens changeraient le sens."
+  },
+  {
+    "id": 14,
+    "label": "Analyser la phrase",
+    "prompt": "À quel nom se rattache la relative soulignée ?",
+    "before": "Je suppose que le cuisinier ",
+    "focus": "qui prépare le banquet",
+    "after": " arrivera tôt.",
+    "options": [
+      {
+        "id": "a",
+        "label": "Au nom « banquet »."
+      },
+      {
+        "id": "b",
+        "label": "Au pronom « je »."
+      },
+      {
+        "id": "c",
+        "label": "Au nom « cuisinier »."
+      },
+      {
+        "id": "d",
+        "label": "Au verbe « suppose »."
+      }
+    ],
+    "answer": "c",
+    "explanation": "La relative répond à la question « quel cuisinier ? » : celui qui prépare le banquet. Elle est incluse dans la conjonctive « que le cuisinier qui prépare le banquet arrivera tôt »."
+  },
+  {
+    "id": 15,
+    "label": "Analyser la phrase",
+    "prompt": "Quelle est la nature de toute la proposition soulignée ?",
+    "before": "Inès affirme ",
+    "focus": "que la valise qui reste sur le quai est vide",
+    "after": ".",
+    "options": [
+      {
+        "id": "a",
+        "label": "Une relative contenant une interrogative indirecte."
+      },
+      {
+        "id": "b",
+        "label": "Une conjonctive complétive contenant une relative."
+      },
+      {
+        "id": "c",
+        "label": "Une circonstancielle de condition contenant une relative."
+      },
+      {
+        "id": "d",
+        "label": "Une indépendante sans subordonnée."
+      }
+    ],
+    "answer": "b",
+    "explanation": "L’ensemble souligné est le contenu de l’affirmation : « Inès l’affirme. » Il commence par la conjonction « que ». À l’intérieur, « qui reste sur le quai » est une relative qui précise « valise »."
+  },
+  {
+    "id": 16,
+    "label": "Analyser la phrase",
+    "prompt": "Combien de propositions cette phrase contient-elle ?",
+    "before": "",
+    "focus": "J’espère que la fenêtre que tu as fermée résistera au vent.",
+    "after": "",
+    "options": [
+      {
+        "id": "a",
+        "label": "Une seule proposition."
+      },
+      {
+        "id": "b",
+        "label": "Deux propositions."
+      },
+      {
+        "id": "c",
+        "label": "Quatre propositions."
+      },
+      {
+        "id": "d",
+        "label": "Trois propositions."
+      }
+    ],
+    "answer": "d",
+    "explanation": "On repère trois noyaux verbaux : « espère », « résistera » et « as fermée ». « As fermée » est une seule forme verbale composée. La phrase contient une principale, une conjonctive et une relative incluse dans celle-ci."
+  },
+  {
+    "id": 17,
+    "label": "Analyser la phrase",
+    "prompt": "Quelle est la nature de toute la proposition soulignée ?",
+    "before": "Elle vérifie ",
+    "focus": "si l’adresse que tu as notée est lisible",
+    "after": ".",
+    "options": [
+      {
+        "id": "a",
+        "label": "Une circonstancielle de condition contenant une relative."
+      },
+      {
+        "id": "b",
+        "label": "Une interrogative indirecte totale contenant une relative."
+      },
+      {
+        "id": "c",
+        "label": "Une relative contenant une conjonctive."
+      },
+      {
+        "id": "d",
+        "label": "Une interrogative indirecte partielle portant sur un lieu."
+      }
+    ],
+    "answer": "b",
+    "explanation": "La vérification porte sur la question « L’adresse est-elle lisible ? », qui appelle oui ou non. Toute la proposition est une interrogative indirecte totale ; « que tu as notée » précise le nom « adresse » à l’intérieur."
+  },
+  {
+    "id": 18,
+    "label": "Analyser la phrase",
+    "prompt": "Quelle suite forme une interrogation indirecte correcte ?",
+    "before": "La surveillante demande ",
+    "focus": "…",
+    "after": ".",
+    "options": [
+      {
+        "id": "a",
+        "label": "où il va"
+      },
+      {
+        "id": "b",
+        "label": "où va-t-il"
+      },
+      {
+        "id": "c",
+        "label": "est-ce qu’il va où"
+      },
+      {
+        "id": "d",
+        "label": "où est-ce qu’il va"
+      }
+    ],
+    "answer": "a",
+    "explanation": "Avec un sujet pronominal, l’interrogation indirecte emploie ici l’ordre « il va » : « La surveillante demande où il va. » On retire les marques de la question directe « Où va-t-il ? » ou « Où est-ce qu’il va ? »."
+  },
+  {
+    "id": 19,
+    "label": "Analyser la phrase",
+    "prompt": "Quelle proposition est la principale dans cette phrase ?",
+    "before": "",
+    "focus": "Si la terrasse est sèche, nous dînerons dehors, alors que nos voisins resteront à l’intérieur.",
+    "after": "",
+    "options": [
+      {
+        "id": "a",
+        "label": "« Si la terrasse est sèche »."
+      },
+      {
+        "id": "b",
+        "label": "« Alors que nos voisins resteront à l’intérieur »."
+      },
+      {
+        "id": "c",
+        "label": "« Si la terrasse est sèche, alors que nos voisins resteront à l’intérieur »."
+      },
+      {
+        "id": "d",
+        "label": "« Nous dînerons dehors »."
+      }
+    ],
+    "answer": "d",
+    "explanation": "Les deux subordonnées se rattachent à « nous dînerons dehors » : l’une énonce une condition, l’autre une opposition. Cette proposition centrale constitue la principale."
+  },
+  {
+    "id": 20,
+    "label": "Analyser la phrase",
+    "prompt": "Quelle analyse des deux propositions introduites par « que » est correcte ?",
+    "before": "",
+    "focus": "Je constate que le scooter que vous réparez appartient au facteur.",
+    "after": "",
+    "options": [
+      {
+        "id": "a",
+        "label": "Les deux « que » introduisent des relatives."
+      },
+      {
+        "id": "b",
+        "label": "Le premier « que » introduit une relative ; le second, une conjonctive."
+      },
+      {
+        "id": "c",
+        "label": "Le premier « que » introduit une conjonctive ; le second, une relative."
+      },
+      {
+        "id": "d",
+        "label": "Les deux « que » introduisent des interrogatives indirectes."
+      }
+    ],
+    "answer": "c",
+    "explanation": "« Que le scooter… appartient au facteur » donne le contenu du constat : c’est la conjonctive COD. Dans cette proposition, « que vous réparez » précise « scooter » : le second « que » est un pronom relatif, COD de « réparez »."
+  }
+]

@@ -1,0 +1,562 @@
+[
+  {
+    "id": 1,
+    "label": "Observer les formes verbales",
+    "prompt": "À quel temps le verbe souligné est-il conjugué ?",
+    "before": "Avant la réunion, le trésorier ",
+    "focus": "avait vérifié",
+    "after": " tous les comptes.",
+    "options": [
+      {
+        "id": "a",
+        "label": "Au passé composé."
+      },
+      {
+        "id": "b",
+        "label": "Au passé antérieur."
+      },
+      {
+        "id": "c",
+        "label": "Au conditionnel passé."
+      },
+      {
+        "id": "d",
+        "label": "Au plus-que-parfait."
+      }
+    ],
+    "answer": "d",
+    "explanation": "« Avait vérifié » associe l’auxiliaire « avoir » à l’imparfait (« avait ») et le participe passé « vérifié ». Cette construction forme le plus-que-parfait."
+  },
+  {
+    "id": 2,
+    "label": "Observer les formes verbales",
+    "prompt": "À quel temps le verbe souligné est-il conjugué ?",
+    "before": "Les deux chercheuses ",
+    "focus": "étaient revenues",
+    "after": " du laboratoire avant la tombée de la nuit.",
+    "options": [
+      {
+        "id": "a",
+        "label": "Au passé antérieur."
+      },
+      {
+        "id": "b",
+        "label": "Au plus-que-parfait."
+      },
+      {
+        "id": "c",
+        "label": "Au futur antérieur."
+      },
+      {
+        "id": "d",
+        "label": "Au passé composé."
+      }
+    ],
+    "answer": "b",
+    "explanation": "L’auxiliaire « être » est à l’imparfait : « étaient ». Avec le participe passé « revenues », il forme le plus-que-parfait de « revenir ». Le participe s’accorde ici avec le sujet féminin pluriel."
+  },
+  {
+    "id": 3,
+    "label": "Observer les formes verbales",
+    "prompt": "À quel temps le verbe souligné est-il conjugué ?",
+    "before": "Dès que le notaire ",
+    "focus": "eut scellé",
+    "after": " l’enveloppe, le coursier l’emporta.",
+    "options": [
+      {
+        "id": "a",
+        "label": "Au plus-que-parfait."
+      },
+      {
+        "id": "b",
+        "label": "Au passé composé."
+      },
+      {
+        "id": "c",
+        "label": "Au passé antérieur."
+      },
+      {
+        "id": "d",
+        "label": "Au futur antérieur."
+      }
+    ],
+    "answer": "c",
+    "explanation": "« Eut » est une forme de l’auxiliaire « avoir » au passé simple. Avec le participe passé « scellé », elle forme le passé antérieur. Il ne faut pas confondre « eut scellé » avec « avait scellé »."
+  },
+  {
+    "id": 4,
+    "label": "Observer les formes verbales",
+    "prompt": "À quel temps le verbe souligné est-il conjugué ?",
+    "before": "Lorsque les alpinistes ",
+    "focus": "furent parvenus",
+    "after": " au sommet, ils signalèrent leur arrivée.",
+    "options": [
+      {
+        "id": "a",
+        "label": "Au passé antérieur."
+      },
+      {
+        "id": "b",
+        "label": "Au plus-que-parfait."
+      },
+      {
+        "id": "c",
+        "label": "Au conditionnel passé."
+      },
+      {
+        "id": "d",
+        "label": "Au passé composé."
+      }
+    ],
+    "answer": "a",
+    "explanation": "« Furent » est le passé simple de l’auxiliaire « être ». Associé au participe passé « parvenus », il forme le passé antérieur de « parvenir ». L’ensemble « furent parvenus » constitue une seule forme verbale composée."
+  },
+  {
+    "id": 5,
+    "label": "Observer les formes verbales",
+    "prompt": "À quel temps le verbe souligné est-il conjugué ?",
+    "before": "À la fin de la matinée, nous ",
+    "focus": "aurons réservé",
+    "after": " les chambres pour toute l’équipe.",
+    "options": [
+      {
+        "id": "a",
+        "label": "Au futur antérieur."
+      },
+      {
+        "id": "b",
+        "label": "Au futur simple."
+      },
+      {
+        "id": "c",
+        "label": "Au conditionnel passé."
+      },
+      {
+        "id": "d",
+        "label": "Au plus-que-parfait."
+      }
+    ],
+    "answer": "a",
+    "explanation": "L’auxiliaire « avoir » est au futur simple (« aurons »), suivi du participe passé « réservé ». L’ensemble est au futur antérieur ; ce n’est pas le futur simple « réserverons »."
+  },
+  {
+    "id": 6,
+    "label": "Observer les formes verbales",
+    "prompt": "À quel temps le verbe souligné est-il conjugué ?",
+    "before": "À sept heures demain, le camion ",
+    "focus": "sera parti",
+    "after": " du dépôt.",
+    "options": [
+      {
+        "id": "a",
+        "label": "Au passé composé."
+      },
+      {
+        "id": "b",
+        "label": "Au passé antérieur."
+      },
+      {
+        "id": "c",
+        "label": "Au conditionnel passé."
+      },
+      {
+        "id": "d",
+        "label": "Au futur antérieur."
+      }
+    ],
+    "answer": "d",
+    "explanation": "Le verbe « partir » forme ses temps composés avec « être ». Ici, « sera » est au futur simple et précède le participe passé « parti » : l’ensemble est donc au futur antérieur."
+  },
+  {
+    "id": 7,
+    "label": "Observer les formes verbales",
+    "prompt": "À quel temps le verbe souligné est-il conjugué ?",
+    "before": "Sans cette crevaison, Adil ",
+    "focus": "aurait gagné",
+    "after": " la course.",
+    "options": [
+      {
+        "id": "a",
+        "label": "Au futur antérieur."
+      },
+      {
+        "id": "b",
+        "label": "Au conditionnel passé."
+      },
+      {
+        "id": "c",
+        "label": "Au plus-que-parfait."
+      },
+      {
+        "id": "d",
+        "label": "Au passé antérieur."
+      }
+    ],
+    "answer": "b",
+    "explanation": "« Aurait » est le conditionnel présent de l’auxiliaire « avoir ». Avec le participe passé « gagné », il forme le conditionnel passé. La phrase présente ici une victoire qui ne s’est pas réalisée."
+  },
+  {
+    "id": 8,
+    "label": "Observer les formes verbales",
+    "prompt": "À quel temps le verbe souligné est-il conjugué ?",
+    "before": "Sans le brouillard, nous ",
+    "focus": "serions arrivés",
+    "after": " avant midi.",
+    "options": [
+      {
+        "id": "a",
+        "label": "Au futur antérieur."
+      },
+      {
+        "id": "b",
+        "label": "Au passé composé."
+      },
+      {
+        "id": "c",
+        "label": "Au conditionnel passé."
+      },
+      {
+        "id": "d",
+        "label": "Au plus-que-parfait."
+      }
+    ],
+    "answer": "c",
+    "explanation": "« Serions » est le conditionnel présent de l’auxiliaire « être ». Avec le participe passé « arrivés », il forme le conditionnel passé du verbe « arriver ». « Serons arrivés » serait un futur antérieur."
+  },
+  {
+    "id": 9,
+    "label": "Observer les formes verbales",
+    "prompt": "Comment la forme verbale soulignée est-elle construite ?",
+    "before": "Vous ",
+    "focus": "aviez compris",
+    "after": " la consigne avant la démonstration.",
+    "options": [
+      {
+        "id": "a",
+        "label": "« Avoir » au présent + participe passé de « comprendre »."
+      },
+      {
+        "id": "b",
+        "label": "« Avoir » à l’imparfait + participe passé de « comprendre »."
+      },
+      {
+        "id": "c",
+        "label": "« Être » à l’imparfait + participe passé de « comprendre »."
+      },
+      {
+        "id": "d",
+        "label": "« Avoir » à l’imparfait + infinitif de « comprendre »."
+      }
+    ],
+    "answer": "b",
+    "explanation": "« Aviez » est l’auxiliaire « avoir » à l’imparfait. « Compris » est un participe passé, dont la consonne finale est muette au masculin singulier ; l’infinitif serait « comprendre »."
+  },
+  {
+    "id": 10,
+    "label": "Observer les formes verbales",
+    "prompt": "Comment la forme verbale soulignée est-elle construite ?",
+    "before": "Quand j’",
+    "focus": "eus vérifié",
+    "after": " le niveau d’huile, je refermai le capot.",
+    "options": [
+      {
+        "id": "a",
+        "label": "« Avoir » à l’imparfait + participe passé de « vérifier »."
+      },
+      {
+        "id": "b",
+        "label": "« Avoir » au passé simple + infinitif de « vérifier »."
+      },
+      {
+        "id": "c",
+        "label": "« Avoir » au passé simple + participe passé de « vérifier »."
+      },
+      {
+        "id": "d",
+        "label": "« Être » au passé simple + participe passé de « vérifier »."
+      }
+    ],
+    "answer": "c",
+    "explanation": "« Eus » est l’auxiliaire « avoir » au passé simple, à la première personne du singulier. « Vérifié », avec la terminaison « -é », est le participe passé : le passé antérieur se construit ainsi avec un auxiliaire et un participe."
+  },
+  {
+    "id": 11,
+    "label": "Observer les formes verbales",
+    "prompt": "Quel groupe verbal est construit avec « avoir » au futur simple et un participe passé ?",
+    "before": "Demain soir, vous ",
+    "focus": "…",
+    "after": " toutes les pièces de la maquette.",
+    "options": [
+      {
+        "id": "a",
+        "label": "aurez assemblé"
+      },
+      {
+        "id": "b",
+        "label": "auriez assemblé"
+      },
+      {
+        "id": "c",
+        "label": "aviez assemblé"
+      },
+      {
+        "id": "d",
+        "label": "assemblerez"
+      }
+    ],
+    "answer": "a",
+    "explanation": "« Aurez » est le futur simple de « avoir » et « assemblé » un participe passé : « aurez assemblé » est un futur antérieur. « Assemblerez » est un futur simple, sans auxiliaire."
+  },
+  {
+    "id": 12,
+    "label": "Observer les formes verbales",
+    "prompt": "Quel élément fait de « auriez choisi » un conditionnel passé ?",
+    "before": "Avec davantage de renseignements, vous ",
+    "focus": "auriez choisi",
+    "after": " un autre trajet.",
+    "options": [
+      {
+        "id": "a",
+        "label": "L’auxiliaire « avoir » au futur simple, suivi d’un participe passé."
+      },
+      {
+        "id": "b",
+        "label": "L’auxiliaire « être » au conditionnel présent, suivi d’un participe passé."
+      },
+      {
+        "id": "c",
+        "label": "Un verbe au conditionnel présent sans auxiliaire."
+      },
+      {
+        "id": "d",
+        "label": "L’auxiliaire « avoir » au conditionnel présent, suivi d’un participe passé."
+      }
+    ],
+    "answer": "d",
+    "explanation": "Le temps composé se reconnaît grâce au temps de l’auxiliaire : « auriez » est au conditionnel présent. « Choisi » est le participe passé de « choisir ». Au futur antérieur, on aurait « aurez choisi »."
+  },
+  {
+    "id": 13,
+    "label": "Observer les formes verbales",
+    "prompt": "Quelle relation entre les deux actions le plus-que-parfait exprime-t-il ?",
+    "before": "Les graines que le jardinier ",
+    "focus": "avait semées",
+    "after": " en avril germèrent au début du mois de mai.",
+    "options": [
+      {
+        "id": "a",
+        "label": "Le semis se produit après la germination."
+      },
+      {
+        "id": "b",
+        "label": "Le semis et la germination commencent nécessairement ensemble."
+      },
+      {
+        "id": "c",
+        "label": "Le semis est antérieur à la germination."
+      },
+      {
+        "id": "d",
+        "label": "Le semis est seulement envisagé pour l’année suivante."
+      }
+    ],
+    "answer": "c",
+    "explanation": "« Avait semées » renvoie à une action déjà accomplie lorsque les graines germèrent. Le plus-que-parfait exprime cette antériorité par rapport à un repère passé ; les dates d’avril et de mai la confirment."
+  },
+  {
+    "id": 14,
+    "label": "Observer les formes verbales",
+    "prompt": "Comment la préparation des micros est-elle située par rapport à votre entrée ?",
+    "before": "Quand vous entrerez dans la salle, nous ",
+    "focus": "aurons préparé",
+    "after": " les micros.",
+    "options": [
+      {
+        "id": "a",
+        "label": "Elle est présentée comme commençant seulement après votre entrée."
+      },
+      {
+        "id": "b",
+        "label": "Elle est présentée comme déjà accomplie au moment de votre entrée future."
+      },
+      {
+        "id": "c",
+        "label": "Elle est présentée comme accomplie avant le moment où nous parlons."
+      },
+      {
+        "id": "d",
+        "label": "Elle est présentée comme une habitude répétée chaque soir."
+      }
+    ],
+    "answer": "b",
+    "explanation": "Le futur antérieur « aurons préparé » présente la préparation comme achevée à un repère futur : votre entrée dans la salle. La phrase ne dit pas que la préparation est déjà faite au moment où l’on parle."
+  },
+  {
+    "id": 15,
+    "label": "Observer les formes verbales",
+    "prompt": "Quelle action est accomplie avant l’autre dans cette phrase ?",
+    "before": "Dès qu’elle ",
+    "focus": "eut fixé",
+    "after": " son casque, la cycliste s’élança sur la piste.",
+    "options": [
+      {
+        "id": "a",
+        "label": "Elle s’élance avant de fixer son casque."
+      },
+      {
+        "id": "b",
+        "label": "Elle fixe son casque seulement après avoir parcouru la piste."
+      },
+      {
+        "id": "c",
+        "label": "La phrase ne permet pas de situer les deux actions l’une par rapport à l’autre."
+      },
+      {
+        "id": "d",
+        "label": "Elle fixe son casque avant de s’élancer."
+      }
+    ],
+    "answer": "d",
+    "explanation": "Le passé antérieur « eut fixé », introduit par « dès que », présente la fixation du casque comme accomplie avant le départ. La seconde action est exprimée par « s’élança » dans la principale."
+  },
+  {
+    "id": 16,
+    "label": "Observer les formes verbales",
+    "prompt": "À quelle voix le verbe souligné est-il employé ?",
+    "before": "Le jardinier ",
+    "focus": "taille",
+    "after": " les rosiers près du portail.",
+    "options": [
+      {
+        "id": "a",
+        "label": "À la voix active : le sujet accomplit l’action."
+      },
+      {
+        "id": "b",
+        "label": "À la voix passive : le sujet subit l’action."
+      },
+      {
+        "id": "c",
+        "label": "À la voix passive : les rosiers sont sujets du verbe."
+      },
+      {
+        "id": "d",
+        "label": "À la voix pronominale : le sujet agit sur lui-même."
+      }
+    ],
+    "answer": "a",
+    "explanation": "Le sujet « le jardinier » accomplit l’action de tailler. « Les rosiers » est le COD du verbe. À la voix passive, on dirait « Les rosiers sont taillés par le jardinier »."
+  },
+  {
+    "id": 17,
+    "label": "Observer les formes verbales",
+    "prompt": "À quelle voix le verbe souligné est-il employé ?",
+    "before": "La fresque ",
+    "focus": "est restaurée",
+    "after": " par deux spécialistes.",
+    "options": [
+      {
+        "id": "a",
+        "label": "À la voix active : le sujet accomplit la restauration."
+      },
+      {
+        "id": "b",
+        "label": "À la voix pronominale : la fresque se restaure elle-même."
+      },
+      {
+        "id": "c",
+        "label": "À la voix active : le groupe introduit par « par » est le sujet."
+      },
+      {
+        "id": "d",
+        "label": "À la voix passive : le sujet subit l’action."
+      }
+    ],
+    "answer": "d",
+    "explanation": "La fresque reçoit l’action des spécialistes. La construction « être + participe passé », avec le complément d’agent « par deux spécialistes », marque la voix passive. À la voix active : « Deux spécialistes restaurent la fresque »."
+  },
+  {
+    "id": 18,
+    "label": "Observer les formes verbales",
+    "prompt": "Quelle analyse de la forme soulignée est correcte ?",
+    "before": "Les randonneurs ",
+    "focus": "sont allés",
+    "after": " au village par le sentier des chèvres.",
+    "options": [
+      {
+        "id": "a",
+        "label": "Un passé composé à la voix active, avec l’auxiliaire « être »."
+      },
+      {
+        "id": "b",
+        "label": "Un présent à la voix passive."
+      },
+      {
+        "id": "c",
+        "label": "Un plus-que-parfait à la voix active."
+      },
+      {
+        "id": "d",
+        "label": "Un conditionnel passé à la voix passive."
+      }
+    ],
+    "answer": "a",
+    "explanation": "Les randonneurs accomplissent le déplacement. Le verbe « aller » forme son passé composé avec « être ». La présence de « être + participe passé » ne suffit donc pas à conclure à une voix passive ; « par le sentier » indique le chemin, pas un agent."
+  },
+  {
+    "id": 19,
+    "label": "Observer les formes verbales",
+    "prompt": "Quelle transformation à la voix passive conserve le temps et le sens de la phrase ?",
+    "before": "",
+    "focus": "La tempête a arraché ce volet.",
+    "after": "",
+    "options": [
+      {
+        "id": "a",
+        "label": "Ce volet est arraché par la tempête."
+      },
+      {
+        "id": "b",
+        "label": "Ce volet avait été arraché par la tempête."
+      },
+      {
+        "id": "c",
+        "label": "Ce volet a été arraché par la tempête."
+      },
+      {
+        "id": "d",
+        "label": "La tempête a été arrachée par ce volet."
+      }
+    ],
+    "answer": "c",
+    "explanation": "Le COD « ce volet » devient sujet et l’ancien sujet devient complément d’agent. Le passé composé est conservé : l’auxiliaire « être » est lui-même au passé composé (« a été »), suivi de « arraché ». « Est arraché » serait au présent."
+  },
+  {
+    "id": 20,
+    "label": "Observer les formes verbales",
+    "prompt": "Quelle analyse de la forme soulignée est correcte ?",
+    "before": "Avant l’ouverture des portes, les invitations ",
+    "focus": "avaient été distribuées",
+    "after": " par l’équipe d’accueil.",
+    "options": [
+      {
+        "id": "a",
+        "label": "Un passé composé à la voix passive."
+      },
+      {
+        "id": "b",
+        "label": "Un plus-que-parfait à la voix passive."
+      },
+      {
+        "id": "c",
+        "label": "Un plus-que-parfait à la voix active."
+      },
+      {
+        "id": "d",
+        "label": "Un conditionnel passé à la voix passive."
+      }
+    ],
+    "answer": "b",
+    "explanation": "Le sujet « les invitations » reçoit l’action de l’équipe : la voix est passive. L’auxiliaire de cette voix, « être », est au plus-que-parfait (« avaient été »), puis vient le participe « distribuées », accordé avec le sujet féminin pluriel."
+  }
+]

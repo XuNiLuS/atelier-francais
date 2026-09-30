@@ -1,562 +1,562 @@
 [
   {
     "id": 1,
-    "label": "Aspect borné",
-    "prompt": "Comment le passé simple présente-t-il les dix années évoquées ?",
-    "before": "Pendant dix ans, de son installation à son départ, la peintre ",
-    "focus": "habita",
-    "after": " cet atelier.",
+    "label": "Valeurs du présent",
+    "prompt": "À quel moment le présent situe-t-il l’action dans cette réplique ?",
+    "before": "Au téléphone, la restauratrice précise : « En ce moment, j’",
+    "focus": "examine",
+    "after": " la toile sous une lampe. »",
     "options": [
       {
         "id": "a",
-        "label": "Comme une période envisagée dans son ensemble, avec des limites."
+        "label": "Au moment où la restauratrice parle."
       },
       {
         "id": "b",
-        "label": "Comme une action nécessairement très brève."
+        "label": "Dans un avenir présenté comme programmé."
       },
       {
         "id": "c",
-        "label": "Comme une situation observée seulement en cours de déroulement."
+        "label": "Avant un autre événement passé."
       },
       {
         "id": "d",
-        "label": "Comme une habitude encore actuelle."
+        "label": "Dans un passé raconté comme s’il était présent."
       }
     ],
     "answer": "a",
-    "explanation": "Le début et la fin du séjour sont indiqués. Le passé simple donne une vue globale de cette période : on parle ici d’aspect borné. Borné ne signifie pas bref, puisque le séjour dure dix ans."
+    "explanation": "« En ce moment » rattache l’examen à la situation de parole. C’est un présent d’énonciation : l’action est présentée comme contemporaine de la réplique."
   },
   {
     "id": 2,
-    "label": "Aspect non borné",
-    "prompt": "Que montre l’imparfait au moment où le train passa ?",
-    "before": "Lorsque le train passa sous le pont, une femme ",
-    "focus": "lisait",
-    "after": " près de la fenêtre.",
+    "label": "Valeurs du présent",
+    "prompt": "Quelle valeur du présent convient à cet énoncé de géométrie ?",
+    "before": "Un triangle ",
+    "focus": "possède",
+    "after": " trois côtés.",
     "options": [
       {
         "id": "a",
-        "label": "La lecture complète, du début à la dernière page."
+        "label": "Une action momentanée du locuteur."
       },
       {
         "id": "b",
-        "label": "La lecture en cours, sans en montrer les limites à cet instant."
+        "label": "Une vérité générale, indépendante d’une occasion particulière."
       },
       {
         "id": "c",
-        "label": "Une lecture répétée à chaque passage du train."
+        "label": "Un événement historique rendu vivant."
       },
       {
         "id": "d",
-        "label": "Une lecture qui commence seulement après le passage du train."
+        "label": "Une action antérieure à une autre action passée."
       }
     ],
     "answer": "b",
-    "explanation": "Le narrateur saisit la femme au milieu de sa lecture. L’imparfait adopte un point de vue interne au déroulement, dit non borné : il ne montre pas ici le début ni la fin. Cela ne prouve pas que la lecture ne se terminera jamais."
+    "explanation": "L’énoncé définit une propriété des triangles, sans la limiter au moment de la parole. Le présent a une valeur générale ; il ne renvoie pas nécessairement à une action en cours."
   },
   {
     "id": 3,
-    "label": "Habitude",
-    "prompt": "Quel indice permet d’interpréter cet imparfait comme une habitude ?",
-    "before": "Durant son enfance, chaque fois qu’un orage approchait, Nora ",
-    "focus": "comptait",
-    "after": " les secondes entre l’éclair et le tonnerre.",
+    "label": "Valeurs du présent",
+    "prompt": "Pourquoi employer le présent dans ce récit situé au XIXe siècle ?",
+    "before": "En 1847, après plusieurs années d’efforts, une institutrice ",
+    "focus": "ouvre",
+    "after": " une petite école sur le port.",
     "options": [
       {
         "id": "a",
-        "label": "Le sujet est un prénom féminin."
+        "label": "Pour déplacer la fondation de l’école dans l’avenir."
       },
       {
         "id": "b",
-        "label": "Le verbe exprime nécessairement une action très longue."
+        "label": "Pour faire de cette fondation un événement répété chaque matin."
       },
       {
         "id": "c",
-        "label": "« Chaque fois » indique la répétition dans des circonstances semblables."
+        "label": "Pour présenter un événement passé comme s’il se déroulait sous nos yeux."
       },
       {
         "id": "d",
-        "label": "Le mot « enfance » signifie que l’action n’a eu lieu qu’une fois."
+        "label": "Pour annoncer une règle valable à toutes les époques."
       }
     ],
     "answer": "c",
-    "explanation": "L’expression « chaque fois » fait revenir le même comportement à plusieurs occasions. L’imparfait présente donc une habitude de Nora ; ce n’est pas seulement le sens du verbe compter qui permet cette interprétation."
+    "explanation": "La date fixe le fait dans le passé, tandis que « ouvre » est au présent. Ce présent de narration rend la scène plus immédiate sans changer sa place dans la chronologie."
   },
   {
     "id": 4,
-    "label": "Premier plan",
-    "prompt": "Quel rôle joue le verbe au passé simple dans ce passage ?",
-    "before": "Les invités échangeaient des propos tranquilles lorsqu’un verre ",
-    "focus": "éclata",
-    "after": " au fond de la salle.",
+    "label": "Valeurs du présent",
+    "prompt": "Quelle indication permet de donner au présent une valeur de futur ?",
+    "before": "La déléguée annonce : « Demain à neuf heures, je ",
+    "focus": "présente",
+    "after": " notre proposition au conseil. »",
     "options": [
       {
         "id": "a",
-        "label": "Il décrit une propriété permanente de la salle."
+        "label": "« Notre proposition » prouve que l’action est terminée."
       },
       {
         "id": "b",
-        "label": "Il présente une action qui se répète tous les soirs."
+        "label": "Le présent situe toujours un fait avant le moment de la parole."
       },
       {
         "id": "c",
-        "label": "Il laisse entendre que le verre est toujours en train d’éclater."
+        "label": "Le verbe présenter ne peut désigner qu’une habitude."
       },
       {
         "id": "d",
-        "label": "Il détache un événement nouveau sur un arrière-plan déjà installé."
+        "label": "« Demain à neuf heures » situe l’action après l’annonce."
       }
     ],
     "answer": "d",
-    "explanation": "« Échangeaient » installe une activité en cours. « Éclata » introduit l’événement qui modifie la scène et fait progresser le récit : c’est le premier plan. Le contraste entre les deux temps organise l’attention du lecteur."
+    "explanation": "Le repère « demain à neuf heures » oriente le présent vers l’avenir. La formulation présente l’intervention comme prévue ; le temps grammatical et la date réelle de l’événement ne coïncident donc pas toujours directement."
   },
   {
     "id": 5,
-    "label": "Description",
-    "prompt": "Quelle interprétation de l’imparfait est la mieux justifiée ?",
-    "before": "À travers la vitre, la voyageuse observait la place. Une statue ",
-    "focus": "occupait",
-    "after": " son centre, entre deux bassins.",
+    "label": "Point de vue sur l’action",
+    "prompt": "Que met en évidence le passé composé dans ce contexte ?",
+    "before": "La traductrice referme son cahier et déclare : « J’",
+    "focus": "ai terminé",
+    "after": " la dernière page ; le manuscrit est prêt. »",
     "options": [
       {
         "id": "a",
-        "label": "Il raconte l’installation de la statue à cet instant."
+        "label": "Une traduction seulement envisagée dans l’avenir."
       },
       {
         "id": "b",
-        "label": "Il présente un élément du décor tel qu’il apparaît à la voyageuse."
+        "label": "L’achèvement de la traduction avant le moment où elle parle."
       },
       {
         "id": "c",
-        "label": "Il indique que la statue changeait régulièrement de place."
+        "label": "Une traduction présentée comme encore en cours à cet instant."
       },
       {
         "id": "d",
-        "label": "Il résume la disparition complète de la statue."
+        "label": "Une habitude dont on ne distingue aucune réalisation particulière."
       }
     ],
     "answer": "b",
-    "explanation": "Le verbe situe la statue dans le paysage observé. L’imparfait construit ici la description du décor ; il ne raconte ni l’arrivée ni le déplacement de la statue."
+    "explanation": "Le passé composé présente ici le travail comme accompli : son terme est atteint au moment de la déclaration. « Le manuscrit est prêt » en donne le résultat actuel."
   },
   {
     "id": 6,
-    "label": "Répétition bornée",
-    "prompt": "Pourquoi le passé simple est-il compatible avec une action répétée ?",
-    "before": "Cette nuit-là, la gardienne ",
-    "focus": "frappa",
-    "after": " trois fois à la porte, puis repartit.",
+    "label": "Relations temporelles",
+    "prompt": "Quelle relation le plus-que-parfait établit-il ?",
+    "before": "Quand le conservateur entra, son assistante ",
+    "focus": "avait déjà rangé",
+    "after": " les objets fragiles.",
     "options": [
       {
         "id": "a",
-        "label": "Le passé simple interdit toute répétition : cette phrase est incorrecte."
+        "label": "Le rangement commence après l’entrée."
       },
       {
         "id": "b",
-        "label": "La gardienne recommence la même action chaque nuit."
+        "label": "Le rangement se déroule nécessairement en même temps que l’entrée."
       },
       {
         "id": "c",
-        "label": "Les trois coups sont regroupés en un épisode achevé."
+        "label": "Le rangement précède l’entrée du conservateur."
       },
       {
         "id": "d",
-        "label": "Le nombre de coups reste indéterminé."
+        "label": "Le rangement se situe après le moment où le narrateur écrit."
       }
     ],
     "answer": "c",
-    "explanation": "« Trois fois » compte les répétitions et « puis repartit » clôt l’épisode. Le passé simple peut donc présenter un ensemble d’actions répétées comme un tout borné. La répétition n’impose pas toujours l’imparfait."
+    "explanation": "« Avait rangé » est un plus-que-parfait. Il marque ici un fait accompli avant le repère passé « entra » ; « déjà » confirme cette antériorité."
   },
   {
     "id": 7,
-    "label": "Changer le temps",
-    "prompt": "Si l’on remplace « marchait » par « marcha », quel changement de point de vue obtient-on ?",
-    "before": "À l’aube, le voyageur ",
-    "focus": "marchait",
-    "after": " le long du canal.",
+    "label": "Relations temporelles",
+    "prompt": "Comment interpréter le futur antérieur dans cette prévision ?",
+    "before": "Demain à dix-huit heures, nous ",
+    "focus": "aurons achevé",
+    "after": " le montage ; l’exposition pourra alors ouvrir.",
     "options": [
       {
         "id": "a",
-        "label": "La marche devient obligatoirement plus rapide."
+        "label": "Le montage est certain d’être achevé au moment présent."
       },
       {
         "id": "b",
-        "label": "La marche se situe automatiquement avant tous les autres événements."
+        "label": "Le montage commencera nécessairement après l’ouverture."
       },
       {
         "id": "c",
-        "label": "Le voyageur effectue nécessairement plusieurs promenades."
+        "label": "Le futur antérieur rapporte ici une action accomplie avant un autre passé."
       },
       {
         "id": "d",
-        "label": "La marche est présentée globalement comme un épisode du récit."
+        "label": "Le montage est envisagé comme accompli au repère futur indiqué."
       }
     ],
     "answer": "d",
-    "explanation": "« Marchait » montre la marche dans son déroulement. « Marcha » la présente globalement, comme une étape du récit, même si sa durée exacte reste inconnue. Changer le temps ne change pas automatiquement la vitesse du personnage."
+    "explanation": "Le repère est « demain à dix-huit heures ». À ce moment futur, le narrateur envisage le montage comme terminé. Le futur antérieur associe donc une orientation vers l’avenir et une présentation accomplie."
   },
   {
     "id": 8,
-    "label": "État délimité",
-    "prompt": "Que montre cet emploi du passé simple avec un état ?",
-    "before": "De sa fondation à sa fermeture, cette école ",
-    "focus": "fut",
-    "after": " un lieu d’accueil pour les enfants du quartier.",
+    "label": "Relations temporelles",
+    "prompt": "Quelle relation temporelle le futur simple exprime-t-il ici ?",
+    "before": "Aujourd’hui, la direction annonce que le laboratoire ",
+    "focus": "fermera",
+    "after": " la semaine prochaine.",
     "options": [
       {
         "id": "a",
-        "label": "Un état peut être présenté comme une période délimitée."
+        "label": "La fermeture est postérieure à l’annonce actuelle."
       },
       {
         "id": "b",
-        "label": "Le passé simple ne peut jamais s’employer avec le verbe être."
+        "label": "La fermeture est antérieure à l’annonce."
       },
       {
         "id": "c",
-        "label": "Le rôle d’accueil a nécessairement duré un instant."
+        "label": "La fermeture est simultanée à l’annonce, nécessairement."
       },
       {
         "id": "d",
-        "label": "Le narrateur ne donne aucune limite à l’existence de l’école."
+        "label": "La fermeture est décrite comme une habitude déjà passée."
       }
     ],
     "answer": "a",
-    "explanation": "« De sa fondation à sa fermeture » encadre toute une période. « Fut » présente cet état dans son ensemble. Le passé simple ne sert donc pas uniquement à raconter des gestes ou des changements brusques."
+    "explanation": "« La semaine prochaine » place la fermeture après « aujourd’hui ». Le futur simple exprime ici la postériorité par rapport au présent de l’annonce."
   },
   {
     "id": 9,
-    "label": "Simultanéité",
-    "prompt": "Comment interpréter les deux actions à l’imparfait ?",
-    "before": "Pendant que le frère réparait la lampe, sa sœur ",
-    "focus": "cherchait",
-    "after": " une nouvelle ampoule dans le placard.",
+    "label": "Relations temporelles",
+    "prompt": "On rapporte au passé : « La passerelle est fragile. » Quelle transposition conserve la simultanéité avec le constat ?",
+    "before": "L’ingénieure constata que la passerelle ",
+    "focus": "…",
+    "after": " fragile à cet instant.",
     "options": [
       {
         "id": "a",
-        "label": "La sœur commence nécessairement après la fin de la réparation."
+        "label": "avait été"
       },
       {
         "id": "b",
-        "label": "Les deux actions sont présentées comme des habitudes quotidiennes."
+        "label": "serait"
       },
       {
         "id": "c",
-        "label": "Leurs déroulements se recouvrent dans le temps."
+        "label": "était"
       },
       {
         "id": "d",
-        "label": "La recherche de l’ampoule est explicitement terminée."
+        "label": "aura été"
       }
     ],
     "answer": "c",
-    "explanation": "« Pendant que » relie deux activités simultanées. Les imparfaits les montrent en cours, sans en raconter les limites. La phrase ne précise ni leur achèvement ni une répétition habituelle."
+    "explanation": "« Était » situe la fragilité au même moment passé que le constat. « Avait été » la présenterait comme antérieure ; « serait » orienterait vers un après ou une autre interprétation. Le contexte demande ici la simultanéité."
   },
   {
     "id": 10,
-    "label": "Succession",
-    "prompt": "Quel effet produit la série de passés simples ?",
-    "before": "La journaliste déplia le message, ",
-    "focus": "relut",
-    "after": " la dernière ligne, puis décrocha le téléphone.",
+    "label": "Relations temporelles",
+    "prompt": "L’envoi est terminé avant la déclaration. Quelle forme conserve cet ordre en rapportant les paroles au passé ?",
+    "before": "Yanis déclara qu’il ",
+    "focus": "…",
+    "after": " le dossier la veille.",
     "options": [
       {
         "id": "a",
-        "label": "Elle superpose trois actions présentées comme simultanées."
+        "label": "enverrait"
       },
       {
         "id": "b",
-        "label": "Elle décrit uniquement les qualités habituelles de la journaliste."
+        "label": "envoie"
       },
       {
         "id": "c",
-        "label": "Elle situe les trois actions avant un autre passé grâce à un temps composé."
+        "label": "enverra"
       },
       {
         "id": "d",
-        "label": "Elle organise trois étapes successives qui font avancer la scène."
+        "label": "avait envoyé"
       }
     ],
     "answer": "d",
-    "explanation": "Les verbes et « puis » guident le lecteur d’une étape à l’autre. Le passé simple présente chacune globalement et construit la progression du récit. Ce n’est pas un temps composé exprimant à lui seul l’antériorité."
+    "explanation": "Le dossier a été envoyé avant que Yanis fasse sa déclaration. Le plus-que-parfait « avait envoyé » conserve cette antériorité dans le récit au passé ; « la veille » confirme l’ordre des deux faits."
   },
   {
     "id": 11,
-    "label": "Limite du sens",
-    "prompt": "Que peut-on affirmer à partir de cet imparfait ?",
-    "before": "À notre arrivée, l’artisan ",
-    "focus": "sculptait",
-    "after": " une petite figure dans le bois.",
+    "label": "Relations temporelles",
+    "prompt": "Quelle est la valeur du conditionnel dans ce récit ?",
+    "before": "En juin, l’organisatrice annonça que le festival ",
+    "focus": "commencerait",
+    "after": " en septembre. Le festival ouvrit effectivement à la date prévue.",
     "options": [
       {
         "id": "a",
-        "label": "Le travail était en cours à notre arrivée ; sa fin n’est pas indiquée."
+        "label": "Un futur vu depuis le moment passé de l’annonce."
       },
       {
         "id": "b",
-        "label": "L’artisan n’a jamais achevé sa sculpture."
+        "label": "Une information non vérifiée que le narrateur refuse de confirmer."
       },
       {
         "id": "c",
-        "label": "L’artisan venait obligatoirement de commencer sa sculpture."
+        "label": "Un regret portant sur un festival annulé."
       },
       {
         "id": "d",
-        "label": "L’artisan avait déjà terminé sa sculpture à notre arrivée."
+        "label": "Une demande polie adressée aux organisateurs."
       }
     ],
     "answer": "a",
-    "explanation": "L’imparfait place le regard à l’intérieur du travail. Il ne permet pas de décider si l’artisan terminera ensuite sa sculpture. Une action montrée sans ses limites n’est pas nécessairement une action réellement inachevée."
+    "explanation": "Le début du festival est postérieur à l’annonce de juin. « Commencerait » est un conditionnel à valeur temporelle de futur du passé. La dernière phrase confirme l’événement : le conditionnel ne marque donc pas automatiquement un doute."
   },
   {
     "id": 12,
-    "label": "Imparfait narratif",
-    "prompt": "Dans ce passage daté, quel emploi particulier de l’imparfait reconnaît-on ?",
-    "before": "Le conseil refusa sa proposition. Le lendemain, à midi précis, elle ",
-    "focus": "quittait",
-    "after": " définitivement la ville.",
+    "label": "Relations temporelles",
+    "prompt": "Que signifie ici le conditionnel passé ?",
+    "before": "Le lundi, elle promit qu’elle ",
+    "focus": "aurait fini",
+    "after": " la maquette le vendredi suivant.",
     "options": [
       {
         "id": "a",
-        "label": "Un imparfait d’habitude : elle quitte la ville tous les midis."
+        "label": "La maquette est présentée comme terminée avant la promesse du lundi."
       },
       {
         "id": "b",
-        "label": "Un imparfait narratif présentant un événement unique qui fait progresser le récit."
+        "label": "L’achèvement est prévu pour un repère futur par rapport à une promesse passée."
       },
       {
         "id": "c",
-        "label": "Une description de la forme de la ville."
+        "label": "La maquette a nécessairement été abandonnée."
       },
       {
         "id": "d",
-        "label": "Une action nécessairement simultanée au refus du conseil."
+        "label": "La promesse est formulée au moment présent."
       }
     ],
     "answer": "b",
-    "explanation": "« Le lendemain », « à midi précis » et « définitivement » situent un départ unique après le refus. Cet imparfait narratif donne à voir l’événement en train de se produire. L’imparfait n’est donc pas toujours limité à l’arrière-plan ou aux habitudes."
+    "explanation": "« Aurait fini » transpose un futur antérieur dans un cadre passé : « J’aurai fini vendredi » devient une promesse rapportée au passé. Il s’agit d’un accomplissement projeté après le lundi, pas nécessairement d’un regret ou d’une hypothèse irréelle."
   },
   {
     "id": 13,
-    "label": "Comparer deux vues",
-    "prompt": "Quel changement produit « trembla » à la place de « tremblait » ?",
-    "before": "Devant la porte close, la sentinelle ",
-    "focus": "tremblait",
-    "after": " de peur.",
+    "label": "Point de vue sur l’action",
+    "prompt": "Quelle analyse distingue correctement borné/non borné et accompli/non accompli ?",
+    "before": "",
+    "focus": "Elle corrigea le texte. / Elle avait corrigé le texte avant notre arrivée.",
+    "after": "",
     "options": [
       {
         "id": "a",
-        "label": "La peur devient nécessairement plus forte."
+        "label": "Les deux phrases montrent obligatoirement une correction encore en cours à notre arrivée."
       },
       {
         "id": "b",
-        "label": "La phrase indique désormais une habitude quotidienne."
+        "label": "Le temps simple signifie que le texte ne sera jamais entièrement corrigé."
       },
       {
         "id": "c",
-        "label": "Le tremblement se déroule obligatoirement dans le présent du lecteur."
+        "label": "Le temps composé signifie que la correction a duré plus longtemps."
       },
       {
         "id": "d",
-        "label": "La peur manifestée par le tremblement est présentée globalement comme un épisode."
+        "label": "La première présente un épisode global ; la seconde le présente déjà accompli par rapport à un repère passé."
       }
     ],
     "answer": "d",
-    "explanation": "« Tremblait » donne à voir un état en cours. « Trembla » le présente comme un épisode borné du passé. La différence porte sur la manière d’envisager la situation, pas sur une mesure certaine de l’intensité de la peur."
+    "explanation": "Le passé simple « corrigea » donne une vue globale, bornée, de l’épisode. Le plus-que-parfait « avait corrigé » présente cet épisode comme accompli avant un repère passé. L’opposition temps simple/composé ne se confond pas avec l’opposition borné/non borné."
   },
   {
     "id": 14,
-    "label": "Durée et temps",
-    "prompt": "Pourquoi l’expression « pendant un mois » convient-elle avec ce passé simple ?",
-    "before": "Pendant un mois, l’archéologue ",
-    "focus": "chercha",
-    "after": " l’entrée du passage ; elle renonça ensuite.",
+    "label": "Point de vue sur l’action",
+    "prompt": "Dans cette comparaison, quelle forme montre le travail en cours au moment présent ?",
+    "before": "",
+    "focus": "Je prépare la séance. / J’ai préparé la séance.",
+    "after": "",
     "options": [
       {
         "id": "a",
-        "label": "Une recherche longue peut être racontée comme un épisode achevé."
+        "label": "« Je prépare » : le déroulement est présenté sans être déjà accompli."
       },
       {
         "id": "b",
-        "label": "Le passé simple signifie toujours que la recherche a réussi."
+        "label": "« J’ai préparé » : la préparation est présentée comme encore en cours."
       },
       {
         "id": "c",
-        "label": "Une durée exprimée en mois exige obligatoirement l’imparfait."
+        "label": "Les deux formes indiquent obligatoirement un travail terminé."
       },
       {
         "id": "d",
-        "label": "Le passé simple transforme un mois en un instant dans l’histoire."
+        "label": "Les deux formes situent le travail dans un avenir lointain."
       }
     ],
     "answer": "a",
-    "explanation": "« Pendant un mois » mesure l’épisode et « renonça ensuite » en marque la clôture. Le passé simple présente toute la recherche comme un ensemble. Achever une recherche ne signifie pas nécessairement trouver ce que l’on cherchait."
+    "explanation": "Dans ce contexte, le présent « prépare » montre la préparation en cours, tandis que le passé composé « ai préparé » la présente comme accomplie. Non accompli ne signifie pas que le travail ne se terminera jamais."
   },
   {
     "id": 15,
-    "label": "Portée de l’imparfait",
-    "prompt": "Quelle conclusion respecte ce que dit la phrase ?",
-    "before": "Quand le navire entra dans la baie, le phare ",
-    "focus": "brillait",
-    "after": " au-dessus des rochers.",
+    "label": "Point de vue sur l’action",
+    "prompt": "Quelle analyse évite de confondre la durée réelle et l’aspect ?",
+    "before": "Entre son arrivée et sa retraite, le bibliothécaire ",
+    "focus": "exerça",
+    "after": " ce métier pendant quarante ans.",
     "options": [
       {
         "id": "a",
-        "label": "Le phare n’avait jamais été éteint auparavant."
+        "label": "Le passé simple impose une durée de quelques secondes."
       },
       {
         "id": "b",
-        "label": "Le phare était allumé à ce moment-là, sans indication sur son extinction."
+        "label": "Le passé simple présente globalement une période longue et délimitée."
       },
       {
         "id": "c",
-        "label": "Le phare s’allumait exactement au moment de l’entrée du navire."
+        "label": "Les quarante années obligent à employer un imparfait."
       },
       {
         "id": "d",
-        "label": "Le phare allait nécessairement s’éteindre une seconde plus tard."
+        "label": "Le passé simple indique que le bibliothécaire exerce encore ce métier."
       }
     ],
     "answer": "b",
-    "explanation": "L’imparfait montre une situation en cours au moment de l’événement au passé simple. Il ne précise ni l’allumage ni l’extinction du phare. Il ne faut pas transformer l’absence de bornes dans la présentation en absence réelle de début ou de fin."
+    "explanation": "Le début et la fin de la carrière encadrent la période. Le passé simple la présente comme un tout borné, même si elle dure quarante ans. L’aspect concerne le point de vue sur le déroulement, pas une durée nécessairement brève."
   },
   {
     "id": 16,
-    "label": "Rythme du récit",
-    "prompt": "Quel effet produit ici le passé simple associé à « vingt années » ?",
-    "before": "Dans ce refuge isolé, le savant ",
-    "focus": "passa",
-    "after": " vingt années à étudier le ciel. Un soir, il reçut enfin une visite.",
+    "label": "Point de vue sur l’action",
+    "prompt": "Que permet d’affirmer l’imparfait dans cette scène ?",
+    "before": "À l’instant où la cloche retentit, les techniciennes ",
+    "focus": "réparaient",
+    "after": " encore le mécanisme.",
     "options": [
       {
         "id": "a",
-        "label": "Il détaille nécessairement chacune des journées de ces vingt années."
+        "label": "La réparation ne pourra jamais être terminée."
       },
       {
         "id": "b",
-        "label": "Il indique que les vingt années durent quelques secondes dans l’histoire."
+        "label": "La réparation était achevée avant la sonnerie."
       },
       {
         "id": "c",
-        "label": "Il résume une longue période avant de raconter un événement particulier."
+        "label": "La réparation est vue en cours à cet instant, sans indication de son terme."
       },
       {
         "id": "d",
-        "label": "Il impose que la visite se produise avant le séjour."
+        "label": "Les techniciennes commençaient obligatoirement leur travail à la sonnerie."
       }
     ],
     "answer": "c",
-    "explanation": "Une seule phrase embrasse vingt années : le récit condense cette période, puis se resserre sur une visite. La durée de l’histoire peut être longue alors que le texte qui la raconte est court. Le passé simple participe ici à cette vue d’ensemble."
+    "explanation": "L’imparfait place le regard à l’intérieur de la réparation, au moment où retentit la cloche. Il ne dit pas si les techniciennes termineront ensuite. L’absence de terme dans la présentation n’est pas l’absence réelle de fin."
   },
   {
     "id": 17,
-    "label": "Arrière-plan actif",
-    "prompt": "Pourquoi l’imparfait ne signifie-t-il pas ici que la scène est immobile ?",
-    "before": "Quand la grille s’ouvrit, plusieurs enfants ",
-    "focus": "couraient",
-    "after": " déjà vers la sortie.",
+    "label": "Construction du verbe",
+    "prompt": "Quels éléments permettent de reconnaître le plus-que-parfait souligné ?",
+    "before": "Nous découvrîmes que l’eau ",
+    "focus": "avait effacé",
+    "after": " une partie des inscriptions.",
     "options": [
       {
         "id": "a",
-        "label": "Il peut montrer une activité en mouvement comme arrière-plan d’un autre événement."
+        "label": "Un auxiliaire à l’imparfait suivi du participe passé."
       },
       {
         "id": "b",
-        "label": "Il annule le sens du verbe courir."
+        "label": "Un auxiliaire au présent suivi d’un infinitif."
       },
       {
         "id": "c",
-        "label": "Il transforme automatiquement le mouvement en habitude."
+        "label": "Un verbe au futur simple suivi d’un adjectif."
       },
       {
         "id": "d",
-        "label": "Il prouve que la course est déjà terminée."
+        "label": "Deux verbes au passé simple coordonnés."
       }
     ],
     "answer": "a",
-    "explanation": "« Couraient » garde le sens d’une activité en mouvement. L’imparfait montre cette activité déjà engagée lorsque la grille s’ouvre. L’opposition arrière-plan / premier plan concerne l’organisation du récit, pas l’opposition immobilité / mouvement."
+    "explanation": "« Avait » est l’auxiliaire avoir à l’imparfait et « effacé » le participe passé du verbe effacer. Cette forme composée exprime ici un effacement accompli avant la découverte."
   },
   {
     "id": 18,
-    "label": "Durée habituelle",
-    "prompt": "Quelle valeur domine malgré la durée précise de chaque séance ?",
-    "before": "Tous les après-midi, pendant deux heures, le musicien ",
-    "focus": "répétait",
-    "after": " le même passage avant le concert du soir.",
+    "label": "Relations temporelles",
+    "prompt": "Quelle relation le passé antérieur souligne-t-il dans ce récit littéraire ?",
+    "before": "Dès qu’elle ",
+    "focus": "eut refermé",
+    "after": " le registre, l’archiviste éteignit la lampe.",
     "options": [
       {
         "id": "a",
-        "label": "Un événement unique sans répétition."
+        "label": "La fermeture est encore en cours après l’extinction."
       },
       {
         "id": "b",
-        "label": "Une série nécessairement achevée de deux séances seulement."
+        "label": "La fermeture est annoncée pour un avenir vu du présent."
       },
       {
         "id": "c",
-        "label": "Une habitude : des séances se répètent selon le même rythme."
+        "label": "La fermeture du registre est accomplie avant l’extinction de la lampe."
       },
       {
         "id": "d",
-        "label": "Un fait situé dans le futur par rapport au narrateur."
+        "label": "La fermeture constitue une habitude actuelle."
       }
     ],
     "answer": "c",
-    "explanation": "« Tous les après-midi » indique la répétition des séances ; « pendant deux heures » mesure chacune d’elles. On peut donc préciser la durée de chaque occurrence tout en utilisant l’imparfait pour présenter une habitude."
+    "explanation": "« Eut refermé » est un passé antérieur, formé avec l’auxiliaire au passé simple. Dans ce récit, il présente la fermeture comme accomplie avant l’action « éteignit » ; « dès que » marque leur enchaînement."
   },
   {
     "id": 19,
-    "label": "Choisir une formulation",
-    "prompt": "On veut raconter les trois heures de surveillance comme un épisode complet. Quelle formulation convient ?",
-    "before": "De neuf heures à midi, le gardien ",
-    "focus": "surveillait",
-    "after": " la cour.",
+    "label": "Relations temporelles",
+    "prompt": "La relecture doit être terminée avant l’envoi futur. Quelle forme convient ?",
+    "before": "Quand vous ",
+    "focus": "…",
+    "after": " le contrat en entier, vous pourrez le transmettre.",
     "options": [
       {
         "id": "a",
-        "label": "À midi, le gardien surveillait encore la cour."
+        "label": "aviez relu"
       },
       {
         "id": "b",
-        "label": "À notre arrivée, le gardien surveillait la cour."
+        "label": "relisiez"
       },
       {
         "id": "c",
-        "label": "Comme chaque jour, le gardien surveillait la cour."
+        "label": "auriez relu"
       },
       {
         "id": "d",
-        "label": "De neuf heures à midi, le gardien surveilla la cour."
+        "label": "aurez relu"
       }
     ],
     "answer": "d",
-    "explanation": "« Surveilla » présente globalement la surveillance entre les deux limites horaires. Les formulations avec « à midi » ou « à notre arrivée » saisissent l’activité en cours ; « comme chaque jour » oriente vers l’habitude. Le choix dépend du point de vue voulu."
+    "explanation": "Le futur antérieur « aurez relu » situe l’achèvement de la relecture avant l’envoi envisagé au futur. Le choix respecte la relation temporelle demandée ; la forme ne dépend pas de la durée de la lecture."
   },
   {
     "id": 20,
-    "label": "Synthèse",
-    "prompt": "Quelle règle explique le mieux le choix entre passé simple et imparfait dans un récit ?",
-    "before": "Il ",
-    "focus": "attendit",
-    "after": " une heure. La pluie tombait quand il repartit.",
+    "label": "Relations temporelles",
+    "prompt": "Quel ordre des faits respecte les trois formes verbales ?",
+    "before": "La veille, Iris avait réservé une salle. Ce matin-là, elle confirma la réservation et précisa que la réunion ",
+    "focus": "aurait lieu",
+    "after": " le lendemain.",
     "options": [
       {
         "id": "a",
-        "label": "Le passé simple exprime toujours une durée courte et l’imparfait une durée longue."
+        "label": "Tenir la réunion, puis réserver et confirmer la salle."
       },
       {
         "id": "b",
-        "label": "Le passé simple présente ici un épisode global, l’imparfait une situation en cours."
+        "label": "Réserver la salle, confirmer la réservation, puis tenir la réunion prévue."
       },
       {
         "id": "c",
-        "label": "Le passé simple exprime uniquement des actions uniques, l’imparfait uniquement des répétitions."
+        "label": "Confirmer la réservation avant toute réservation de salle."
       },
       {
         "id": "d",
-        "label": "L’imparfait indique toujours une action qui ne se terminera jamais."
+        "label": "Réserver, confirmer et tenir la réunion exactement au même instant."
       }
     ],
     "answer": "b",
-    "explanation": "L’attente, pourtant longue d’une heure, est envisagée globalement au passé simple. La pluie est présentée en cours au moment du départ. Le contexte et le point de vue sur le déroulement comptent davantage qu’une opposition simpliste entre court et long."
+    "explanation": "Le plus-que-parfait renvoie à la réservation antérieure ; « confirma » raconte l’étape suivante. « Aurait lieu » présente un futur depuis ce moment passé. Les repères « la veille » et « le lendemain » rendent cette chronologie explicite."
   }
 ]

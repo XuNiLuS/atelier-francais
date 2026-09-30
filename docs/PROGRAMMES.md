@@ -1,6 +1,6 @@
 # Repères pédagogiques et programmes
 
-Vérification des sources : **29 septembre 2026**. Public visé : **4e, 3e et seconde générale et technologique**. Les six QCM comportent chacun 20 questions, soit 120 questions. Les phrases, distracteurs et explications ont été rédigés pour ce projet ; ils ne sont pas copiés dans un manuel ni dans les exemples institutionnels.
+Vérification des sources : **30 septembre 2026**. Public visé : **4e, 3e et seconde générale et technologique**. Les quinze QCM comportent chacun 20 questions, soit 300 questions. Les phrases, distracteurs et explications ont été rédigés pour ce projet ; ils ne sont pas copiés dans un manuel ni dans les exemples institutionnels.
 
 ## Le choix des nouveaux programmes au collège
 
@@ -10,37 +10,49 @@ Pour la seconde GT, la référence consultée reste le programme du **BO spécia
 
 ## Une progression choisie pour ces exercices
 
-Ce découpage en six QCM est un choix pédagogique du projet. Il facilite des séances courtes et la reprise des erreurs ; il ne constitue ni une progression annuelle officielle ni une couverture exhaustive des programmes.
+Ce découpage en quinze QCM est un choix pédagogique du projet. Il facilite des séances courtes et la reprise des erreurs ; il ne constitue ni une progression annuelle officielle ni une couverture exhaustive des programmes.
 
-| Niveau et QCM | Ce que travaille la série | Progression proposée |
+| Niveau et QCM | Travail proposé dans le site | Progression choisie |
 | --- | --- | --- |
-| 4e — Temps du récit (`4e-temps-recit.json`) | Description, habitude, action en cours, premier plan, succession et action envisagée dans sa totalité ; 10 imparfaits et 10 passés simples. | Partir d’indices explicites, identifier une valeur en contexte, puis comprendre qu’une action longue peut être présentée au passé simple. |
-| 4e — Grammaire (`4e-grammaire.json`) | Classes de mots, distinction entre les deux emplois de « que », fonctions de groupes et d’une conjonctive, opposition et condition, apposition ; accords avec déterminant indéfini, plusieurs personnes, pronom relatif et verbe pronominal. | Consolider les repères de 5e, identifier les relations entre mots ou groupes, puis justifier les accords par une manipulation. |
-| 3e — Temps du récit (`3e-temps-recit.json`) | Valeurs du passé simple et de l’imparfait, simultanéité, succession, répétition limitée, point de vue sur la durée et changement de temps. | Passer du repérage à la comparaison d’énoncés et expliquer les effets du choix d’un temps. |
-| 3e — Phrase complexe (`3e-phrase-complexe.json`) | Juxtaposition, coordination, subordination ; fonctions des subordonnées et des pronoms relatifs, interrogation indirecte, relations logiques, forme emphatique et groupes nominaux étendus. | Distinguer la construction et la fonction, utiliser des substitutions et expliquer l’organisation de phrases plus complexes. |
-| Seconde GT — Temps du récit (`seconde-temps-recit.json`) | Aspect borné ou non borné, durée réelle et point de vue, premier plan et arrière-plan, simultanéité, rythme du récit et un emploi narratif de l’imparfait. | Affiner l’interprétation et comparer les effets d’une reformulation ; l’imparfait narratif est un approfondissement choisi pour cette série. |
-| Seconde GT — Syntaxe (`seconde-syntaxe.json`) | Rapports entre propositions, relatives et conjonctives, fonctions des pronoms relatifs, « dont », « auquel », « duquel », « où », accords et incidence de la ponctuation. | Passer de l’analyse de structure à la précision du sens, notamment dans l’opposition entre relative déterminative et explicative. |
+| 4e — Temps du récit (`4e-temps-recit`) | Imparfait et passé simple : description, habitude, arrière-plan, événements et actions délimitées. | Série initiale conservée ; justifier une valeur à partir d’indices explicites. |
+| 4e — Classes, fonctions et accords (`4e-grammaire`) | Classes de mots, fonctions, groupes, subordonnants et chaînes d’accord. | Série conservée ; employer une manipulation pour expliquer un accord. |
+| 4e — Phrase complexe (`4e-phrase-complexe`) | Principale et subordonnée, relatives, conjonctives, interrogatives indirectes et liens logiques. | Identifier les constituants puis observer leur emboîtement. |
+| 4e — Paroles rapportées (`4e-paroles-rapportees`) | Discours direct et indirect, personnes et repères, transpositions. | Reconnaître puis transformer une parole dans une situation précisée. |
+| 4e — Formes verbales (`4e-formes-verbales`) | Temps composés, auxiliaire et participe passé ; voix active et passive. | Distinguer la forme, le repère temporel et la voix du verbe. |
+| 3e — Conditionnel et hypothèses (`3e-temps-recit`) | Présent et passé, futur dans le passé, hypothèse, atténuation et information non confirmée. | Consolider une notion déjà abordée ; expliquer sa valeur en contexte. |
+| 3e — Subjonctif (`3e-subjonctif`) | Présent et passé, formation, emplois après un verbe ou une conjonction. | Relier la construction au mode et distinguer les relations temporelles. |
+| 3e — Paroles rapportées (`3e-paroles-rapportees`) | Direct, indirect et indirect libre ; transpositions et effets sur la lecture. | Repérer les voix du narrateur et du personnage dans un contexte suffisant. |
+| 3e — Accords (`3e-accords`) | Groupe nominal étendu, adjectifs, sujets complexes, participe passé avec COD relatif antéposé. | Retrouver le donneur d’accord malgré les mots intercalés. |
+| 3e — Phrase complexe (`3e-phrase-complexe`) | Fonctions des propositions, liens logiques, forme emphatique et pronoms relatifs. | Série conservée ; distinguer nature et fonction, expliquer les articulations. |
+| Seconde GT — Temps, aspect et concordance (`seconde-temps-recit`) | Relations temporelles, temps simples et composés, aspect et concordance. | Comparer les formes et interpréter les choix temporels au-delà du seul récit au passé. |
+| Seconde GT — Modes et modalisation (`seconde-modes-modalisation`) | Indicatif, subjonctif, impératif et valeurs modales du conditionnel ; prise en charge d’une affirmation. | Comparer les formulations et nuancer leur interprétation. |
+| Seconde GT — Accords (`seconde-accords`) | Accords du groupe nominal et du verbe, classes et fonctions dans des structures élaborées. | Justifier l’accord par la construction syntaxique. |
+| Seconde GT — Phrase complexe (`seconde-phrase-complexe`) | Juxtaposition, coordination, subordination, imbrication et réécriture. | Distinguer le lien syntaxique du rapport logique et interpréter le choix de construction. |
+| Seconde GT — Syntaxe et relatives (`seconde-syntaxe`) | Antécédents, fonctions des pronoms, dont/auquel/duquel, relatives déterminatives et explicatives. | Série conservée ; mettre l’analyse grammaticale au service du sens. |
+
+Les anciennes adresses `3e-temps-recit` et `seconde-temps-recit` restent valides : elles mènent désormais aux séries élargies décrites ci-dessus. Leurs titres, aides et questions ont été remplacés. Les deux quiz initiaux de 4e sont conservés.
 
 Les corrections donnent un indice de lecture ou une manipulation : remplacement par un pronom, reformulation, identification du donneur d’accord, déplacement d’un complément ou comparaison des temps. Elles servent à expliciter le raisonnement, y compris lorsque la première réponse était correcte.
 
 ## Raccord avec les textes de référence
 
-L’annexe 2026 organise la grammaire par niveau. La sélection de 4e s’appuie sur ses objectifs concernant les subordonnants, les fonctions, les groupes nominaux et les accords ; celle de 3e ajoute la complexification des phrases et l’interprétation des relations grammaticales. Les deux séries sur le récit sélectionnent le travail des valeurs temporelles et aspectuelles. Voir les rubriques de grammaire de [l’annexe officielle 2026, pages 17 à 19](https://www.education.gouv.fr/sites/default/files/document/Annexe%201%20%E2%80%93%20Programme%20de%20fran%C3%A7ais%20pour%20le%20cycle%204-480713.pdf).
+L’annexe 2026 distingue les attendus par classe : paroles rapportées, formes verbales, syntaxe et accords structurent notre sélection de 4e ; les séries de 3e consolident le conditionnel et développent le subjonctif, l’indirect libre et les accords dans des constructions plus élaborées. Le **conditionnel est un temps de l’indicatif**, avec des emplois temporels et modaux ; il n’apparaît pas pour la première fois en 3e. Voir les rubriques de grammaire de [l’annexe officielle 2026, pages 17 à 19](https://www.education.gouv.fr/sites/default/files/document/Annexe%201%20%E2%80%93%20Programme%20de%20fran%C3%A7ais%20pour%20le%20cycle%204-480713.pdf).
 
-En seconde, le texte consolidé prévoit dès cette classe un travail sur le verbe, les relations entre propositions et les relatives. Nos deux séries en retiennent une partie. L’interrogation, la négation et les subordonnées circonstancielles font aussi l’objet d’approfondissements explicitement situés en première : la série de seconde n’entend pas remplacer ce travail. Voir [l’annexe 1 consolidée, pages 3 et 4](https://eduscol.education.gouv.fr/sites/default/files/document/04-annexe1francais2ebomodifiepdf-69834.pdf).
+En seconde, les cinq séries répartissent les quatre axes engagés dès cette classe : accords du groupe nominal et du verbe ; valeurs temporelles, aspectuelles et modales avec concordance ; relations entre propositions ; syntaxe des relatives. L’axe du verbe occupe deux quiz. Les notions du collège sont réinvesties avec davantage d’analyse et de comparaison de formulations. L’approfondissement de l’interrogation, de la négation et des circonstancielles explicitement prévu en première ne constitue pas une série spécifique ici. Voir [l’annexe 1 consolidée, pages 3 et 4](https://eduscol.education.gouv.fr/sites/default/files/document/04-annexe1francais2ebomodifiepdf-69834.pdf).
 
 ## Précautions d’emploi
 
 - Les valeurs dépendent du contexte. Les options d’une question sont choisies pour qu’une seule soit pertinente dans l’énoncé proposé ; elles ne résument pas toutes les possibilités du temps étudié.
 - La durée réelle ne décide pas du temps : un événement long peut être envisagé dans sa totalité au passé simple. L’imparfait peut présenter une action en cours sans en préciser les limites.
-- **Borné/non borné** et **accompli/non accompli** ne sont pas interchangeables. Les exercices centrés sur le passé simple et l’imparfait ne couvrent pas à eux seuls l’opposition entre temps simples et composés.
+- **Borné/non borné** et **accompli/non accompli** ne sont pas interchangeables. Les quiz sur les formes composées et la concordance complètent l’étude initiale du passé simple et de l’imparfait.
+- Le subjonctif ne signifie pas automatiquement « doute » ou « fait irréel » : sa valeur dépend aussi de la construction et du contexte. Les transpositions au discours indirect précisent les repères de personne et de temps quand ils déterminent la réponse.
 - Les classes grammaticales et les fonctions sont distinguées dans les consignes. Un pronom relatif a une fonction dans sa subordonnée ; celle-ci a aussi sa propre fonction dans la phrase.
 - Un résultat sur 20 mesure une réussite dans cette série. Il ne certifie pas la maîtrise de toutes les compétences du niveau.
 - Ces QCM doivent être complétés par de la lecture, de la réécriture, des justifications libres et des productions écrites ou orales. Ils ne couvrent pas tous les temps et modes, toutes les fonctions, le lexique, les œuvres ni l’ensemble des apprentissages de français.
 
 ## Sources officielles consultées
 
-Toutes les consultations ci-dessous ont été effectuées le **29 septembre 2026**.
+Toutes les consultations ci-dessous ont été effectuées le **30 septembre 2026**.
 
 1. [BO n° 10 du 5 mars 2026 — programmes de français et de mathématiques du cycle 4](https://www.education.gouv.fr/bo/2026/Hebdo10/MENE2602912A) : arrêté du 18 février 2026, calendrier d’application, notamment article 3.
 2. [Annexe 1 définitive — programme de français du cycle 4](https://www.education.gouv.fr/sites/default/files/document/Annexe%201%20%E2%80%93%20Programme%20de%20fran%C3%A7ais%20pour%20le%20cycle%204-480713.pdf) : grammaire et orthographe grammaticale, pages 15 à 19 ; référence principale des exercices de collège.
@@ -49,5 +61,6 @@ Toutes les consultations ci-dessous ont été effectuées le **29 septembre 2026
 5. [Éduscol — programmes et ressources de français, voie GT](https://eduscol.education.gouv.fr/5793/programmes-et-ressources-en-francais-voie-gt) : page actualisée en septembre 2026, statut du programme de seconde.
 6. [Programme de seconde GT, annexe 1 consolidée après la modification de 2020](https://eduscol.education.gouv.fr/sites/default/files/document/04-annexe1francais2ebomodifiepdf-69834.pdf) : étude de la langue, notamment pages 3 et 4.
 7. [BO n° 40 du 22 octobre 2020 — modification des programmes de français du lycée](https://www.education.gouv.fr/bo/20/Hebdo40/MENE2025804A.htm) : arrêté du 28 septembre 2020, clarification des apprentissages engagés dès la seconde.
+8. [Éduscol — La grammaire du français, terminologie grammaticale](https://eduscol.education.gouv.fr/sites/default/files/document/guide-la-grammaire-du-francais-terminologie-grammaticale-67998.pdf) : connecteurs et coordination (p. 65), conditionnel et distinctions aspectuelles (p. 144–146). Repère complémentaire pour la terminologie des corrections.
 
 Les sources ont servi à cadrer les niveaux et les notions. Aucune validation du projet par l’Éducation nationale n’est revendiquée. Les dates d’application devront être revérifiées si les textes officiels changent.

@@ -16,9 +16,9 @@ QUESTIONS_PATH = BASE_DIR / "data" / "quizzes" / f"{DEFAULT_QUIZ}.json"
 
 
 LEVELS = (
-    {"id": "4e", "name": "4e", "stage": "Collège", "description": "Construire des repères solides et reconnaître les indices dans une phrase."},
-    {"id": "3e", "name": "3e", "stage": "Collège", "description": "Relier les propositions et expliquer comment la grammaire construit le sens."},
-    {"id": "seconde", "name": "Seconde", "stage": "Lycée général et technologique", "description": "Affiner l’analyse des temps, des relations logiques et des propositions relatives."},
+    {"id": "4e", "name": "4e", "stage": "Collège", "description": "Explorer les temps, les accords, la phrase complexe et les paroles rapportées."},
+    {"id": "3e", "name": "3e", "stage": "Collège", "description": "Maîtriser le conditionnel, le subjonctif et les accords ; interpréter les paroles rapportées."},
+    {"id": "seconde", "name": "Seconde", "stage": "Lycée général et technologique", "description": "Analyser les temps, la modalisation et la syntaxe ; justifier les accords et les choix d’écriture."},
 )
 
 

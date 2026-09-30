@@ -1,0 +1,562 @@
+[
+  {
+    "id": 1,
+    "label": "Groupe nominal étendu",
+    "prompt": "Quelle forme convient à l’adjectif qui qualifie les fenêtres ?",
+    "before": "Les grandes fenêtres de l’atelier restent ",
+    "focus": "…",
+    "after": " depuis la tempête.",
+    "options": [
+      {
+        "id": "a",
+        "label": "abîmés"
+      },
+      {
+        "id": "b",
+        "label": "abîmée"
+      },
+      {
+        "id": "c",
+        "label": "abîmé"
+      },
+      {
+        "id": "d",
+        "label": "abîmées"
+      }
+    ],
+    "answer": "d",
+    "explanation": "L’adjectif « abîmées » se rapporte aux « fenêtres », nom féminin pluriel, et non à « atelier ». Le complément du nom ne change pas le donneur d’accord : on conserve le féminin pluriel."
+  },
+  {
+    "id": 2,
+    "label": "Accord sujet-verbe",
+    "prompt": "Quelle forme du verbe au présent convient ?",
+    "before": "Les récits de cette exploratrice ",
+    "focus": "…",
+    "after": " les jeunes lecteurs.",
+    "options": [
+      {
+        "id": "a",
+        "label": "captivent"
+      },
+      {
+        "id": "b",
+        "label": "captive"
+      },
+      {
+        "id": "c",
+        "label": "captives"
+      },
+      {
+        "id": "d",
+        "label": "captivez"
+      }
+    ],
+    "answer": "a",
+    "explanation": "Le noyau du groupe sujet est « récits », au pluriel. « De cette exploratrice » complète ce nom, mais ne commande pas le verbe. On peut remplacer le groupe sujet par « ils » : « ils captivent »."
+  },
+  {
+    "id": 3,
+    "label": "Accord sujet-verbe",
+    "prompt": "Quelle forme de être au présent convient ?",
+    "before": "La couverture des carnets que tu as retrouvés ",
+    "focus": "…",
+    "after": " en cuir.",
+    "options": [
+      {
+        "id": "a",
+        "label": "sont"
+      },
+      {
+        "id": "b",
+        "label": "êtes"
+      },
+      {
+        "id": "c",
+        "label": "est"
+      },
+      {
+        "id": "d",
+        "label": "sommes"
+      }
+    ],
+    "answer": "c",
+    "explanation": "Le sujet entier a pour noyau « couverture », au singulier. « Des carnets que tu as retrouvés » est une expansion de ce nom. On peut dire « elle est en cuir » : le pluriel voisin « carnets » ne commande pas « est »."
+  },
+  {
+    "id": 4,
+    "label": "Accord de l’adjectif",
+    "prompt": "Quelle forme convient à l’adjectif épithète de « nouvelles » ?",
+    "before": "Cette revue publie des nouvelles ",
+    "focus": "…",
+    "after": " de jeunes auteurs.",
+    "options": [
+      {
+        "id": "a",
+        "label": "originaux"
+      },
+      {
+        "id": "b",
+        "label": "originales"
+      },
+      {
+        "id": "c",
+        "label": "originale"
+      },
+      {
+        "id": "d",
+        "label": "original"
+      }
+    ],
+    "answer": "b",
+    "explanation": "« Nouvelles » est ici un nom féminin pluriel désignant des récits brefs. Son épithète s’accorde avec lui : « originales ». « De jeunes auteurs » complète le groupe sans modifier cet accord."
+  },
+  {
+    "id": 5,
+    "label": "Accord de l’adjectif",
+    "prompt": "Pourquoi l’adjectif souligné prend-il la marque du féminin pluriel ?",
+    "before": "Les falaises, ",
+    "focus": "impressionnantes",
+    "after": ", dominaient le port.",
+    "options": [
+      {
+        "id": "a",
+        "label": "Il est en apposition au nom féminin pluriel « falaises »."
+      },
+      {
+        "id": "b",
+        "label": "Il s’accorde avec le nom masculin singulier « port »."
+      },
+      {
+        "id": "c",
+        "label": "Tout adjectif placé entre deux virgules est féminin pluriel."
+      },
+      {
+        "id": "d",
+        "label": "Il s’accorde avec le verbe « dominaient », et non avec un nom."
+      }
+    ],
+    "answer": "a",
+    "explanation": "Détaché par des virgules, « impressionnantes » apporte une caractéristique des falaises : il est en apposition à ce nom. L’accord dépend de « falaises », féminin pluriel, pas de la ponctuation à elle seule."
+  },
+  {
+    "id": 6,
+    "label": "Accord de l’adjectif",
+    "prompt": "Quelle forme de l’attribut convient ?",
+    "before": "Après leur nettoyage, les pièces du mécanisme semblent ",
+    "focus": "…",
+    "after": ".",
+    "options": [
+      {
+        "id": "a",
+        "label": "neufs"
+      },
+      {
+        "id": "b",
+        "label": "neuves"
+      },
+      {
+        "id": "c",
+        "label": "neuve"
+      },
+      {
+        "id": "d",
+        "label": "neuf"
+      }
+    ],
+    "answer": "b",
+    "explanation": "Le verbe attributif « semblent » relie l’adjectif au sujet « les pièces du mécanisme ». Le noyau « pièces » est féminin pluriel : l’attribut devient « neuves ». Le masculin singulier « mécanisme » n’est pas le donneur d’accord."
+  },
+  {
+    "id": 7,
+    "label": "Accord de l’adjectif",
+    "prompt": "Quelle forme complète cette phrase où l’adjectif qualifie les deux personnages ?",
+    "before": "Le frère et la sœur paraissent ",
+    "focus": "…",
+    "after": " de leur invention.",
+    "options": [
+      {
+        "id": "a",
+        "label": "fières"
+      },
+      {
+        "id": "b",
+        "label": "fier"
+      },
+      {
+        "id": "c",
+        "label": "fière"
+      },
+      {
+        "id": "d",
+        "label": "fiers"
+      }
+    ],
+    "answer": "d",
+    "explanation": "L’adjectif est attribut d’un sujet formé de deux noms coordonnés, l’un masculin et l’autre féminin. Dans cet accord grammatical, on emploie le masculin pluriel : « fiers »."
+  },
+  {
+    "id": 8,
+    "label": "Groupe nominal étendu",
+    "prompt": "Quel nom commande l’accord de l’adjectif souligné ?",
+    "before": "Les chemins que nous empruntons dans la forêt sont ",
+    "focus": "étroits",
+    "after": ".",
+    "options": [
+      {
+        "id": "a",
+        "label": "Le nom « forêt »."
+      },
+      {
+        "id": "b",
+        "label": "Le pronom « nous »."
+      },
+      {
+        "id": "c",
+        "label": "Le nom « chemins »."
+      },
+      {
+        "id": "d",
+        "label": "Le pronom relatif « que »."
+      }
+    ],
+    "answer": "c",
+    "explanation": "Ce sont les chemins qui sont étroits. Le sujet a pour noyau « chemins », masculin pluriel. La relative précise quels chemins sont concernés. La présence du nom féminin « forêt » dans cette relative ne modifie pas l’accord de l’attribut avec le sujet « chemins »."
+  },
+  {
+    "id": 9,
+    "label": "Accord du participe passé",
+    "prompt": "Quelle forme complète la phrase ?",
+    "before": "Les lettres que Nora a ",
+    "focus": "…",
+    "after": " sont rangées par date.",
+    "options": [
+      {
+        "id": "a",
+        "label": "écrit"
+      },
+      {
+        "id": "b",
+        "label": "écrites"
+      },
+      {
+        "id": "c",
+        "label": "écrits"
+      },
+      {
+        "id": "d",
+        "label": "écrite"
+      }
+    ],
+    "answer": "b",
+    "explanation": "Avec avoir, le participe passé s’accorde avec le COD lorsque celui-ci est placé avant lui. Nora a écrit quoi ? « Que », qui reprend « les lettres », féminin pluriel. On écrit donc « écrites »."
+  },
+  {
+    "id": 10,
+    "label": "Accord du participe passé",
+    "prompt": "Quelle forme complète la phrase ?",
+    "before": "Les dessins que le musée a ",
+    "focus": "…",
+    "after": " seront exposés dimanche.",
+    "options": [
+      {
+        "id": "a",
+        "label": "acheté"
+      },
+      {
+        "id": "b",
+        "label": "achetées"
+      },
+      {
+        "id": "c",
+        "label": "achetée"
+      },
+      {
+        "id": "d",
+        "label": "achetés"
+      }
+    ],
+    "answer": "d",
+    "explanation": "« Que » est COD de « a acheté » et reprend « les dessins », masculin pluriel. Comme ce COD précède le participe employé avec avoir, celui-ci s’accorde : « achetés ». Le sujet singulier « le musée » ne commande pas cet accord."
+  },
+  {
+    "id": 11,
+    "label": "Accord du participe passé",
+    "prompt": "Quelle forme complète la phrase ?",
+    "before": "La décision que les arbitres ont ",
+    "focus": "…",
+    "after": " a surpris le public.",
+    "options": [
+      {
+        "id": "a",
+        "label": "pris"
+      },
+      {
+        "id": "b",
+        "label": "prises"
+      },
+      {
+        "id": "c",
+        "label": "prise"
+      },
+      {
+        "id": "d",
+        "label": "prisent"
+      }
+    ],
+    "answer": "c",
+    "explanation": "Les arbitres ont pris quoi ? « Que », qui représente « la décision ». Ce COD féminin singulier est antéposé : « pris » devient « prise ». Le pluriel du sujet « les arbitres » ne détermine pas l’accord du participe avec avoir."
+  },
+  {
+    "id": 12,
+    "label": "Accord du participe passé",
+    "prompt": "Pourquoi le participe passé souligné porte-t-il un « s » ?",
+    "before": "Les sentiers que nous avons ",
+    "focus": "suivis",
+    "after": " traversent la lande.",
+    "options": [
+      {
+        "id": "a",
+        "label": "Le COD « que », reprenant « les sentiers », est placé avant le participe."
+      },
+      {
+        "id": "b",
+        "label": "Le sujet « nous » impose toujours un « s » au participe avec avoir."
+      },
+      {
+        "id": "c",
+        "label": "Tous les participes passés employés avec avoir sont pluriels."
+      },
+      {
+        "id": "d",
+        "label": "Le participe s’accorde avec le nom singulier « lande »."
+      }
+    ],
+    "answer": "a",
+    "explanation": "On reconstruit « Nous avons suivi les sentiers ». Dans la relative, ce COD devient « que » et précède le participe. Il conserve le masculin pluriel de son antécédent « sentiers », d’où « suivis »."
+  },
+  {
+    "id": 13,
+    "label": "Accord du participe passé",
+    "prompt": "Quelle forme respecte la place du COD dans cette phrase ?",
+    "before": "Les élèves ont ",
+    "focus": "…",
+    "after": " leurs réponses sur une feuille séparée.",
+    "options": [
+      {
+        "id": "a",
+        "label": "notés"
+      },
+      {
+        "id": "b",
+        "label": "notées"
+      },
+      {
+        "id": "c",
+        "label": "notée"
+      },
+      {
+        "id": "d",
+        "label": "noté"
+      }
+    ],
+    "answer": "d",
+    "explanation": "Le verbe est construit avec avoir et son COD, « leurs réponses », est placé après le participe. Celui-ci reste donc invariable : « noté ». Ni le sujet pluriel ni un COD placé après ne déclenchent cet accord."
+  },
+  {
+    "id": 14,
+    "label": "Accord du participe passé",
+    "prompt": "Quelle forme convient, malgré le pronom relatif placé avant le verbe ?",
+    "before": "Les amies auxquelles j’ai ",
+    "focus": "…",
+    "after": " m’ont répondu ce matin.",
+    "options": [
+      {
+        "id": "a",
+        "label": "écrit"
+      },
+      {
+        "id": "b",
+        "label": "écrites"
+      },
+      {
+        "id": "c",
+        "label": "écrits"
+      },
+      {
+        "id": "d",
+        "label": "écrite"
+      }
+    ],
+    "answer": "a",
+    "explanation": "On écrit à quelqu’un : « auxquelles » est donc COI, et non COD. Avec avoir, un COI antéposé ne provoque pas l’accord du participe passé. « Écrit » reste invariable, même si le relatif reprend « les amies »."
+  },
+  {
+    "id": 15,
+    "label": "Accord sujet-verbe",
+    "prompt": "Quelle forme de recevoir au présent convient ?",
+    "before": "Chacun des participants ",
+    "focus": "…",
+    "after": " un exemplaire du règlement.",
+    "options": [
+      {
+        "id": "a",
+        "label": "reçoivent"
+      },
+      {
+        "id": "b",
+        "label": "recevez"
+      },
+      {
+        "id": "c",
+        "label": "reçoit"
+      },
+      {
+        "id": "d",
+        "label": "reçois"
+      }
+    ],
+    "answer": "c",
+    "explanation": "Le sujet grammatical est le pronom distributif « chacun », singulier. Le complément « des participants » ne transforme pas ce sujet en pluriel. On écrit donc « chacun reçoit »."
+  },
+  {
+    "id": 16,
+    "label": "Accord sujet-verbe",
+    "prompt": "Quelle forme de devoir au présent convient ?",
+    "before": "Chaque équipe de jeunes reporters ",
+    "focus": "…",
+    "after": " vérifier ses sources.",
+    "options": [
+      {
+        "id": "a",
+        "label": "doivent"
+      },
+      {
+        "id": "b",
+        "label": "doit"
+      },
+      {
+        "id": "c",
+        "label": "devez"
+      },
+      {
+        "id": "d",
+        "label": "dois"
+      }
+    ],
+    "answer": "b",
+    "explanation": "Le déterminant « chaque » accompagne ici le nom singulier « équipe », noyau du sujet. « De jeunes reporters » est un complément du nom. L’accord se fait au singulier : « chaque équipe doit »."
+  },
+  {
+    "id": 17,
+    "label": "Accord sujet-verbe",
+    "prompt": "Quelle forme de être au présent convient ?",
+    "before": "Aucun des exemplaires de cette édition n’",
+    "focus": "…",
+    "after": " disponible.",
+    "options": [
+      {
+        "id": "a",
+        "label": "sont"
+      },
+      {
+        "id": "b",
+        "label": "êtes"
+      },
+      {
+        "id": "c",
+        "label": "est"
+      },
+      {
+        "id": "d",
+        "label": "sommes"
+      }
+    ],
+    "answer": "c",
+    "explanation": "Le pronom « aucun » est le sujet, au singulier. Les groupes « des exemplaires » et « de cette édition » le précisent sans commander le verbe. La phrase se reformule « aucun n’est disponible »."
+  },
+  {
+    "id": 18,
+    "label": "Accord sujet-verbe",
+    "prompt": "Quelle forme de avoir au présent convient au pronom sujet ?",
+    "before": "Les candidates attendaient le résultat. Toutes ",
+    "focus": "…",
+    "after": " préparé un exposé différent.",
+    "options": [
+      {
+        "id": "a",
+        "label": "ont"
+      },
+      {
+        "id": "b",
+        "label": "a"
+      },
+      {
+        "id": "c",
+        "label": "as"
+      },
+      {
+        "id": "d",
+        "label": "avez"
+      }
+    ],
+    "answer": "a",
+    "explanation": "Le pronom « toutes » reprend l’ensemble des candidates et est au pluriel. Il commande la troisième personne du pluriel d’avoir : « ont ». L’idée d’un exposé différent pour chacune ne rend pas le sujet singulier."
+  },
+  {
+    "id": 19,
+    "label": "Accord sujet-verbe",
+    "prompt": "Quelle forme de être au présent convient ?",
+    "before": "Le classement des photographies de ces deux expéditions ",
+    "focus": "…",
+    "after": " presque terminé.",
+    "options": [
+      {
+        "id": "a",
+        "label": "sont"
+      },
+      {
+        "id": "b",
+        "label": "êtes"
+      },
+      {
+        "id": "c",
+        "label": "sommes"
+      },
+      {
+        "id": "d",
+        "label": "est"
+      }
+    ],
+    "answer": "d",
+    "explanation": "Le noyau du groupe sujet est « classement », singulier. Les compléments « des photographies » et « de ces deux expéditions » ne commandent pas le verbe. Remplacer tout le groupe par « il » permet de vérifier « il est »."
+  },
+  {
+    "id": 20,
+    "label": "Accord de l’adjectif",
+    "prompt": "Quelle forme convient à l’adjectif en apposition au sujet ?",
+    "before": "Les chercheuses, ",
+    "focus": "…",
+    "after": " de leur méthode, reprennent les mesures.",
+    "options": [
+      {
+        "id": "a",
+        "label": "certains"
+      },
+      {
+        "id": "b",
+        "label": "certaines"
+      },
+      {
+        "id": "c",
+        "label": "certaine"
+      },
+      {
+        "id": "d",
+        "label": "certain"
+      }
+    ],
+    "answer": "b",
+    "explanation": "Le groupe adjectival détaché « certaines de leur méthode » se rapporte aux « chercheuses », féminin pluriel. On accorde l’adjectif avec ce sujet. Le complément « de leur méthode » ne modifie pas son genre ni son nombre."
+  }
+]

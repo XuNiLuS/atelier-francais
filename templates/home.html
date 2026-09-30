@@ -23,7 +23,7 @@
   {% endif %}
 
   <section class="quiz-catalog" aria-labelledby="catalog-title">
-    <div class="catalog-heading"><div><div class="eyebrow">À TOI DE JOUER</div><h2 id="catalog-title">{% if current_level %}Tes quiz de {{ current_level.name }}{% else %}Les premiers parcours{% endif %}</h2></div><span>{{ quizzes|length }} quiz disponibles</span></div>
+    <div class="catalog-heading"><div><div class="eyebrow">À TOI DE JOUER</div><h2 id="catalog-title">{% if current_level %}Tes quiz de {{ current_level.name }}{% else %}Les parcours thématiques{% endif %}</h2></div><span>{{ quizzes|length }} quiz disponibles</span></div>
     <div class="quiz-cards">
       {% for quiz in quizzes %}
       <article class="quiz-card">

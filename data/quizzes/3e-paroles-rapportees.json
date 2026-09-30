@@ -1,0 +1,562 @@
+[
+  {
+    "id": 1,
+    "label": "Reconnaître les discours",
+    "prompt": "Quelle forme de discours rapporte les paroles soulignées ?",
+    "before": "Le capitaine annonça : ",
+    "focus": "« Nous repartirons dès l’aube. »",
+    "after": "",
+    "options": [
+      {
+        "id": "a",
+        "label": "Le discours indirect."
+      },
+      {
+        "id": "b",
+        "label": "Le discours direct."
+      },
+      {
+        "id": "c",
+        "label": "Le discours indirect libre."
+      },
+      {
+        "id": "d",
+        "label": "Un récit sans paroles rapportées."
+      }
+    ],
+    "answer": "b",
+    "explanation": "Les deux-points et les guillemets détachent les paroles du récit. Le « nous » et le futur « repartirons » appartiennent à la situation où le capitaine s’adresse à son équipage : c’est du discours direct."
+  },
+  {
+    "id": 2,
+    "label": "Reconnaître les discours",
+    "prompt": "Comment les paroles de Clara sont-elles rapportées ?",
+    "before": "Clara expliqua ",
+    "focus": "qu’elle avait laissé son carnet à la maison",
+    "after": ".",
+    "options": [
+      {
+        "id": "a",
+        "label": "Au discours direct, sans modification des pronoms."
+      },
+      {
+        "id": "b",
+        "label": "Au discours indirect libre, sans verbe introducteur."
+      },
+      {
+        "id": "c",
+        "label": "Sous la forme d’un ordre à l’impératif."
+      },
+      {
+        "id": "d",
+        "label": "Au discours indirect, dans une proposition dépendant de « expliqua »."
+      }
+    ],
+    "answer": "d",
+    "explanation": "Le verbe « expliqua » introduit une subordonnée en « que ». Le récit intègre ainsi les paroles : « je » devient « elle » et l’action antérieure est exprimée au plus-que-parfait. Cette construction caractérise le discours indirect."
+  },
+  {
+    "id": 3,
+    "label": "Reconnaître les discours",
+    "prompt": "Les phrases soulignées traduisent les pensées de Noé. De quelle forme de discours s’agit-il ?",
+    "before": "Noé froissa la convocation. ",
+    "focus": "Pourquoi devait-il encore se justifier ? Demain, il parlerait enfin !",
+    "after": "",
+    "options": [
+      {
+        "id": "a",
+        "label": "Du discours indirect libre."
+      },
+      {
+        "id": "b",
+        "label": "Du discours direct encadré par des guillemets."
+      },
+      {
+        "id": "c",
+        "label": "Du discours indirect introduit par une subordonnée en « que »."
+      },
+      {
+        "id": "d",
+        "label": "D’une description objective sans accès à ses pensées."
+      }
+    ],
+    "answer": "a",
+    "explanation": "La troisième personne « il » et les temps du récit se mêlent aux questions et à l’exclamation de Noé. Il n’y a ni guillemets ni proposition subordonnée dépendant d’un verbe de parole : ses pensées passent au discours indirect libre."
+  },
+  {
+    "id": 4,
+    "label": "Interpréter les effets",
+    "prompt": "Quel effet le discours direct produit-il dans ce passage ?",
+    "before": "La porte s’ouvrit. ",
+    "focus": "« Ne touchez pas à cette valise ! » cria la voyageuse.",
+    "after": "",
+    "options": [
+      {
+        "id": "a",
+        "label": "Il supprime les paroles au profit d’un résumé neutre."
+      },
+      {
+        "id": "b",
+        "label": "Il garantit que la voyageuse dit la vérité sur le contenu de la valise."
+      },
+      {
+        "id": "c",
+        "label": "Il donne à entendre l’avertissement avec sa force expressive."
+      },
+      {
+        "id": "d",
+        "label": "Il transforme l’ordre en une habitude passée."
+      }
+    ],
+    "answer": "c",
+    "explanation": "Les guillemets, l’impératif et l’exclamation font entendre l’avertissement comme s’il était prononcé devant le lecteur. Le discours direct restitue une manière de parler ; il ne garantit pas la vérité de ce qui est dit."
+  },
+  {
+    "id": 5,
+    "label": "Reconnaître les discours",
+    "prompt": "Quel indice grammatical caractérise ici le discours indirect ?",
+    "before": "Le gardien répondit ",
+    "focus": "que la galerie fermait à dix-huit heures",
+    "after": ".",
+    "options": [
+      {
+        "id": "a",
+        "label": "La subordonnée introduite par « que » dépend du verbe « répondit »."
+      },
+      {
+        "id": "b",
+        "label": "Les paroles sont isolées par des guillemets."
+      },
+      {
+        "id": "c",
+        "label": "Le narrateur disparaît entièrement du texte."
+      },
+      {
+        "id": "d",
+        "label": "La phrase est obligatoirement adressée au lecteur."
+      }
+    ],
+    "answer": "a",
+    "explanation": "Les paroles sont intégrées à la syntaxe du récit par « répondit que ». L’imparfait « fermait » prend place dans le cadre passé. Ni des guillemets ni une réplique autonome ne sont employés."
+  },
+  {
+    "id": 6,
+    "label": "Transposer les paroles",
+    "prompt": "Quelle transposition au discours indirect, avec concordance au passé, conserve le sens ?",
+    "before": "La veille, Amir avait déclaré : ",
+    "focus": "« Je suis prêt. »",
+    "after": "",
+    "options": [
+      {
+        "id": "a",
+        "label": "La veille, Amir avait déclaré que je suis prêt."
+      },
+      {
+        "id": "b",
+        "label": "La veille, Amir avait déclaré qu’il serait prêt le mois suivant."
+      },
+      {
+        "id": "c",
+        "label": "La veille, Amir avait déclaré : « Il était prêt. »"
+      },
+      {
+        "id": "d",
+        "label": "La veille, Amir avait déclaré qu’il était prêt."
+      }
+    ],
+    "answer": "d",
+    "explanation": "Le « je » de la réplique désigne Amir et devient « il ». Avec le verbe introducteur au passé, le présent « suis » devient l’imparfait « était ». La subordonnée en « que » intègre la déclaration au récit."
+  },
+  {
+    "id": 7,
+    "label": "Transposer les paroles",
+    "prompt": "Quelle transposition au discours indirect, avec concordance au passé, convient ?",
+    "before": "Éva déclara : ",
+    "focus": "« J’ai retrouvé la clé. »",
+    "after": "",
+    "options": [
+      {
+        "id": "a",
+        "label": "Éva déclara qu’elle retrouverait la clé."
+      },
+      {
+        "id": "b",
+        "label": "Éva déclara si elle retrouvait la clé."
+      },
+      {
+        "id": "c",
+        "label": "Éva déclara qu’elle avait retrouvé la clé."
+      },
+      {
+        "id": "d",
+        "label": "Éva déclara : « Elle a retrouvé la clé. »"
+      }
+    ],
+    "answer": "c",
+    "explanation": "La clé est retrouvée avant la déclaration. Le passé composé « ai retrouvé » devient donc le plus-que-parfait « avait retrouvé » dans cette transposition au passé. Le pronom « elle » reprend Éva."
+  },
+  {
+    "id": 8,
+    "label": "Transposer les paroles",
+    "prompt": "Quelle transposition au discours indirect conserve l’annonce d’un événement postérieur à la déclaration ?",
+    "before": "Le maire déclara : ",
+    "focus": "« La bibliothèque ouvrira bientôt. »",
+    "after": "",
+    "options": [
+      {
+        "id": "a",
+        "label": "Le maire déclara que la bibliothèque avait ouvert la veille."
+      },
+      {
+        "id": "b",
+        "label": "Le maire déclara si la bibliothèque ouvrait bientôt."
+      },
+      {
+        "id": "c",
+        "label": "Le maire déclara : « La bibliothèque ouvrirait bientôt. »"
+      },
+      {
+        "id": "d",
+        "label": "Le maire déclara que la bibliothèque ouvrirait bientôt."
+      }
+    ],
+    "answer": "d",
+    "explanation": "Le verbe introducteur est au passé et l’ouverture doit avoir lieu après la déclaration. Le futur direct « ouvrira » devient le conditionnel « ouvrirait », futur du passé, dans la subordonnée introduite par « que »."
+  },
+  {
+    "id": 9,
+    "label": "Transposer les paroles",
+    "prompt": "Quelle phrase rapporte correctement cet ordre au discours indirect ?",
+    "before": "Le bibliothécaire demande à Lila : ",
+    "focus": "« Ferme la fenêtre. »",
+    "after": "",
+    "options": [
+      {
+        "id": "a",
+        "label": "Le bibliothécaire demande à Lila si fermer la fenêtre."
+      },
+      {
+        "id": "b",
+        "label": "Le bibliothécaire demande à Lila de fermer la fenêtre."
+      },
+      {
+        "id": "c",
+        "label": "Le bibliothécaire demande à Lila que ferme la fenêtre."
+      },
+      {
+        "id": "d",
+        "label": "Le bibliothécaire demande à Lila : « Fermer la fenêtre. »"
+      }
+    ],
+    "answer": "b",
+    "explanation": "Un ordre peut être rapporté par « demander à quelqu’un de + infinitif ». L’impératif « ferme » devient ici « de fermer ». Les guillemets disparaissent et la consigne est intégrée à la phrase."
+  },
+  {
+    "id": 10,
+    "label": "Transposer les paroles",
+    "prompt": "Quelle phrase rapporte correctement la question ?",
+    "before": "Le surveillant demande à Hugo : ",
+    "focus": "« As-tu ton carnet ? »",
+    "after": "",
+    "options": [
+      {
+        "id": "a",
+        "label": "Le surveillant demande à Hugo qu’il a son carnet."
+      },
+      {
+        "id": "b",
+        "label": "Le surveillant demande à Hugo s’a-t-il son carnet."
+      },
+      {
+        "id": "c",
+        "label": "Le surveillant demande à Hugo s’il a son carnet."
+      },
+      {
+        "id": "d",
+        "label": "Le surveillant demande à Hugo est-ce qu’il a son carnet."
+      }
+    ],
+    "answer": "c",
+    "explanation": "Une question totale, à laquelle on pourrait répondre par oui ou non, devient une interrogative indirecte en « si ». Le sujet reprend sa place avant le verbe : « s’il a », sans inversion ni « est-ce que »."
+  },
+  {
+    "id": 11,
+    "label": "Transposer les paroles",
+    "prompt": "Quelle interrogation indirecte respecte la syntaxe de l’écrit ?",
+    "before": "L’enquêtrice demande : ",
+    "focus": "« Pourquoi la lumière clignote-t-elle ? »",
+    "after": "",
+    "options": [
+      {
+        "id": "a",
+        "label": "L’enquêtrice demande pourquoi la lumière clignote-t-elle."
+      },
+      {
+        "id": "b",
+        "label": "L’enquêtrice demande pourquoi la lumière clignote."
+      },
+      {
+        "id": "c",
+        "label": "L’enquêtrice demande que pourquoi la lumière clignote."
+      },
+      {
+        "id": "d",
+        "label": "L’enquêtrice demande pourquoi est-ce que la lumière clignote."
+      }
+    ],
+    "answer": "b",
+    "explanation": "Le mot interrogatif « pourquoi » est conservé, mais l’inversion disparaît. La question est désormais subordonnée à « demande » : « pourquoi la lumière clignote ». Elle n’a plus la syntaxe d’une interrogation directe."
+  },
+  {
+    "id": 12,
+    "label": "Repères d’énonciation",
+    "prompt": "Trois jours plus tard, quel repère rapporte « demain » sans changer la date annoncée ?",
+    "before": "Le lundi, la directrice avait dit : ",
+    "focus": "« La répétition aura lieu demain. »",
+    "after": "",
+    "options": [
+      {
+        "id": "a",
+        "label": "La directrice avait annoncé que la répétition aurait lieu le lendemain."
+      },
+      {
+        "id": "b",
+        "label": "La directrice avait annoncé que la répétition aurait lieu demain."
+      },
+      {
+        "id": "c",
+        "label": "La directrice avait annoncé que la répétition aurait lieu la veille."
+      },
+      {
+        "id": "d",
+        "label": "La directrice avait annoncé que la répétition aurait lieu trois jours auparavant."
+      }
+    ],
+    "answer": "a",
+    "explanation": "Dans la réplique du lundi, « demain » désigne le mardi. Lorsqu’on rapporte ensuite cette annonce depuis un autre jour, « le lendemain » conserve le repère par rapport au lundi ; « demain » changerait la date visée."
+  },
+  {
+    "id": 13,
+    "label": "Repères d’énonciation",
+    "prompt": "Le narrateur rapporte ces paroles depuis une autre ville. Quelle transposition conserve le lieu désigné ?",
+    "before": "Dans son atelier, Iris avait annoncé : ",
+    "focus": "« Je travaillerai ici. »",
+    "after": "",
+    "options": [
+      {
+        "id": "a",
+        "label": "Iris avait annoncé qu’elle travaillerait ici, dans la ville du narrateur."
+      },
+      {
+        "id": "b",
+        "label": "Iris avait annoncé que le narrateur travaillerait dans son propre atelier."
+      },
+      {
+        "id": "c",
+        "label": "Iris avait annoncé qu’elle travaillerait là, dans son atelier."
+      },
+      {
+        "id": "d",
+        "label": "Iris avait annoncé qu’elle avait travaillé ailleurs la veille."
+      }
+    ],
+    "answer": "c",
+    "explanation": "Le « ici » initial renvoie à l’atelier où Iris parle. Comme le récit se fait depuis un autre lieu, « là, dans son atelier » garde la même référence. Les pronoms et les repères de lieu doivent être adaptés à la situation du narrateur."
+  },
+  {
+    "id": 14,
+    "label": "Repères d’énonciation",
+    "prompt": "Quelle transposition conserve les rôles de la personne qui parle et de celle qui écoute ?",
+    "before": "Salomé dit à Yanis : ",
+    "focus": "« Je te confie mon cahier. »",
+    "after": "",
+    "options": [
+      {
+        "id": "a",
+        "label": "Salomé dit à Yanis qu’il lui confie son cahier."
+      },
+      {
+        "id": "b",
+        "label": "Salomé dit à Yanis qu’elle me confie mon cahier."
+      },
+      {
+        "id": "c",
+        "label": "Salomé dit à Yanis que je te confie son cahier."
+      },
+      {
+        "id": "d",
+        "label": "Salomé dit à Yanis qu’elle lui confie son cahier."
+      }
+    ],
+    "answer": "d",
+    "explanation": "Le « je » désigne Salomé, d’où « elle ». « Te » désigne Yanis, d’où « lui ». Le cahier appartient à Salomé : « mon cahier » devient « son cahier ». Il faut suivre les référents, et non remplacer les pronoms au hasard."
+  },
+  {
+    "id": 15,
+    "label": "Interpréter les effets",
+    "prompt": "Les phrases soulignées reprennent les pensées de Sarah. Quel effet produit ce discours indirect libre ?",
+    "before": "Sarah relut le refus, le cœur serré. ",
+    "focus": "On ne lui laisserait donc jamais sa chance ! À quoi bon recommencer ?",
+    "after": "",
+    "options": [
+      {
+        "id": "a",
+        "label": "Il fait entendre la déception du personnage à l’intérieur du récit."
+      },
+      {
+        "id": "b",
+        "label": "Il garantit que le refus se répétera réellement à l’infini."
+      },
+      {
+        "id": "c",
+        "label": "Il transforme ces pensées en un dialogue avec un autre personnage."
+      },
+      {
+        "id": "d",
+        "label": "Il efface toute marque d’émotion du passage."
+      }
+    ],
+    "answer": "a",
+    "explanation": "L’exclamation et la question portent le découragement de Sarah, tandis que « lui » et « laisserait » s’intègrent à la narration. Le lecteur perçoit son jugement sans que le narrateur le présente comme une vérité certaine."
+  },
+  {
+    "id": 16,
+    "label": "Comparer les discours",
+    "prompt": "Comment l’annonce est-elle successivement rapportée dans les deux formulations ?",
+    "before": "",
+    "focus": "« Le pont est fermé », avertit Lou. / Lou avertit les voyageurs que le pont était fermé.",
+    "after": "",
+    "options": [
+      {
+        "id": "a",
+        "label": "D’abord au discours indirect, puis au discours direct."
+      },
+      {
+        "id": "b",
+        "label": "Deux fois au discours indirect libre."
+      },
+      {
+        "id": "c",
+        "label": "Deux fois sous la forme d’un récit sans paroles."
+      },
+      {
+        "id": "d",
+        "label": "D’abord au discours direct, puis au discours indirect."
+      }
+    ],
+    "answer": "d",
+    "explanation": "Dans la première formulation, les guillemets isolent la réplique. Dans la seconde, le verbe « avertit » introduit une subordonnée en « que ». Cette intégration syntaxique distingue le discours indirect du discours direct."
+  },
+  {
+    "id": 17,
+    "label": "Reconnaître les discours",
+    "prompt": "La narratrice précise qu’elle restitue les pensées inquiètes de Maëlle. Quel indice permet d’y reconnaître l’indirect libre ?",
+    "before": "Maëlle hésitait devant la porte. ",
+    "focus": "Elle n’oserait jamais entrer ! Que penseraient les autres de sa visite ?",
+    "after": "",
+    "options": [
+      {
+        "id": "a",
+        "label": "Un verbe de parole introduit une subordonnée en « que »."
+      },
+      {
+        "id": "b",
+        "label": "Des guillemets ouvrent et ferment une réplique à la première personne."
+      },
+      {
+        "id": "c",
+        "label": "L’émotion du personnage se mêle à la troisième personne et aux temps du récit, sans subordination introductrice."
+      },
+      {
+        "id": "d",
+        "label": "La phrase ne contient aucun point de vue de personnage."
+      }
+    ],
+    "answer": "c",
+    "explanation": "Les questions et l’exclamation expriment l’inquiétude de Maëlle. « Elle » et les conditionnels restent liés au cadre narratif. L’absence de guillemets et de verbe introducteur avec subordination caractérise ici l’indirect libre."
+  },
+  {
+    "id": 18,
+    "label": "Interpréter les effets",
+    "prompt": "Dans ce passage, à qui faut-il attribuer le jugement souligné ?",
+    "before": "Adam, qui se méprenait sur ses camarades, se détourna. ",
+    "focus": "Ils se moquaient donc tous de lui ! Personne ne le respectait !",
+    "after": "",
+    "options": [
+      {
+        "id": "a",
+        "label": "Nécessairement au narrateur, comme un fait objectivement établi."
+      },
+      {
+        "id": "b",
+        "label": "À Adam, dont le narrateur restitue la pensée au discours indirect libre."
+      },
+      {
+        "id": "c",
+        "label": "À un camarade qui parle entre guillemets."
+      },
+      {
+        "id": "d",
+        "label": "Au lecteur, auquel un ordre est adressé."
+      }
+    ],
+    "answer": "b",
+    "explanation": "Le contexte précise qu’Adam se trompe sur ses camarades. Les exclamations expriment donc son interprétation blessée. L’indirect libre fait entendre cette pensée sans obliger le narrateur à la prendre à son compte."
+  },
+  {
+    "id": 19,
+    "label": "Reconnaître les discours",
+    "prompt": "Le dernier segment restitue la pensée de l’amie. Quelles formes de discours se succèdent ?",
+    "before": "",
+    "focus": "« Je viendrai », promit Luc. Il ajouta qu’il apporterait les outils. Son amie sourit : enfin, elle pourrait réparer cette étagère !",
+    "after": "",
+    "options": [
+      {
+        "id": "a",
+        "label": "Un discours direct, un discours indirect, puis une pensée au discours indirect libre."
+      },
+      {
+        "id": "b",
+        "label": "Trois discours directs, tous placés entre guillemets."
+      },
+      {
+        "id": "c",
+        "label": "Un discours indirect libre, puis deux discours directs."
+      },
+      {
+        "id": "d",
+        "label": "Trois discours indirects introduits par « que »."
+      }
+    ],
+    "answer": "a",
+    "explanation": "La promesse est citée entre guillemets. L’ajout est ensuite subordonné à « ajouta » par « que ». Enfin, l’exclamation traduit la satisfaction de l’amie à la troisième personne et au conditionnel, sans verbe introducteur : c’est de l’indirect libre."
+  },
+  {
+    "id": 20,
+    "label": "Transposer les paroles",
+    "prompt": "Le pronom « il » désigne Jules. Quelle réécriture au discours direct conserve la chronologie ?",
+    "before": "",
+    "focus": "Jules annonça qu’il partirait le lendemain.",
+    "after": "",
+    "options": [
+      {
+        "id": "a",
+        "label": "Jules annonça : « Je suis parti hier. »"
+      },
+      {
+        "id": "b",
+        "label": "Jules annonça : « Je partirai demain. »"
+      },
+      {
+        "id": "c",
+        "label": "Jules annonça : « Il partait la veille. »"
+      },
+      {
+        "id": "d",
+        "label": "Jules annonça : « Je pars chaque lundi. »"
+      }
+    ],
+    "answer": "b",
+    "explanation": "Le discours direct reprend le point de vue de Jules au moment où il parle. « Il » devient « je », le futur du passé « partirait » devient « partirai », et « le lendemain » devient « demain ». La postériorité du départ est ainsi conservée."
+  }
+]

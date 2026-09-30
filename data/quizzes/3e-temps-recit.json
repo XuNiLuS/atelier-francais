@@ -1,562 +1,562 @@
 [
   {
     "id": 1,
-    "label": "Imparfait",
-    "prompt": "Comment l’action soulignée se situe-t-elle par rapport à l’arrivée du facteur ?",
-    "before": "Nous ",
-    "focus": "guettions",
-    "after": " la route depuis la fenêtre lorsque le facteur apparut enfin.",
+    "label": "Formes du conditionnel",
+    "prompt": "À quel temps de l’indicatif le verbe souligné est-il conjugué ?",
+    "before": "Avec une salle plus grande, nous ",
+    "focus": "réunirions",
+    "after": " toutes les classes pour le débat.",
     "options": [
       {
         "id": "a",
-        "label": "Elle est déjà en cours et forme l’arrière-plan de l’arrivée."
+        "label": "Au conditionnel présent."
       },
       {
         "id": "b",
-        "label": "Elle commence après l’arrivée du facteur."
+        "label": "Au futur simple."
       },
       {
         "id": "c",
-        "label": "Elle est présentée comme entièrement terminée avant son arrivée."
+        "label": "À l’imparfait."
       },
       {
         "id": "d",
-        "label": "Elle correspond à une habitude qui se répète chaque jour."
+        "label": "Au conditionnel passé."
       }
     ],
     "answer": "a",
-    "explanation": "L’imparfait montre l’attente en cours au moment où le facteur apparaît. « Lorsque » met en relation cette activité d’arrière-plan et l’événement au passé simple, sans donner le début ni la fin de l’attente."
+    "explanation": "« Réunirions » associe le radical du futur « réunir- » à la terminaison « -ions ». C’est le conditionnel présent. Le futur serait « réunirons » et l’imparfait « réunissions ». Le conditionnel est ici un temps de l’indicatif."
   },
   {
     "id": 2,
-    "label": "Passé simple",
-    "prompt": "Pourquoi le passé simple convient-il à cette action pourtant répétée ?",
-    "before": "Avant de renoncer ce soir-là, Salomé ",
-    "focus": "frappa",
-    "after": " exactement trois fois à la porte, puis repartit.",
+    "label": "Formes du conditionnel",
+    "prompt": "Quelle description rend compte de la formation du verbe souligné ?",
+    "before": "À ta place, je ",
+    "focus": "garderais",
+    "after": " une copie du document.",
     "options": [
       {
         "id": "a",
-        "label": "Toute action répétée doit obligatoirement être au passé simple."
+        "label": "Le radical « gard- » suivi de la terminaison du futur « -ai »."
       },
       {
         "id": "b",
-        "label": "La répétition est une habitude sans nombre défini."
+        "label": "L’auxiliaire avoir suivi du participe passé « gardé »."
       },
       {
         "id": "c",
-        "label": "Le temps indique que Salomé est encore en train de frapper."
+        "label": "Le radical du présent « gard- » suivi de « -e »."
       },
       {
         "id": "d",
-        "label": "Les trois coups forment un ensemble délimité, présenté dans sa totalité."
+        "label": "Le radical du futur « garder- » suivi de la terminaison d’imparfait « -ais »."
       }
     ],
     "answer": "d",
-    "explanation": "« Exactement trois fois » compte les répétitions et « puis repartit » clôt l’épisode. Le passé simple peut présenter un ensemble limité de répétitions ; il ne sert pas seulement à raconter une action unique."
+    "explanation": "Le conditionnel présent emploie les terminaisons -ais, -ais, -ait, -ions, -iez, -aient sur le radical du futur. « Garderais » est donc une forme simple ; aucun auxiliaire n’entre dans sa construction."
   },
   {
     "id": 3,
-    "label": "Imparfait",
-    "prompt": "Quel rôle joue le verbe souligné dans ce passage ?",
-    "before": "Je revois encore cette salle : une verrière ",
-    "focus": "occupait",
-    "after": " tout le plafond, et les murs étaient tapissés de cartes.",
+    "label": "Formes du conditionnel",
+    "prompt": "Quelle forme de « pouvoir » au conditionnel présent complète la phrase ?",
+    "before": "Avec votre aide, nous ",
+    "focus": "…",
+    "after": " terminer la maquette.",
     "options": [
       {
         "id": "a",
-        "label": "Raconter l’installation de la verrière."
+        "label": "pouvions"
       },
       {
         "id": "b",
-        "label": "Décrire le cadre du souvenir."
+        "label": "pourrions"
       },
       {
         "id": "c",
-        "label": "Présenter une suite d’actions accomplies."
+        "label": "pourrons"
       },
       {
         "id": "d",
-        "label": "Indiquer une visite répétée chaque semaine."
+        "label": "pourriez"
       }
     ],
     "answer": "b",
-    "explanation": "La verrière et les cartes sont les éléments du décor. « Occupait » décrit la place de la verrière ; il ne raconte pas le moment où elle a été installée."
+    "explanation": "Le radical du futur et du conditionnel de « pouvoir » est « pourr- ». Avec le sujet « nous », on ajoute « -ions » : « nous pourrions ». « Pouvions » est à l’imparfait ; « pourrons » au futur."
   },
   {
     "id": 4,
-    "label": "Passé simple",
-    "prompt": "Quelle analyse du passé simple est correcte dans cette phrase ?",
-    "before": "De 1910 à 1930, cette école ",
-    "focus": "accueillit",
-    "after": " les enfants du village ; elle ferma ensuite ses portes.",
+    "label": "Relations temporelles",
+    "prompt": "Quelle valeur le conditionnel exprime-t-il ici ?",
+    "before": "Au début du voyage, la guide annonça que le groupe ",
+    "focus": "atteindrait",
+    "after": " le refuge avant la nuit.",
     "options": [
       {
         "id": "a",
-        "label": "Il signifie que l’accueil ne dura qu’un instant."
+        "label": "Une habitude qui précède l’annonce."
       },
       {
         "id": "b",
-        "label": "Il décrit une situation dont la fin reste hors du récit."
+        "label": "Un ordre directement adressé au groupe."
       },
       {
         "id": "c",
-        "label": "Il présente une situation longue comme un ensemble borné dans le temps."
+        "label": "Un événement futur par rapport à l’annonce située dans le passé."
       },
       {
         "id": "d",
-        "label": "Il situe l’accueil après la fermeture de l’école."
+        "label": "Une information présentée explicitement comme une rumeur."
       }
     ],
     "answer": "c",
-    "explanation": "Les dates et la fermeture fixent les limites de cette période de vingt ans. Le passé simple présente toute la période d’un seul point de vue : une action ou une situation au passé simple peut être longue."
+    "explanation": "L’annonce est passée (« annonça »), tandis que l’arrivée au refuge lui est postérieure. « Atteindrait » exprime ce futur vu depuis le passé. Le conditionnel n’exprime pas nécessairement le doute."
   },
   {
     "id": 5,
-    "label": "Imparfait",
-    "prompt": "Quel indice permet d’interpréter l’imparfait comme une habitude ?",
-    "before": "À cette époque, chaque fois que la sirène sonnait, les ouvriers ",
-    "focus": "quittaient",
-    "after": " l’atelier en silence.",
-    "options": [
-      {
-        "id": "a",
-        "label": "« En silence » prouve que l’action est instantanée."
-      },
-      {
-        "id": "b",
-        "label": "« Chaque fois que » signale la répétition régulière de la même scène."
-      },
-      {
-        "id": "c",
-        "label": "« L’atelier » indique une durée exactement mesurée."
-      },
-      {
-        "id": "d",
-        "label": "La sirène annonce nécessairement une seule sortie exceptionnelle."
-      }
-    ],
-    "answer": "b",
-    "explanation": "« Chaque fois que » associe chaque sonnerie à une nouvelle sortie. L’imparfait présente une conduite répétée à cette époque, sans raconter séparément ni compter toutes les sorties."
-  },
-  {
-    "id": 6,
-    "label": "Passé simple",
-    "prompt": "Quel rôle joue l’action soulignée dans l’organisation du récit ?",
-    "before": "Le témoin relut sa déclaration, ",
-    "focus": "signa",
-    "after": " au bas de la page, puis remit le document à la juge.",
-    "options": [
-      {
-        "id": "a",
-        "label": "Elle constitue une étape dans une succession d’actions."
-      },
-      {
-        "id": "b",
-        "label": "Elle décrit l’aspect physique du témoin."
-      },
-      {
-        "id": "c",
-        "label": "Elle exprime une habitude du témoin."
-      },
-      {
-        "id": "d",
-        "label": "Elle se déroule nécessairement en même temps que la remise du document."
-      }
-    ],
-    "answer": "a",
-    "explanation": "La relecture, la signature puis la remise du document se succèdent. Les trois verbes au passé simple organisent la progression chronologique de cet épisode."
-  },
-  {
-    "id": 7,
-    "label": "Imparfait",
-    "prompt": "Quelle relation temporelle la phrase établit-elle entre les deux activités ?",
-    "before": "Pendant que ma sœur réparait la lampe, je ",
-    "focus": "recopiais",
-    "after": " le plan sur une feuille ; nous travaillions côte à côte.",
-    "options": [
-      {
-        "id": "a",
-        "label": "La copie commence obligatoirement après la réparation."
-      },
-      {
-        "id": "b",
-        "label": "La réparation commence obligatoirement après la copie."
-      },
-      {
-        "id": "c",
-        "label": "La copie est présentée comme terminée avant la réparation."
-      },
-      {
-        "id": "d",
-        "label": "Les deux activités se déroulent en même temps."
-      }
-    ],
-    "answer": "d",
-    "explanation": "« Pendant que » met les deux activités en parallèle. Les imparfaits les montrent en cours au même moment, sans les présenter comme deux étapes successives."
-  },
-  {
-    "id": 8,
-    "label": "Passé simple",
-    "prompt": "Quel effet produit le verbe au passé simple dans cette scène ?",
-    "before": "La foule attendait calmement sur le quai ; soudain, une voix ",
-    "focus": "cria",
-    "after": " le nom du disparu.",
-    "options": [
-      {
-        "id": "a",
-        "label": "Il prolonge la description immobile du quai."
-      },
-      {
-        "id": "b",
-        "label": "Il indique que le même cri se répétait tous les jours."
-      },
-      {
-        "id": "c",
-        "label": "Il fait surgir un événement de premier plan sur un arrière-plan d’attente."
-      },
-      {
-        "id": "d",
-        "label": "Il exprime une action encore inachevée au moment où commence l’attente."
-      }
-    ],
-    "answer": "c",
-    "explanation": "L’attente à l’imparfait installe la situation. « Soudain » et le passé simple introduisent le cri comme un nouvel événement qui fait avancer la scène."
-  },
-  {
-    "id": 9,
-    "label": "Imparfait",
-    "prompt": "Quelle valeur de l’imparfait domine dans ce portrait ?",
-    "before": "Sur la photographie, mon arrière-grand-mère ",
-    "focus": "avait",
-    "after": " un regard déterminé et un sourire à peine esquissé.",
-    "options": [
-      {
-        "id": "a",
-        "label": "La description d’un personnage."
-      },
-      {
-        "id": "b",
-        "label": "Une succession de décisions."
-      },
-      {
-        "id": "c",
-        "label": "Un événement soudain qui interrompt le récit."
-      },
-      {
-        "id": "d",
-        "label": "Une habitude indiquée par un repère de fréquence."
-      }
-    ],
-    "answer": "a",
-    "explanation": "Le regard et le sourire caractérisent le personnage sur une image fixe. « Avait » participe au portrait ; aucun indice ne présente ici une répétition ou un événement nouveau."
-  },
-  {
-    "id": 10,
-    "label": "Passé simple",
-    "prompt": "Que permet d’affirmer le choix du passé simple ?",
-    "before": "De l’aube jusqu’à la fermeture du musée, Inès ",
-    "focus": "attendit",
-    "after": " le retour du conservateur, puis elle repartit.",
-    "options": [
-      {
-        "id": "a",
-        "label": "L’attente a été très brève, puisque le verbe est au passé simple."
-      },
-      {
-        "id": "b",
-        "label": "L’attente se prolonge encore après le départ d’Inès."
-      },
-      {
-        "id": "c",
-        "label": "L’attente est envisagée dans sa totalité, même si elle a duré plusieurs heures."
-      },
-      {
-        "id": "d",
-        "label": "Inès répétait nécessairement cette attente tous les matins."
-      }
-    ],
-    "answer": "c",
-    "explanation": "« De l’aube jusqu’à la fermeture » fixe une durée et le départ en marque la fin. Le passé simple embrasse l’attente entière ; il n’impose pas une durée courte."
-  },
-  {
-    "id": 11,
-    "label": "Imparfait",
-    "prompt": "Que sait-on de la lecture au moment où l’électricité est coupée ?",
-    "before": "Quand l’électricité fut coupée, Malik ",
-    "focus": "lisait",
-    "after": " encore la dernière page du carnet.",
-    "options": [
-      {
-        "id": "a",
-        "label": "Elle est forcément achevée avant la coupure."
-      },
-      {
-        "id": "b",
-        "label": "Elle est en cours ; la phrase ne dit pas si Malik la terminera ensuite."
-      },
-      {
-        "id": "c",
-        "label": "Elle commence seulement après la coupure."
-      },
-      {
-        "id": "d",
-        "label": "Elle est forcément abandonnée pour toujours."
-      }
-    ],
-    "answer": "b",
-    "explanation": "« Lisait encore » montre une activité en cours au moment de la coupure. L’imparfait ne raconte pas son terme : on ne peut pas déduire de cette seule phrase si Malik achèvera ou abandonnera la lecture."
-  },
-  {
-    "id": 12,
-    "label": "Passé simple",
-    "prompt": "Quelle différence le passé simple introduit-il par rapport à « Elle lisait le dossier » ?",
-    "before": "Avant de prendre une décision, elle ",
-    "focus": "lut",
-    "after": " le dossier de la première à la dernière page.",
-    "options": [
-      {
-        "id": "a",
-        "label": "La lecture est obligatoirement plus rapide."
-      },
-      {
-        "id": "b",
-        "label": "La lecture devient une activité quotidienne."
-      },
-      {
-        "id": "c",
-        "label": "La fin de la lecture reste extérieure à ce que raconte la phrase."
-      },
-      {
-        "id": "d",
-        "label": "La lecture est présentée comme un tout, du début à la fin."
-      }
-    ],
-    "answer": "d",
-    "explanation": "« Lut » présente la lecture dans sa totalité, ce que confirme « de la première à la dernière page ». « Lisait » montrerait l’activité dans son déroulement, sans en présenter à lui seul l’achèvement. On oppose ainsi une valeur bornée au passé simple et une valeur non bornée à l’imparfait."
-  },
-  {
-    "id": 13,
-    "label": "Comparer les temps",
-    "prompt": "Si l’on remplace « traversait » par « traversa », quel changement de point de vue obtient-on ?",
-    "before": "Depuis la rive, on apercevait le voyageur : il ",
-    "focus": "traversait",
-    "after": " le fleuve sur une petite barque.",
-    "options": [
-      {
-        "id": "a",
-        "label": "La traversée devient nécessairement plus courte dans les faits."
-      },
-      {
-        "id": "b",
-        "label": "La traversée devient une habitude de tous les jours."
-      },
-      {
-        "id": "c",
-        "label": "La traversée est déplacée dans le futur."
-      },
-      {
-        "id": "d",
-        "label": "La traversée, vue en cours à l’imparfait, est alors envisagée dans sa totalité."
-      }
-    ],
-    "answer": "d",
-    "explanation": "« Traversait » montre le voyageur pendant la traversée. « Traversa » présente celle-ci comme un événement borné. Le changement de temps modifie la manière de raconter, sans imposer une vitesse différente."
-  },
-  {
-    "id": 14,
-    "label": "Passé simple",
-    "prompt": "Quelle interprétation tient compte à la fois du temps et du contexte ?",
-    "before": "Durant les cinq soirées du festival, le pianiste ",
-    "focus": "reprit",
-    "after": " le même morceau en rappel ; le festival se termina le dimanche.",
-    "options": [
-      {
-        "id": "a",
-        "label": "Le temps interdit toute idée de répétition."
-      },
-      {
-        "id": "b",
-        "label": "Le pianiste est décrit en train de jouer à un instant précis."
-      },
-      {
-        "id": "c",
-        "label": "Les reprises constituent une série limitée aux cinq soirées, racontée globalement."
-      },
-      {
-        "id": "d",
-        "label": "Les reprises forment une habitude dont la période n’est pas délimitée."
-      }
-    ],
-    "answer": "c",
-    "explanation": "La répétition est réelle, mais les cinq soirées en forment un ensemble limité. Le passé simple peut résumer cette série entière ; la présence d’une répétition ne commande donc pas automatiquement l’imparfait."
-  },
-  {
-    "id": 15,
-    "label": "Imparfait",
-    "prompt": "Comment le récit présente-t-il ces visites ?",
-    "before": "Quand j’étais enfant, ma tante ",
-    "focus": "venait",
-    "after": " souvent nous voir après le marché, avec un panier de fruits.",
-    "options": [
-      {
-        "id": "a",
-        "label": "Comme une habitude passée, sans raconter une visite particulière."
-      },
-      {
-        "id": "b",
-        "label": "Comme une visite unique dont on suit toutes les étapes."
-      },
-      {
-        "id": "c",
-        "label": "Comme une arrivée soudaine qui interrompt le marché."
-      },
-      {
-        "id": "d",
-        "label": "Comme une série exactement limitée à trois visites."
-      }
-    ],
-    "answer": "a",
-    "explanation": "« Quand j’étais enfant » installe une période du souvenir et « souvent » indique une fréquence. L’imparfait évoque des visites habituelles sans les individualiser ni les compter."
-  },
-  {
-    "id": 16,
-    "label": "Deux plans du récit",
-    "prompt": "Quel élément est présenté au premier plan ?",
-    "before": "La pluie tombait depuis une heure lorsque le messager ",
-    "focus": "entra",
-    "after": " dans la cour.",
-    "options": [
-      {
-        "id": "a",
-        "label": "La pluie, parce qu’elle dure plus longtemps."
-      },
-      {
-        "id": "b",
-        "label": "L’entrée du messager, racontée au passé simple."
-      },
-      {
-        "id": "c",
-        "label": "La pluie, parce qu’elle est mentionnée en premier dans la phrase."
-      },
-      {
-        "id": "d",
-        "label": "Les deux faits sont présentés comme des habitudes répétées."
-      }
-    ],
-    "answer": "b",
-    "explanation": "Le passé simple fait de l’entrée le nouvel événement du récit. La pluie à l’imparfait constitue le cadre en cours. « Premier plan » désigne un rôle narratif, pas la première place dans la phrase ni la plus longue durée."
-  },
-  {
-    "id": 17,
-    "label": "Imparfait",
-    "prompt": "Pourquoi l’imparfait est-il employé dans la partie soulignée ?",
-    "before": "Le visiteur s’arrêta devant la façade. Deux colonnes fissurées ",
-    "focus": "encadraient",
-    "after": " la porte, sous un balcon rouillé.",
-    "options": [
-      {
-        "id": "a",
-        "label": "Il raconte le moment où les colonnes sont dressées."
-      },
-      {
-        "id": "b",
-        "label": "Il annonce la disparition immédiate de la façade."
-      },
-      {
-        "id": "c",
-        "label": "Il compte les visites successives du personnage."
-      },
-      {
-        "id": "d",
-        "label": "Le récit suspend la progression des événements pour décrire le bâtiment."
-      }
-    ],
-    "answer": "d",
-    "explanation": "Après l’arrêt du visiteur au passé simple, la phrase décrit la disposition des colonnes. L’imparfait construit le décor observé, sans raconter un déplacement des colonnes."
-  },
-  {
-    "id": 18,
-    "label": "Passé simple",
-    "prompt": "Quelle lecture respecte l’ordre indiqué dans la phrase ?",
-    "before": "D’abord, Nora vérifia la liste ; ensuite, elle ",
-    "focus": "répartit",
-    "after": " les rôles ; enfin, chacun rejoignit son poste.",
-    "options": [
-      {
-        "id": "a",
-        "label": "Les trois actions se déroulent obligatoirement en même temps."
-      },
-      {
-        "id": "b",
-        "label": "La répartition des rôles est une étape située entre la vérification et le départ de chacun."
-      },
-      {
-        "id": "c",
-        "label": "La répartition est une activité de fond encore en cours après le départ de tous."
-      },
-      {
-        "id": "d",
-        "label": "Le passage décrit une organisation qui se reproduit chaque matin."
-      }
-    ],
-    "answer": "b",
-    "explanation": "« D’abord », « ensuite » et « enfin » ordonnent trois événements au passé simple. L’action soulignée est la deuxième étape de cette succession, et non une habitude."
-  },
-  {
-    "id": 19,
-    "label": "Imparfait",
-    "prompt": "Que montre ici l’imparfait malgré la durée mentionnée ?",
-    "before": "L’équipe ",
-    "focus": "cherchait",
-    "after": " une issue depuis deux heures quand le guide découvrit enfin une fenêtre ouverte.",
-    "options": [
-      {
-        "id": "a",
-        "label": "La recherche avait forcément pris fin avant la découverte."
-      },
-      {
-        "id": "b",
-        "label": "La recherche ne dure qu’un instant."
-      },
-      {
-        "id": "c",
-        "label": "La recherche est encore en cours au moment de la découverte."
-      },
-      {
-        "id": "d",
-        "label": "La durée « deux heures » rend obligatoire le passé simple."
-      }
-    ],
-    "answer": "c",
-    "explanation": "« Depuis deux heures » mesure une durée déjà écoulée, mais « cherchait » montre la recherche en cours quand survient la découverte. Un repère de durée n’impose pas à lui seul le passé simple."
-  },
-  {
-    "id": 20,
-    "label": "Comparer les temps",
-    "prompt": "Quelle différence de point de vue explique le mieux ces deux formulations ?",
+    "label": "Relations temporelles",
+    "prompt": "En commençant par « Hier, Ana a promis », quelle transposition conserve le futur annoncé ?",
     "before": "",
-    "focus": "Elle habitait ce village. / Elle habita ce village pendant trente ans, puis le quitta.",
+    "focus": "Ana promet : « Je reviendrai lundi. »",
     "after": "",
     "options": [
       {
         "id": "a",
-        "label": "L’imparfait montre la situation sans en présenter les limites ; le passé simple la considère comme une période entière."
+        "label": "Hier, Ana a promis qu’elle revenait chaque lundi."
       },
       {
         "id": "b",
-        "label": "L’imparfait indique toujours une durée plus longue que le passé simple."
+        "label": "Hier, Ana a promis qu’elle reviendrait lundi."
       },
       {
         "id": "c",
-        "label": "Le passé simple impose que les trente années paraissent instantanées au personnage."
+        "label": "Hier, Ana a promis qu’elle était revenue lundi."
       },
       {
         "id": "d",
-        "label": "Les deux temps signifient nécessairement que le personnage habite encore le village."
+        "label": "Hier, Ana a promis qu’elle serait revenue le lundi précédent."
+      }
+    ],
+    "answer": "b",
+    "explanation": "L’annonce devient passée et « je » désigne Ana, reprise par « elle ». Le futur « reviendrai » devient « reviendrait », futur du passé. Les autres propositions ajoutent une habitude ou présentent un retour antérieur."
+  },
+  {
+    "id": 6,
+    "label": "Construire une hypothèse",
+    "prompt": "Dans cette phrase, de quoi dépend la réalisation de l’action au conditionnel ?",
+    "before": "Si les transports étaient gratuits, davantage d’habitants ",
+    "focus": "laisseraient",
+    "after": " leur voiture au garage.",
+    "options": [
+      {
+        "id": "a",
+        "label": "De la réalisation de la condition exprimée par « si les transports étaient gratuits »."
+      },
+      {
+        "id": "b",
+        "label": "D’un fait que le narrateur déclare déjà réalisé."
+      },
+      {
+        "id": "c",
+        "label": "D’un ordre exprimé à l’impératif."
+      },
+      {
+        "id": "d",
+        "label": "D’une répétition fixée par « chaque jour »."
       }
     ],
     "answer": "a",
-    "explanation": "Dans la première formulation, les limites du séjour restent hors du point de vue adopté. Dans la seconde, « pendant trente ans » et le départ présentent le séjour comme un ensemble terminé. La distinction porte sur la manière d’envisager la période, et non sur sa longueur réelle. On parle respectivement de valeur non bornée et de valeur bornée."
+    "explanation": "La proposition en « si » pose une situation envisagée, non affirmée comme réelle. Le conditionnel présente la conséquence de cette hypothèse : davantage d’habitants laisseraient leur voiture si cette condition était remplie."
+  },
+  {
+    "id": 7,
+    "label": "Construire une hypothèse",
+    "prompt": "Quel couple de formes convient à cette hypothèse portant sur le présent ?",
+    "before": "",
+    "focus": "Si j’… une boussole, je … le nord plus facilement.",
+    "after": "",
+    "options": [
+      {
+        "id": "a",
+        "label": "aurais / trouverais"
+      },
+      {
+        "id": "b",
+        "label": "aurais / trouvais"
+      },
+      {
+        "id": "c",
+        "label": "avais / trouverai"
+      },
+      {
+        "id": "d",
+        "label": "avais / trouverais"
+      }
+    ],
+    "answer": "d",
+    "explanation": "Pour cette construction hypothétique, on emploie « si + imparfait », puis le conditionnel présent : « Si j’avais une boussole, je trouverais… ». On ne met pas le conditionnel après le « si » qui introduit cette condition."
+  },
+  {
+    "id": 8,
+    "label": "Formes du conditionnel",
+    "prompt": "Comment la forme soulignée est-elle construite ?",
+    "before": "Avec une consigne plus claire, vous ",
+    "focus": "auriez compris",
+    "after": " le problème dès la première lecture.",
+    "options": [
+      {
+        "id": "a",
+        "label": "Avec avoir au futur et un infinitif."
+      },
+      {
+        "id": "b",
+        "label": "Avec avoir à l’imparfait et le participe présent."
+      },
+      {
+        "id": "c",
+        "label": "Avec avoir au conditionnel présent et le participe passé de comprendre."
+      },
+      {
+        "id": "d",
+        "label": "Avec être au conditionnel présent et le participe passé de comprendre."
+      }
+    ],
+    "answer": "c",
+    "explanation": "« Auriez » est la forme d’avoir au conditionnel présent, et « compris » le participe passé de comprendre. Leur association forme le conditionnel passé, un temps composé de l’indicatif."
+  },
+  {
+    "id": 9,
+    "label": "Construire une hypothèse",
+    "prompt": "Quelle interprétation convient au contexte ?",
+    "before": "Le train est déjà parti : si nous avions quitté la maison plus tôt, nous ",
+    "focus": "serions arrivés",
+    "after": " à temps.",
+    "options": [
+      {
+        "id": "a",
+        "label": "L’arrivée à temps était possible sous une condition passée qui ne s’est pas réalisée."
+      },
+      {
+        "id": "b",
+        "label": "L’arrivée à temps est annoncée avec certitude pour demain."
+      },
+      {
+        "id": "c",
+        "label": "L’arrivée à temps se répétait tous les matins."
+      },
+      {
+        "id": "d",
+        "label": "Le narrateur affirme que le train n’est pas encore parti."
+      }
+    ],
+    "answer": "a",
+    "explanation": "« Si nous avions quitté… » envisage autrement un passé désormais terminé. Le conditionnel passé exprime la conséquence qui aurait résulté de ce départ plus tôt. Le contexte indique que le train a été manqué."
+  },
+  {
+    "id": 10,
+    "label": "Construire une hypothèse",
+    "prompt": "Quelle forme convient à la conséquence de cette hypothèse passée non réalisée ?",
+    "before": "Si elle avait vu le panneau hier, elle ",
+    "focus": "…",
+    "after": " le détour et serait arrivée à l’heure.",
+    "options": [
+      {
+        "id": "a",
+        "label": "avait évité"
+      },
+      {
+        "id": "b",
+        "label": "évitera"
+      },
+      {
+        "id": "c",
+        "label": "aurait évité"
+      },
+      {
+        "id": "d",
+        "label": "évite"
+      }
+    ],
+    "answer": "c",
+    "explanation": "Après « si + plus-que-parfait », le conditionnel passé permet d’envisager une conséquence passée non réalisée : « aurait évité ». La suite « serait arrivée » emploie déjà ce même temps."
+  },
+  {
+    "id": 11,
+    "label": "Valeurs du conditionnel",
+    "prompt": "Pourquoi emploie-t-on le conditionnel dans cette demande ?",
+    "before": "À l’accueil du théâtre, un visiteur demande : « ",
+    "focus": "Pourriez-vous",
+    "after": " m’indiquer l’entrée de la salle ? »",
+    "options": [
+      {
+        "id": "a",
+        "label": "Pour affirmer que l’entrée a disparu."
+      },
+      {
+        "id": "b",
+        "label": "Pour formuler la demande de manière polie et moins directe."
+      },
+      {
+        "id": "c",
+        "label": "Pour raconter une demande faite la veille."
+      },
+      {
+        "id": "d",
+        "label": "Pour présenter une action forcément impossible."
+      }
+    ],
+    "answer": "b",
+    "explanation": "« Pourriez-vous » atténue la demande par rapport à « Indiquez-moi l’entrée ». Le conditionnel a ici une valeur modale de politesse ; il ne signifie pas que l’interlocuteur est incapable de répondre."
+  },
+  {
+    "id": 12,
+    "label": "Valeurs du conditionnel",
+    "prompt": "Quelle valeur prend le conditionnel dans cette réplique ?",
+    "before": "Ton brouillon est complet ; tu ",
+    "focus": "devrais",
+    "after": " maintenant relire les accords.",
+    "options": [
+      {
+        "id": "a",
+        "label": "Un fait accompli avant la rédaction du brouillon."
+      },
+      {
+        "id": "b",
+        "label": "Le futur d’un récit introduit par un verbe au passé."
+      },
+      {
+        "id": "c",
+        "label": "Une information rapportée sans être confirmée."
+      },
+      {
+        "id": "d",
+        "label": "Un conseil adressé à l’interlocuteur."
+      }
+    ],
+    "answer": "d",
+    "explanation": "« Tu devrais » présente la relecture comme souhaitable. Le conditionnel adoucit le conseil : l’énoncé guide l’interlocuteur sans employer un ordre direct à l’impératif."
+  },
+  {
+    "id": 13,
+    "label": "Valeurs du conditionnel",
+    "prompt": "Quel effet produit le conditionnel passé dans cette brève journalistique ?",
+    "before": "D’après un témoin, la panne ",
+    "focus": "aurait commencé",
+    "after": " vers six heures ; les techniciens n’ont pas encore confirmé cette heure.",
+    "options": [
+      {
+        "id": "a",
+        "label": "Il certifie l’heure exacte de la panne."
+      },
+      {
+        "id": "b",
+        "label": "Il exprime une demande polie adressée au témoin."
+      },
+      {
+        "id": "c",
+        "label": "Il indique que la panne est seulement envisagée pour demain."
+      },
+      {
+        "id": "d",
+        "label": "Il présente une information dont la confirmation reste attendue."
+      }
+    ],
+    "answer": "d",
+    "explanation": "La source est indiquée par « d’après un témoin » et l’absence de confirmation est explicite. « Aurait commencé » marque la distance du rédacteur envers l’information : il ne la présente pas comme vérifiée."
+  },
+  {
+    "id": 14,
+    "label": "Relations temporelles",
+    "prompt": "Le conditionnel souligné suffit-il à prouver que le narrateur doute de l’arrivée ?",
+    "before": "Le directeur avait annoncé que la nouvelle enseignante ",
+    "focus": "arriverait",
+    "after": " le lundi suivant. Elle arriva bien ce jour-là.",
+    "options": [
+      {
+        "id": "a",
+        "label": "Oui : un conditionnel exprime toujours une incertitude."
+      },
+      {
+        "id": "b",
+        "label": "Oui : il signale nécessairement que l’annonce était mensongère."
+      },
+      {
+        "id": "c",
+        "label": "Non : il exprime ici le futur du passé, et la phrase suivante confirme l’arrivée."
+      },
+      {
+        "id": "d",
+        "label": "Non : « arriverait » est en réalité un imparfait."
+      }
+    ],
+    "answer": "c",
+    "explanation": "L’arrivée est postérieure à l’annonce passée. C’est un emploi temporel du conditionnel, distinct d’un emploi de doute ou d’information non confirmée. La deuxième phrase empêche de conclure à une arrivée incertaine ou manquée."
+  },
+  {
+    "id": 15,
+    "label": "Valeurs du conditionnel",
+    "prompt": "Quelle valeur du conditionnel passé domine dans cette phrase ?",
+    "before": "La rencontre est terminée et je n’ai pas osé intervenir : j’",
+    "focus": "aurais aimé",
+    "after": " poser une question à l’autrice.",
+    "options": [
+      {
+        "id": "a",
+        "label": "Le regret d’un souhait qui n’a pas été réalisé."
+      },
+      {
+        "id": "b",
+        "label": "La certitude de poser une question demain."
+      },
+      {
+        "id": "c",
+        "label": "Une action accomplie et attestée pendant la rencontre."
+      },
+      {
+        "id": "d",
+        "label": "Une habitude qui se répète à chaque rencontre."
+      }
+    ],
+    "answer": "a",
+    "explanation": "Le contexte indique que l’occasion est passée et que le locuteur n’est pas intervenu. Le conditionnel passé évoque ce qu’il aurait souhaité faire et exprime ainsi son regret."
+  },
+  {
+    "id": 16,
+    "label": "Formes du conditionnel",
+    "prompt": "Quelle forme au conditionnel présent exprime la conséquence de cette hypothèse ?",
+    "before": "Si je connaissais son adresse, je lui ",
+    "focus": "…",
+    "after": " une invitation.",
+    "options": [
+      {
+        "id": "a",
+        "label": "enverrai"
+      },
+      {
+        "id": "b",
+        "label": "enverrais"
+      },
+      {
+        "id": "c",
+        "label": "enverras"
+      },
+      {
+        "id": "d",
+        "label": "envoyais"
+      }
+    ],
+    "answer": "b",
+    "explanation": "« Si je connaissais » pose une hypothèse à l’imparfait ; sa conséquence se met ici au conditionnel présent : « j’enverrais ». À la première personne, le conditionnel se termine par « -ais », le futur par « -ai »."
+  },
+  {
+    "id": 17,
+    "label": "Relations temporelles",
+    "prompt": "Pourquoi le narrateur emploie-t-il ici le conditionnel passé ?",
+    "before": "Le lundi, Zoé affirma qu’elle ",
+    "focus": "aurait terminé",
+    "after": " son affiche avant la réunion prévue le mercredi.",
+    "options": [
+      {
+        "id": "a",
+        "label": "Il place nécessairement la fin de l’affiche avant le lundi."
+      },
+      {
+        "id": "b",
+        "label": "Il prouve que Zoé n’a finalement jamais terminé son affiche."
+      },
+      {
+        "id": "c",
+        "label": "Il présente une règle valable à toutes les époques."
+      },
+      {
+        "id": "d",
+        "label": "Il présente l’affiche comme terminée avant un repère à venir, vu depuis une annonce passée."
+      }
+    ],
+    "answer": "d",
+    "explanation": "Le mercredi est futur par rapport à l’annonce du lundi. La forme composée « aurait terminé » ajoute que la fin du travail doit précéder ce repère futur du passé. La phrase ne dit pas si la promesse sera tenue."
+  },
+  {
+    "id": 18,
+    "label": "Construire une hypothèse",
+    "prompt": "Quelle phrase conserve correctement une condition ouverte portant sur demain ?",
+    "before": "",
+    "focus": "Si la météo le permet, …",
+    "after": "",
+    "options": [
+      {
+        "id": "a",
+        "label": "nous serions partis hier."
+      },
+      {
+        "id": "b",
+        "label": "nous partirons demain."
+      },
+      {
+        "id": "c",
+        "label": "nous étions partis la veille."
+      },
+      {
+        "id": "d",
+        "label": "nous partions autrefois."
+      }
+    ],
+    "answer": "b",
+    "explanation": "Le présent après « si » envisage ici une condition possible pour demain. La conséquence peut donc être au futur simple : « nous partirons ». Le conditionnel n’est pas obligatoire dans toute phrase contenant « si »."
+  },
+  {
+    "id": 19,
+    "label": "Formes du conditionnel",
+    "prompt": "Quelle analyse complète de la forme soulignée est correcte ?",
+    "before": "Sans cette fermeture imprévue, Léa et moi ",
+    "focus": "aurions visité",
+    "after": " l’exposition hier.",
+    "options": [
+      {
+        "id": "a",
+        "label": "Futur antérieur, première personne du pluriel, construit avec avoir."
+      },
+      {
+        "id": "b",
+        "label": "Plus-que-parfait, troisième personne du pluriel, construit avec avoir."
+      },
+      {
+        "id": "c",
+        "label": "Conditionnel passé, première personne du pluriel, construit avec avoir."
+      },
+      {
+        "id": "d",
+        "label": "Conditionnel présent, première personne du pluriel, sans auxiliaire."
+      }
+    ],
+    "answer": "c",
+    "explanation": "« Léa et moi » correspond à « nous ». L’auxiliaire « aurions » est au conditionnel présent et précède « visité », participe passé : l’ensemble est au conditionnel passé. Le futur antérieur serait « aurons visité »."
+  },
+  {
+    "id": 20,
+    "label": "Valeurs du conditionnel",
+    "prompt": "Quelle différence distingue ces deux conditionnels ?",
+    "before": "",
+    "focus": "Elle savait que Paul viendrait. / Avec plus de temps, Paul viendrait nous aider.",
+    "after": "",
+    "options": [
+      {
+        "id": "a",
+        "label": "Le premier situe un futur dans le passé ; le second présente une action soumise à une condition."
+      },
+      {
+        "id": "b",
+        "label": "Les deux expriment obligatoirement une demande polie."
+      },
+      {
+        "id": "c",
+        "label": "Le premier est un imparfait ; le second un futur simple."
+      },
+      {
+        "id": "d",
+        "label": "Les deux certifient que Paul est déjà venu."
+      }
+    ],
+    "answer": "a",
+    "explanation": "Dans la première phrase, « savait » fournit un repère passé auquel la venue est postérieure. Dans la seconde, « avec plus de temps » pose une condition. Une même forme verbale peut donc avoir une valeur temporelle ou modale selon son contexte."
   }
 ]
