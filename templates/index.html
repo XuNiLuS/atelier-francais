@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block title %}{{ quiz.title }} · {{ current_level.name }} · L’atelier de français{% endblock %}
+{% block title %}{{ quiz.title }} · {{ current_level.name }} · L’atelier de Madame Daadoun{% endblock %}
 {% block description %}{{ quiz.description }} {{ questions|length }} questions avec une correction expliquée, niveau {{ current_level.name }}.{% endblock %}
 {% block scripts %}<script src="{{ url_for('static', path='app.js').path }}" defer></script>{% endblock %}
 {% block skip_target %}#question-title{% endblock %}

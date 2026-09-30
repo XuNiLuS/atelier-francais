@@ -1,4 +1,4 @@
-# Sécurité — L’atelier de français
+# Sécurité — L’atelier de Madame Daadoun
 
 Ce document décrit l’architecture **entièrement statique** du site. Python et Jinja2 génèrent les pages avant publication ; le navigateur effectue les corrections et calcule les scores. L’hébergeur sert uniquement les fichiers de `dist/`.
 

@@ -54,7 +54,7 @@ class StaticExportTests(unittest.TestCase):
         self.assertFalse((self.output / "data").exists())
         self.assertFalse((self.output / ".git").exists())
         self.assertFalse((self.output / "reports").exists())
-        self.assertEqual({p.name for p in (self.output / "static").iterdir()}, {"app.js", "style.css", "favicon.svg"})
+        self.assertEqual({p.name for p in (self.output / "static").iterdir()}, {"app.js", "navigation.js", "style.css", "favicon.svg"})
 
     def test_each_static_quiz_contains_its_own_twenty_explained_corrections(self):
         export_site(self.output)

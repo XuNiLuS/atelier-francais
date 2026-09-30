@@ -1,4 +1,4 @@
-# L’atelier de français
+# L’atelier de Madame Daadoun
 
 **Site public : [xunilus.github.io/atelier-francais](https://xunilus.github.io/atelier-francais/)** · [Dépôt GitHub](https://github.com/XuNiLuS/atelier-francais)
 

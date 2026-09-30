@@ -5,26 +5,38 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'none'; base-uri 'none'; form-action 'none'; object-src 'none'"><meta name="referrer" content="no-referrer">
   <meta name="description" content="{% block description %}Des quiz de français expliqués pour progresser en 4e, en 3e et en seconde générale et technologique.{% endblock %}">
-  <title>{% block title %}L’atelier de français · Du collège au lycée{% endblock %}</title>
+  <title>{% block title %}L’atelier de Madame Daadoun · Du collège au lycée{% endblock %}</title>
   <link rel="icon" href="{{ url_for('static', path='favicon.svg').path }}" type="image/svg+xml">
   <link rel="stylesheet" href="{{ url_for('static', path='style.css').path }}">
+  <script src="{{ url_for('static', path='navigation.js').path }}" defer></script>
   {% block scripts %}{% endblock %}
 </head>
 <body>
   <a class="skip-link" href="{% block skip_target %}#main-content{% endblock %}">{% block skip_label %}Aller au contenu{% endblock %}</a>
   <header class="site-header">
-    <a class="brand" href="{{ site_root }}/" aria-label="L’atelier de français, accueil">
-      <span class="brand-mark" aria-hidden="true">a<span>.</span></span>
-      <span>L’atelier <strong>de français</strong></span>
+    <a class="brand" href="{{ site_root }}/" aria-label="L’atelier de Madame Daadoun, accueil">
+      <img class="brand-mark" src="{{ url_for('static', path='favicon.svg').path }}" width="48" height="48" alt="">
+      <span><span class="brand-kicker">L’atelier de</span><strong>Madame Daadoun</strong></span>
     </a>
-    <nav class="level-nav" aria-label="Choisir un niveau">
+    <nav class="level-nav" aria-label="Niveaux et thèmes de travail">
       {% for level in levels %}
-      <a href="{{ site_root }}/niveaux/{{ level.id }}" {% if current_level and current_level.id == level.id %}aria-current="page"{% endif %}>{{ level.name }}</a>
+      <details class="level-menu{% if current_level and current_level.id == level.id %} is-current-level{% endif %}" name="level-navigation">
+        <summary>{{ level.name }}<span class="sr-only"> : thèmes de travail</span><span class="nav-chevron" aria-hidden="true"></span></summary>
+        <div class="level-dropdown">
+          <a class="level-overview" href="{{ site_root }}/niveaux/{{ level.id }}"{% if current_level and current_level.id == level.id and quiz is not defined %} aria-current="page"{% endif %}>Tous les quiz de {{ level.name }} <span aria-hidden="true">↗</span></a>
+          <p class="nav-section-label">Thèmes de travail</p>
+          <ul class="theme-links">
+            {% for item in quiz_navigation[level.id] %}
+            <li><a href="{{ site_root }}/quiz/{{ item.id }}"{% if quiz is defined and quiz.id == item.id %} aria-current="page"{% endif %}>{{ item.title }}</a></li>
+            {% endfor %}
+          </ul>
+        </div>
+      </details>
       {% endfor %}
     </nav>
   </header>
   {% block content %}{% endblock %}
-  <footer class="site-footer"><span>L’atelier de français</span><a href="{{ site_root }}/programmes">Repères et programmes officiels</a><span>Comprendre, puis progresser.</span></footer>
+  <footer class="site-footer"><span>L’atelier de Madame Daadoun</span><a href="{{ site_root }}/programmes">Repères et programmes officiels</a><span>Comprendre, puis progresser.</span></footer>
   {% block data %}{% endblock %}
 </body>
 </html>

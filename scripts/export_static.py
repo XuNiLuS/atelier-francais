@@ -31,6 +31,13 @@ def export_site(output=PROJECT_DIR / "dist", base_path=""):
             raise ValueError("Choisissez un dossier vide ou un ancien export de cet outil.")
 
     catalog = load_catalog()
+    quiz_navigation = {
+        level["id"]: [
+            {"id": quiz["id"], "title": quiz["title"]}
+            for quiz in catalog.values() if quiz["level"] == level["id"]
+        ]
+        for level in LEVELS
+    }
     environment = Environment(
         loader=FileSystemLoader(BASE_DIR / "templates"),
         autoescape=select_autoescape(["html"]),
@@ -41,7 +48,7 @@ def export_site(output=PROJECT_DIR / "dist", base_path=""):
 
     def render(name, **context):
         return environment.get_template(name).render(
-            levels=LEVELS, site_root=base_path,
+            levels=LEVELS, site_root=base_path, quiz_navigation=quiz_navigation,
             url_for=asset_url, **context,
         )
 
@@ -63,7 +70,8 @@ def export_site(output=PROJECT_DIR / "dist", base_path=""):
         '{% extends "base.html" %}{% block title %}Page introuvable{% endblock %}'
         '{% block content %}<main class="page" id="main-content"><h1>Page introuvable</h1>'
         '<p><a href="{{ site_root }}/">Revenir aux quiz</a></p></main>{% endblock %}'
-    ).render(levels=LEVELS, current_level=None, site_root=base_path, url_for=asset_url)
+    ).render(levels=LEVELS, current_level=None, site_root=base_path,
+             quiz_navigation=quiz_navigation, url_for=asset_url)
 
     if marker.is_file():
         shutil.rmtree(output)
@@ -74,7 +82,7 @@ def export_site(output=PROJECT_DIR / "dist", base_path=""):
         target.parent.mkdir(parents=True, exist_ok=True)
         target.write_text(html + "\n", encoding="utf-8")
     (output / "static").mkdir()
-    for name in ("app.js", "style.css", "favicon.svg"):
+    for name in ("app.js", "navigation.js", "style.css", "favicon.svg"):
         shutil.copyfile(BASE_DIR / "static" / name, output / "static" / name)
     (output / ".nojekyll").touch()
     # Appliqué par Cloudflare Pages ; GitHub Pages utilise la CSP meta des pages.

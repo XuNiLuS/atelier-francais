@@ -12,6 +12,7 @@
 !templates/programmes.html
 !static/
 !static/app.js
+!static/navigation.js
 !static/style.css
 !static/favicon.svg
 !data/

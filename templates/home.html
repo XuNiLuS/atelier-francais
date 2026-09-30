@@ -1,17 +1,32 @@
 {% extends "base.html" %}
-{% block title %}{% if current_level %}Quiz de {{ current_level.name }} · {% endif %}L’atelier de français{% endblock %}
+{% block title %}{% if current_level %}Quiz de {{ current_level.name }} · {% endif %}L’atelier de Madame Daadoun{% endblock %}
 {% block content %}
 <main class="page catalog-page" id="main-content">
-  <div class="page-intro catalog-intro">
+  <div class="page-intro catalog-intro{% if not current_level %} atelier-intro{% endif %}">
+    <div class="intro-copy">
     <div class="eyebrow"><span class="short-line" aria-hidden="true"></span> {% if current_level %}{{ current_level.stage }} · {{ current_level.name }}{% else %}DU COLLÈGE AU LYCÉE{% endif %}</div>
     {% if current_level %}
     <h1>Le français en <em>{{ current_level.name }}.</em></h1>
     <p>{{ current_level.description }}</p>
     {% else %}
     <h1>Un peu de pratique,<br><em>beaucoup de progrès.</em></h1>
-    <p>Choisis ton niveau, observe les phrases et comprends chaque réponse.<br>Des quiz de grammaire pour avancer à ton rythme.</p>
+    <p>Un atelier pour apprivoiser la grammaire et la conjugaison.<br>Choisis ta classe et avance à ton rythme, une réponse après l’autre.</p>
     {% endif %}
     <div class="catalog-pills"><span>20 questions par quiz</span><span>Correction à chaque réponse</span><span>Sans inscription</span></div>
+    </div>
+    {% if not current_level %}
+    <div class="atelier-illustration" aria-hidden="true">
+      <div class="notebook-sheet"></div>
+      <div class="atelier-book">
+        <span class="book-caption">LES CARNETS DE L’ATELIER</span>
+        <span class="book-ornament">✦</span>
+        <span class="book-title">Le plaisir<br>de <em>comprendre.</em></span>
+        <span class="book-rule"></span>
+        <span class="book-signature">Madame Daadoun</span>
+      </div>
+      <span class="book-pencil"></span>
+    </div>
+    {% endif %}
   </div>
 
   {% if not current_level %}
@@ -23,7 +38,7 @@
   {% endif %}
 
   <section class="quiz-catalog" aria-labelledby="catalog-title">
-    <div class="catalog-heading"><div><div class="eyebrow">À TOI DE JOUER</div><h2 id="catalog-title">{% if current_level %}Tes quiz de {{ current_level.name }}{% else %}Les parcours thématiques{% endif %}</h2></div><span>{{ quizzes|length }} quiz disponibles</span></div>
+    <div class="catalog-heading"><div><div class="eyebrow">À TOI DE JOUER</div><h2 id="catalog-title">{% if current_level %}Tes quiz de {{ current_level.name }}{% else %}Les parcours de l’atelier{% endif %}</h2></div><span>{{ quizzes|length }} quiz disponibles</span></div>
     <div class="quiz-cards">
       {% for quiz in quizzes %}
       <article class="quiz-card">
