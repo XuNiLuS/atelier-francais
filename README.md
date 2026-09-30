@@ -2,11 +2,11 @@
 
 **Site public : [xunilus.github.io/atelier-francais](https://xunilus.github.io/atelier-francais/)** · [Dépôt GitHub](https://github.com/XuNiLuS/atelier-francais)
 
-Des quiz de grammaire pour les **4e, 3e et secondes générales et technologiques**, avec une difficulté progressive. La page d’accueil présente les niveaux et les thèmes. Chaque quiz contient **20 questions**, soit **300 questions réparties en 15 quiz** dans cette version.
+Des quiz de grammaire pour les **4e, 3e et secondes générales et technologiques**, avec une difficulté progressive. La page d’accueil présente les niveaux et les thèmes. Chaque quiz contient **20 questions**, soit **320 questions réparties en 16 quiz** dans cette version.
 
 | Niveau | Quiz disponibles |
 | --- | --- |
-| 4e | Temps du récit ; classes, fonctions et accords ; phrase complexe ; paroles rapportées ; temps composés et voix passive |
+| 4e | Temps du récit ; conjugaison du passé simple ; classes, fonctions et accords ; phrase complexe ; paroles rapportées ; temps composés et voix passive |
 | 3e | Conditionnel et hypothèses ; subjonctif ; paroles rapportées ; accords complexes ; phrase complexe |
 | Seconde GT | Temps, aspect et concordance ; modes et modalisation ; accords ; phrase complexe ; syntaxe et propositions relatives |
 
@@ -97,7 +97,7 @@ Les questions se trouvent dans `data/quizzes/`, avec un fichier JSON par quiz. L
 
 Conserver les espaces dans `before` et `after`. Les questions et le catalogue sont validés **à la construction** par `quiz_data.py`. Pour ajouter un quiz, créer `data/quizzes/mon-quiz.json` puis son entrée dans `data/catalog.json` avec le même `id`, un `level` (`4e`, `3e` ou `seconde`), `title`, `description`, `eyebrow`, une liste `objectives` et une liste `help` contenant des objets `title`/`text`. Les identifiants utilisent uniquement des lettres minuscules non accentuées, des chiffres et des tirets.
 
-La liste du catalogue détermine les quiz générés. Après modification, reconstruire le site avec Python ou Docker. Les tests vérifient les 15 séries actuelles, leurs 300 corrections et leurs liens : adapter les effectifs attendus si le catalogue évolue.
+La liste du catalogue détermine les quiz générés. Après modification, reconstruire le site avec Python ou Docker. Les tests vérifient les 16 séries actuelles, leurs 320 corrections et leurs liens : adapter les effectifs attendus si le catalogue évolue.
 
 ## Pages générées
 
@@ -118,7 +118,7 @@ quiz_data.py              Chargement et validation du catalogue avec la biblioth
 scripts/export_static.py  Génération HTML avec Jinja2
 requirements.txt          Dépendance de construction Python
 data/catalog.json         Catalogue et aides
-data/quizzes/             Quinze fichiers de questions et corrections
+data/quizzes/             Seize fichiers de questions et corrections
 templates/                Modèles HTML
 static/                   CSS, JavaScript et icône
 dist/                     Site généré, seul dossier à publier

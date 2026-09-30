@@ -1,0 +1,322 @@
+[
+  {
+    "id": 1,
+    "label": "Verbes du 1er groupe",
+    "prompt": "Complète la phrase avec « marcher » au passé simple, à la personne demandée.",
+    "before": "Pour rejoindre la tour avant la nuit, je ",
+    "focus": "…",
+    "after": " jusqu’au bout du chemin.",
+    "options": [
+      {"id": "a", "label": "marchais"},
+      {"id": "b", "label": "marchai"},
+      {"id": "c", "label": "marcha"},
+      {"id": "d", "label": "marchait"}
+    ],
+    "answer": "b",
+    "explanation": "Au passé simple, un verbe du 1er groupe prend la terminaison « -ai » avec « je » : « je marchai ». « Marchais », avec un s, est un imparfait ; « marcha » correspond à « il » ou « elle »."
+  },
+  {
+    "id": 2,
+    "label": "Verbes du 1er groupe",
+    "prompt": "Quelle forme de « entrer » au passé simple convient au sujet ?",
+    "before": "La messagère ",
+    "focus": "…",
+    "after": " dans la cour du château avec une lettre scellée.",
+    "options": [
+      {"id": "a", "label": "entrait"},
+      {"id": "b", "label": "entrat"},
+      {"id": "c", "label": "entrèrent"},
+      {"id": "d", "label": "entra"}
+    ],
+    "answer": "d",
+    "explanation": "« La messagère » peut être remplacé par « elle ». Au passé simple, entrer se termine par « -a » à la troisième personne du singulier : « elle entra ». On n’ajoute pas de t à cette terminaison."
+  },
+  {
+    "id": 3,
+    "label": "Verbes du 1er groupe",
+    "prompt": "Complète avec « traverser » au passé simple.",
+    "before": "Guidés par la lumière du phare, nous ",
+    "focus": "…",
+    "after": " la passerelle de bois.",
+    "options": [
+      {"id": "a", "label": "traversâmes"},
+      {"id": "b", "label": "traversâtes"},
+      {"id": "c", "label": "traversames"},
+      {"id": "d", "label": "traversions"}
+    ],
+    "answer": "a",
+    "explanation": "Avec « nous », les verbes du 1er groupe prennent « -âmes » au passé simple : « nous traversâmes ». L’accent circonflexe est nécessaire. « -âtes » correspond à « vous » et « traversions » est un imparfait."
+  },
+  {
+    "id": 4,
+    "label": "Verbes du 1er groupe",
+    "prompt": "Quelle forme de « observer » au passé simple complète la phrase ?",
+    "before": "Depuis le belvédère, vous ",
+    "focus": "…",
+    "after": " le départ des montgolfières.",
+    "options": [
+      {"id": "a", "label": "observâmes"},
+      {"id": "b", "label": "observiez"},
+      {"id": "c", "label": "observâtes"},
+      {"id": "d", "label": "observates"}
+    ],
+    "answer": "c",
+    "explanation": "Le sujet est « vous » : on ajoute la terminaison « -âtes » au radical « observ- ». Il faut conserver l’accent circonflexe : « vous observâtes ». « Vous observiez » serait à l’imparfait."
+  },
+  {
+    "id": 5,
+    "label": "Verbes du 1er groupe",
+    "prompt": "Complète avec « gagner » au passé simple en tenant compte du sujet.",
+    "before": "Après la dernière épreuve, les deux sœurs ",
+    "focus": "…",
+    "after": " le tournoi d’échecs du village.",
+    "options": [
+      {"id": "a", "label": "gagnait"},
+      {"id": "b", "label": "gagnèrent"},
+      {"id": "c", "label": "gagneront"},
+      {"id": "d", "label": "gagna"}
+    ],
+    "answer": "b",
+    "explanation": "« Les deux sœurs » correspond à « elles ». Au passé simple, gagner prend « -èrent » à la troisième personne du pluriel : « elles gagnèrent ». « Gagneront » est au futur et « gagna » est au singulier."
+  },
+  {
+    "id": 6,
+    "label": "Particularités orthographiques",
+    "prompt": "Quelle forme de « commencer » au passé simple est correctement orthographiée ?",
+    "before": "Au signal du chef d’orchestre, nous ",
+    "focus": "…",
+    "after": " le morceau répété la veille.",
+    "options": [
+      {"id": "a", "label": "commençâmes"},
+      {"id": "b", "label": "commencâmes"},
+      {"id": "c", "label": "commençames"},
+      {"id": "d", "label": "commencions"}
+    ],
+    "answer": "a",
+    "explanation": "La terminaison avec « nous » est « -âmes ». Devant le a, le c prend une cédille pour conserver le son [s] : « nous commençâmes ». Cette forme exige donc à la fois la cédille et l’accent circonflexe."
+  },
+  {
+    "id": 7,
+    "label": "Particularités orthographiques",
+    "prompt": "Quelle forme de « manger » au passé simple convient avec « je » ?",
+    "before": "À la halte suivante, je ",
+    "focus": "…",
+    "after": " une pomme près du ruisseau.",
+    "options": [
+      {"id": "a", "label": "mangai"},
+      {"id": "b", "label": "mangeais"},
+      {"id": "c", "label": "mangea"},
+      {"id": "d", "label": "mangeai"}
+    ],
+    "answer": "d",
+    "explanation": "Avec « je », la terminaison du passé simple est « -ai ». On conserve un e après le g pour garder le son de « manger » devant le a : « je mangeai ». « Je mangeais », avec un s final, serait à l’imparfait."
+  },
+  {
+    "id": 8,
+    "label": "Verbes du 2e groupe",
+    "prompt": "Complète avec « finir » au passé simple.",
+    "before": "Les apprenties ",
+    "focus": "…",
+    "after": " leur vitrail avant le retour de la maîtresse verrière.",
+    "options": [
+      {"id": "a", "label": "finissaient"},
+      {"id": "b", "label": "finiront"},
+      {"id": "c", "label": "finirent"},
+      {"id": "d", "label": "finit"}
+    ],
+    "answer": "c",
+    "explanation": "Finir est un verbe du 2e groupe. Avec « elles », son passé simple est « finirent » : radical « fin- » et terminaison « -irent ». « Finissaient » est un imparfait, « finiront » un futur et « finit » une forme du singulier."
+  },
+  {
+    "id": 9,
+    "label": "Verbes du 2e groupe",
+    "prompt": "Quelle forme de « choisir » au passé simple convient avec « tu » ?",
+    "before": "Parmi les trois itinéraires proposés, tu ",
+    "focus": "…",
+    "after": " le sentier qui longeait les falaises.",
+    "options": [
+      {"id": "a", "label": "choisis"},
+      {"id": "b", "label": "choisit"},
+      {"id": "c", "label": "choisissais"},
+      {"id": "d", "label": "choisîtes"}
+    ],
+    "answer": "a",
+    "explanation": "Au passé simple, choisir donne « je choisis, tu choisis, il choisit ». Avec « tu », il faut donc un s final. La forme « tu choisis » existe aussi au présent : ici, la consigne demande explicitement le passé simple."
+  },
+  {
+    "id": 10,
+    "label": "Verbes du 2e groupe",
+    "prompt": "Complète avec « réussir » au passé simple.",
+    "before": "Après plusieurs essais, nous ",
+    "focus": "…",
+    "after": " à ouvrir le coffre ancien.",
+    "options": [
+      {"id": "a", "label": "réussimes"},
+      {"id": "b", "label": "réussissîmes"},
+      {"id": "c", "label": "réussissions"},
+      {"id": "d", "label": "réussîmes"}
+    ],
+    "answer": "d",
+    "explanation": "Au passé simple, réussir conserve le radical « réuss- » et prend « -îmes » avec « nous » : « nous réussîmes ». On n’ajoute pas « -iss- » comme dans l’imparfait « nous réussissions ». L’accent circonflexe sur le i est nécessaire."
+  },
+  {
+    "id": 11,
+    "label": "Verbes du 3e groupe",
+    "prompt": "Quelle forme de « prendre » au passé simple complète la phrase ?",
+    "before": "Le jeune marin ",
+    "focus": "…",
+    "after": " la barre pendant la manœuvre.",
+    "options": [
+      {"id": "a", "label": "prenait"},
+      {"id": "b", "label": "prît"},
+      {"id": "c", "label": "prit"},
+      {"id": "d", "label": "prendit"}
+    ],
+    "answer": "c",
+    "explanation": "Le passé simple de prendre est irrégulier : « je pris, tu pris, il prit ». « Le jeune marin » correspond à « il », donc on écrit « prit », sans accent. « Prît » appartient à l’imparfait du subjonctif, qui n’est pas demandé ici."
+  },
+  {
+    "id": 12,
+    "label": "Verbes du 3e groupe",
+    "prompt": "Complète avec « faire » au passé simple, à la première personne du singulier.",
+    "before": "Pour avertir mes compagnons, je ",
+    "focus": "…",
+    "after": " un signe depuis la fenêtre.",
+    "options": [
+      {"id": "a", "label": "faisais"},
+      {"id": "b", "label": "fis"},
+      {"id": "c", "label": "fit"},
+      {"id": "d", "label": "fît"}
+    ],
+    "answer": "b",
+    "explanation": "Faire se conjugue « je fis, tu fis, il fit » au passé simple. Le sujet « je » impose donc « fis », avec un s. « Faisais » est un imparfait ; « fit » est à la troisième personne du singulier."
+  },
+  {
+    "id": 13,
+    "label": "Verbes du 3e groupe",
+    "prompt": "Quelle forme de « dire » au passé simple convient avec « vous » ?",
+    "before": "Devant les membres du jury, vous ",
+    "focus": "…",
+    "after": " toute la vérité sur cette découverte.",
+    "options": [
+      {"id": "a", "label": "dites"},
+      {"id": "b", "label": "disiez"},
+      {"id": "c", "label": "dîmes"},
+      {"id": "d", "label": "dîtes"}
+    ],
+    "answer": "d",
+    "explanation": "Au passé simple, on écrit « vous dîtes », avec un accent circonflexe sur le i. Il distingue cette forme de « vous dites », au présent. « Dîmes » correspond à « nous » et « disiez » est un imparfait."
+  },
+  {
+    "id": 14,
+    "label": "Verbes du 3e groupe",
+    "prompt": "Complète avec « voir » au passé simple.",
+    "before": "Au détour du sentier, les explorateurs ",
+    "focus": "…",
+    "after": " une cascade entre les rochers.",
+    "options": [
+      {"id": "a", "label": "virent"},
+      {"id": "b", "label": "voyaient"},
+      {"id": "c", "label": "verront"},
+      {"id": "d", "label": "vîrent"}
+    ],
+    "answer": "a",
+    "explanation": "Voir donne « ils virent » au passé simple. À cette personne, la terminaison est « -irent », sans accent circonflexe. On ne doit pas la confondre avec « -îmes » et « -îtes », qui portent un accent avec « nous » et « vous »."
+  },
+  {
+    "id": 15,
+    "label": "Être et avoir",
+    "prompt": "Quelle forme de « être » au passé simple complète la phrase ?",
+    "before": "À l’annonce du résultat, la championne ",
+    "focus": "…",
+    "after": " très émue.",
+    "options": [
+      {"id": "a", "label": "était"},
+      {"id": "b", "label": "fut"},
+      {"id": "c", "label": "fût"},
+      {"id": "d", "label": "furent"}
+    ],
+    "answer": "b",
+    "explanation": "Au passé simple, être donne « je fus, tu fus, elle fut ». Le sujet « la championne » est singulier : on choisit « fut », sans accent. « Fût » est un imparfait du subjonctif ; « furent » correspond à un sujet pluriel."
+  },
+  {
+    "id": 16,
+    "label": "Être et avoir",
+    "prompt": "Complète avec « avoir » au passé simple.",
+    "before": "À la lecture du message, les voyageuses ",
+    "focus": "…",
+    "after": " enfin des nouvelles de leur guide.",
+    "options": [
+      {"id": "a", "label": "eûrent"},
+      {"id": "b", "label": "avaient"},
+      {"id": "c", "label": "eurent"},
+      {"id": "d", "label": "eut"}
+    ],
+    "answer": "c",
+    "explanation": "« Les voyageuses » correspond à « elles ». Le passé simple d’avoir est « elles eurent », sans accent circonflexe. « Eut » est au singulier et « avaient » est à l’imparfait."
+  },
+  {
+    "id": 17,
+    "label": "Verbes du 3e groupe",
+    "prompt": "Quelle forme de « vouloir » au passé simple convient avec « nous » ?",
+    "before": "Malgré le vent, nous ",
+    "focus": "…",
+    "after": " poursuivre l’ascension.",
+    "options": [
+      {"id": "a", "label": "voulions"},
+      {"id": "b", "label": "voulumes"},
+      {"id": "c", "label": "voulûtes"},
+      {"id": "d", "label": "voulûmes"}
+    ],
+    "answer": "d",
+    "explanation": "Vouloir forme son passé simple en u : « je voulus, il voulut, nous voulûmes ». Avec « nous », on écrit « -ûmes », avec un accent circonflexe. « Voulûtes » correspond à « vous » et « voulions » est un imparfait."
+  },
+  {
+    "id": 18,
+    "label": "Verbes du 3e groupe",
+    "prompt": "Complète avec « lire » au passé simple.",
+    "before": "Avant de déplier la carte, vous ",
+    "focus": "…",
+    "after": " les instructions inscrites au dos.",
+    "options": [
+      {"id": "a", "label": "lûmes"},
+      {"id": "b", "label": "lûtes"},
+      {"id": "c", "label": "lisiez"},
+      {"id": "d", "label": "lutes"}
+    ],
+    "answer": "b",
+    "explanation": "Lire forme son passé simple en u : « je lus, il lut, vous lûtes ». La terminaison avec « vous » est « -ûtes », accent circonflexe compris. « Lûmes » s’emploie avec « nous » ; « lisiez » est à l’imparfait."
+  },
+  {
+    "id": 19,
+    "label": "Changer de sujet",
+    "prompt": "Remplace « Léa » par « Léa et Omar » : quelle forme de « venir » conserve le passé simple ?",
+    "before": "Léa ",
+    "focus": "vint",
+    "after": " chercher les lanternes dans la remise.",
+    "options": [
+      {"id": "a", "label": "venaient"},
+      {"id": "b", "label": "viennent"},
+      {"id": "c", "label": "vinrent"},
+      {"id": "d", "label": "vînrent"}
+    ],
+    "answer": "c",
+    "explanation": "« Léa et Omar » correspond à « ils ». Venir forme son passé simple avec « vin- » : « elle vint » devient « ils vinrent ». Il n’y a pas d’accent circonflexe à la troisième personne du pluriel."
+  },
+  {
+    "id": 20,
+    "label": "Changer de sujet",
+    "prompt": "Remplace « La gardienne » par « Nous » : quelle forme de « tenir » conserve le passé simple ?",
+    "before": "La gardienne ",
+    "focus": "tint",
+    "after": " la corde pendant la traversée.",
+    "options": [
+      {"id": "a", "label": "tînmes"},
+      {"id": "b", "label": "tenions"},
+      {"id": "c", "label": "tinmes"},
+      {"id": "d", "label": "tîntes"}
+    ],
+    "answer": "a",
+    "explanation": "Tenir se conjugue « je tins, elle tint, nous tînmes » au passé simple. En remplaçant le sujet par « nous », on obtient « Nous tînmes la corde pendant la traversée ». L’accent circonflexe sur le i est nécessaire."
+  }
+]

@@ -19,14 +19,14 @@ class CatalogTests(unittest.TestCase):
             for quiz in cls.catalog.values()
         ]
 
-    def test_catalog_has_fifteen_quizzes_and_three_hundred_questions(self):
-        self.assertEqual(len(self.catalog), 15)
-        self.assertEqual(sum(quiz["count"] for quiz in self.catalog.values()), 300)
+    def test_catalog_has_sixteen_quizzes_and_three_hundred_twenty_questions(self):
+        self.assertEqual(len(self.catalog), 16)
+        self.assertEqual(sum(quiz["count"] for quiz in self.catalog.values()), 320)
         self.assertIn(DEFAULT_QUIZ, self.catalog)
         self.assertEqual({level["id"] for level in LEVELS}, {"4e", "3e", "seconde"})
         self.assertEqual(
             Counter(quiz["level"] for quiz in self.catalog.values()),
-            {"4e": 5, "3e": 5, "seconde": 5},
+            {"4e": 6, "3e": 5, "seconde": 5},
         )
         for quiz_id, quiz in self.catalog.items():
             with self.subTest(quiz=quiz_id):

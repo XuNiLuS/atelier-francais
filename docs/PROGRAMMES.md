@@ -1,6 +1,6 @@
 # Repères pédagogiques et programmes
 
-Vérification des sources : **30 septembre 2026**. Public visé : **4e, 3e et seconde générale et technologique**. Les quinze QCM comportent chacun 20 questions, soit 300 questions. Les phrases, distracteurs et explications ont été rédigés pour ce projet ; ils ne sont pas copiés dans un manuel ni dans les exemples institutionnels.
+Vérification des sources : **30 septembre 2026**. Public visé : **4e, 3e et seconde générale et technologique**. Les seize QCM comportent chacun 20 questions, soit 320 questions. Les phrases, distracteurs et explications ont été rédigés pour ce projet ; ils ne sont pas copiés dans un manuel ni dans les exemples institutionnels.
 
 ## Le choix des nouveaux programmes au collège
 
@@ -10,11 +10,12 @@ Pour la seconde GT, la référence consultée reste le programme du **BO spécia
 
 ## Une progression choisie pour ces exercices
 
-Ce découpage en quinze QCM est un choix pédagogique du projet. Il facilite des séances courtes et la reprise des erreurs ; il ne constitue ni une progression annuelle officielle ni une couverture exhaustive des programmes.
+Ce découpage en seize QCM est un choix pédagogique du projet. Il facilite des séances courtes et la reprise des erreurs ; il ne constitue ni une progression annuelle officielle ni une couverture exhaustive des programmes.
 
 | Niveau et QCM | Travail proposé dans le site | Progression choisie |
 | --- | --- | --- |
 | 4e — Temps du récit (`4e-temps-recit`) | Imparfait et passé simple : description, habitude, arrière-plan, événements et actions délimitées. | Série initiale conservée ; justifier une valeur à partir d’indices explicites. |
+| 4e — Conjuguer au passé simple (`4e-conjugaison-passe-simple`) | Terminaisons des trois groupes, être et avoir, radicaux irréguliers, accents, cédille et maintien du e de manger. | Consolider la morphologie des verbes réguliers et irréguliers courants, puis réécrire en changeant le sujet ; complément au quiz sur les valeurs des temps. |
 | 4e — Classes, fonctions et accords (`4e-grammaire`) | Classes de mots, fonctions, groupes, subordonnants et chaînes d’accord. | Série conservée ; employer une manipulation pour expliquer un accord. |
 | 4e — Phrase complexe (`4e-phrase-complexe`) | Principale et subordonnée, relatives, conjonctives, interrogatives indirectes et liens logiques. | Identifier les constituants puis observer leur emboîtement. |
 | 4e — Paroles rapportées (`4e-paroles-rapportees`) | Discours direct et indirect, personnes et repères, transpositions. | Reconnaître puis transformer une parole dans une situation précisée. |

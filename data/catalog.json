@@ -21,6 +21,32 @@
     ]
   },
   {
+    "id": "4e-conjugaison-passe-simple",
+    "level": "4e",
+    "title": "Conjuguer au passé simple",
+    "description": "Choisir la bonne forme du verbe : terminaisons, radicaux, accents et changements de sujet.",
+    "eyebrow": "Former les verbes du récit",
+    "objectives": [
+      "Conjuguer les verbes des trois groupes, être et avoir",
+      "Distinguer les personnes et éviter les pièges d’orthographe",
+      "Réécrire une phrase en changeant le sujet"
+    ],
+    "help": [
+      {
+        "title": "Les verbes du 1er groupe",
+        "text": "Les terminaisons sont -ai, -as, -a, -âmes, -âtes, -èrent : je chantai, tu chantas, elle chanta, nous chantâmes, vous chantâtes, ils chantèrent. Ne confonds pas je chantai et l’imparfait je chantais."
+      },
+      {
+        "title": "Les autres modèles",
+        "text": "Le 2e groupe suit le modèle de finir : je finis, tu finis, elle finit, nous finîmes, vous finîtes, ils finirent. Au 3e groupe, retiens le modèle propre au verbe : il prit, il lut, il vint. Être donne il fut ; avoir donne il eut."
+      },
+      {
+        "title": "Soigner l’orthographe",
+        "text": "Au passé simple, nous et vous portent un accent circonflexe : nous parlâmes, vous finîtes, nous voulûmes, vous vîntes. À la 3e personne, on écrit il fut et ils vinrent sans circonflexe. Pense aussi au e de je mangeai et à la cédille de nous commençâmes."
+      }
+    ]
+  },
+  {
     "id": "4e-grammaire",
     "level": "4e",
     "title": "Classes, fonctions et accords",
