@@ -40,14 +40,14 @@
   <footer class="site-footer"><span>L’atelier de Madame Daadoun</span><a href="{{ site_root }}/programmes">Repères et programmes officiels</a><a href="{{ site_root }}/confidentialite/">Confidentialité</a><button type="button" class="privacy-settings" id="analytics-settings" hidden>Mes choix de statistiques</button></footer>
   <section id="analytics-consent" class="analytics-consent" aria-labelledby="analytics-heading" hidden>
     <div class="consent-copy">
-      <h2 id="analytics-heading">Un choix pour tes données</h2>
-      <p>Autorises-tu Google Analytics à mesurer les visites et les quiz commencés ou terminés, par niveau et par thème ? Des cookies servent à compter les visites. Ton nom, tes réponses et tes notes ne sont pas transmis.</p>
-      <p>Tu peux refuser et faire tous les quiz. Tu peux aussi changer d’avis en bas de chaque page. <a href="{{ site_root }}/confidentialite/">En savoir plus</a></p>
+      <h2 id="analytics-heading">Les statistiques de l’atelier</h2>
+      <p>Autorises-tu les cookies Google Analytics pour compter les visites et les quiz par niveau et par thème ? Aucun nom, réponse ou note n’est transmis.</p>
+      <p class="consent-note">Tous les quiz restent accessibles si tu refuses. <a href="{{ site_root }}/confidentialite/">En savoir plus</a></p>
       <p id="analytics-status" role="status"></p>
     </div>
     <div class="consent-actions">
-      <button type="button" class="button button-secondary" id="analytics-reject">Refuser les statistiques</button>
-      <button type="button" class="button button-secondary" id="analytics-accept">Accepter les statistiques</button>
+      <button type="button" class="button button-secondary" id="analytics-reject">Refuser</button>
+      <button type="button" class="button button-primary" id="analytics-accept">Accepter</button>
     </div>
   </section>
   <script type="application/json" id="analytics-config">{{ analytics_config | tojson }}</script>

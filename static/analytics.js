@@ -10,6 +10,7 @@
   const settingsButton = document.getElementById('analytics-settings');
   const status = document.getElementById('analytics-status');
   if (!banner || !acceptButton || !rejectButton || !settingsButton || !status) return;
+  const acceptLabel = acceptButton.textContent || 'Accepter';
 
   let config = {};
   try {
@@ -32,10 +33,11 @@
   let savedAt = 0;
   let storageAvailable = true;
   let expiryTimer;
+  let loadingTimer;
   let tagStarted = false;
   let stopping = false;
   let suspended = false;
-  let loadFailed = false;
+  let tagState = 'idle';
   let tag;
   let started = false;
   let completed = false;
@@ -83,16 +85,25 @@
     let text = choice === 'accepted'
       ? 'Mesure d’audience autorisée. Tu peux la refuser à tout moment.'
       : choice === 'rejected'
-        ? 'Mesure d’audience refusée. Aucun appel à Google Analytics.'
-        : 'Sans ton accord, aucun appel à Google Analytics.';
+        ? 'Statistiques refusées : aucun appel à Google Analytics.'
+        : 'Facultatif. Ton choix reste modifiable en bas de page.';
+    const canRetry = choice === 'accepted' && ['failed', 'slow'].includes(tagState);
+    if (choice === 'accepted' && production && measurementId) {
+      if (tagState === 'loading') text = 'Choix enregistré. Chargement de la balise en cours…';
+      else if (tagState === 'loaded') text = 'Balise chargée. Les rapports peuvent mettre quelques minutes à s’actualiser.';
+      else if (tagState === 'slow') text = 'Choix enregistré. Le chargement prend du temps ; il n’est pas encore confirmé.';
+      else if (tagState === 'failed') text = 'Le chargement de la balise a échoué ou a été bloqué. Le quiz reste utilisable.';
+    }
     if (!production) text += ' Prévisualisation : aucune mesure n’est envoyée depuis cette adresse.';
     else if (!measurementId) text += ' La mesure d’audience n’est pas configurée sur cette page.';
-    else if (loadFailed) text += ' Le chargement de la mesure a échoué ; le quiz reste utilisable.';
     if (!storageAvailable) text += ' Le stockage est indisponible : ce choix vaut uniquement pour cette page.';
     if (choice === 'accepted' && tagStarted) {
-      text += ' Si tu refuses maintenant, la page sera rechargée et le quiz en cours recommencera.';
+      text += canRetry
+        ? ' Réessayer ou refuser recharge la page et recommence le quiz.'
+        : ' Refuser recharge la page et recommence le quiz.';
     }
     status.textContent = text;
+    acceptButton.textContent = canRetry ? 'Réessayer' : acceptLabel;
     acceptButton.setAttribute('aria-pressed', String(choice === 'accepted'));
     rejectButton.setAttribute('aria-pressed', String(choice === 'rejected'));
   }
@@ -108,6 +119,7 @@
 
   function stopMeasurement() {
     if (disabledKey) window[disabledKey] = true;
+    window.clearTimeout(loadingTimer);
     clearProjectCookies();
     if (!tagStarted || stopping) return;
     stopping = true;
@@ -137,11 +149,21 @@
   }
 
   function canMeasure() {
-    return checkExpiry() && production && measurementId && !stopping && !suspended && !loadFailed;
+    return checkExpiry() && production && measurementId && !stopping && !suspended && tagState !== 'failed';
   }
 
   function gtag() {
-    if (canMeasure()) window.dataLayer.push(arguments);
+    if (!canMeasure()) return;
+    try { window.dataLayer.push(arguments); } catch (_) { failLoading(); }
+  }
+
+  function failLoading() {
+    if (stopping) return;
+    tagState = 'failed';
+    window.clearTimeout(loadingTimer);
+    if (disabledKey) window[disabledKey] = true;
+    if (Array.isArray(window.dataLayer)) window.dataLayer.length = 0;
+    updateStatus();
   }
 
   function pageMetadata() {
@@ -160,55 +182,58 @@
   function startMeasurement() {
     if (!canMeasure() || tagStarted) return;
     tagStarted = true;
-    window[disabledKey] = false;
-    window.dataLayer = [];
-    window.gtag = gtag;
-    const pageLocation = window.location.origin + window.location.pathname;
-    const metadata = pageMetadata();
-    const pageTitle = metadata.quiz_theme
-      ? `${metadata.quiz_theme} · ${metadata.education_level} · L’atelier de Madame Daadoun`
-      : metadata.education_level
-        ? `Quiz de ${metadata.education_level} · L’atelier de Madame Daadoun`
-        : 'L’atelier de Madame Daadoun';
-    gtag('consent', 'default', {
-      analytics_storage: 'denied', ad_storage: 'denied',
-      ad_user_data: 'denied', ad_personalization: 'denied',
-    });
-    gtag('consent', 'update', { analytics_storage: 'granted' });
-    gtag('js', new Date());
-    gtag('config', measurementId, {
-      send_page_view: false,
-      page_location: pageLocation,
-      page_referrer: '',
-      page_title: pageTitle,
-      allow_google_signals: false,
-      allow_ad_personalization_signals: false,
-      cookie_prefix: 'atelier',
-      cookie_domain: 'none',
-      cookie_path: cookiePath,
-      cookie_expires: retention / 1000,
-      cookie_update: false,
-      cookie_flags: 'SameSite=Lax;Secure',
-    });
-    gtag('event', 'page_view', { ...metadata, page_location: pageLocation, page_referrer: '' });
+    tagState = 'loading';
     try {
+      window[disabledKey] = false;
+      window.dataLayer = [];
+      window.gtag = gtag;
+      const pageLocation = window.location.origin + window.location.pathname;
+      const metadata = pageMetadata();
+      const pageTitle = metadata.quiz_theme
+        ? `${metadata.quiz_theme} · ${metadata.education_level} · L’atelier de Madame Daadoun`
+        : metadata.education_level
+          ? `Quiz de ${metadata.education_level} · L’atelier de Madame Daadoun`
+          : 'L’atelier de Madame Daadoun';
+      gtag('consent', 'default', {
+        analytics_storage: 'denied', ad_storage: 'denied',
+        ad_user_data: 'denied', ad_personalization: 'denied',
+      });
+      gtag('consent', 'update', { analytics_storage: 'granted' });
+      gtag('js', new Date());
+      gtag('config', measurementId, {
+        send_page_view: false,
+        page_location: pageLocation,
+        page_referrer: '',
+        page_title: pageTitle,
+        allow_google_signals: false,
+        allow_ad_personalization_signals: false,
+        cookie_prefix: 'atelier',
+        cookie_domain: 'none',
+        cookie_path: cookiePath,
+        cookie_expires: retention / 1000,
+        cookie_update: false,
+        cookie_flags: 'SameSite=Lax;Secure',
+      });
+      gtag('event', 'page_view', { ...metadata, page_location: pageLocation, page_referrer: '' });
+      if (tagState === 'failed') return;
       tag = document.createElement('script');
       tag.async = true;
       tag.referrerPolicy = 'no-referrer';
       tag.src = `https://www.googletagmanager.com/gtag/js?id=${measurementId}`;
-      tag.onerror = () => {
-        loadFailed = true;
-        window[disabledKey] = true;
-        window.dataLayer.length = 0;
+      tag.onload = () => {
+        if (stopping || tagState === 'failed') return;
+        window.clearTimeout(loadingTimer);
+        tagState = 'loaded';
         updateStatus();
       };
+      tag.onerror = failLoading;
+      loadingTimer = window.setTimeout(() => {
+        if (stopping || tagState !== 'loading') return;
+        tagState = 'slow'; // Un délai dépassé n'est pas une preuve d'échec réseau.
+        updateStatus();
+      }, 20000);
       document.head.appendChild(tag);
-    } catch (_) {
-      loadFailed = true;
-      window[disabledKey] = true;
-      window.dataLayer.length = 0;
-      updateStatus();
-    }
+    } catch (_) { failLoading(); }
   }
 
   function recordQuizEvent(name) {
@@ -232,6 +257,17 @@
   };
 
   acceptButton.addEventListener('click', () => {
+    if (choice === 'accepted' && ['failed', 'slow'].includes(tagState)) {
+      // Réessai explicite seulement : la page repart proprement, avec le choix déjà enregistré.
+      stopping = true;
+      suspended = true;
+      if (disabledKey) window[disabledKey] = true;
+      window.clearTimeout(loadingTimer);
+      tag?.remove();
+      if (Array.isArray(window.dataLayer)) window.dataLayer.length = 0;
+      window.location.reload();
+      return;
+    }
     choice = 'accepted';
     persistChoice(choice);
     scheduleExpiry();
@@ -270,15 +306,14 @@
   window.addEventListener('storage', (event) => {
     if (event.key === storageKey || event.key === null) refreshStoredChoice();
   });
-  // Le cache précédent/suivant conserve le JavaScript : suspendre avant de le quitter,
-  // puis relire le choix avant de laisser une ancienne balise reprendre ses envois.
+  // Laisser GA terminer les envois déjà autorisés au départ ; seuls nos nouveaux hooks
+  // sont suspendus. Au retour du cache, vérifier le choix avant les écouteurs de la balise.
   window.addEventListener('pagehide', () => {
     suspended = true;
-    if (disabledKey) window[disabledKey] = true;
   });
   window.addEventListener('pageshow', (event) => {
     if (event.persisted) refreshStoredChoice();
-  });
+  }, { capture: true });
   document.addEventListener('visibilitychange', () => {
     if (document.visibilityState !== 'visible') return;
     if (storageAvailable) refreshStoredChoice();

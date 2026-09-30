@@ -23,6 +23,7 @@ function environment(options = {}) {
   const cookieWrites = [];
   const timers = new Map();
   const events = new Map();
+  const eventOptions = new Map();
   const documentEvents = new Map();
   const stored = new Map(Object.entries(options.storage || {}));
   const config = {
@@ -39,7 +40,11 @@ function environment(options = {}) {
     addEventListener(name, handler) { documentEvents.set(name, handler); },
     getElementById(id) { return nodes.get(id) || null; },
     createElement(tag) { return makeNode(tag); },
-    head: { appendChild(node) { scripts.push(node); return node; } },
+    head: { appendChild(node) {
+      if (options.appendBlocked) throw new Error('Insertion de balise bloquée');
+      scripts.push(node);
+      return node;
+    } },
   };
   Object.defineProperty(document, 'cookie', {
     get() { return options.cookies || ''; },
@@ -63,6 +68,7 @@ function environment(options = {}) {
     nodes.set(id, makeNode(id));
   }
   nodes.get('analytics-config').textContent = options.rawConfig ?? JSON.stringify(config);
+  nodes.get('analytics-accept').textContent = 'Accepter';
   if (options.missingNode) nodes.delete(options.missingNode);
   const url = new URL(options.url || `${ORIGIN}${BASE}/quiz/4e-temps-recit/?email=prive@example.org#prenom`);
   const window = {
@@ -86,7 +92,7 @@ function environment(options = {}) {
     },
     setTimeout(callback, delay) { const id = ++nextTimer; timers.set(id, { callback, delay }); return id; },
     clearTimeout(id) { timers.delete(id); },
-    addEventListener(name, handler) { events.set(name, handler); },
+    addEventListener(name, handler, settings) { events.set(name, handler); eventOptions.set(name, settings); },
   };
   class Clock extends Date {
     constructor(...args) { super(...(args.length ? args : [now])); }
@@ -94,11 +100,19 @@ function environment(options = {}) {
   }
   vm.runInNewContext(source, { window, document, Date: Clock });
   return {
-    window, document, nodes, scripts, stored, cookieWrites, timers,
+    window, document, nodes, scripts, stored, cookieWrites, timers, eventOptions,
     get reloads() { return reloads; },
     commands() { return JSON.parse(JSON.stringify((window.dataLayer || []).map((item) => Array.from(item)))); },
     clicks(id) { nodes.get(id).click(); },
     dispatchWindow(name, event = {}) { events.get(name)?.(event); },
+    runTimer(delay) {
+      const entry = [...timers].find(([, timer]) => timer.delay === delay);
+      if (!entry) return false;
+      now += delay;
+      timers.delete(entry[0]);
+      entry[1].callback();
+      return true;
+    },
     visibility(state) {
       document.visibilityState = state;
       documentEvents.get('visibilitychange')?.();
@@ -149,7 +163,7 @@ test('Refuser mémorise le choix, sans script, ping ni commande de consentement 
   assert.equal(env.reloads, 0);
   assert.equal(env.nodes.get('analytics-consent').hidden, true);
   assert.equal(env.document.activeElement, env.nodes.get('analytics-settings'));
-  assert.doesNotMatch(env.nodes.get('analytics-status').textContent, /quiz en cours recommencera/);
+  assert.doesNotMatch(env.nodes.get('analytics-status').textContent, /recharge la page/);
   assert.match(env.nodes.get('analytics-status').textContent, /refusée/);
   env.clicks('analytics-settings');
   assert.equal(env.nodes.get('analytics-consent').hidden, false);
@@ -192,7 +206,7 @@ test('Accepter configure une mesure limitée et une seule page_view nettoyée', 
   });
   assert.equal(env.document.activeElement, env.nodes.get('analytics-settings'));
   env.clicks('analytics-settings');
-  assert.match(env.nodes.get('analytics-status').textContent, /Si tu refuses maintenant, la page sera rechargée et le quiz en cours recommencera/);
+  assert.match(env.nodes.get('analytics-status').textContent, /Refuser recharge la page et recommence le quiz/);
   assert.doesNotMatch(JSON.stringify(commands), /prive@|prenom|ecole\.example|titre-personnel/);
 });
 
@@ -345,7 +359,8 @@ test('Une mesure bloquée ou une configuration absente ne casse jamais le quiz',
 test('Un retour précédent/suivant respecte un retrait intervenu pendant la mise en cache', () => {
   const env = environment({ storage: { [KEY]: choice('accepted') } });
   env.dispatchWindow('pagehide', { persisted: true });
-  assert.equal(env.window[`ga-disable-${ID}`], true);
+  assert.equal(env.window[`ga-disable-${ID}`], false);
+  assert.equal(env.eventOptions.get('pageshow').capture, true);
   env.stored.set(KEY, choice('rejected', NOW)); // Aucun événement storage sur la page gelée.
   env.dispatchWindow('pageshow', { persisted: true });
   assert.equal(env.window[`ga-disable-${ID}`], true);
@@ -406,4 +421,95 @@ test('Les pages de catalogue ne fabriquent pas de contexte de quiz', () => {
   assert.equal(events(level)[0][2].education_level, 'seconde');
   assert.equal(events(level)[0][2].quiz_id, undefined);
   assert.equal(level.commands().find((item) => item[0] === 'config')[2].page_title, 'Quiz de seconde · L’atelier de Madame Daadoun');
+});
+
+test('Les états chargement et chargé ne prétendent jamais confirmer une réception GA4', () => {
+  const env = environment();
+  assert.equal(env.nodes.get('analytics-status').textContent, 'Facultatif. Ton choix reste modifiable en bas de page.');
+  env.clicks('analytics-accept');
+  assert.match(env.nodes.get('analytics-status').textContent, /Chargement de la balise en cours/);
+  assert.equal(env.nodes.get('analytics-accept').textContent, 'Accepter');
+  env.scripts[0].onload();
+  assert.match(env.nodes.get('analytics-status').textContent, /Balise chargée\. Les rapports peuvent mettre quelques minutes à s’actualiser\./);
+  assert.doesNotMatch(env.nodes.get('analytics-status').textContent, /reçu|réception|collecté|envoyé/);
+  assert.equal(env.runTimer(20000), false);
+  assert.equal(env.reloads, 0);
+});
+
+test('Après une erreur, Réessayer recharge uniquement sur action explicite et prévient avant', () => {
+  const env = environment();
+  env.clicks('analytics-accept');
+  const savedChoice = env.stored.get(KEY);
+  env.scripts[0].onerror();
+  assert.equal(env.window[`ga-disable-${ID}`], true);
+  assert.match(env.nodes.get('analytics-status').textContent, /échoué ou a été bloqué/);
+  assert.match(env.nodes.get('analytics-status').textContent, /Réessayer ou refuser recharge la page et recommence le quiz/);
+  assert.equal(env.nodes.get('analytics-accept').textContent, 'Réessayer');
+  assert.equal(env.runTimer(20000), false);
+  assert.equal(env.reloads, 0);
+  env.clicks('analytics-settings');
+  assert.equal(env.reloads, 0);
+  env.clicks('analytics-accept');
+  assert.equal(env.reloads, 1);
+  assert.equal(env.scripts.length, 1);
+  assert.equal(env.scripts[0].removed, true);
+  assert.equal(env.stored.get(KEY), savedChoice);
+  env.scripts[0].onload();
+  env.window.atelierAnalytics.quizStarted();
+  assert.equal(env.commands().length, 0);
+  assert.doesNotMatch(env.nodes.get('analytics-status').textContent, /Balise chargée/);
+});
+
+test('Après 20 secondes sans réponse, le chargement reste indéterminé et peut finir', () => {
+  const env = environment();
+  env.clicks('analytics-accept');
+  assert.equal(env.runTimer(20000), true);
+  assert.match(env.nodes.get('analytics-status').textContent, /pas encore confirmé/);
+  assert.doesNotMatch(env.nodes.get('analytics-status').textContent, /échoué|Balise chargée|reçu/);
+  assert.equal(env.nodes.get('analytics-accept').textContent, 'Réessayer');
+  assert.equal(env.window[`ga-disable-${ID}`], false);
+  assert.equal(env.reloads, 0);
+  env.scripts[0].onload();
+  assert.match(env.nodes.get('analytics-status').textContent, /Balise chargée/);
+  assert.equal(env.nodes.get('analytics-accept').textContent, 'Accepter');
+  assert.equal(env.scripts.length, 1);
+  assert.equal(env.reloads, 0);
+});
+
+test('Un chargement indéterminé peut être réessayé explicitement sans créer une seconde balise', () => {
+  const env = environment();
+  env.clicks('analytics-accept');
+  env.runTimer(20000);
+  assert.match(env.nodes.get('analytics-status').textContent, /Réessayer ou refuser recharge la page et recommence le quiz/);
+  env.clicks('analytics-accept');
+  assert.equal(env.reloads, 1);
+  assert.equal(env.scripts.length, 1);
+  assert.equal(env.window[`ga-disable-${ID}`], true);
+  assert.equal(env.commands().length, 0);
+});
+
+test('Un départ rapide laisse terminer le transport autorisé mais suspend les nouveaux hooks', () => {
+  const env = environment();
+  env.clicks('analytics-accept');
+  env.window.atelierAnalytics.quizStarted();
+  const beforeDeparture = env.commands();
+  env.dispatchWindow('pagehide', { persisted: false });
+  assert.equal(env.window[`ga-disable-${ID}`], false);
+  env.window.atelierAnalytics.quizCompleted();
+  assert.deepEqual(env.commands(), beforeDeparture);
+  assert.equal(env.reloads, 0);
+});
+
+test('Les exceptions du tag restent isolées du parcours du quiz', () => {
+  const insertion = environment({ appendBlocked: true });
+  assert.doesNotThrow(() => insertion.clicks('analytics-accept'));
+  assert.match(insertion.nodes.get('analytics-status').textContent, /quiz reste utilisable/);
+  const env = environment();
+  env.clicks('analytics-accept');
+  env.window.dataLayer.push = () => { throw new Error('Traitement du tag indisponible'); };
+  assert.doesNotThrow(() => env.window.atelierAnalytics.quizStarted());
+  assert.doesNotThrow(() => env.window.atelierAnalytics.quizCompleted());
+  assert.doesNotThrow(() => env.window.atelierAnalytics.resetAttempt());
+  assert.equal(env.window[`ga-disable-${ID}`], true);
+  assert.match(env.nodes.get('analytics-status').textContent, /quiz reste utilisable/);
 });

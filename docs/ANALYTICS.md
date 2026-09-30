@@ -39,6 +39,8 @@ GA4 peut également collecter automatiquement des événements tels que `first_v
 
 Dans **Rapports**, commencer par la vue **Temps réel** pour contrôler une visite de test consentie. Les autres rapports ne sont pas instantanés : leur [traitement peut prendre 24 à 48 heures](https://support.google.com/analytics/answer/11198161?hl=fr). L’absence de résultat immédiat ne prouve donc ni une panne ni un bon fonctionnement.
 
+Choisir **Aperçu en temps réel** pour voir l’ensemble des visites. **Instantané d’utilisateur** montre l’activité d’un visiteur sélectionné au hasard : il ne représente pas forcément votre propre navigation. Si cette vue est ouverte, cliquer sur **Quitter l’instantané** pour revenir au rapport global.
+
 Pour les visites, utiliser le rapport **Pages et écrans**, avec une dimension de chemin de page, et comparer les vues :
 
 - `/atelier-francais/` correspond à l’accueil ;
@@ -82,7 +84,7 @@ Google Signals et la personnalisation publicitaire sont désactivés par le code
 
 ## Vérifier avant et après publication
 
-Le 30 septembre 2026, **19 tests Python et 17 tests JavaScript ont réussi** pour cette intégration. Le [déploiement GitHub Pages](https://github.com/XuNiLuS/atelier-francais/actions/runs/36763018436) a réussi. Sur le site public, un parcours de 20 réponses du quiz « Les temps du récit » a produit une page vue, un début et une fin de quiz, tous visibles dans **Aperçu en temps réel**. La valeur `education_level = 4e` a été consultée dans le détail de l’événement reçu. Ces premières occurrences sont des tests, pas des visites d’élèves.
+Le 30 septembre 2026, **19 tests Python et 23 tests JavaScript ont réussi**, y compris les contrôles ajoutés pour le chargement et les changements de page. Le [déploiement initial GitHub Pages](https://github.com/XuNiLuS/atelier-francais/actions/runs/36763018436) a réussi. Sur le site public, un parcours de 20 réponses du quiz « Les temps du récit » a produit une page vue, un début et une fin de quiz, tous visibles dans **Aperçu en temps réel**. La valeur `education_level = 4e` a été consultée dans le détail de l’événement reçu. Ces premières occurrences sont des tests, pas des visites d’élèves.
 
 Le navigateur a également confirmé l’absence de script Google avant accord, après refus et après retrait (avec rechargement). Aucune erreur JavaScript ou CSP n’a été observée sur ce parcours. Le positionnement des boutons a été vérifié en largeur mobile de 375 pixels. La configuration des cookies est couverte par les tests simulés ; les attributs des cookies réels n’ont pas été inspectés dans les outils de stockage du navigateur. Les rapports différés et les autres navigateurs n’ont pas encore été vérifiés.
 
@@ -106,5 +108,7 @@ Sur le site publié, contrôler séparément le comportement réel dans les outi
 6. Contrôler ensuite les événements dans **Temps réel** et, après traitement, dans les rapports. Une requête réseau ou un test local réussi ne remplace pas cette observation dans GA4.
 
 Si rien n’apparaît, vérifier l’adresse de production, l’accord, l’identifiant de mesure, les bloqueurs, les erreurs CSP et la bonne propriété Analytics. Ne pas réactiver les mesures améliorées pour tenter de corriger un problème de réception : elles ajouteraient d’autres événements que ceux prévus ici.
+
+Le panneau **Mes choix de statistiques** distingue désormais l’accord enregistré, le chargement en cours, la balise chargée et une erreur de chargement. Au-delà de 20 secondes sans résultat, il signale une attente longue, sans conclure à une panne. En cas d’erreur ou d’attente longue, **Réessayer** recharge la page et réinitialise l’essai en cours ; le choix de consentement mémorisé reste inchangé. « Balise chargée » confirme le chargement du script, pas la réception des données par Google : cette dernière se vérifie dans **Aperçu en temps réel**.
 
 Pour désactiver la mesure pour tous les visiteurs, remplacer `measurement_id` par une chaîne vide dans `data/analytics.json`, puis reconstruire et publier. Un changement d’hôte ou de chemin demande aussi de revoir le garde-fou dans le code, les tests, les cookies et la documentation ; modifier seulement l’identifiant GA4 ne suffit pas.
