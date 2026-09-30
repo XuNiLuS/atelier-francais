@@ -76,7 +76,7 @@ Le 29 septembre 2026 : 14 tests automatisés réussis sur les contenus, les expo
 
 ## Vérifications à reproduire
 
-Pour l’intégration Analytics, le 30 septembre 2026 : **19 tests Python et 17 tests JavaScript réussis**. Les trois dimensions personnalisées ont été enregistrées dans GA4. Ces contrôles précèdent la publication de cette intégration ; ils ne constituent pas une preuve de réception d’événements en production.
+Pour l’intégration Analytics, le 30 septembre 2026 : **19 tests Python et 17 tests JavaScript réussis**, puis déploiement GitHub Pages réussi. Les trois dimensions personnalisées ont été enregistrées dans GA4. Un parcours de 20 réponses en production a donné une occurrence de `page_view`, `quiz_start` et `quiz_complete` dans le rapport temps réel ; le paramètre de niveau `4e` a aussi été vérifié. Aucun script Google n’était présent avant accord, après refus ni après retrait avec rechargement. Aucune erreur JavaScript ou CSP n’a été observée. Les tests simulés couvrent les réglages de cookies ; leurs attributs réels et les rapports différés n’ont pas été inspectés. Voir [le détail des contrôles Analytics](docs/ANALYTICS.md). L’image Docker n’a pas été reconstruite pendant cette intégration.
 
 ```sh
 python -m pip install -r requirements.txt

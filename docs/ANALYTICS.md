@@ -15,7 +15,7 @@ Utiliser [Google Analytics — L’atelier de Madame Daadoun](https://analytics.
 | Origine autorisée | `https://xunilus.github.io` |
 | Chemin du site | `/atelier-francais` |
 
-La création du compte, de la propriété et du flux a été vérifiée dans l’interface GA4 le 30 septembre 2026. Les **mesures améliorées du flux sont désactivées** et les trois dimensions personnalisées décrites ci-dessous sont enregistrées. La configuration seule ne prouve pas la réception d’événements : la réception réelle reste à vérifier dans GA4 après publication.
+La création du compte, de la propriété et du flux a été vérifiée dans l’interface GA4 le 30 septembre 2026. Les **mesures améliorées du flux sont désactivées** et les trois dimensions personnalisées décrites ci-dessous sont enregistrées. Après publication, GA4 a bien affiché une occurrence de chacun des événements `page_view`, `quiz_start` et `quiz_complete` issus du parcours de test de 4e.
 
 L’identifiant de mesure est public et figure dans `data/analytics.json`, puis dans les pages générées. Il ne donne pas accès aux rapports. Aucun mot de passe ni jeton d’administration Google n’est nécessaire dans le dépôt.
 
@@ -82,7 +82,9 @@ Google Signals et la personnalisation publicitaire sont désactivés par le code
 
 ## Vérifier avant et après publication
 
-Le 30 septembre 2026, **19 tests Python et 17 tests JavaScript ont réussi** pour cette intégration. La vérification en production et la réception réelle dans GA4 restent à effectuer après publication.
+Le 30 septembre 2026, **19 tests Python et 17 tests JavaScript ont réussi** pour cette intégration. Le [déploiement GitHub Pages](https://github.com/XuNiLuS/atelier-francais/actions/runs/36763018436) a réussi. Sur le site public, un parcours de 20 réponses du quiz « Les temps du récit » a produit une page vue, un début et une fin de quiz, tous visibles dans **Aperçu en temps réel**. La valeur `education_level = 4e` a été consultée dans le détail de l’événement reçu. Ces premières occurrences sont des tests, pas des visites d’élèves.
+
+Le navigateur a également confirmé l’absence de script Google avant accord, après refus et après retrait (avec rechargement). Aucune erreur JavaScript ou CSP n’a été observée sur ce parcours. Le positionnement des boutons a été vérifié en largeur mobile de 375 pixels. La configuration des cookies est couverte par les tests simulés ; les attributs des cookies réels n’ont pas été inspectés dans les outils de stockage du navigateur. Les rapports différés et les autres navigateurs n’ont pas encore été vérifiés.
 
 Les vérifications automatisées s’exécutent depuis le dossier du projet :
 
