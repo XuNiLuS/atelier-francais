@@ -10,12 +10,15 @@
 !templates/base.html
 !templates/home.html
 !templates/programmes.html
+!templates/confidentialite.html
 !static/
 !static/app.js
 !static/navigation.js
+!static/analytics.js
 !static/style.css
 !static/favicon.svg
 !data/
 !data/catalog.json
+!data/analytics.json
 !data/quizzes/
 !data/quizzes/*.json

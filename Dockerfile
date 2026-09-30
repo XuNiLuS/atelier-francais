@@ -8,7 +8,7 @@ COPY quiz_data.py ./
 COPY scripts/export_static.py ./scripts/export_static.py
 COPY templates/ ./templates/
 COPY static/ ./static/
-COPY data/catalog.json ./data/catalog.json
+COPY data/catalog.json data/analytics.json ./data/
 COPY data/quizzes/ ./data/quizzes/
 RUN python scripts/export_static.py
 

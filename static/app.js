@@ -157,6 +157,11 @@ function checkAnswer() {
     renderFeedback(question, result);
     verifiedAnswers.set(question.id, result);
     updateProgress();
+    // La mesure facultative ne doit jamais interrompre une correction.
+    try {
+      if (verifiedAnswers.size === 1) window.atelierAnalytics?.quizStarted();
+      if (verifiedAnswers.size === questions.length) window.atelierAnalytics?.quizCompleted();
+    } catch { /* Le quiz reste utilisable si les statistiques sont indisponibles. */ }
   } catch (error) {
     checkFailed = true;
     message.textContent = error.message || 'Un problème empêche la correction. Recharge le quiz.';
@@ -269,6 +274,7 @@ form.addEventListener('submit', (event) => {
 document.getElementById('restart-button').addEventListener('click', () => {
   form.reset();
   verifiedAnswers.clear();
+  try { window.atelierAnalytics?.resetAttempt(); } catch { /* Mesure facultative. */ }
   checking = false;
   submitting = false;
   checkFailed = false;

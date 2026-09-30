@@ -7,9 +7,10 @@ import re
 import tempfile
 import unittest
 from urllib.parse import urlsplit
+from unittest.mock import patch
 
 from scripts.export_static import export_site
-from quiz_data import load_catalog
+from quiz_data import load_analytics_config, load_catalog
 
 
 class Links(HTMLParser):
@@ -33,7 +34,7 @@ class StaticExportTests(unittest.TestCase):
         for prefix in ("", "/atelier-francais"):
             result = export_site(self.output, prefix)
             self.assertEqual(result["quizzes"], len(load_catalog()))
-            self.assertEqual(result["pages"], len(load_catalog()) + 6)
+            self.assertEqual(result["pages"], len(load_catalog()) + 7)
             for page in self.output.rglob("*.html"):
                 parser = Links()
                 parser.feed(page.read_text())
@@ -54,7 +55,33 @@ class StaticExportTests(unittest.TestCase):
         self.assertFalse((self.output / "data").exists())
         self.assertFalse((self.output / ".git").exists())
         self.assertFalse((self.output / "reports").exists())
-        self.assertEqual({p.name for p in (self.output / "static").iterdir()}, {"app.js", "navigation.js", "style.css", "favicon.svg"})
+        self.assertEqual({p.name for p in (self.output / "static").iterdir()}, {"app.js", "navigation.js", "analytics.js", "style.css", "favicon.svg"})
+
+    def test_each_page_has_public_analytics_config_and_only_its_own_context(self):
+        export_site(self.output)
+        settings = load_analytics_config()
+        catalog = load_catalog()
+        expected_fields = set(settings) | {"level", "quiz_id", "quiz_theme"}
+        self.assertTrue((self.output / 'confidentialite/index.html').is_file())
+        for page in self.output.rglob('*.html'):
+            relative = page.relative_to(self.output)
+            html = page.read_text(encoding='utf-8')
+            match = re.search(r'<script type="application/json" id="analytics-config">(.*?)</script>', html, re.S)
+            with self.subTest(page=relative):
+                self.assertIsNotNone(match)
+                config = json.loads(match.group(1))
+                self.assertEqual(set(config), expected_fields)
+                self.assertEqual({key: config[key] for key in settings}, settings)
+                self.assertIn('src="/static/analytics.js"', html)
+                if relative.parts[0] == 'quiz':
+                    quiz = catalog[relative.parts[1]]
+                    self.assertEqual((config['level'], config['quiz_id'], config['quiz_theme']),
+                                     (quiz['level'], quiz['id'], quiz['title']))
+                elif relative.parts[0] == 'niveaux':
+                    self.assertEqual((config['level'], config['quiz_id'], config['quiz_theme']),
+                                     (relative.parts[1], '', ''))
+                else:
+                    self.assertEqual((config['level'], config['quiz_id'], config['quiz_theme']), ('', '', ''))
 
     def test_each_static_quiz_contains_its_own_twenty_explained_corrections(self):
         export_site(self.output)
@@ -85,6 +112,15 @@ class StaticExportTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             export_site(self.output)
         self.assertEqual(document.read_text(), "À conserver")
+
+    def test_invalid_analytics_config_preserves_the_previous_export(self):
+        export_site(self.output)
+        home = self.output / 'index.html'
+        previous_html = home.read_bytes()
+        with patch('scripts.export_static.load_analytics_config', side_effect=ValueError('Configuration invalide')):
+            with self.assertRaises(ValueError):
+                export_site(self.output)
+        self.assertEqual(home.read_bytes(), previous_html)
 
     def test_export_rejects_unsafe_url_prefixes(self):
         for prefix in ("https://example.org", "//example.org", "/../private", '/quiz" onload="evil'):

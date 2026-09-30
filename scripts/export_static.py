@@ -15,7 +15,10 @@ from jinja2 import Environment, FileSystemLoader, select_autoescape
 
 PROJECT_DIR = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(PROJECT_DIR))
-from quiz_data import BASE_DIR, LEVELS, SECURITY_HEADERS, load_catalog  # noqa: E402
+from quiz_data import (  # noqa: E402
+    BASE_DIR, LEVELS, META_CONTENT_SECURITY_POLICY, SECURITY_HEADERS,
+    load_analytics_config, load_catalog,
+)
 
 
 def export_site(output=PROJECT_DIR / "dist", base_path=""):
@@ -31,6 +34,7 @@ def export_site(output=PROJECT_DIR / "dist", base_path=""):
             raise ValueError("Choisissez un dossier vide ou un ancien export de cet outil.")
 
     catalog = load_catalog()
+    analytics_settings = load_analytics_config()
     quiz_navigation = {
         level["id"]: [
             {"id": quiz["id"], "title": quiz["title"]}
@@ -46,15 +50,29 @@ def export_site(output=PROJECT_DIR / "dist", base_path=""):
     def asset_url(_name, path):
         return SimpleNamespace(path=f"{base_path}/static/{path}")
 
+    def page_context(**context):
+        level = context.get("current_level")
+        quiz = context.get("quiz")
+        return {
+            "levels": LEVELS, "site_root": base_path,
+            "quiz_navigation": quiz_navigation, "url_for": asset_url,
+            "content_security_policy": META_CONTENT_SECURITY_POLICY,
+            "analytics_config": {
+                **analytics_settings,
+                "level": level["id"] if level else "",
+                "quiz_id": quiz["id"] if quiz else "",
+                "quiz_theme": quiz["title"] if quiz else "",
+            },
+            **context,
+        }
+
     def render(name, **context):
-        return environment.get_template(name).render(
-            levels=LEVELS, site_root=base_path, quiz_navigation=quiz_navigation,
-            url_for=asset_url, **context,
-        )
+        return environment.get_template(name).render(**page_context(**context))
 
     # Tout rendre avant de remplacer un export précédent.
     pages = {"index.html": render("home.html", current_level=None, quizzes=list(catalog.values()))}
     pages["programmes/index.html"] = render("programmes.html", current_level=None)
+    pages["confidentialite/index.html"] = render("confidentialite.html", current_level=None)
     for level in LEVELS:
         pages[f'niveaux/{level["id"]}/index.html'] = render(
             "home.html", current_level=level,
@@ -70,8 +88,7 @@ def export_site(output=PROJECT_DIR / "dist", base_path=""):
         '{% extends "base.html" %}{% block title %}Page introuvable{% endblock %}'
         '{% block content %}<main class="page" id="main-content"><h1>Page introuvable</h1>'
         '<p><a href="{{ site_root }}/">Revenir aux quiz</a></p></main>{% endblock %}'
-    ).render(levels=LEVELS, current_level=None, site_root=base_path,
-             quiz_navigation=quiz_navigation, url_for=asset_url)
+    ).render(**page_context(current_level=None))
 
     if marker.is_file():
         shutil.rmtree(output)
@@ -82,7 +99,7 @@ def export_site(output=PROJECT_DIR / "dist", base_path=""):
         target.parent.mkdir(parents=True, exist_ok=True)
         target.write_text(html + "\n", encoding="utf-8")
     (output / "static").mkdir()
-    for name in ("app.js", "navigation.js", "style.css", "favicon.svg"):
+    for name in ("app.js", "navigation.js", "analytics.js", "style.css", "favicon.svg"):
         shutil.copyfile(BASE_DIR / "static" / name, output / "static" / name)
     (output / ".nojekyll").touch()
     # Appliqué par Cloudflare Pages ; GitHub Pages utilise la CSP meta des pages.

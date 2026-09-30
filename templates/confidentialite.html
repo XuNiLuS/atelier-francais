@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %}Confidentialité · L’atelier de Madame Daadoun{% endblock %}
+{% block content %}
+<main class="page programme-page" id="main-content">
+  <div class="page-intro"><div class="eyebrow">TES DONNÉES</div><h1>Apprendre <em>en gardant le choix.</em></h1><p>Les quiz fonctionnent sans inscription et sans accepter les statistiques.</p></div>
+  <div class="programme-content">
+    <section><h2>Tes réponses restent dans ton navigateur</h2>
+      <p>La correction et le bilan sont calculés sur ton appareil. Le site ne demande ni nom, ni adresse électronique. Tes réponses et tes notes ne sont pas envoyées à Google Analytics. Fermer ou recharger la page efface l’essai en cours.</p>
+    </section>
+    <section><h2>Des statistiques seulement avec ton accord</h2>
+      <p>L’équipe de L’atelier de Madame Daadoun utilise Google Analytics 4 pour savoir quelles pages sont consultées et quels quiz sont commencés ou terminés. Ces informations l’aident à choisir les prochains contenus.</p>
+      <p>Si tu acceptes, Google reçoit la page consultée, le niveau (4e, 3e ou seconde), l’identifiant et le thème du quiz. Un quiz est compté comme commencé à la première réponse vérifiée et comme terminé lorsque ses 20 réponses sont vérifiées. Recommencer compte comme un nouvel essai : ces nombres ne représentent pas un nombre d’élèves.</p>
+      <p>Google reçoit aussi des informations techniques liées à la connexion et au navigateur ; un identifiant de navigateur est conservé dans des cookies. Il ne s’agit donc pas d’une collecte totalement anonyme. La publicité personnalisée et Google Signals sont désactivés pour ce site. Les paramètres ajoutés à l’URL et le fragment après « # » ne sont pas inclus dans les adresses envoyées par notre code.</p>
+      <p>Sans accord, le site ne charge pas Google Analytics et ne lui envoie pas ces statistiques. Un refus ne change rien aux exercices ni aux corrections. Les bloqueurs et les refus rendent les statistiques incomplètes.</p>
+    </section>
+    <section><h2>Changer d’avis</h2>
+      <p>Le bouton <strong>« Mes choix de statistiques »</strong>, en bas de chaque page, permet d’accepter ou de refuser à tout moment. Le retrait arrête la collecte et supprime les cookies Analytics de ce site sur ce navigateur. Si la mesure était active, la page est rechargée : l’essai en cours recommence. Le retrait n’efface pas les statistiques déjà reçues par Google.</p>
+      <p>Le choix est mémorisé localement pendant 180 jours au maximum, qu’il s’agisse d’un accord ou d’un refus. Les cookies de mesure configurés par le site ont aussi une durée maximale de 180 jours. Le navigateur peut les effacer plus tôt. Le réglage est propre à chaque navigateur et appareil.</p>
+      <p>Dans Google Analytics, la conservation des données détaillées d’événement et d’utilisateur est réglée à deux mois, sans renouvellement à chaque nouvelle activité. Cette durée ne s’applique pas aux rapports statistiques agrégés.</p>
+    </section>
+    <section><h2>Hébergement et service de mesure</h2>
+      <p>Le site est hébergé par GitHub Pages. GitHub peut traiter des informations techniques, comme l’adresse IP, pour fournir et sécuriser l’hébergement, indépendamment du choix de statistiques.</p>
+      <p>Google Analytics est fourni par Google. Ses traitements peuvent impliquer des serveurs situés hors de l’Union européenne. Consulte les informations des prestataires pour connaître leurs règles et les moyens d’exercer tes droits :</p>
+      <ul>
+        <li><a href="https://policies.google.com/privacy?hl=fr">Règles de confidentialité de Google</a></li>
+        <li><a href="https://support.google.com/analytics/answer/6004245?hl=fr">Protection des données dans Google Analytics</a></li>
+        <li><a href="https://docs.github.com/fr/site-policy/privacy-policies/github-general-privacy-statement">Déclaration de confidentialité de GitHub</a></li>
+      </ul>
+      <p>Pour toute question sur l’utilisation de ce site en classe, adresse-toi à Madame Daadoun.</p>
+    </section>
+    <p class="journey-note">Informations mises à jour le 30 septembre 2026.</p>
+    <a class="button button-primary" href="{{ site_root }}/">Revenir aux quiz</a>
+  </div>
+</main>
+{% endblock %}

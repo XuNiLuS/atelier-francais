@@ -6,17 +6,29 @@ Ce document décrit l’architecture **entièrement statique** du site. Python e
 
 ## Périmètre et données
 
-Le site ne possède ni API de correction, ni compte, ni session, ni téléversement, ni base de données. Le choix d’un élève reste dans la mémoire de la page et ne déclenche aucun envoi de réponse au serveur. Recharger la page recommence l’essai ; les scores ne sont pas enregistrés.
+Le site ne possède ni API de correction, ni compte élève, ni session applicative côté serveur, ni téléversement, ni base de données. La réponse d’un élève reste dans la mémoire de la page et ne déclenche aucun envoi de réponse au serveur ou à Google Analytics. Recharger la page recommence l’essai ; les réponses et les scores ne sont pas enregistrés par l’application.
 
 Les questions, les bonnes réponses et les explications sont publiques par conception. Le verrouillage d’un choix dans l’interface ne protège pas une note contre la modification du navigateur. **Le site convient à l’entraînement, pas à une évaluation authentifiée.**
 
-Aucune ressource distante ni outil d’analyse d’audience n’est ajouté par l’application. L’hébergement et son éventuel frontal peuvent cependant conserver des adresses IP, des URL et des informations de navigateur dans leurs journaux. Leurs règles de collecte et de conservation doivent être examinées pour le service choisi.
+Les quiz fonctionnent sans ressource distante. Une mesure d’audience Google Analytics 4 est facultative : le script distant et les requêtes de mesure sont bloqués tant que le visiteur n’a pas accepté. L’hébergement et son éventuel frontal peuvent conserver des adresses IP, des URL et des informations de navigateur dans leurs journaux, indépendamment de ce choix. Leurs règles de collecte et de conservation doivent être examinées pour le service choisi.
+
+## Mesure d’audience facultative
+
+`static/analytics.js` exige à la fois un accord valide, un identifiant GA4 valide, l’origine exacte `https://xunilus.github.io` et le chemin `/atelier-francais` ou un de ses sous-chemins. Les prévisualisations locales, HTTP, les autres hôtes et les projets voisins ne chargent pas la balise, même après un clic sur Accepter. Le code n’envoie aucun signal de consentement à Google avant l’accord et ne conserve pas d’événements à transmettre rétroactivement.
+
+Le choix, accord ou refus, est stocké dans `localStorage` sous une clé propre au chemin du projet, pendant 180 jours au maximum. Une simple visite ne prolonge pas ce délai. Si ce stockage est inaccessible, le choix vaut pour la page ouverte seulement. Les cookies GA4 sont configurés avec le préfixe `atelier`, sans attribut `Domain` (hôte seulement), au chemin `/atelier-francais/`, avec `SameSite=Lax;Secure`, une durée de 180 jours et sans renouvellement automatique à chaque visite. Ces réglages limitent le périmètre des cookies ; ils ne constituent pas une isolation de sécurité entre applications partageant la même origine.
+
+Le bouton **Mes choix de statistiques** permet de retirer l’accord. Le code désactive alors la mesure, supprime les cookies `atelier_ga` du projet, vide sa file locale et recharge la page si la balise avait été chargée. Un retrait dans un autre onglet ou l’expiration du choix déclenche aussi l’arrêt. Cette action n’efface pas les données déjà reçues par Google ; le rechargement efface l’essai en cours comme tout autre rechargement de la page.
+
+Le site envoie explicitement `page_view`, `quiz_start` et `quiz_complete`. Les événements de quiz contiennent seulement `education_level`, `quiz_id` et `quiz_theme`, issus du catalogue. Les vues de page ajoutent le niveau lorsqu’il existe et, sur les pages de quiz, l’identifiant et le thème. Les réponses, corrections consultées et notes ne sont pas transmises comme données d’événements. Les URL envoyées par le code excluent les paramètres et fragments ; le référent est vide. Le titre transmis est construit à partir du nom du site, du niveau et du thème disponibles dans le catalogue, sans lire le titre du document ni les réponses. Les événements automatiques GA4 de visite, de session et d’engagement restent possibles après accord, même lorsque les mesures améliorées sont désactivées. Google reçoit aussi des informations techniques et des identifiants de navigateur : **la collecte n’est pas totalement anonyme**.
+
+Les mesures améliorées du flux ont été désactivées dans l’interface GA4 ; Google Signals et la personnalisation publicitaire sont désactivés dans le code. L’ajout de cette balise introduit une dépendance à du JavaScript distant, dont les évolutions et le comportement réel doivent être surveillés. Le [guide Analytics](docs/ANALYTICS.md) précise les identifiants, la lecture des rapports et les contrôles à reproduire. La page publique `/confidentialite/` présente ces informations aux visiteurs. Ces réglages techniques ne constituent pas une certification de conformité juridique ou CNIL.
 
 ## Construction et rendu
 
 `quiz_data.py` vérifie la structure du catalogue et des questions avant la génération. Les fichiers de contenu et les modèles sont des sources de confiance maintenues dans le dépôt : ils ne sont pas fournis par les visiteurs.
 
-Jinja2 échappe le texte HTML et sérialise les données embarquées avec son filtre JSON. Le JavaScript crée les éléments de réponse avec des insertions textuelles, sans interpréter les libellés comme du HTML. La CSP limite les scripts et styles aux fichiers du site, sans `unsafe-inline` ni `unsafe-eval`. Ces protections doivent être conservées lors de l’ajout de questions ou de fonctionnalités.
+Jinja2 échappe le texte HTML et sérialise les données embarquées avec son filtre JSON. Le JavaScript crée les éléments de réponse avec des insertions textuelles, sans interpréter les libellés comme du HTML. La CSP autorise les scripts du site et la seule URL de chargement `https://www.googletagmanager.com/gtag/js`, sans `unsafe-inline` ni `unsafe-eval`. Les styles restent locaux ; les connexions et images de mesure sont limitées aux hôtes Google explicitement listés dans la configuration. Cette autorisation CSP ne vaut pas consentement : le script local contrôle le chargement et les envois. Ces protections doivent être conservées lors de l’ajout de questions ou de fonctionnalités.
 
 L’exporteur copie les pages et ressources explicitement prévues. Il ne publie ni code Python, ni historique Git, ni rapports d’audit, ni fichier local `.env`. Publier **le contenu de `dist/` seulement**. Les corrigés font néanmoins partie des pages générées : leur présence ne doit pas être confondue avec une fuite de secrets.
 
@@ -64,16 +76,21 @@ Le 29 septembre 2026 : 14 tests automatisés réussis sur les contenus, les expo
 
 ## Vérifications à reproduire
 
+Pour l’intégration Analytics, le 30 septembre 2026 : **19 tests Python et 17 tests JavaScript réussis**. Les trois dimensions personnalisées ont été enregistrées dans GA4. Ces contrôles précèdent la publication de cette intégration ; ils ne constituent pas une preuve de réception d’événements en production.
+
 ```sh
 python -m pip install -r requirements.txt
 python -m unittest discover -s tests -v
+node --test tests/analytics.test.cjs
 python scripts/export_static.py
 docker compose build --pull --no-cache
 docker compose up -d --wait
 docker compose ps
 ```
 
-Compléter ces contrôles par un essai dans le navigateur : navigation entre niveaux, corrections correctes et incorrectes, bilan et nouvel essai. Examiner les réponses HTTP du service choisi, la non-publication de `/.git/config`, `/.env` et des sources, ainsi que les restrictions effectives du conteneur.
+Les tests JavaScript nécessitent Node.js 22 et n’installent aucun paquet npm ; ils s’exécutent sans requête réseau. Ils vérifient notamment l’absence de mesure sans accord et hors production, l’expiration, le retrait, le périmètre des cookies et les données admises dans les événements. Le workflow GitHub Pages les exécute avant la publication. Ces tests simulés ne prouvent pas la réception d’événements par Google.
+
+Compléter ces contrôles par un essai dans le navigateur : navigation entre niveaux, corrections correctes et incorrectes, bilan et nouvel essai, puis refus, accord et retrait de la mesure. Examiner les requêtes réelles, les réponses HTTP du service choisi, la non-publication de `/.git/config`, `/.env` et des sources, ainsi que les restrictions effectives du conteneur. Le [guide Analytics](docs/ANALYTICS.md) décrit la vérification séparée dans GA4.
 
 Un inventaire des dépendances de construction ne suffit pas à analyser l’image finale Caddy. Inversement, l’analyse du conteneur ne couvre pas les outils et comptes qui construisent le site, ni les serveurs de GitHub ou de Cloudflare. Pour tout nouveau scan, conserver l’image exacte, l’architecture, la date, la version du scanner et celle de sa base d’avis. Ne pas ignorer les avis dépourvus de correctif.
 

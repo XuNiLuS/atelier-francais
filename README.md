@@ -14,7 +14,7 @@ Au collège, le contenu anticipe le **nouveau programme officiel publié en mars
 
 L’élève choisit une réponse puis clique sur **Vérifier ma réponse** : il voit si elle est correcte, la bonne réponse et une explication. La réponse est alors figée pour cet essai. Il peut revenir sur les questions, lire son bilan sur 20 et recommencer. Chaque quiz a ses propres questions, corrections et aides.
 
-Le site est entièrement **statique : HTML, CSS et JavaScript**. Python valide les données et Jinja2 génère les pages avant publication. La correction et le score sont calculés dans le navigateur, sans API. Aucun compte, cookie, base de données ni dépendance distante n’est nécessaire. La progression reste dans la page ouverte : changer de quiz ou recharger la page commence un nouvel essai.
+Le site est entièrement **statique : HTML, CSS et JavaScript**. Python valide les données et Jinja2 génère les pages avant publication. La correction et le score sont calculés dans le navigateur, sans API. Aucun compte élève ni base de données n’est nécessaire. Les exercices fonctionnent sans cookie de mesure ni ressource distante ; Google Analytics est facultatif et chargé seulement après accord. La progression reste dans la page ouverte : changer de quiz ou recharger la page commence un nouvel essai.
 
 ## Démarrer avec Docker
 
@@ -79,6 +79,14 @@ Les corrections figurent dans les fichiers publics et peuvent être consultées 
 
 Le conteneur Caddy livré ici écoute en HTTP pour l’usage local ou derrière un frontal. Sur une machine publique, prévoir séparément le domaine, HTTPS et son renouvellement, le pare-feu, les protections contre les abus et les mises à jour. Ce dépôt ne configure ni machine publique ni certificat.
 
+## Consulter les statistiques
+
+Ouvrir [Google Analytics — L’atelier de Madame Daadoun](https://analytics.google.com/analytics/web/#/a410298672p556853738/) avec le compte autorisé. Le [guide Analytics](docs/ANALYTICS.md) décrit les rapports par page, niveau et quiz, les réglages et la vérification de la réception des événements. Les rapports peuvent demander [24 à 48 heures de traitement](https://support.google.com/analytics/answer/11198161?hl=fr) ; une configuration enregistrée ne prouve pas encore que des événements ont été reçus.
+
+Sans accord explicite, **aucune requête à Google Analytics** n’est envoyée. La mesure est aussi désactivée en prévisualisation locale : elle exige l’origine `https://xunilus.github.io` et le chemin `/atelier-francais` ou l’un de ses sous-chemins. Le choix est conservé localement pendant 180 jours au maximum et peut être modifié avec **Mes choix de statistiques**, en bas de page. Retirer un accord après le démarrage de la mesure recharge la page et efface l’essai en cours.
+
+Après accord, le site mesure les pages consultées, les débuts de quiz à la première réponse vérifiée et les fins de quiz après les 20 réponses vérifiées. Les vues de page indiquent leur niveau lorsqu’il existe et, sur un quiz, son identifiant et son thème ; les événements de début et de fin reprennent ces trois informations du catalogue. **Aucune réponse ni note n’est transmise.** Les débuts et fins sont des nombres d’essais, pas d’élèves. GA4 ajoute ses événements automatiques de visite, de session et d’engagement et utilise des cookies de navigateur : la mesure n’est pas totalement anonyme. Les refus et bloqueurs rendent les statistiques incomplètes. La page `/confidentialite/` explique ces choix aux élèves.
+
 ## Modifier ou ajouter un quiz
 
 Les questions se trouvent dans `data/quizzes/`, avec un fichier JSON par quiz. Le catalogue `data/catalog.json` définit les titres, les niveaux, les objectifs et les aides. Chaque question contient :
@@ -107,6 +115,7 @@ La liste du catalogue détermine les quiz générés. Après modification, recon
 | `/niveaux/{level_id}/` | Quiz de 4e, 3e ou seconde. |
 | `/quiz/{quiz_id}/` | Questionnaire choisi et corrections dans le navigateur. |
 | `/programmes/` | Progression, références officielles et dates d’application. |
+| `/confidentialite/` | Données, mesure d’audience facultative et changement de choix. |
 | `/404.html` | Page d’erreur pour l’hébergeur. |
 
 Il n’y a aucune route API ni point de santé JSON. Le contrôle de santé Docker vérifie simplement que la page d’accueil répond.
@@ -118,13 +127,15 @@ quiz_data.py              Chargement et validation du catalogue avec la biblioth
 scripts/export_static.py  Génération HTML avec Jinja2
 requirements.txt          Dépendance de construction Python
 data/catalog.json         Catalogue et aides
+data/analytics.json       Identifiant public GA4 et adresse de production autorisée
 data/quizzes/             Seize fichiers de questions et corrections
 templates/                Modèles HTML
 static/                   CSS, JavaScript et icône
 dist/                     Site généré, seul dossier à publier
-tests/                    Tests unittest de données et de génération
+tests/                    Tests Python et tests JavaScript du consentement
 docs/PROGRAMMES.md        Raccord aux programmes officiels
 docs/DEPLOIEMENT.md       Publication du site statique
+docs/ANALYTICS.md         Statistiques, configuration et vérifications GA4
 SECURITY.md                Sécurité actuelle et archives de l’audit précédent
 Dockerfile                Construction Python, puis service statique Caddy
 Caddyfile                 Service HTTP local et en-têtes de protection
@@ -138,10 +149,13 @@ Après activation de l’environnement Python :
 ```sh
 python -m pip install -r requirements.txt
 python -m unittest discover -s tests -v
+node --test tests/analytics.test.cjs
 python scripts/export_static.py
 ```
 
-Ouvrir ensuite le site pour vérifier la navigation, une réponse correcte, une réponse incorrecte, le bilan et le redémarrage d’un quiz. Pour Docker, consulter l’état avec `docker compose ps`.
+Les tests JavaScript utilisent Node.js 22, sans paquet npm ni requête réseau. Le workflow GitHub Pages exécute les tests Python et JavaScript avant la publication.
+
+Ouvrir ensuite le site pour vérifier la navigation, une réponse correcte, une réponse incorrecte, le bilan et le redémarrage d’un quiz. Vérifier aussi le refus, l’accord puis son retrait, et l’absence de mesure en local ; le [guide Analytics](docs/ANALYTICS.md) distingue ces tests de la réception réelle dans GA4. Pour Docker, consulter l’état avec `docker compose ps`.
 
 ## Git
 

@@ -22,18 +22,58 @@ LEVELS = (
 )
 
 
+GOOGLE_TAG_SOURCE = "https://www.googletagmanager.com/gtag/js"
+ANALYTICS_NETWORK_SOURCES = (
+    "https://www.google-analytics.com",
+    "https://region1.google-analytics.com",
+    "https://www.googletagmanager.com",
+)
+
+# Autoriser ces destinations ne les contacte pas : analytics.js attend l’accord
+# explicite et vérifie l’origine de production avant de charger le tag Google.
+CONTENT_SECURITY_POLICY = (
+    f"default-src 'none'; script-src 'self' {GOOGLE_TAG_SOURCE}; "
+    f"style-src 'self'; img-src 'self' {' '.join(ANALYTICS_NETWORK_SOURCES)}; "
+    f"connect-src {' '.join(ANALYTICS_NETWORK_SOURCES)}; "
+    "base-uri 'none'; form-action 'none'; frame-ancestors 'none'; object-src 'none'"
+)
+# frame-ancestors fonctionne dans un en-tête HTTP, mais pas dans une balise meta.
+META_CONTENT_SECURITY_POLICY = "; ".join(
+    directive.strip() for directive in CONTENT_SECURITY_POLICY.split(";")
+    if not directive.strip().startswith("frame-ancestors ")
+)
+
 SECURITY_HEADERS = {
-    "Content-Security-Policy": (
-        "default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; "
-        "connect-src 'none'; base-uri 'none'; form-action 'none'; "
-        "frame-ancestors 'none'; object-src 'none'"
-    ),
+    "Content-Security-Policy": CONTENT_SECURITY_POLICY,
     "X-Frame-Options": "DENY",
     "X-Content-Type-Options": "nosniff",
     "Referrer-Policy": "no-referrer",
     "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
     "Cross-Origin-Resource-Policy": "same-origin",
 }
+
+
+def load_analytics_config(path=BASE_DIR / "data" / "analytics.json"):
+    """Valider la configuration publique ; aucun identifiant d’élève n’y figure."""
+    with Path(path).open(encoding="utf-8") as source:
+        config = json.load(source)
+    fields = {"measurement_id", "production_origin", "base_path"}
+    if not isinstance(config, dict) or set(config) != fields:
+        raise ValueError("La configuration Analytics doit contenir exactement measurement_id, production_origin et base_path.")
+    measurement_id = config["measurement_id"]
+    if not isinstance(measurement_id, str) or (measurement_id and not re.fullmatch(r"G-[A-Z0-9]+", measurement_id)):
+        raise ValueError("L’identifiant Analytics doit être vide ou commencer par G- suivi de lettres majuscules et de chiffres.")
+    origin = config["production_origin"]
+    # Une origine HTTPS canonique évite les chemins, ports, userinfo et variantes
+    # de casse qui rendraient la comparaison stricte avec location.origin ambiguë.
+    host_label = r"[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?"
+    origin_pattern = rf"https://(?:{host_label}\.)+[a-z](?:[a-z0-9-]{{0,61}}[a-z0-9])?"
+    if not isinstance(origin, str) or len(origin) > 261 or not re.fullmatch(origin_pattern, origin):
+        raise ValueError("L’origine de production doit être un domaine HTTPS en minuscules, sans chemin, port ni identifiants.")
+    base_path = config["base_path"]
+    if not isinstance(base_path, str) or not re.fullmatch(r"(?:/[A-Za-z0-9][A-Za-z0-9_.-]*)*", base_path):
+        raise ValueError("Le chemin Analytics doit être vide ou un chemin local sûr sans slash final.")
+    return config
 
 
 def load_questions(path=QUESTIONS_PATH):
